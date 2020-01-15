@@ -1,0 +1,21 @@
+<div class="cloth-new-box">
+	<div>
+		<h4><strong>カテゴリー</strong></h4>
+		<%= form.collection_select(:category_id, Category.all, :id, :category) %>
+	</div>
+	<div>
+		<h4><strong>ブランド名</strong></h4>
+		<span>※わからない場合はノーブランドと入力してください。</span><br>
+		<span>※先頭の文字が自動的に大文字で登録されます。</span><br>
+		<%= form.text_field :brand, placeholder: '例) Gucci' %>
+	</div>
+	<div>
+		<h4><strong>サイズ</strong></h4>
+		<span>※アルファベットの場合は自動的に大文字で登録されます。</span><br>
+		<%= form.text_field :size, placeholder: '例)42, 例)M' %>
+	</div>
+	<div>
+		<h4><strong>画像を選択</strong></h4>
+		<%= form.attachment_field :image %>
+	</div>
+</div>

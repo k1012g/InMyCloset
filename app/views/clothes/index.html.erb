@@ -1,2 +1,14 @@
-<h1>Clothes#index</h1>
-<p>Find me in app/views/clothes/index.html.erb</p>
+<div class="cloth-index">
+	<% @clothes.each do |clothes| %>
+		<div class="cloth-box">
+				<%= attachment_image_tag clothes, :image, :fill, 150, 150, fallback: "no_image.png" %><br>
+				<%= clothes.brand %>
+				<%= clothes.size %>
+				<%= clothes.category.category %><br>
+				<%= link_to user_path(clothes.user.id) do %>
+					<%= attachment_image_tag clothes.user, :profile_image, :fill, 40, 40, fallback: "no_image.png", class: "user_image" %>
+					<%= clothes.user.name %>
+				<% end %>
+		</div>
+	<% end %>
+</div>
