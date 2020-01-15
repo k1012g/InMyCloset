@@ -1,3 +1,13 @@
 <header class="header">
-	<h3><strong>InMyCloset</strong></h3>
+	<span><strong>InMyCloset</strong></span>
+	<% if signed_in? %>
+		<p>ログイン中</p>
+		<strong><%= link_to "Sign out", destroy_user_session_path, method: :delete %></strong>
+	<% else %>
+		<strong><%= link_to "What is InMyCloset?", about_path %></strong>
+		<strong><%= link_to "Home", root_path %></strong>
+		<strong><%= link_to "Sign in", new_user_session_path %></strong>
+		<strong><%= link_to "Sign up", new_user_registration_path
+		 %></strong>
+	<% end %>
 </header>

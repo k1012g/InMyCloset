@@ -30,13 +30,45 @@
 	clear: both;
 }
 
-/* layouts/header */
-.header{
-	background-color: ;
+/* layouts/application */
+.container{
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
+/* layouts/header */
+.header{
+	width: 100%;
+	height: 80px;
+	padding: 0 20px;
+	background-color: #292929;
+	span{
+		line-height: 80px;
+		text-align: left;
+		color: white;
+		font-size: 30px;
+	}
+	a{
+		line-height: 80px;
+		float: right;
+		color: white;
+		font-size: 20px;
+		padding: 0 20px;
+	}
+}
 
-
+/* layouts/footer */
+.footer{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	background-color: #292929;
+	span{
+		line-height: 40px;
+		color: white;
+		font-size: 15px;
+	}
+}
 
 
 

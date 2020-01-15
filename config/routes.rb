@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 	get '/about' => 'top#about', as: 'about'
 
 # users controller & devise controller
-	resources :users, only: [:index, :show, :edit, :update]
 	devise_for :users, :controllers => {
 		:registrations => 'users/registrations',
 		:sessions => 'users/sessions'
 	}
+	resources :users, only: [:index, :show, :edit, :update]
 
 
 # clothes controller
