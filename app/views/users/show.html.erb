@@ -6,8 +6,10 @@
 		<section class="profile-detail">
 			<strong><%= @user.name %></strong><br>
 			<span><%= @user.introduction %></span><br><br>
-			<span class="btn btn-default"><%= link_to "プロフィールを編集", edit_user_path(@user.id) %></span><br><br>
-			<span class="btn btn-default"><%= link_to "洋服を登録する", new_clothes_path %></span>
+			<% if current_user == @user %>
+				<span class="btn btn-default"><%= link_to "プロフィールを編集", edit_user_path(@user.id) %></span><br><br>
+				<span class="btn btn-default"><%= link_to "洋服を登録する", new_clothes_path %></span>
+			<% end %>
 		</section>
 	</div>
 	<div class="profile-box-right">
