@@ -16,7 +16,7 @@
 @import "bootstrap-sprockets";  /*ここを追加*/
 @import "bootstrap";
 
-/* リセットcs */
+/* リセットcss */
 *{
 	margin: 0;
 	padding: 0;
@@ -69,6 +69,23 @@
 		font-size: 15px;
 	}
 }
+
+/* layouts/sidebar */
+.sidebar-nav{
+	list-style: none;
+	li{
+		font-size: 30px;
+		a{
+			color: black;
+		}
+	}
+}
+
+/* top/top */
+h1{
+	font-size: 70px;
+}
+
 
 /* users/show */
 .profile-box{
