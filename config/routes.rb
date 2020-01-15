@@ -15,8 +15,9 @@ Rails.application.routes.draw do
 	get '/clothes' => 'clothes#index', as: 'clothes'
 	get '/cloth/new' => 'clothes#new', as: 'new_clothes'
 	post '/cloth/new' => 'clothes#create', as: 'create_clothes'
-	get '/cloth/edit' => 'clothes#edit', as: 'edit_clothes'
-	put '/cloth/edit' => 'clothes#update', as: 'update_clothes'
+	get '/cloth/edit/:id' => 'clothes#edit', as: 'edit_clothes'
+	patch '/cloth/edit/:id' => 'clothes#update', as: 'update_clothes'
+	delete '/cloth/delete/:id' => 'clothes#destroy', as: 'destroy_clothes'
 
 
 # categories controller

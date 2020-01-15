@@ -1,2 +1,5 @@
-<h1>Clothes#new</h1>
-<p>Find me in app/views/clothes/new.html.erb</p>
+<h2><strong>クローゼットに追加</strong></h2>
+<%= form_with(model: @cloth, url: create_clothes_path) do |form| %>
+	<%= render 'clothes/form', form: form %>
+	<%= form.submit "追加する", class: "btn btn-default" %>
+<% end %>
