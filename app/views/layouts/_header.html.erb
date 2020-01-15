@@ -1,8 +1,8 @@
 <header class="header">
 	<span><strong>InMyCloset</strong></span>
 	<% if signed_in? %>
-		<p>ログイン中</p>
 		<strong><%= link_to "Sign out", destroy_user_session_path, method: :delete %></strong>
+		<strong><%= link_to "My Page", user_path(current_user.id) %></strong>
 	<% else %>
 		<strong><%= link_to "What is InMyCloset?", about_path %></strong>
 		<strong><%= link_to "Home", root_path %></strong>
