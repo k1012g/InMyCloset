@@ -3,12 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
     devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :validatable
+    attachment :profile_image
 
 # バリデーション
     validates :name, presence: true, length: { in: 2..20}
+    validates :introduction, length: { maximum: 100 }
 
 # association
-    has_many :clothes
+    has_many :cloths
     has_many :favorites
 # 自分がフォローしている人との関連
     has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
