@@ -1,2 +1,18 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="clearfix profile-box">
+	<div class="profile-box-left">
+		<div class="profile-image">
+			<%= attachment_image_tag @user, :profile_image, :fill, 500, 500, fallback: "no_image.png"  %>
+		</div>
+		<section class="profile-detail">
+			<strong><%= @user.name %></strong><br>
+			<span><%= @user.introduction %></span><br><br>
+			<span class="btn btn-default"><%= link_to "プロフィールを編集", edit_user_path(@user.id) %></span><br><br>
+			<span class="btn btn-default"><%= link_to "洋服を登録する", new_clothes_path %></span>
+		</section>
+	</div>
+	<div class="profile-box-right">
+		<h1>ここに登録している洋服をカテゴリーで分ける</h1>
+		<% @user_clothes.each do |clothes| %>
+		<% end %>
+	</div>
+</div>
