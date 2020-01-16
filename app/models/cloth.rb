@@ -8,6 +8,6 @@ class Cloth < ApplicationRecord
 
 # バリデーション
 	validates :brand, presence: true, length: { in: 1..20 }
-	validates :size, presence: true
+	validates :size, presence: true, length: { in: 1..10 }
 	validates :category_id, presence: true
 end
