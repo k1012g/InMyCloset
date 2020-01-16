@@ -7,8 +7,8 @@
 			<strong><%= @user.name %></strong><br>
 			<span><%= @user.introduction %></span><br><br>
 			<% if current_user == @user %>
-				<span class="btn btn-default"><%= link_to "プロフィールを編集", edit_user_path(@user.id) %></span><br><br>
-				<span class="btn btn-default"><%= link_to "洋服を登録する", new_clothes_path %></span>
+				<%= link_to "Edit profile", edit_user_path(@user.id), class: "btn btn-default common-btn" %>
+				<%= link_to "Add clothes", new_clothes_path, class: "btn btn-default common-btn" %>
 			<% end %>
 		</section>
 	</div>
@@ -26,7 +26,7 @@
 						<%= clothes.size %>
 						<%= clothes.category.category %>
 					<% end %><br>
-					<%= link_to "削除", destroy_clothes_path(clothes.id), method: :delete, data: {confirm: "No.#{@each_times}を削除しますか？"}, class: "btn btn-danger" %>
+					<%= link_to "Delete", destroy_clothes_path(clothes.id), method: :delete, data: {confirm: "Really No.#{@each_times} delete？"}, class: "btn btn-danger", style: "width: 100%;" %>
 				<% else %>
 					<%= attachment_image_tag clothes, :image, :fill, 150, 150, fallback: "no_image.png" %><br>
 					<strong>No.<%= @each_times %></strong>

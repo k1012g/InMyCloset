@@ -1,23 +1,23 @@
 <div class="profile-edit-box clearfix">
-	<h2><strong>プロフィールを編集</strong></h2>
+	<h2><strong>Edit Profile</strong></h2>
 	<%= form_with(model: @user) do |form| %>
 		<div class="profile-edit-left">
 			<div class="profile-edit-image">
 			<%= attachment_image_tag @user, :profile_image, :fill, 500, 500, fallback: "no_image.png"  %>
 			</div>
-			<div>
-				<h4><strong>プロフィール画像を編集</strong></h4>
+			<div class="edit-image">
+				<h4><strong>Edit profile image</strong></h4>
 				<%= form.attachment_field :profile_image %>
 			</div>
 		</div>
 		<div class="profile-edit-right">
-			<h4><strong>ユーザーネーム</strong></h4>
+			<h4><strong>User Name</strong></h4>
 			<%= form.text_field :name, style: "height: 25px; width: 300px;" %>
 
-			<h4><strong>自己紹介</strong></h4>
+			<h4><strong>Introduction</strong></h4>
 			<%= form.text_area :introduction, style: "height: 150px; width: 300px;" %><br>
 
-			<%= form.submit "変更を保存", class: "btn btn-default", style: "width: 300px;" %>
+			<%= form.submit "Update profile", class: "btn btn-default common-btn", style: "width: 300px;" %>
 		</div>
 	<% end %>
 </div>

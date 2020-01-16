@@ -1,5 +1,16 @@
-<h2><strong>クローゼットを編集</strong></h2>
-<%= form_with(model: @cloth, url: edit_clothes_path) do |form| %>
-	<%= render 'clothes/form', form: form %>
-	<%= form.submit "更新する", class: "btn btn-default" %>
-<% end %>
+<div class="col-xs-6" style="text-align: center;">
+	<h2><strong>Before the edit</strong></h2>
+	<%= attachment_image_tag @cloth, :image, :fill, 350, 350 %>
+	<br>
+	<strong>Category : </strong><%= @cloth.category.category %><br>
+	<strong>Brand : </strong><%= @cloth.brand %><br>
+	<strong>Size : </strong><%= @cloth.size %>
+</div>
+<div class="col-xs-6">
+	<h2 style="text-align: center;"><strong>Edit clothes</strong></h2>
+	<%= form_with(model: @cloth, url: edit_clothes_path) do |form| %>
+		<%= render 'clothes/form', form: form %><br>
+		<%= form.submit "Update clothes", class: "btn btn-default common-btn" %>
+		<%= link_to "Back", user_path(current_user.id), class: "btn btn-default common-btn" %>
+	<% end %>
+</div>

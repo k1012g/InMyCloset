@@ -1,5 +1,20 @@
-<h2><strong>クローゼットに追加</strong></h2>
-<%= form_with(model: @cloth, url: create_clothes_path) do |form| %>
-	<%= render 'clothes/form', form: form %>
-	<%= form.submit "追加する", class: "btn btn-default" %>
-<% end %>
+<div class="col-xs-6" style="text-align: center;">
+	<h2><strong>Preview</strong></h2>
+	<div style="width: 350px; height: 350px; margin: 0 auto; border: double black;">
+		<span style="line-height: 350px;">
+			Image is here.
+		</span>
+	</div>
+	<br>
+	<strong>Category : </strong><span>(Example : tops)</span><br>
+	<strong>Brand : </strong><span>(Example : Gucci)</span><br>
+	<strong>Size : </strong><span>(Example : 42/S)</span>
+</div>
+<div class="col-xs-6">
+	<h2 style="text-align: center;"><strong>Add clothes</strong></h2>
+	<%= form_with(model: @cloth, url: create_clothes_path) do |form| %>
+		<%= render 'clothes/form', form: form %><br>
+		<%= form.submit "Add clothes", class: "btn btn-default common-btn" %>
+		<%= link_to "Back", user_path(current_user.id), class: "btn btn-default common-btn" %>
+	<% end %>
+</div>
