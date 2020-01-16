@@ -1,2 +1,6 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h2><strong><%= @category.category %></strong></h2>
+<div class="cloth-index">
+	<% @category.cloths.each do |clothes| %>
+		<%= render 'clothes/index', clothes: clothes %>
+	<% end %>
+</div>
