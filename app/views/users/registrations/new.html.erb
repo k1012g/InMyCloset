@@ -6,19 +6,19 @@
     <table class="table">
       <tr>
         <th>User Name</th>
-        <td><%= f.text_field :name, autofocus: true %></td>
+        <td><%= f.text_field :name, autofocus: true, style: "width: 250px;" %></td>
       </tr>
       <tr>
         <th>Email</th>
-        <td><%= f.email_field :email, autocomplete: "email" %></td>
+        <td><%= f.email_field :email, autocomplete: "email", style: "width: 250px;" %></td>
       </tr>
       <tr>
         <th>Password</th>
-        <td><%= f.password_field :password, autocomplete: "new-password", placeholder: "6 characters minimum" %></td>
+        <td><%= f.password_field :password, autocomplete: "new-password", placeholder: "6 characters minimum", style: "width: 250px;" %></td>
       </tr>
       <tr>
         <th>Password Confirmation</th>
-        <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+        <td><%= f.password_field :password_confirmation, autocomplete: "new-password", style: "width: 250px;" %></td>
       </tr>
     </table>
     <div class="actions">
