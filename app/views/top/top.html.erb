@@ -1,8 +1,95 @@
-<div class="col-xs-12">
-	<div class="col-xs-2">
-		<%= render 'layouts/sidebar' %>
-	</div>
-	<div class="col-xs-10">
-		<h1><strong>Welcome to InMyCloset!</strong></h1>
-	</div>
-</div>
+<div class="col-xs-12"> -->
+	<% if signed_in? %>
+		<!-- ログインしているときはフォローしている人のタイムラインを表示 -->
+		<div class="col-xs-10">
+			Following User
+		</div>
+	<% else %>
+		<!-- ログインしていないときはTOPページ -->
+		<div style="text-align: center;">
+			<h1><strong>Welcome to "InMyCloset!"</strong></h1>
+			<br>
+			<section class="top-contents">
+				<span><strong>I am sure you have the experience of forgetting what you have in your closet.</strong></span>
+			</section>
+
+			<br><br><br>
+
+			<span style="font-size: 50px;"><strong>
+				If it were possible,<br>
+				you think you want to bring<br>
+				your closet to clothing store<br>
+				you always buy clothes.
+			</strong></span>
+
+			<br><br><br>
+
+			<section class="top-contents2">
+				<span><strong>
+					This application "InMyCloset" makes it possible.
+				</strong></span>
+			</section>
+
+			<br><br><br>
+
+			<section class="top-contents3">
+				<h2 style="font-size: 50px;"><strong>Only 3 steps!</strong></h2>
+				<br><br>
+
+				<span style="font-size: 40px;"><strong>Step 1 : Fill in required items.</strong></span><br>
+				<div class="step1"></div>
+				<br><br>
+				<strong style="font-size: 30px; color: #292929;"><%= link_to "☞ Sign up here!", new_user_registration_path %></strong>
+
+				<br><br><br>
+
+				<span style="font-size: 40px;"><strong>Step 2 : Add your clothes.</strong></span><br>
+				<div class="step2"></div>
+
+				<br><br><br>
+
+				<span style="font-size: 40px;"><strong>Step 3 : Enjoy fashion!</strong></span><br>
+				<div class="step3"></div>
+				<br><br>
+			</section>
+
+			<br><br><br>
+
+			<!-- 各種リンク -->
+			<section class="col-xs-12">
+				<div class="col-xs-3">
+					<ul style="text-align: left;">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+				</div>
+				<div class="col-xs-3">
+					<ul style="text-align: left;">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+				</div>
+				<div class="col-xs-3">
+					<ul style="text-align: left;">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+				</div>
+				<div class="col-xs-3">
+					<ul style="text-align: left;">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+	<% end %>
+<!-- </div>
