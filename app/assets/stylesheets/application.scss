@@ -233,6 +233,11 @@ h1{
 .profile-edit-left{
 	width: 45%;
 	float: left;
+	.edit-image{
+		input{
+			margin: 0 0 0 140px;
+		}
+	}
 }
 .profile-edit-right{
 	width: 40%;
