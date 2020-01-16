@@ -10,4 +10,8 @@ class Cloth < ApplicationRecord
 	validates :brand, presence: true, length: { in: 1..20 }
 	validates :size, presence: true, length: { in: 1..10 }
 	validates :category_id, presence: true
+
+	def favorited_by?(user)
+        favorites.where(user_id: user.id).exists?
+    end
 end

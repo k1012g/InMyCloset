@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 	patch '/cloth/edit/:id' => 'clothes#update', as: 'update_clothes'
 	delete '/cloth/delete/:id' => 'clothes#destroy', as: 'destroy_clothes'
 
+# favorites controller
+	post 'cloth/:cloth_id/favorite' => 'favorites#create', as: 'create_favorite'
+	delete 'cloth/:cloth_id/favorite' => 'favorites#destroy', as: 'destroy_favorite'
 
 # categories controller
 	resources :categories, only: [:index, :show]
