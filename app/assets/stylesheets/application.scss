@@ -32,6 +32,15 @@
 	clear: both;
 }
 
+.common-btn{
+	background-color: #292929;
+	color: #fff;
+}
+.common-btn:hover{
+	background-color: #fff;
+	color: #292929;
+}
+
 /* layouts/application */
 .container{
 	margin-top: 30px;
@@ -222,4 +231,9 @@ h1{
 .sidebar-box{
 	width: 25%;
 	float: left;
+}
+
+/* users/registraions/new */
+.sign-box{
+	text-align: center;
 }
