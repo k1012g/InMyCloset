@@ -1,6 +1,6 @@
 <div class="following clearfix">
 	<h2 style="text-align: center;"><strong style="font-size: 40px;"><%= @user.name %></strong></h2>
-	<h2 style="text-align: center;"><strong style="font-size: 40px;">Follower</strong></h2>
+	<h2 style="text-align: center;"><strong style="font-size: 40px;">Follower(<%= @follower.count %>)</strong></h2>
 	<% if @follower.blank? %>
 		<h3><strong>No users.</strong></h3>
 	<% else %>
