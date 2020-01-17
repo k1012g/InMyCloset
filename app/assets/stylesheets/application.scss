@@ -224,7 +224,18 @@ h1{
 	height: 700px;
 	padding: 5px;
 	float: left;
-	border: 1px solid black;
+	.upper{
+		width: 100%;
+		height: 35%;
+		.introduction{
+			font-size: 20px;
+		}
+	}
+	.lower{
+		width: 100%;
+		height: 65%;
+		border: 1px solid black;
+	}
 }
 .profile-detail{
 	width: 100%;
@@ -232,11 +243,7 @@ h1{
 	margin-top: 5%;
 	padding: 0 20px;
 	strong{
-		font-size: 30px;
-	}
-	span{
-		width: 100%;
-		font-size: 20px;
+		font-size: 50px;
 	}
 }
 .profile-cloth-box{
@@ -336,6 +343,43 @@ h1{
 .cloth-new-box{
 	width: 100%;
 }
+
+/* clothes/show */
+.closet{
+	width: 100%;
+	.upper{
+		width: 70%;
+		height: 300px;
+		margin: 0 auto;
+		.left{
+			width: 45%;
+			text-align: center;
+			float: left;
+			img{
+				border: 1px solid black;
+				border-radius: 50%;
+			}
+			span{
+				font-size: 40px;
+			}
+		}
+		.right{
+			float: left;
+			width: 55%;
+			text-align: center;
+			span{
+			}
+		}
+	}
+	.lower{
+		width: 100%;
+		.cloth{
+			float: left;
+			margin: 0 10px;
+		}
+	}
+}
+
 
 /* clothes/index */
 .cloth-index{

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :current_user?, only: [:edit, :update]
+  before_action :current_user?, only: [:edit, :update, :show]
   before_action :authenticate_user!, only: [:edit, :update]
   def index
   	@users = User.all
@@ -7,8 +7,6 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-  	@user_clothes = @user.cloths
-    @each_times = 0
   end
 
   def edit

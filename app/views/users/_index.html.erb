@@ -1,4 +1,4 @@
-<%= link_to user_path(users.id) do %>
+<%= link_to cloth_path(users.id) do %>
 	<% if controller.controller_name == "top" %>
 		<%= attachment_image_tag users, :profile_image, :fill, 150, 150, fallback: "no_image.png", size:'150x150' %><br>
 	<% else %>

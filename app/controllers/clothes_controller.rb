@@ -4,6 +4,11 @@ class ClothesController < ApplicationController
     @clothes = Cloth.all
   end
 
+  def show
+    @user = User.find(params[:id])
+    @user_cloth = @user.cloths
+  end
+
   def new
     @cloth = Cloth.new
   end
