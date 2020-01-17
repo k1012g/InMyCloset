@@ -22,18 +22,18 @@
 						<%= attachment_image_tag clothes, :image, :fill, 150, 150, fallback: "no_image.png" %><br>
 						<strong>No.<%= @each_times %></strong>
 						<br>
-						<%= clothes.brand %>
-						<%= clothes.size %>
-						<%= clothes.category.category %>
+						<strong>Category : </strong><%= clothes.category.category %><br>
+						<strong>Brand : </strong><%= clothes.brand %><br>
+						<strong>Size : </strong><%= clothes.size %>
 					<% end %><br>
 					<%= link_to "Delete", destroy_clothes_path(clothes.id), method: :delete, data: {confirm: "Really No.#{@each_times} delete？"}, class: "btn btn-danger", style: "width: 100%;" %>
 				<% else %>
 					<%= attachment_image_tag clothes, :image, :fill, 150, 150, fallback: "no_image.png" %><br>
 					<strong>No.<%= @each_times %></strong>
 					<br>
-					<%= clothes.brand %>
-					<%= clothes.size %>
-					<%= clothes.category.category %>
+					<strong>Category : </strong><%= clothes.category.category %><br>
+					<strong>Brand : </strong><%= clothes.brand %><br>
+					<strong>Size : </strong><%= clothes.size %>
 				<% end %>
 			</div>
 		<% end %>
