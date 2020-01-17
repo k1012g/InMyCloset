@@ -1,0 +1,48 @@
+<div class="closet">
+	<div class="upper clearfix">
+		<div class="left">
+			<%= attachment_image_tag @user, :profile_image, :fill, 200, 200, fallback: "no_image.png", size:'200x200' %><br>
+			<span><strong><%= @user.name %></strong></span>
+		</div>
+		<div class="right">
+			<span style="font-size: 35px;"><strong>Introduction</strong></span>
+			<br>
+			<span class="introduction">
+				<%= @user.introduction %>
+			</span>
+			<br>
+			<%= link_to following_path(@user.id) do %>
+				<span style="font-size: 20px;"><strong style="font-size: 20px;">Following : </strong><%= @user.followings.count %></span>
+			<% end %>
+			<%= link_to follower_path(@user.id) do %>
+				<span style="font-size: 20px;"><strong style="font-size: 20px;">Follower : </strong><%= @user.followers.count %></span>
+			<% end %>
+			<br>
+			<br>
+			<% if current_user == @user %>
+				<%= link_to "My Profile", user_path(@user.id), class: "btn btn-default common-btn" %>
+				<%= link_to "Add Clothes", new_clothes_path, class: "btn btn-default common-btn" %>
+			<% else %>
+				<% if @user.followed_by?(current_user) %>
+					<%= link_to "Following", user_relationships_path(@user.id), method: :delete, class: "btn btn-primary" %>
+				<% else %>
+					<%= link_to "Follow", user_relationships_path(@user.id), method: :post, class: "btn btn-default" %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+	<div class="lower">
+		<% if @user_cloth.blank? %>
+			<h1 style="text-align: center;"><strong>No clothes.</strong></h1>
+		<% else %>
+			<% @user_cloth.each do |cloth| %>
+				<div class="cloth">
+					<%= attachment_image_tag cloth, :image, :fill, 200, 200, fallback: "no_image.png", size:'200x200' %><br>
+					<span style="font-size: 18px;"><strong><%= cloth.category.category %><br>
+					<%= cloth.brand %><br>
+					<%= cloth.size %></strong></span>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>

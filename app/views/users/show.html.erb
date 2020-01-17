@@ -5,18 +5,26 @@
 		</div>
 		<section class="profile-detail">
 			<strong><%= @user.name %></strong><br>
-			<span style="white-space:pre-wrap;"><%= @user.introduction %></span><br>
+		</section>
+	</div>
+	<div class="profile-box-right">
+		<div class="upper" style="text-align: center;">
+			<span style="font-size: 35px;"><strong>Introduction</strong></span>
+			<br>
+			<span class="introduction">
+				<%= @user.introduction %>
+			</span>
+			<br>
 			<%= link_to following_path(@user.id) do %>
 				<span><strong style="font-size: 15px;">Following : </strong><%= @user.followings.count %></span>
 			<% end %>
-			<br>
 			<%= link_to follower_path(@user.id) do %>
 				<span><strong style="font-size: 15px;">Follower : </strong><%= @user.followers.count %></span>
 			<% end %>
-			<br><br>
+			<br>
+			<br>
 			<% if current_user == @user %>
 				<%= link_to "Edit profile", edit_user_path(@user.id), class: "btn btn-default common-btn" %>
-				<%= link_to "Add clothes", new_clothes_path, class: "btn btn-default common-btn" %>
 			<% else %>
 				<% if @user.followed_by?(current_user) %>
 					<%= link_to "Following", user_relationships_path(@user.id), method: :delete, class: "btn btn-primary" %>
@@ -24,32 +32,10 @@
 					<%= link_to "Follow", user_relationships_path(@user.id), method: :post, class: "btn btn-default" %>
 				<% end %>
 			<% end %>
-		</section>
-	</div>
-	<div class="profile-box-right">
-		<% @user_clothes.each do |clothes| %>
-			<!-- each文の回数で服のNoを表示 -->
-			<% @each_times += 1 %>
-			<div class="profile-cloth-box">
-				<% if current_user == @user %>
-					<%= link_to edit_clothes_path(clothes.id) do %>
-						<%= attachment_image_tag clothes, :image, :fill, 150, 150, fallback: "no_image.png" %><br>
-						<strong>No.<%= @each_times %></strong>
-						<br>
-						<strong>Category : </strong><%= clothes.category.category %><br>
-						<strong>Brand : </strong><%= clothes.brand %><br>
-						<strong>Size : </strong><%= clothes.size %>
-					<% end %><br>
-					<%= link_to "Delete", destroy_clothes_path(clothes.id), method: :delete, data: {confirm: "Really No.#{@each_times} delete？"}, class: "btn btn-danger", style: "width: 100%;" %>
-				<% else %>
-					<%= attachment_image_tag clothes, :image, :fill, 150, 150, fallback: "no_image.png" %><br>
-					<strong>No.<%= @each_times %></strong>
-					<br>
-					<strong>Category : </strong><%= clothes.category.category %><br>
-					<strong>Brand : </strong><%= clothes.brand %><br>
-					<strong>Size : </strong><%= clothes.size %>
-				<% end %>
-			</div>
-		<% end %>
+		</div>
+		<div class="lower">
+			<h2>カテゴリーごとに何着所持しているかを数字で表示</h2>
+			<%= link_to "My Closet", cloth_path(@user.id), class: "btn common-btn" %>
+		</div>
 	</div>
 </div>
