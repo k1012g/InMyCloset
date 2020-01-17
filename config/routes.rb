@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 		:registrations => 'users/registrations',
 		:sessions => 'users/sessions'
 	}
-	resources :users, only: [:index, :show, :edit, :update]
+	resources :users, only: [:index, :show, :edit, :update] do
+		resource :relationships, only: [:create, :destroy]
+		get :follows, on: :member
+	    get :followers, on: :member
+	end
 
 
 # clothes controller
