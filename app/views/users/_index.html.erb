@@ -1,0 +1,15 @@
+<%= link_to user_path(users.id) do %>
+	<% if controller.controller_name == "top" %>
+		<%= attachment_image_tag users, :profile_image, :fill, 150, 150, fallback: "no_image.png", size:'150x150' %><br>
+	<% else %>
+		<%= attachment_image_tag users, :profile_image, :fill, 200, 200, fallback: "no_image.png", size:'200x200' %><br>
+	<% end %>
+	<strong><%= users.name %></strong>
+	<% if current_user != users %>
+		<% if users.followed_by?(current_user) %>
+			<%= link_to "Following", user_relationships_path(users.id), method: :delete, class: "btn btn-primary" %>
+		<% else %>
+			<%= link_to "Follow", user_relationships_path(users.id), method: :post, class: "btn btn-default" %>
+		<% end %>
+	<% end %>
+<% end %>
