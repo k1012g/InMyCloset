@@ -12,9 +12,11 @@
 		</div>
 		<div class="profile-edit-right">
 			<h4><strong>User Name</strong></h4>
+			<span>⚠️Please less than 20 characters.</span>
 			<%= form.text_field :name, style: "height: 25px; width: 300px;" %>
 
 			<h4><strong>Introduction</strong></h4>
+			<span>⚠️Please less than 40 characters.</span>
 			<%= form.text_area :introduction, style: "height: 150px; width: 300px;" %><br>
 
 			<%= form.submit "Update profile", class: "btn btn-default common-btn", style: "width: 300px;" %>

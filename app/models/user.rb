@@ -6,8 +6,8 @@ class User < ApplicationRecord
     attachment :profile_image
 
 # バリデーション
-    validates :name, presence: true, length: { in: 2..20}
-    validates :introduction, length: { maximum: 100 }
+    validates :name, presence: true, length: { maximum: 20}
+    validates :introduction, length: { maximum: 40 }
 
 # association
     has_many :cloths

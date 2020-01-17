@@ -277,6 +277,38 @@ h1{
 	}
 }
 
+/* users/following */
+.following{
+	width: 70%;
+	margin: 0 auto;
+	.following-inner{
+		margin-bottom: 15px;
+		a{
+			color: black;
+		}
+		img{
+			border: 1px solid black;
+			border-radius: 50%;
+			margin-right: 10%;
+		}
+		strong{
+			font-size: 24px;
+			display: inline-block;
+			margin-right: 10%;
+		}
+	}
+	strong{
+		line-height: 75px;
+	}
+	a{
+		color: #292929;
+	}
+	a:hover{
+		text-decoration: none;
+	}
+}
+
+
 /* cloth/new */
 .cloth-new-box{
 	width: 100%;

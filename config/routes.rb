@@ -3,16 +3,21 @@ Rails.application.routes.draw do
 	root to: 'top#top'
 	get '/about' => 'top#about', as: 'about'
 
-# users controller & devise controller
+# devise controller
 	devise_for :users, :controllers => {
 		:registrations => 'users/registrations',
 		:sessions => 'users/sessions'
 	}
+
+# users controller
 	resources :users, only: [:index, :show, :edit, :update] do
 		resource :relationships, only: [:create, :destroy]
 		get :follows, on: :member
 	    get :followers, on: :member
 	end
+
+	get '/following/:id' => 'users#following', as: 'following'
+	get '/follower/:id' => 'users#follower', as: 'follower'
 
 
 # clothes controller
