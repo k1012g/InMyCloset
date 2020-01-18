@@ -42,6 +42,9 @@
 						<span style="font-size: 18px;"><strong><%= cloth.category.category %><br>
 						<%= cloth.brand %><br>
 						<%= cloth.size %></strong></span>
+						<span id="favorites_<%= cloth.id %>">
+							<%= render 'favorites/fav', cloth: cloth %>
+						</span>
 					<% end %>
 				</div>
 			<% end %>
