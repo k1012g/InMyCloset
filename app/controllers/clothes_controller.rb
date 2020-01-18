@@ -31,7 +31,7 @@ class ClothesController < ApplicationController
 
   def update
     @cloth = Cloth.find(params[:id])
-    @cloth.brand = params[:cloth][:brand].to_s.capitalize!
+    @cloth.brand = params[:cloth][:brand].to_s.capitalize
     @cloth.size = params[:cloth][:size].to_s.upcase!
     if @cloth.update!(cloth_params)
       redirect_to user_path(current_user.id)
