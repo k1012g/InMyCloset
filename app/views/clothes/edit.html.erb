@@ -11,6 +11,7 @@
 	<%= form_with(model: @cloth, url: edit_clothes_path) do |form| %>
 		<%= render 'clothes/form', form: form %><br>
 		<%= form.submit "Update clothes", class: "btn btn-default common-btn" %>
+		<%= link_to "Delete this clothes", destroy_clothes_path(@cloth.id), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
 		<%= link_to "Back", user_path(current_user.id), class: "btn btn-default common-btn" %>
 	<% end %>
 </div>
