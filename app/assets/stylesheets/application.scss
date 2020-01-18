@@ -104,24 +104,27 @@ h1{
 }
 
 .timeline{
-	height: 500px;
-	float: right;
-	img{
-		border-radius: 50%;
-		border: 1px solid black
-	}
-	.timeline_cloth{
-		float: right;
-		img{
-			border: none;
+	width: 100%;
+	.cloth-box{
+		width: 46%;
+		float: left;
+		margin: 30px 2%;
+		padding: 10px;
+		border: 1px solid black;
+		.timeline_cloth{
+			width: 80%;
+			height: auto;
+		}
+		.user_image{
+			width: 20%;
+			height: auto;
+			border-radius: 50%;
+			border: 1px solid black
+		}
+		a{
+			color: #292929;
 		}
 	}
-	a{
-		color: #292929;
-	}
-}
-.timeline:hover{
-	opacity: 0.8;
 }
 
 .top-contents{

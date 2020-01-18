@@ -42,7 +42,7 @@ class ClothesController < ApplicationController
 
   def destroy
     Cloth.find(params[:id]).destroy
-    redirect_to user_path(current_user.id)
+    redirect_to cloth_path(current_user.id)
   end
 
   private
