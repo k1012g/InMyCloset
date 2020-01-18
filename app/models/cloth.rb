@@ -7,7 +7,7 @@ class Cloth < ApplicationRecord
 	has_many :favorites
 
 # バリデーション
-	validates :brand, presence: true, length: { in: 1..20 }
+	validates :brand, presence: true
 	validates :size, presence: true, length: { in: 1..10 }
 	validates :category_id, presence: true
 
