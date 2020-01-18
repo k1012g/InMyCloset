@@ -3,7 +3,7 @@
 	<% if signed_in? %>
 		<strong><%= link_to "Sign out", destroy_user_session_path, method: :delete %></strong>
 		<strong><%= link_to "My Page", user_path(current_user.id) %></strong>
-		<strong><%= link_to "Users", users_path %></strong>
+		<strong><%= link_to "Search", search_path %></strong>
 		<strong><%= link_to "My Closet", cloth_path(current_user.id) %></strong>
 	<% else %>
 		<strong><%= link_to "What is InMyCloset?", about_path %></strong>
