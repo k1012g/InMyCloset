@@ -7,6 +7,9 @@ class ClothesController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user_cloth = @user.cloths
+    if params[:category_id].present?
+      @user_cloth = Cloth.where(["category_id = ? and user_id = ?", params[:category_id], @user.id])
+    end
   end
 
   def new

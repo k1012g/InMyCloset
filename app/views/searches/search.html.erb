@@ -12,41 +12,47 @@
 		</strong></span>
 	</div>
 	<div class="lower">
-		<% if @sort == "User" %>
-			<% if @input.blank? %>
-				<% @users.each do |user| %>
-					<%= render 'users/index', users: user %>
-				<% end %>
-			<% else %>
-				<% @results.each do |user| %>
-					<%= render 'users/index', users: user %>
-				<% end %>
+		<% if @input.blank? && @sort.blank? %>
+			<% @users.each do |user| %>
+				<%= render 'users/index', users: user %>
 			<% end %>
-		<% elsif @sort == "Brand" %>
-			<% if @input.blank? %>
-				<% @clothes.each do |brand| %>
-					<%= render 'clothes/index', clothes: brand %>
+		<% else %>
+			<% if @sort == "User" %>
+				<% if @input.blank? %>
+					<% @users.each do |user| %>
+						<%= render 'users/index', users: user %>
+					<% end %>
+				<% else %>
+					<% @results.each do |user| %>
+						<%= render 'users/index', users: user %>
+					<% end %>
 				<% end %>
-			<% else %>
-				<% @results.each do |brand| %>
-					<%= render 'clothes/index', clothes: brand %>
+			<% elsif @sort == "Brand" %>
+				<% if @input.blank? %>
+					<% @clothes.each do |brand| %>
+						<%= render 'clothes/index', clothes: brand %>
+					<% end %>
+				<% else %>
+					<% @results.each do |brand| %>
+						<%= render 'clothes/index', clothes: brand %>
+					<% end %>
 				<% end %>
-			<% end %>
-		<% elsif @sort == "Category" %>
-			<% if @input.blank? %>
-					<% @categories.each do |category| %>
+			<% elsif @sort == "Category" %>
+				<% if @input.blank? %>
+						<% @categories.each do |category| %>
+							<%= link_to category_path(category.id) do %>
+								<div class="category-index-box">
+									<strong><%= category.category %></strong>
+								</div>
+							<% end %>
+						<% end %>
+				<% else %>
+					<% @results.each do |category| %>
 						<%= link_to category_path(category.id) do %>
 							<div class="category-index-box">
 								<strong><%= category.category %></strong>
 							</div>
 						<% end %>
-					<% end %>
-			<% else %>
-				<% @results.each do |category| %>
-					<%= link_to category_path(category.id) do %>
-						<div class="category-index-box">
-							<strong><%= category.category %></strong>
-						</div>
 					<% end %>
 				<% end %>
 			<% end %>

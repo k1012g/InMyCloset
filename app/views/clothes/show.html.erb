@@ -33,6 +33,13 @@
 		</div>
 	</div>
 	<div class="lower">
+		<div style="text-align: center;">
+			<%= link_to "All Clothes", cloth_path(@user.id), class: "btn-default btn common-btn" %>
+			<%= form_tag(cloth_path(@user.id), :method => 'get') do %>
+				<%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :category) %>
+				<%= submit_tag "Search", class: "btn-default btn common-btn" %>
+			<% end %>
+		</div>
 		<% if @user_cloth.blank? %>
 			<h1 style="text-align: center;"><strong>No clothes.</strong></h1>
 		<% else %>
@@ -46,10 +53,6 @@
 						<%= render 'favorites/fav', cloth: cloth %>
 					<% end %>
 				</div>
-				<%= form_tag(cloth_path, :method => 'get') do %>
-					<%= select_tag :category, options_for_select(Category.all.pluck(:category)) %>
-					<%= submit_tag "send" %>
-				<% end %>
 			<% end %>
 		<% end %>
 	</div>
