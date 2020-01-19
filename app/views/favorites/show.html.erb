@@ -1,0 +1,8 @@
+<div class="favorite clearfix" style="width: 90%; margin: 0 auto;">
+	<h2 style="text-align: center; font-size: 45px;"><strong>Favorites</strong></h2>
+	<% @favorites.each do |fav| %>
+		<div class="content" style="float: left; width: 33%;">
+			<%= render 'clothes/index', clothes: fav.cloth %>
+		</div>
+	<% end %>
+</div>
