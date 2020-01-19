@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @categories = Category.all
+    @times = 0
   end
 
   def edit
