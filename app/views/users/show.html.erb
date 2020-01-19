@@ -26,6 +26,7 @@
 			<% if current_user == @user %>
 				<%= link_to "Edit profile", edit_user_path(@user.id), class: "btn btn-default common-btn" %>
 				<%= link_to "Favorites", user_favorite_path(@user.id), class: "btn btn-default common-btn" %>
+				<%= link_to "My Closet", cloth_path(@user.id), class: "btn common-btn" %>
 			<% else %>
 				<% if @user.followed_by?(current_user) %>
 					<%= link_to "Following", user_relationships_path(@user.id), method: :delete, class: "btn btn-primary" %>
@@ -35,8 +36,12 @@
 			<% end %>
 		</div>
 		<div class="lower">
-			<h2>カテゴリーごとに何着所持しているかを数字で表示</h2>
-			<%= link_to "My Closet", cloth_path(@user.id), class: "btn common-btn" %>
+			<% @categories.each do |category| %>
+				<div style="width: 33%; float: left;">
+					<strong style="font-size: 20px;"><%= category.category %> : </strong>
+					<strong style="font-size: 20px;"><%= Cloth.where(user_id: current_user.id, category_id: category.id).count %></strong>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </div>
