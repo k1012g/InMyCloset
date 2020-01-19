@@ -1,7 +1,7 @@
 <div class="search">
 	<div class="upper">
 		<h1><strong>Search Page</strong></h1>
-		<%= form_tag(search_path,:method => 'get') do %>
+		<%= form_tag(search_path, :method => 'get') do %>
 			<%= text_field_tag :input, '', placeholder: 'Example : Gucci, Justin Biebar' %>
 			<%= select_tag :sort, options_for_select({ "User" => "User", "Brand" => "Brand", "Category" => "Category" }) %>
 			<%= submit_tag "Search", class: "btn common-btn" %>
