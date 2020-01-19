@@ -470,3 +470,12 @@ h1{
 		}
 	}
 }
+
+.favorite{
+	.content{
+		.user_image{
+			border: 1px solid black;
+			border-radius: 50%;
+		}
+	}
+}

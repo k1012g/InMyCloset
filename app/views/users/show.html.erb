@@ -25,6 +25,7 @@
 			<br>
 			<% if current_user == @user %>
 				<%= link_to "Edit profile", edit_user_path(@user.id), class: "btn btn-default common-btn" %>
+				<%= link_to "Favorites", user_favorite_path(@user.id), class: "btn btn-default common-btn" %>
 			<% else %>
 				<% if @user.followed_by?(current_user) %>
 					<%= link_to "Following", user_relationships_path(@user.id), method: :delete, class: "btn btn-primary" %>

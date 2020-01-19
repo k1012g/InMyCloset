@@ -1,10 +1,10 @@
 <% if signed_in? %>
 	<% if cloth.favorited_by?(current_user) %>
-		<%= link_to destroy_favorite_path(cloth.id), method: :delete, remote: true do %>
+		<%= link_to destroy_favorite_path(cloth.id), method: :delete, id: "favorites" do %>
 			<%= icon 'fas', 'heart' %><%= cloth.favorites.count %>
 		<% end %>
 	<% else %>
-		<%= link_to create_favorite_path(cloth.id), method: :post, remote: true do %>
+		<%= link_to create_favorite_path(cloth.id), method: :post, id: "favorites" do %>
 			<%= icon 'far', 'heart' %><%= cloth.favorites.count %>
 		<% end %>
 	<% end %>
