@@ -46,6 +46,10 @@
 						<%= render 'favorites/fav', cloth: cloth %>
 					<% end %>
 				</div>
+				<%= form_tag(cloth_path, :method => 'get') do %>
+					<%= select_tag :category, options_for_select(Category.all.pluck(:category)) %>
+					<%= submit_tag "send" %>
+				<% end %>
 			<% end %>
 		<% end %>
 	</div>
