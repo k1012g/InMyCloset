@@ -16,6 +16,6 @@
 		</div>
 	<% end %>
 	<% if controller.controller_name == "top" %>
-		<%= clothes.created_at %>
+		<%= clothes.created_at.strftime("%y/%m/%d/%H:%M") %>
 	<% end %>
 </div>
