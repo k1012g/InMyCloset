@@ -6,6 +6,7 @@ class ClothesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @categories = Category.all
     @user_cloth = @user.cloths
     if params[:category_id].present?
       @user_cloth = Cloth.where(["category_id = ? and user_id = ?", params[:category_id], @user.id])
@@ -20,7 +21,7 @@ class ClothesController < ApplicationController
     @cloth = Cloth.new(cloth_params)
     @cloth.user_id = current_user.id
     @cloth.brand = params[:cloth][:brand].to_s.capitalize
-    @cloth.size = params[:cloth][:size].to_s.upcase!
+    @cloth.size = params[:cloth][:size].to_s.upcase
     if @cloth.save!
       redirect_to user_path(current_user.id)
     else
@@ -35,7 +36,7 @@ class ClothesController < ApplicationController
   def update
     @cloth = Cloth.find(params[:id])
     @cloth.brand = params[:cloth][:brand].to_s.capitalize
-    @cloth.size = params[:cloth][:size].to_s.upcase!
+    @cloth.size = params[:cloth][:size].to_s.upcase
     if @cloth.update!(cloth_params)
       redirect_to user_path(current_user.id)
     else

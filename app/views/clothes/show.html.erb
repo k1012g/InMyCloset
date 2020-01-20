@@ -9,7 +9,7 @@
 			<span style="font-size: 35px;"><strong>Introduction</strong></span>
 			<br>
 			<span class="introduction">
-				<%= @user.introduction %>
+				<%= simple_format(@user.introduction) %>
 			</span>
 			<br>
 			<%= link_to following_path(@user.id) do %>
