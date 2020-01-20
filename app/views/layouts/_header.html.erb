@@ -1,15 +1,19 @@
 <header class="header">
 	<span><strong>InMyCloset</strong></span>
 	<% if signed_in? %>
-		<strong><%= link_to "Sign out", destroy_user_session_path, method: :delete %></strong>
-		<strong><%= link_to "My Page", user_path(current_user.id) %></strong>
-		<strong><%= link_to "Search", search_path %></strong>
-		<strong><%= link_to "My Closet", cloth_path(current_user.id) %></strong>
+		<div style="float: right;">
+			<strong><%= link_to "Sign out", destroy_user_session_path, method: :delete %></strong>
+			<strong><%= link_to "Search", search_path %></strong>
+			<strong><%= link_to "My Page", user_path(current_user.id) %></strong>
+			<strong><%= link_to "My Closet", cloth_path(current_user.id) %></strong>
+		</div>
 	<% else %>
-		<strong><%= link_to "What is InMyCloset?", about_path %></strong>
-		<strong><%= link_to "Home", root_path %></strong>
-		<strong><%= link_to "Sign in!", new_user_session_path %></strong>
-		<strong><%= link_to "Sign up!", new_user_registration_path
-		 %></strong>
+		<div style="float: right;">
+			<strong><%= link_to "What is InMyCloset?", about_path %></strong>
+			<strong><%= link_to "Home", root_path %></strong>
+			<strong><%= link_to "Sign in!", new_user_session_path %></strong>
+			<strong><%= link_to "Sign up!", new_user_registration_path
+			 %></strong>
+		</div>
 	<% end %>
 </header>
