@@ -4,11 +4,9 @@
 		<strong><%= user.name %></strong>
 	<% end %>
 	<% if current_user != user %>
-		<% if user.followed_by?(current_user) %>
-			<%= link_to "Following", user_relationships_path(user.id), method: :delete, class: "btn btn-primary" %>
-		<% else %>
-			<%= link_to "Follow", user_relationships_path(user.id), method: :post, class: "btn btn-default" %>
-		<% end %>
+		<div id="follow_<%= user.id %>">
+			<%= render 'relationships/follow' , user: user %>
+		</div>
 	<% end %>
 </div>
 <div class="col-xs-4" style="width: 20%;">
