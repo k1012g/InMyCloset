@@ -9,6 +9,12 @@ class TopController < ApplicationController
   		@cloth = @clothes.sort{|a, b|
 	      b.id <=> a.id
 	    }
+      @todayPost = 0
+      @clothes.each do |post|
+        if (post.created_at.to_s.match(/#{Date.today.to_s}.+/))
+          @todayPost += 1
+        end
+      end
   	end
   end
 

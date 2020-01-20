@@ -1,6 +1,7 @@
 <div class="col-xs-12 timeline">
 	<% if signed_in? %>
 		<!-- ログインしているときはフォローしている人のタイムラインを表示 -->
+		<h2 style="text-align: center;"><strong>Today's Post : <%= @todayPost %></strong></h2>
 		<% @cloth.each do |cloth| %>
 			<%= render 'clothes/index', clothes: cloth %>
 		<% end %>
