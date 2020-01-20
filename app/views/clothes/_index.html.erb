@@ -6,7 +6,9 @@
 	<%= link_to cloth_path(clothes.user.id) do %>
 		<%= attachment_image_tag clothes.user, :profile_image, :fill, 70, 70, fallback: "no_image.png", size:'70x70', class: "user_image" %>
 		<%= clothes.user.name %>
-		<%= render 'favorites/fav', cloth: clothes %>
+		<div id="favorites_<%= clothes.id %>">
+			<%= render 'favorites/fav', cloth: clothes %>
+		</div>
 	<% end %>
 	<% if controller.controller_name == "top" %>
 		<%= clothes.created_at %>
