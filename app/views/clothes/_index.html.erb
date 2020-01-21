@@ -1,20 +1,24 @@
-<div class="cloth-box">
-	<strong style="font-size: 30px;"><%= clothes.brand %></strong><br>
-	<strong style="font-size: 30px;"><%= clothes.category.category %></strong>
+<div class="width-4x box-border" style="height: 380px;">
+	<strong class="font-md"><%= clothes.brand %></strong>
+	<br>
+	<strong class="font-md"><%= clothes.category.category %></strong>
 	<br>
 	<%= attachment_image_tag clothes, :image, :fill, 200, 200, class: "timeline_cloth" %>
+	<br>
 	<%= link_to cloth_path(clothes.user.id) do %>
 		<%= attachment_image_tag clothes.user, :profile_image, :fill, 70, 70, fallback: "no_image.png", size:'70x70', class: "user_image" %>
 		<%= clothes.user.name %>
-		<% if current_user != clothes.user %>
-			<div id="follow_<%= clothes.user.id %>">
-				<%= render 'relationships/follow' , user: clothes.user %>
-			</div>
-		<% end %>
-		<div id="favorites_<%= clothes.id %>">
-			<%= render 'favorites/fav', cloth: clothes %>
-		</div>
 	<% end %>
+	<span id="favorites_<%= clothes.id %>" class="font-sm" style="margin-left: 5px;" >
+		<%= render 'favorites/fav', cloth: clothes %>
+	</span>
+	<% if current_user != clothes.user %>
+		<span id="follow_<%= clothes.user.id %>" style="margin-left: 5px;">
+			<%= render 'relationships/follow' , user: clothes.user %>
+		</span>
+	<% end %>
+
+	<!-- topコントローラのみ時刻を表示 -->
 	<% if controller.controller_name == "top" %>
 		<%= clothes.created_at.strftime("%y/%m/%d/%H:%M") %>
 	<% end %>

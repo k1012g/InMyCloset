@@ -1,5 +1,5 @@
-<h2><strong><%= @category.category %></strong></h2>
-<div class="cloth-index">
+<strong class="font-bg text-center"><%= @category.category %></strong>
+<div class="width-bg">
 	<% @category.cloths.each do |clothes| %>
 		<%= render 'clothes/index', clothes: clothes %>
 	<% end %>
