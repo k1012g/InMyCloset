@@ -21,7 +21,6 @@
 			<br>
 			<br>
 			<% if current_user == @user %>
-				<%= link_to "My Page", user_path(@user.id), class: "btn btn-default common-btn" %>
 				<%= link_to "Add Clothes", new_clothes_path, class: "btn btn-default common-btn" %>
 				<%= link_to "Edit profile", edit_user_path(@user.id), class: "btn btn-default common-btn" %>
 				<%= link_to "Favorites", user_favorite_path(@user.id), class: "btn btn-default common-btn" %>
