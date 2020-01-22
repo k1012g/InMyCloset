@@ -1,17 +1,25 @@
 class FavoritesController < ApplicationController
+  before_action :current_user?, only: [:show]
+  before_action :authenticate_user!
   def show
   	@favorites = current_user.favorites
   end
 
   def create
   	Favorite.create(user_id: current_user.id, cloth_id: params[:cloth_id])
-  	# redirect_back(fallback_location: clothes_path)
     @clothes = Cloth.find(params[:cloth_id])
   end
 
   def destroy
   	Favorite.find_by(user_id: current_user.id, cloth_id: params[:cloth_id]).destroy
-  	# redirect_back(fallback_location: clothes_path)
     @clothes = Cloth.find(params[:cloth_id])
+  end
+
+  private
+  def current_user?
+    user = User.find(params[:user_id])
+    if user != current_user
+      redirect_to user_path(current_user.id)
+    end
   end
 end

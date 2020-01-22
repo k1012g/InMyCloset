@@ -42,7 +42,7 @@ body{
 	font-size: 50px;
 }
 .font-md{
-	font-size: 30px;
+	font-size: 32px;
 }
 .font-sm{
 	font-size: 20px;
@@ -57,12 +57,6 @@ body{
 /* コンテンツの区切り用ボーダー */
 .box-border{
 	border: 1px solid #D3D3D3;
-}
-
-/* 要素の横幅指定 */
-.width-bg{
-	width: 95%;
-	margin: 0 auto;
 }
 
 /* 1列に2要素を並べる */
@@ -93,41 +87,12 @@ body{
 	float: left;
 }
 
-/* userの画像の形 */
+/* user imageの形 */
 .user_image{
 	border: 1px solid black;
 	border-radius: 50%;
 }
 
-/* aタグのアニメーション */
-.atag{
-	text-decoration: none;
-	a{
-		color: #292929;
-		text-decoration: none;
-		&:hover{
-			opacity: 0.6;
-		}
-	}
-}
-
-/* followボタンのデザイン */
-.following-btn{
-	background-color: #292929;
-	color: #fff;
-	&:hover{
-		background-color: #5D5D5D;
-		color: #fff;
-	}
-}
-
-/* 洋服登録時のプレビュー */
-.cloth-preview{
-	width: 350px;
-	height: 350px;
-	margin: 0 auto;
-	border: double black;
-}
 
 /* 完了ボタン */
 .done-btn{
@@ -139,40 +104,22 @@ body{
 	}
 }
 
-/* 自己紹介 */
-.introduction{
-	width: 300px;
-	margin: 0 auto;
-	margin-top: -15px;
-	border: double black;
-	padding: 10px;
+/* aタグのアニメーション */
+.atag{
+	text-decoration: none;
+	a{
+		text-decoration: none;
+		&:hover{
+			opacity: 0.6;
+		}
+	}
 }
 
+/* select_tag */
 select{
 	background-color: #292929;
 	color: #fff;
 	height: 34px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* layouts/application */
-.container{
-	margin-top: 30px;
-	margin-bottom: 30px;
 }
 
 /* layouts/header */
@@ -201,253 +148,4 @@ select{
 	height: 60px;
 	text-align: center;
 	background-color: #292929;
-}
-
-
-/* top/top */
-h1{
-	font-size: 70px;
-}
-
-.timeline{
-	width: 100%;
-	.cloth-box{
-		width: 46%;
-		float: left;
-		margin: 30px 2%;
-		padding: 10px;
-		border: 1px solid black;
-		.timeline_cloth{
-			width: 80%;
-			height: auto;
-		}
-		.user_image{
-			width: 20%;
-			height: auto;
-			border-radius: 50%;
-			border: 1px solid black
-		}
-		a{
-			color: #292929;
-		}
-	}
-}
-
-.top-contents{
-	width: 100%;
-	height: 700px;
-	background-image: url(closet.jpg);
-	background-size: cover;
-	background-position: center;
-	span{
-		background: rgba(100,100,100,0.5);
-		width: 100%;
-		height: 700px;
-		display: block;
-		line-height: 700px;
-		color: #fff;
-		font-size: 20px;
-	}
-}
-.top-contents2{
-	width: 100%;
-	height: 500px;
-	background-image: url(application.jpg);
-	background-size: cover;
-	background-position: center;
-	span{
-		width: 100%;
-		height: 500px;
-		display: block;
-		background: rgba(100,100,100,0.5);
-		line-height: 500px;
-		color: #fff;
-		font-size: 20px;
-	}
-}
-.top-contents3{
-	a{
-		color: red;
-	}
-	div{
-		width: 60%;
-		height: 400px;
-		margin: 0 auto;
-		border: 1px solid black;
-	}
-	.step1{
-		background-image: url(signup.png);
-		background-size: cover;
-		background-position: center;
-	}
-	.step2{
-		background-image: url(add-clothes.jpg);
-		background-size: cover;
-		background-position: center;
-	}
-	.step3{
-		background-image: url(shopping.jpg);
-		background-size: cover;
-		background-position: center;
-	}
-}
-
-/* top/about */
-.about{
-	text-align: center;
-	span{
-		font-size: 30px;
-	}
-	li{
-		font-size: 20px;
-		text-align: left;
-	}
-	a{
-		color: red;
-	}
-}
-
-
-
-
-/* users/show */
-.profile-box{
-	width: 100%;
-}
-.profile-box-left{
-	width: 45%;
-	height: 700px;
-	float: left;
-	text-align: center;
-}
-.profile-image{
-	width: 90%;
-	height: 65%;
-	margin: 0 auto;
-	border: 1px solid black;
-	border-radius: 50%;
-	overflow: hidden;
-}
-.profile-box-right{
-	width: 55%;
-	padding: 5px;
-	float: left;
-	.upper{
-		width: 100%;
-		.introduction{
-			font-size: 20px;
-		}
-	}
-	.lower{
-		width: 80%;
-		margin-top: 40px;
-		margin-left: 100px;
-	}
-}
-.profile-detail{
-	width: 100%;
-	height: 30%;
-	margin-top: 5%;
-	padding: 0 20px;
-	strong{
-		font-size: 50px;
-	}
-}
-.profile-cloth-box{
-	margin: 10px;
-	padding: 10px;
-	float: left;
-	border: double black;
-	a{
-		color: black;
-	}
-}
-
-/* users/edit */
-.profile-edit-box{
-	width: 100%;
-	text-align: center;
-}
-.profile-edit-left{
-	width: 45%;
-	float: left;
-	.edit-image{
-		input{
-			margin: 0 0 0 140px;
-		}
-	}
-}
-.profile-edit-right{
-	width: 40%;
-	padding: 30px;
-	margin-left: 15%;
-	float: left;
-	text-align: left;
-}
-.profile-edit-image{
-	width: 500px;
-	height: 500px;
-	border: 1px solid black;
-	border-radius: 50%;
-	overflow: hidden;
-	text-align: center;
-}
-
-/* users/index */
-.users-index-box{
-	width: 100%;
-	.each-users{
-		float: left;
-		text-align: center;
-		margin-right: 20px;
-		a{
-			color: black;
-		}
-		img{
-			border: 1px solid black;
-			border-radius: 50%;
-		}
-		strong{
-			font-size: 20px;
-		}
-	}
-}
-
-/* users/following */
-.following{
-	width: 70%;
-	margin: 0 auto;
-	.following-inner{
-		margin-bottom: 15px;
-		a{
-			color: black;
-		}
-		img{
-			border: 1px solid black;
-			border-radius: 50%;
-			margin-right: 10%;
-		}
-		strong{
-			font-size: 24px;
-			display: inline-block;
-			margin-right: 10%;
-		}
-	}
-	strong{
-		font-size: 19px;
-		line-height: 75px;
-	}
-	a{
-		color: #292929;
-	}
-	a:hover{
-		text-decoration: none;
-	}
-}
-
-
-
-/* users/registraions/new */
-.sign-box{
-	text-align: center;
 }

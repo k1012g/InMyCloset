@@ -1,25 +1,29 @@
-<div class="profile-edit-box clearfix">
-	<h2><strong>Edit Profile</strong></h2>
-	<%= form_with(model: @user) do |form| %>
-		<div class="profile-edit-left">
-			<div class="profile-edit-image">
+<strong class="font-bg text-center">Edit Profile</strong>
+<%= form_with(model: @user) do |form| %>
+	<div class="profile-edit-left">
+		<div class="profile-edit-image">
+		<!-- プロフィール画像 -->
 			<%= attachment_image_tag @user, :profile_image, :fill, 500, 500, fallback: "no_image.png"  %>
-			</div>
-			<div class="edit-image">
-				<h4><strong>Edit profile image</strong></h4>
-				<%= form.attachment_field :profile_image %>
-			</div>
 		</div>
-		<div class="profile-edit-right">
-			<h4><strong>User Name</strong></h4>
-			<span>⚠️Please less than 20 characters.</span>
-			<%= form.text_field :name, style: "height: 25px; width: 300px;" %>
-
-			<h4><strong>Introduction</strong></h4>
-			<span>⚠️Please less than 40 characters.</span>
-			<%= form.text_area :introduction, style: "height: 150px; width: 300px;" %><br>
-
-			<%= form.submit "Update profile", class: "btn btn-default common-btn", style: "width: 300px;" %>
+		<div class="edit-image">
+		<!-- プロフィール画像の編集 -->
+			<strong class="font-sm text-center">Edit profile image</strong>
+			<%= form.attachment_field :profile_image %>
 		</div>
-	<% end %>
-</div>
+	</div>
+	<div class="profile-edit-right">
+		<strong class="font-sm">User Name</strong>
+		<br>
+		<span>⚠️Please less than 20 characters.</span>
+		<%= form.text_field :name, style: "height: 25px; width: 300px;" %>
+		<!-- ユーザーネームの編集 -->
+		<strong class="font-sm">Introduction</strong>
+		<br>
+		<span>⚠️Please less than 40 characters.</span>
+		<!-- ユーザーの自己紹介の編集 -->
+		<%= form.text_area :introduction, style: "height: 150px; width: 300px;" %>
+		<br>
+		<%= form.submit "Update profile", class: "btn done-btn", style: "width: 244px;" %>
+		<%= link_to "Back", user_path(current_user.id), class: "btn done-btn" %>
+	</div>
+<% end %>

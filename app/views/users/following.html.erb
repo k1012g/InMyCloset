@@ -1,15 +1,24 @@
-<div class="following clearfix">
-	<h2 style="text-align: center;"><strong style="font-size: 40px;"><%= @user.name %></strong></h2>
-	<h2 style="text-align: center;"><strong style="font-size: 40px;">Following(<%= @following.count %>)</strong></h2>
-	<% if @following.blank? %>
-		<h3><strong>No users.</strong></h3>
-		<% if current_user == @user %>
-			<h3><strong style="text-decoration: underline;"><%= link_to "Let's follow users!", users_path %></strong></h3>
-		<% end %>
-	<% else %>
-		<% @following.each do |user| %>
-			<%= render 'users/follow', user: user %>
-			<br>
-		<% end %>
+<strong class="font-bg text-center">
+	Following Users(<%= @following.count %>)
+</strong>
+<strong class="font-bg text-center">
+	<!-- そのページのユーザーネーム -->
+	<%= @user.name %>
+</strong>
+<% if @following.blank? %>
+<!-- フォローしている人がいない時 -->
+	<strong class="font-md">No users.</strong>
+	<% if current_user == @user %>
+		<strong class="font-md" style="text-decoration: underline;">
+			<!-- 検索ページ(ユーザー一覧が観れるため) -->
+			<%= link_to "Let's follow users!", search_path %>
+		</strong>
 	<% end %>
-</div>
+<% else %>
+<!-- フォローしている人がいる時 -->
+	<% @following.each do |user| %>
+		<div class="width-4x box-border">
+			<%= render 'users/index', users: user %>
+		</div>
+	<% end %>
+<% end %>

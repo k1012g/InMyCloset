@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 	}
 
 # users controller
-	resources :users, only: [:index, :edit, :update] do
+	resources :users, only: [:show, :edit, :update] do
 		resource :relationships, only: [:create, :destroy]
 		get :follows, on: :member
 	    get :followers, on: :member
@@ -21,8 +21,6 @@ Rails.application.routes.draw do
 
 
 # clothes controller
-	get '/clothes' => 'clothes#index', as: 'clothes'
-	get '/clothes/:id' => 'clothes#show', as: 'cloth'
 	get '/cloth/new' => 'clothes#new', as: 'new_clothes'
 	post '/cloth/new' => 'clothes#create', as: 'create_clothes'
 	get '/cloth/edit/:id' => 'clothes#edit', as: 'edit_clothes'

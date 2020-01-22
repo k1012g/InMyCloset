@@ -1,7 +1,8 @@
-<div class="sign-box col-xs-4 col-xs-offset-4">
-  <h2><strong>Sign in</strong></h2>
+<div class="text-center col-xs-4 col-xs-offset-4">
+  <strong class="font-bg">Sign in</strong>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <br>
     <table class="table">
       <tr>
         <th>Email</th>
@@ -13,7 +14,7 @@
       </tr>
     </table>
     <div class="actions">
-      <%= f.submit "Sign in!", class: "btn btn-default common-btn" %>
+      <%= f.submit "Sign in!", class: "btn done-btn" %>
     </div>
   <% end %>
   <br>
