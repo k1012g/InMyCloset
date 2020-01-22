@@ -7,13 +7,13 @@
 	<% if signed_in? %>
 		<div style="float: right;">
 			<strong>
-				<%= link_to "Sign out", destroy_user_session_path, data: { confirm: "Are you sure?" }, method: :delete %>
+				<%= link_to "My Closet", cloth_path(current_user.id) %>
 			</strong>
 			<strong>
 				<%= link_to "Search", search_path %>
 			</strong>
 			<strong>
-				<%= link_to "My Closet", cloth_path(current_user.id) %>
+				<%= link_to "Sign out", destroy_user_session_path, data: { confirm: "Are you sure?" }, method: :delete %>
 			</strong>
 		</div>
 	<% else %>
