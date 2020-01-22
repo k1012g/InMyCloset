@@ -1,20 +1,26 @@
+<!-- プレビュー -->
 <div class="col-xs-6" style="text-align: center;">
-	<h2><strong>Preview</strong></h2>
-	<div style="width: 350px; height: 350px; margin: 0 auto; border: double black;">
+	<strong class="font-md">Preview</strong>
+	<div class="cloth-preview">
 		<span style="line-height: 350px; font-size: 30px;">
 			<strong>Image is here.</strong>
 		</span>
 	</div>
 	<br>
-	<strong>Category : </strong><span>(Example : tops)</span><br>
-	<strong>Brand : </strong><span>(Example : Gucci)</span><br>
-	<strong>Size : </strong><span>(Example : 42/S)</span>
+	<strong>Category : </strong>
+	<span>(Example : tops)</span>
+	<br>
+	<strong>Brand : </strong>
+	<span>(Example : Gucci)</span>
+	<br>
+	<strong>Size : </strong>
+	<span>(Example : 42/S)</span>
 </div>
+<!-- 入力フォーム -->
 <div class="col-xs-6">
-	<h2 style="text-align: center;"><strong>Add clothes</strong></h2>
-	<%= form_with(model: @cloth, url: create_clothes_path) do |form| %>
-		<%= render 'clothes/form', form: form %><br>
-		<%= form.submit "Add clothes", class: "btn btn-default common-btn" %>
-		<%= link_to "Back", user_path(current_user.id), class: "btn btn-default common-btn" %>
+	<strong class="font-md text-center">Add clothes</strong>
+	<%= form_with(model: @cloth, url: create_clothes_path) do |f| %>
+		<!-- 入力フォームの部分テンプレート -->
+		<%= render 'clothes/form', form: f %>
 	<% end %>
 </div>
