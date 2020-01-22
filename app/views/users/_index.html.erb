@@ -1,15 +1,27 @@
-<div class="each-users">
+<span class="atag">
+	<!--  各ユーザーのリンク -->
 	<%= link_to cloth_path(users.id) do %>
+		<!-- トップコントローラの時 -->
 		<% if controller.controller_name == "top" %>
-			<%= attachment_image_tag users, :profile_image, :fill, 150, 150, fallback: "no_image.png", size:'150x150' %><br>
+		<!-- ユーザーの画像 -->
+			<%= attachment_image_tag users, :profile_image, :fill, 150, 150, fallback: "no_image.png", size:'150x150', class: "user_image" %>
+			<br>
 		<% else %>
-			<%= attachment_image_tag users, :profile_image, :fill, 200, 200, fallback: "no_image.png", size:'200x200' %><br>
+		<!-- ユーザーの画像 -->
+			<%= attachment_image_tag users, :profile_image, :fill, 200, 200, fallback: "no_image.png", size:'200x200', class: "user_image" %>
+			<br>
 		<% end %>
-		<strong><%= users.name %></strong>
+		<!-- ユーザーネーム -->
+		<strong class="font-md">
+			<%= users.name %>
+		</strong>
+		<!-- サインインしているユーザーではないユーザーにのみ
+			フォローボタンを表示 -->
 		<% if current_user != users %>
 			<div id="follow_<%= users.id %>">
+				<!-- フォロー機能の部分テンプレート -->
 				<%= render 'relationships/follow' , user: users %>
 			</div>
 		<% end %>
 	<% end %>
-</div>
+</span>
