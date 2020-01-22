@@ -107,6 +107,28 @@ body{
 	}
 }
 
+/* 洋服登録時のプレビュー */
+.cloth-preview{
+	width: 350px;
+	height: 350px;
+	margin: 0 auto;
+	border: double black;
+}
+
+
+.done-btn{
+	background-color: #292929;
+	color: #fff;
+	&:hover{
+		background-color: #5D5D5D;
+		color: #fff;
+	}
+}
+
+
+
+
+
 .common-btn{
 	background-color: #292929;
 	color: #fff;
