@@ -146,6 +146,19 @@ select{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* layouts/application */
 .container{
 	margin-top: 30px;
@@ -439,40 +452,6 @@ h1{
 }
 
 
-/* cloth/new */
-.cloth-new-box{
-	width: 100%;
-}
-
-
-
-/* clothes/index */
-.cloth-index{
-	.cloth-box{
-		float: left;
-		text-align: center;
-		margin-right: 20px;
-		padding: 5px;
-		border: double black;
-		.user_image{
-			border: 1px solid black;
-			border-radius: 50%;
-		}
-		a{
-			color: black;
-		}
-	}
-}
-
-/* category/index */
-.category-index{
-	width: 75%;
-	float: left;
-}
-.sidebar-box{
-	width: 25%;
-	float: left;
-}
 
 /* users/registraions/new */
 .sign-box{
@@ -538,15 +517,6 @@ h1{
 			a{
 				color: black;
 			}
-		}
-	}
-}
-
-.favorite{
-	.content{
-		.user_image{
-			border: 1px solid black;
-			border-radius: 50%;
 		}
 	}
 }
