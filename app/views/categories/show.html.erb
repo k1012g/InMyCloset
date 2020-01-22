@@ -1,5 +1,9 @@
-<strong class="font-bg text-center"><%= @category.category %></strong>
+<strong class="font-bg text-center">
+	<!-- カテゴリー名を表示 -->
+	<%= @category.category %>
+</strong>
 <div class="width-bg">
+	<!-- カテゴリー毎の投稿を表示 -->
 	<% @category.cloths.each do |clothes| %>
 		<%= render 'clothes/index', clothes: clothes %>
 	<% end %>
