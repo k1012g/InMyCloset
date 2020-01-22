@@ -69,6 +69,9 @@ body{
 .width-3x{
 	width: 33%;
 	float: left;
+	padding: 10px;
+	margin-right: 0.3%;
+	margin-bottom: 3px;
 }
 
 /* 1列に4要素を並べる */
@@ -90,6 +93,7 @@ body{
 .atag{
 	text-decoration: none;
 	a{
+		color: #292929;
 		text-decoration: none;
 		&:hover{
 			opacity: 0.6;
@@ -115,7 +119,7 @@ body{
 	border: double black;
 }
 
-
+/* 完了ボタン */
 .done-btn{
 	background-color: #292929;
 	color: #fff;
@@ -125,18 +129,22 @@ body{
 	}
 }
 
+/* 自己紹介 */
+.introduction{
+	width: 300px;
+	margin: 0 auto;
+	margin-top: -15px;
+	border: double black;
+	padding: 10px;
+}
 
-
-
-
-.common-btn{
+select{
 	background-color: #292929;
 	color: #fff;
+	height: 34px;
 }
-.common-btn:hover{
-	background-color: #fff;
-	color: #292929;
-}
+
+
 
 /* layouts/application */
 .container{
@@ -436,42 +444,6 @@ h1{
 	width: 100%;
 }
 
-/* clothes/show */
-.closet{
-	width: 100%;
-	.upper{
-		width: 70%;
-		margin: 0 auto;
-		margin-bottom: 50px;
-		.left{
-			width: 45%;
-			text-align: center;
-			float: left;
-			img{
-				border: 1px solid black;
-				border-radius: 50%;
-			}
-			span{
-				font-size: 40px;
-			}
-		}
-		.right{
-			float: left;
-			width: 55%;
-			text-align: center;
-			span{
-			}
-		}
-	}
-	.lower{
-		width: 80%;
-		margin: 0 auto;
-		.cloth{
-			float: left;
-			margin: 0 10px;
-		}
-	}
-}
 
 
 /* clothes/index */

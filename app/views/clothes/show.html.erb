@@ -1,64 +1,86 @@
-<div class="closet">
-	<h2 style="text-align: center; font-size: 45px;"><strong>Closet</strong></h2>
-	<div class="upper clearfix">
-		<div class="left">
-			<%= attachment_image_tag @user, :profile_image, :fill, 200, 200, fallback: "no_image.png", size:'200x200' %><br>
-			<span><strong><%= @user.name %></strong></span>
-		</div>
-		<div class="right">
-			<span style="font-size: 35px;"><strong>Introduction</strong></span>
+<strong class="font-bg text-center">Closet</strong>
+<!-- プロフィール欄 -->
+<div class="col-xs-11 col-xs-offset-1 clearfix">
+	<div class="col-xs-2">
+		<% @categories.each do |category| %>
+			<strong class="font-sm">
+				<%= category.category %> :
+			</strong>
+			<strong class="font-sm">
+				<%= Cloth.where(user_id: current_user.id, category_id: category.id).count %>
+			</strong>
 			<br>
-			<span class="introduction">
-				<%= simple_format(@user.introduction) %>
-			</span>
-			<br>
-			<%= link_to following_path(@user.id) do %>
-				<span style="font-size: 20px;"><strong style="font-size: 20px;">Following : </strong><%= @user.followings.count %></span>
-			<% end %>
-			<%= link_to follower_path(@user.id) do %>
-				<span style="font-size: 20px;"><strong style="font-size: 20px;">Follower : </strong><%= @user.followers.count %></span>
-			<% end %>
-			<br>
-			<br>
-			<% if current_user == @user %>
-				<%= link_to "Add Clothes", new_clothes_path, class: "btn btn-default common-btn" %>
-				<%= link_to "Edit profile", edit_user_path(@user.id), class: "btn btn-default common-btn" %>
-				<%= link_to "Favorites", user_favorite_path(@user.id), class: "btn btn-default common-btn" %>
-			<% else %>
-				<div id="follow_<%= @user.id %>">
-					<%= render 'relationships/follow' , user: @user %>
-				</div>
-			<% end %>
-			<% @categories.each do |category| %>
-				<div style="width: 33%; float: left; text-align: left;">
-					<strong style="font-size: 20px;"><%= category.category %> : </strong>
-					<strong style="font-size: 20px;"><%= Cloth.where(user_id: current_user.id, category_id: category.id).count %></strong>
-				</div>
-			<% end %>
-		</div>
-	</div>
-	<div class="lower">
-		<div style="text-align: center;">
-			<%= link_to "All Clothes", cloth_path(@user.id), class: "btn-default btn common-btn" %>
-			<%= form_tag(cloth_path(@user.id), :method => 'get') do %>
-				<%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :category) %>
-				<%= submit_tag "Search", class: "btn-default btn common-btn" %>
-			<% end %>
-		</div>
-		<% if @user_cloth.blank? %>
-			<h1 style="text-align: center;"><strong>No clothes.</strong></h1>
-		<% else %>
-			<% @user_cloth.each do |clothes| %>
-				<div class="cloth">
-					<%= link_to edit_clothes_path(clothes.id) do %>
-						<%= attachment_image_tag clothes, :image, :fill, 200, 200, fallback: "no_image.png", size:'200x200' %><br>
-						<span style="font-size: 18px;"><strong><%= clothes.category.category %><br>
-						<%= clothes.brand %><br>
-						<%= clothes.size %></strong></span>
-						<div id="favorites_<%= clothes.id %>"><%= render 'favorites/fav', cloth: clothes %></div>
-					<% end %>
-				</div>
-			<% end %>
 		<% end %>
 	</div>
+	<div class="col-xs-3">
+		<%= attachment_image_tag @user, :profile_image, :fill, 200, 200, fallback: "no_image.png", size:'200x200', class: "user_image" %>
+	</div>
+	<div class="col-xs-6">
+		<strong class="font-md text-center">
+			<%= @user.name %>
+			<span id="follow_<%= @user.id %>">
+				<% if current_user != @user %>
+					<%= render 'relationships/follow' , user: @user %>
+				<% end %>
+			</span>
+		</strong>
+		<br>
+		<span class="atag text-center">
+			<%= link_to following_path(@user.id) do %>
+				<strong class="font-sm">
+					Following :
+					<%= @user.followings.count %>
+				</strong>
+			<% end %>
+			<strong>/</strong>
+			<%= link_to follower_path(@user.id) do %>
+				<strong class="font-sm">
+					Follower :
+					<%= @user.followers.count %>
+				</strong>
+			<% end %>
+		</span>
+		<br>
+		<strong class="font-md text-center">
+			Introduction
+		</strong>
+		<br>
+		<div class="font-sm introduction">
+			<%= simple_format(@user.introduction) %>
+		</div>
+		<span class="text-center" style="margin-top: 10px;">
+			<% if current_user == @user %>
+				<%= link_to "Add Clothes", new_clothes_path, class: "btn done-btn" %>
+				<%= link_to "Edit profile", edit_user_path(@user.id), class: "btn done-btn" %>
+				<%= link_to "Favorites", user_favorite_path(@user.id), class: "btn done-btn" %>
+			<% end %>
+		</span>
+	</div>
+</div>
+<!-- 投稿一覧 -->
+<div class="col-xs-12">
+	<div class="text-center" style="margin: 20px auto;">
+		<%= form_tag(cloth_path(@user.id), :method => 'get') do %>
+			<%= link_to "All Clothes", cloth_path(@user.id), class: "btn done-btn" %>
+			<%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :category) %>
+			<%= submit_tag "Search", class: "btn done-btn" %>
+		<% end %>
+	</div>
+	<% if @user_cloth.blank? %>
+		<strong class="font-bg text-center" style="margin: 30px 0;">No clothes.</strong>
+	<% else %>
+	<!-- ユーザー毎の投稿一覧 -->
+		<% @user_cloth.each do |clothes| %>
+			<span class="atag">
+				<% if current_user == @user %>
+				<!-- ユーザー本人のみ編集可 -->
+					<%= link_to edit_clothes_path(clothes.id) do %>
+						<%= render 'clothes/index', clothes: clothes %>
+					<% end %>
+				<% else %>
+					<%= render 'clothes/index', clothes: clothes %>
+				<% end %>
+			</span>
+		<% end %>
+	<% end %>
 </div>
