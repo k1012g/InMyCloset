@@ -1,3 +1,82 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* top/top */
+h1{
+	font-size: 70px;
+}
+
+.top-contents{
+	width: 100%;
+	height: 700px;
+	background-image: url(closet.jpg);
+	background-size: cover;
+	background-position: center;
+	span{
+		background: rgba(100,100,100,0.5);
+		width: 100%;
+		height: 700px;
+		display: block;
+		line-height: 700px;
+		color: #fff;
+		font-size: 20px;
+	}
+}
+.top-contents2{
+	width: 100%;
+	height: 500px;
+	background-image: url(application.jpg);
+	background-size: cover;
+	background-position: center;
+	span{
+		width: 100%;
+		height: 500px;
+		display: block;
+		background: rgba(100,100,100,0.5);
+		line-height: 500px;
+		color: #fff;
+		font-size: 20px;
+	}
+}
+.top-contents3{
+	a{
+		color: red;
+	}
+	div{
+		width: 60%;
+		height: 400px;
+		margin: 0 auto;
+		border: 1px solid black;
+	}
+	.step1{
+		background-image: url(signup.png);
+		background-size: cover;
+		background-position: center;
+	}
+	.step2{
+		background-image: url(add-clothes.jpg);
+		background-size: cover;
+		background-position: center;
+	}
+	.step3{
+		background-image: url(shopping.jpg);
+		background-size: cover;
+		background-position: center;
+	}
+}
+
+/* top/about */
+.about{
+	text-align: center;
+	span{
+		font-size: 30px;
+	}
+	li{
+		font-size: 20px;
+		text-align: left;
+	}
+	a{
+		color: red;
+	}
+}

@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
-  before_action :current_user?, only: [:edit, :update, :show]
+  before_action :current_user?, only: [:edit, :update]
   before_action :authenticate_user!, only: [:edit, :update]
-  def index
-  	@users = User.all
+  def show
+    @categories = Category.all
+    @user = User.find(params[:id])
+    @user_cloth = @user.cloths
+    if params[:category_id].present?
+      @user_cloth = Cloth.where(["category_id = ? and user_id = ?", params[:category_id], @user.id])
+    end
   end
 
   def edit
@@ -12,7 +17,7 @@ class UsersController < ApplicationController
   def update
   	@user = User.find(params[:id])
   	if @user.update(user_params)
-  		redirect_to cloth_path(@user.id)
+  		redirect_to user_path(@user.id)
   	else
   		render :edit
   	end

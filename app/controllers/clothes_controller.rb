@@ -1,18 +1,5 @@
 class ClothesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  def index
-    @clothes = Cloth.all
-  end
-
-  def show
-    @user = User.find(params[:id])
-    @categories = Category.all
-    @user_cloth = @user.cloths
-    if params[:category_id].present?
-      @user_cloth = Cloth.where(["category_id = ? and user_id = ?", params[:category_id], @user.id])
-    end
-  end
-
   def new
     @cloth = Cloth.new
   end
@@ -23,7 +10,7 @@ class ClothesController < ApplicationController
     @cloth.brand = params[:cloth][:brand].to_s.capitalize
     @cloth.size = params[:cloth][:size].to_s.upcase
     if @cloth.save!
-      redirect_to cloth_path(current_user.id)
+      redirect_to user_path(current_user.id)
     else
       render :new
     end
@@ -38,7 +25,7 @@ class ClothesController < ApplicationController
     @cloth.brand = params[:cloth][:brand].to_s.capitalize
     @cloth.size = params[:cloth][:size].to_s.upcase
     if @cloth.update!(cloth_params)
-      redirect_to cloth_path(current_user.id)
+      redirect_to user_path(current_user.id)
     else
       render :edit
     end
@@ -46,7 +33,7 @@ class ClothesController < ApplicationController
 
   def destroy
     Cloth.find(params[:id]).destroy
-    redirect_to cloth_path(current_user.id)
+    redirect_to user_path(current_user.id)
   end
 
   private
