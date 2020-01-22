@@ -175,7 +175,6 @@ select{
 		line-height: 80px;
 		text-align: left;
 		color: white;
-		font-size: 30px;
 	}
 	a{
 		line-height: 80px;
@@ -192,23 +191,8 @@ select{
 	height: 60px;
 	text-align: center;
 	background-color: #292929;
-	span{
-		line-height: 60px;
-		color: white;
-		font-size: 15px;
-	}
 }
 
-/* layouts/sidebar */
-.sidebar-nav{
-	list-style: none;
-	li{
-		font-size: 30px;
-		a{
-			color: #292929;
-		}
-	}
-}
 
 /* top/top */
 h1{
