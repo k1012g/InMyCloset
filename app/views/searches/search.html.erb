@@ -1,61 +1,90 @@
 <div style="width: 100%;">
-	<div class="upper">
-		<h1><strong>Search Page</strong></h1>
+	<strong class="font-bg text-center">Search Page</strong>
+	<span class="text-center">
+		<!-- 検索結果のフォーム -->
 		<%= form_tag(search_path, :method => 'get') do %>
 			<%= text_field_tag :input, '', placeholder: 'Example : Gucci, Justin Biebar' %>
 			<%= select_tag :sort, options_for_select({ "User" => "User", "Brand" => "Brand", "Category" => "Category" }) %>
-			<%= submit_tag "Search", class: "btn common-btn" %>
+			<%= submit_tag "Search", class: "btn done-btn" %>
 		<% end %>
-		<span style="font-size: 25px;"><strong>
-			You can search everything you want to check.<br>
-			Sorting fuction and search box can be available.<br>
-		</strong></span>
-	</div>
-	<div class="lower">
-		<% if @input.blank? && @sort.blank? %>
-			<% @users.each do |user| %>
+		<strong class="font-md">
+			You can search everything you want to check.
+			<br>
+			Sorting fuction and search box can be available.
+			<br>
+		</strong>
+	</span>
+	<% if @input.blank? && @sort.blank? %>
+	<!-- 何も入力しなかった時の条件分岐 -->
+		<% @users.each do |user| %>
+			<div class="width-4x">
 				<%= render 'users/index', users: user %>
+			</div>
+		<% end %>
+	<% else %>
+		<% if @sort == "User" %>
+		<!-- ユーザーでのソート -->
+			<% if @input.blank? %>
+			<!-- 入力しない時 -->
+				<% @users.each do |user| %>
+					<div class="width-4x">
+						<%= render 'users/index', users: user %>
+					</div>
+				<% end %>
+			<% else %>
+			<!-- 入力した時 -->
+				<% @results.each do |user| %>
+					<div class="width-4x">
+						<%= render 'users/index', users: user %>
+					</div>
+				<% end %>
 			<% end %>
-		<% else %>
-			<% if @sort == "User" %>
-				<% if @input.blank? %>
-					<% @users.each do |user| %>
-						<%= render 'users/index', users: user %>
-					<% end %>
-				<% else %>
-					<% @results.each do |user| %>
-						<%= render 'users/index', users: user %>
-					<% end %>
-				<% end %>
-			<% elsif @sort == "Brand" %>
-				<% if @input.blank? %>
-					<% @clothes.each do |brand| %>
+		<% elsif @sort == "Brand" %>
+		<!-- ブランドでのソート -->
+			<% if @input.blank? %>
+			<!-- 入力しない時 -->
+				<% @clothes.each do |brand| %>
+					<div class="width-4x box-border">
 						<%= render 'clothes/index', clothes: brand %>
-					<% end %>
-				<% else %>
-					<% @results.each do |brand| %>
-						<%= render 'clothes/index', clothes: brand %>
-					<% end %>
+					</div>
 				<% end %>
-			<% elsif @sort == "Category" %>
-				<% if @input.blank? %>
-						<% @categories.each do |category| %>
-							<%= link_to category_path(category.id) do %>
-								<div class="category-index-box<%= category.id %>">
-									<strong><%= category.category %></strong>
-								</div>
-							<% end %>
-						<% end %>
-				<% else %>
-					<% @results.each do |category| %>
+			<% else %>
+			<!-- 入力した時 -->
+				<% @results.each do |brand| %>
+					<div class="width-4x box-border">
+						<%= render 'clothes/index', clothes: brand %>
+					</div>
+				<% end %>
+			<% end %>
+		<% elsif @sort == "Category" %>
+		<!-- カテゴリーでのソート -->
+			<% if @input.blank? %>
+			<!-- 入力しない時 -->
+				<% @categories.each do |category| %>
+					<span class="atag">
 						<%= link_to category_path(category.id) do %>
-							<div class="category-index-box<%= category.id %>">
-								<strong><%= category.category %></strong>
+							<div class="width-4x box-border">
+								<strong class="font-md">
+									<%= category.category %>
+								</strong>
 							</div>
 						<% end %>
-					<% end %>
+					</span>
+				<% end %>
+			<% else %>
+			<!-- 入力した時 -->
+				<% @results.each do |category| %>
+					<span class="atag">
+						<%= link_to category_path(category.id) do %>
+							<div class="width-4x box-border">
+								<strong class="font-md">
+									<%= category.category %>
+								</strong>
+							</div>
+						<% end %>
+					</span>
 				<% end %>
 			<% end %>
 		<% end %>
-	</div>
+	<% end %>
 </div>
