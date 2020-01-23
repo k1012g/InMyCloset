@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :current_user?, only: [:edit, :update]
   before_action :authenticate_user!, only: [:edit, :update]
+
   def show
     @categories = Category.all
     @user = User.find(params[:id])
@@ -31,6 +32,10 @@ class UsersController < ApplicationController
   def follower
     @user = User.find(params[:id])
     @follower = @user.followers
+  end
+
+  def index
+    redirect_to new_user_registration_path
   end
 
   private

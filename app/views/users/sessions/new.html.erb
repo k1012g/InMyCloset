@@ -13,6 +13,10 @@
         <td><%= f.password_field :password, autocomplete: "current-password", style: "width: 250px;" %></td>
       </tr>
     </table>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+    <% end %>
+    <br>
     <div class="actions">
       <%= f.submit "Sign in!", class: "btn done-btn" %>
     </div>
