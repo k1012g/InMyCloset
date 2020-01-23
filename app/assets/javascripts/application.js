@@ -16,3 +16,18 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+$(document).on('turbolinks:load', function() {
+	let $image = $('.outer');
+
+	$image
+		.on('mouseover', function(){
+			$(this).find('.cover').stop(true).animate({
+				opacity: 1.0
+			}, 300);
+		})
+		.on('mouseout', function(){
+			$(this).find('.cover').stop(true).animate({
+				opacity: 0
+			}, 300);
+		});
+});

@@ -1,40 +1,33 @@
-<div>
-	<!-- 投稿のブランド名を表示 -->
-	<strong class="font-md">
+<!-- 投稿そのものを表示 -->
+<div style="width: 200px;" class="outer">
+	<strong class="font-md cover">
 		<%= clothes.brand %>
 	</strong>
-	<br>
-	<!-- 投稿のカテゴリー名を表示 -->
-	<strong class="font-md">
-		<%= clothes.category.category %>
-	</strong>
-	<br>
-	<!-- 投稿そのものの画像を表示 -->
-	<%= attachment_image_tag clothes, :image, :fill, 200, 200, class: "timeline_cloth" %>
-	<br>
-	<!-- 投稿した人の画像、名前とその人のページへのリンク -->
-	<span class="atag">
-		<%= link_to user_path(clothes.user.id) do %>
-			<%= attachment_image_tag clothes.user, :profile_image, :fill, 70, 70, fallback: "no_image.png", size:'70x70', class: "user_image" %>
-			<span style="color: #292929;">
-				<%= clothes.user.name %>
-			</span>
-		<% end %>
-	</span>
-	<!-- いいね機能の部分テンプレート -->
-	<span id="favorites_<%= clothes.id %>" class="font-sm">
-		<%= render 'favorites/fav', cloth: clothes %>
-	</span>
-	<!-- フォロー機能の部分テンプレート -->
-	<% if controller.controller_name != "top" && controller.controller_name != "users" %>
-		<% if current_user != clothes.user %>
-			<span id="follow_<%= clothes.user.id %>">
-				<%= render 'relationships/follow' , user: clothes.user %>
-			</span>
-		<% end %>
-	<% end %>
-	<!-- topコントローラのみ時刻を表示 -->
-	<% if controller.controller_name == "top" %>
-		<%= clothes.created_at.strftime("%y/%m/%d/%H:%M") %>
-	<% end %>
+	<%= attachment_image_tag clothes, :image, :fill, 200, 200 %>
 </div>
+<br>
+<!-- 投稿した人の画像、名前とその人のページへのリンク -->
+<span class="atag">
+	<%= link_to user_path(clothes.user.id) do %>
+		<%= attachment_image_tag clothes.user, :profile_image, :fill, 70, 70, fallback: "no_image.png", size:'70x70', class: "user_image" %>
+		<span style="color: #292929;">
+			<%= clothes.user.name %>
+		</span>
+	<% end %>
+</span>
+<!-- いいね機能の部分テンプレート -->
+<span id="favorites_<%= clothes.id %>" class="font-sm">
+	<%= render 'favorites/fav', cloth: clothes %>
+</span>
+<!-- フォロー機能の部分テンプレート -->
+<% if controller.controller_name != "top" && controller.controller_name != "users" %>
+	<% if current_user != clothes.user %>
+		<span id="follow_<%= clothes.user.id %>">
+			<%= render 'relationships/follow' , user: clothes.user %>
+		</span>
+	<% end %>
+<% end %>
+<!-- topコントローラのみ時刻を表示 -->
+<% if controller.controller_name == "top" %>
+	<%= clothes.created_at.strftime("%y/%m/%d/%H:%M") %>
+<% end %>
