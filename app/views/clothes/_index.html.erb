@@ -25,7 +25,6 @@
 	<span id="favorites_<%= clothes.id %>" class="font-sm">
 		<%= render 'favorites/fav', cloth: clothes %>
 	</span>
-	<br>
 	<!-- フォロー機能の部分テンプレート -->
 	<% if controller.controller_name != "top" && controller.controller_name != "users" %>
 		<% if current_user != clothes.user %>
