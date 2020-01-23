@@ -152,3 +152,21 @@ select{
 	text-align: center;
 	background-color: #292929;
 }
+
+a{
+	color: #292929;
+}
+
+/* jQueryの処理用 */
+.outer{
+	position: relative;
+	margin-top: 10px;
+	.cover{
+		position: absolute;
+		top: 80px;
+		left: 10px;
+		opacity: 0;
+		text-shadow: 2px 2px 8px #fff;
+		color: #292929;
+	}
+}
