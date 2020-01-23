@@ -9,7 +9,7 @@ class ClothesController < ApplicationController
     @cloth.user_id = current_user.id
     @cloth.brand = params[:cloth][:brand].to_s.capitalize
     @cloth.size = params[:cloth][:size].to_s.upcase
-    if @cloth.save!
+    if @cloth.save
       redirect_to user_path(current_user.id)
     else
       render :new
@@ -24,7 +24,7 @@ class ClothesController < ApplicationController
     @cloth = Cloth.find(params[:id])
     @cloth.brand = params[:cloth][:brand].to_s.capitalize
     @cloth.size = params[:cloth][:size].to_s.upcase
-    if @cloth.update!(cloth_params)
+    if @cloth.update(cloth_params)
       redirect_to user_path(current_user.id)
     else
       render :edit

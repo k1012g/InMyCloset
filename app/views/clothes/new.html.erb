@@ -19,9 +19,12 @@
 <!-- 入力フォーム -->
 <div class="col-xs-6">
 	<strong class="font-md text-center">Add clothes</strong>
-	<%= form_with(model: @cloth, url: create_clothes_path) do |f| %>
+	<%= form_with(model: @cloth, url: create_clothes_path, local: true) do |f| %>
 		<!-- 入力フォームの部分テンプレート -->
 		<%= render 'clothes/form', form: f %>
+		<!-- エラーメッセージの部分テンプレート -->
+		<%= render 'layouts/error', obj: @cloth %>
+		<br>
 		<%= f.submit "Add clothes", class: "btn done-btn" %>
 		<span>
 			<%= link_to "Back", user_path(current_user.id), class: "btn done-btn" %>

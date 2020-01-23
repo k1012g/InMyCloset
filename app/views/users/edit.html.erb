@@ -1,5 +1,5 @@
 <strong class="font-bg text-center">Edit Profile</strong>
-<%= form_with(model: @user) do |form| %>
+<%= form_with(model: @user, local: true) do |form| %>
 	<div class="profile-edit-left">
 		<div class="profile-edit-image">
 		<!-- プロフィール画像 -->
@@ -22,6 +22,17 @@
 		<span>⚠️Please less than 40 characters.</span>
 		<!-- ユーザーの自己紹介の編集 -->
 		<%= form.text_area :introduction, style: "height: 150px; width: 300px;" %>
+		<!-- エラーメッセージ -->
+		<% if @user.errors.any? %>
+			<div id="error_explanation">
+			    <ul style="list-style: none;">
+			      <% @user.errors.full_messages.each do |message| %>
+			        <li style="color: red;"><%= message %>
+			        </li>
+			      <% end %>
+			    </ul>
+		    </div>
+		<% end %>
 		<br>
 		<%= form.submit "Update profile", class: "btn done-btn", style: "width: 244px;" %>
 		<%= link_to "Back", user_path(current_user.id), class: "btn done-btn" %>
