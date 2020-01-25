@@ -1,7 +1,7 @@
 <strong class="font-bg text-center">Favorites</strong>
 <div class="col-xs-12">
 	<% @favorites.each do |fav| %>
-		<div class="width-4x box-border">
+		<div class="width-sm width-md width-bg box-border">
 			<%= render 'clothes/index', clothes: fav.cloth %>
 		</div>
 	<% end %>

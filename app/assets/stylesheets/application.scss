@@ -18,6 +18,8 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+/* スマホ中心 レスポンシブ */
+
 /* font名の指定 */
 body{
 	font-family: "Georgia";
@@ -35,6 +37,46 @@ body{
 	content: "";
 	display: block;
 	clear: both;
+}
+
+/* user imageの形 */
+.user_image{
+	border: 1px solid black;
+	border-radius: 50%;
+}
+
+/* aタグのアニメーション */
+.atag{
+	text-decoration: none;
+	a{
+		text-decoration: none;
+		&:hover{
+			opacity: 0.6;
+		}
+	}
+}
+
+a{
+	color: #292929;
+}
+
+/* jQueryの処理用 */
+.outer{
+	position: relative;
+	margin-top: 10px;
+	.cover{
+		position: absolute;
+		top: 80px;
+		left: 10px;
+		opacity: 0;
+		text-shadow: 2px 2px 8px #fff;
+		color: #292929;
+	}
+}
+
+#flash_alert{
+	font-size: 14px;
+	color: red;
 }
 
 /* fontのサイズ指定 */
@@ -59,46 +101,16 @@ body{
 	border: 1px solid #D3D3D3;
 }
 
-/* 1列に2要素を並べる */
-.width-2x{
-	width: 48%;
-	float: left;
-	padding-left: 19px;
-	padding-bottom: 10px;
-	margin-right: 1%;
-	margin-left: 1%;
-	margin-bottom: 20px;
+/* select_tag */
+select{
+	background-color: #292929;
+	color: #fff;
+	height: 34px;
 }
-
-/* 1列に3要素を並べる */
-.width-3x{
-	width: 33%;
-	float: left;
-	padding-bottom: 10px;
-	padding-left: 19px;
-	margin-right: 0.3%;
-	margin-bottom: 3px;
-}
-
-/* 1列に4要素を並べる */
-.width-4x{
-	width: 24%;
-	margin-right: 1%;
-	margin-bottom: 10px;
-	padding-left: 19px;
-	padding-bottom: 10px;
-	float: left;
-}
-
-/* user imageの形 */
-.user_image{
-	border: 1px solid black;
-	border-radius: 50%;
-}
-
 
 /* 完了ボタン */
 .done-btn{
+	margin-top: 2px;
 	background-color: #292929;
 	color: #fff;
 	&:hover{
@@ -107,71 +119,177 @@ body{
 	}
 }
 
-/* aタグのアニメーション */
-.atag{
-	text-decoration: none;
-	a{
-		text-decoration: none;
-		&:hover{
-			opacity: 0.6;
+
+
+@media screen and (max-width: 414px){
+}
+
+/* スマホ横画面 & タブレット縦画面 レスポンシブ */
+@media screen and (min-width: 415px) and (max-width: 990px){
+
+}
+
+/* PC画面 レスポンシブ */
+@media screen and (min-width: 991px) {
+	/* 1列に4要素を並べる */
+	.width-bg{
+		width: 24%;
+		margin-right: 1%;
+		margin-bottom: 10px;
+		padding-left: 19px;
+		padding-bottom: 10px;
+		float: left;
+	}
+	/* layouts/header */
+	.header{
+		width: 100%;
+		height: 80px;
+		padding: 0 20px;
+		background-color: #292929;
+		span{
+			line-height: 80px;
+			text-align: left;
+			color: white;
+		}
+		a{
+			line-height: 80px;
+			float: left;
+			color: white;
+			font-size: 20px;
+			padding: 0 20px;
 		}
 	}
-}
 
-/* select_tag */
-select{
-	background-color: #292929;
-	color: #fff;
-	height: 34px;
-}
-
-/* layouts/header */
-.header{
-	width: 100%;
-	height: 80px;
-	padding: 0 20px;
-	background-color: #292929;
-	span{
-		line-height: 80px;
-		text-align: left;
-		color: white;
+	/* layouts/footer */
+	.footer{
+		width: 100%;
+		height: 60px;
+		text-align: center;
+		background-color: #292929;
+		strong{
+			color: #fff;
+			line-height: 60px;
+		}
 	}
-	a{
-		line-height: 80px;
+
+	/* clothes/edit */
+	.cloth-preview{
+		width: 350px;
+		height: 350px;
+		margin: 0 auto;
+		border: double black;
+	}
+
+	/* top/top */
+	h1{
+		font-size: 70px;
+	}
+
+	.top-contents{
+		width: 100%;
+		height: 700px;
+		background-image: url(closet.jpg);
+		background-size: cover;
+		background-position: center;
+		span{
+			background: rgba(100,100,100,0.5);
+			width: 100%;
+			height: 700px;
+			display: block;
+			line-height: 700px;
+			color: #fff;
+			font-size: 20px;
+		}
+	}
+	.top-contents2{
+		width: 100%;
+		height: 500px;
+		background-image: url(application.jpg);
+		background-size: cover;
+		background-position: center;
+		span{
+			width: 100%;
+			height: 500px;
+			display: block;
+			background: rgba(100,100,100,0.5);
+			line-height: 500px;
+			color: #fff;
+			font-size: 20px;
+		}
+	}
+	.top-contents3{
+		a{
+			color: red;
+		}
+		div{
+			width: 60%;
+			height: 400px;
+			margin: 0 auto;
+			border: 1px solid black;
+		}
+		.step1{
+			background-image: url(signup.png);
+			background-size: cover;
+			background-position: center;
+		}
+		.step2{
+			background-image: url(add-clothes.jpg);
+			background-size: cover;
+			background-position: center;
+		}
+		.step3{
+			background-image: url(shopping.jpg);
+			background-size: cover;
+			background-position: center;
+		}
+	}
+
+	/* top/about */
+	.about{
+		text-align: center;
+		span{
+			font-size: 30px;
+		}
+		li{
+			font-size: 20px;
+			text-align: left;
+		}
+		a{
+			color: red;
+		}
+	}
+
+	/* users/edit */
+
+	.introduction{
+		width: 300px;
+		margin: 0 auto;
+		margin-top: -15px;
+		border: double black;
+		padding: 10px;
+	}
+
+	.profile-edit-left{
+		width: 45%;
 		float: left;
-		color: white;
-		font-size: 20px;
-		padding: 0 20px;
+		.edit-image{
+			input{
+				margin: 0 0 0 140px;
+			}
+		}
 	}
-}
-
-/* layouts/footer */
-.footer{
-	width: 100%;
-	height: 60px;
-	text-align: center;
-	background-color: #292929;
-}
-
-a{
-	color: #292929;
-}
-
-/* jQueryの処理用 */
-.outer{
-	position: relative;
-	margin-top: 10px;
-	.cover{
-		position: absolute;
-		top: 80px;
-		left: 10px;
-		opacity: 0;
-		text-shadow: 2px 2px 8px #fff;
-		color: #292929;
+	.profile-edit-right{
+		width: 40%;
+		padding: 30px;
+		margin-left: 15%;
+		float: left;
+		text-align: left;
 	}
-}
-
-#flash_alert{
-	font-size: 14px;
-	color: red;
+	.profile-edit-image{
+		width: 500px;
+		height: 500px;
+		border: 1px solid black;
+		border-radius: 50%;
+		overflow: hidden;
+	}
 }
