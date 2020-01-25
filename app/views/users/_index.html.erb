@@ -20,7 +20,11 @@
 		<% if current_user != users %>
 			<div id="follow_<%= users.id %>">
 				<!-- フォロー機能の部分テンプレート -->
-				<%= render 'relationships/follow' , user: users %>
+				<%= render 'relationships/follow', user: users %>
+			</div>
+		<% else %>
+			<div>
+				<%= link_to "Me", user_path(current_user.id), class: "btn done-btn", style: "width: 65px;" %>
 			</div>
 		<% end %>
 	<% end %>

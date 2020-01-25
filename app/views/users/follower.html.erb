@@ -17,7 +17,7 @@
 <% else %>
 <!-- フォロワーがいる時 -->
 	<% @follower.each do |user| %>
-		<div class="width-4x box-border">
+		<div class="width-bg box-border">
 			<%= render 'users/index', users: user %>
 		</div>
 	<% end %>
