@@ -37,5 +37,8 @@ Rails.application.routes.draw do
 
 # searches controller
 	get '/search' => 'searches#search', as: 'search'
+
+# 開発環境時のメール確認テスト用
+mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
