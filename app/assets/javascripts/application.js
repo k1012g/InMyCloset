@@ -16,6 +16,9 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+// 投稿のアニメーション
 $(document).on('turbolinks:load', function() {
 	let $image = $('.outer');
 
@@ -32,14 +35,16 @@ $(document).on('turbolinks:load', function() {
 		});
 });
 
+// スライドメニュー
 $(document).on('turbolinks:load', function(){
 	$('#menu').on('click', function(){
 		$('#nav').toggleClass('open');
 	});
 });
 
-$(document).on('turbolinks:load', function(){
 
+// ヘッダーの固定
+$(document).on('turbolinks:load', function(){
 	$('.header').each(function(){
 
 		let $window = $(window),
