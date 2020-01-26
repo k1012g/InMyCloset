@@ -75,12 +75,12 @@
 				<% if current_user == @user %>
 				<!-- ユーザー本人のみ編集可 -->
 					<%= link_to edit_clothes_path(clothes.id) do %>
-						<div class="width-bg box-border">
+						<div class="width4 box-border">
 							<%= render 'clothes/index', clothes: clothes %>
 						</div>
 					<% end %>
 				<% else %>
-					<div class="width-bg box-border">
+					<div class="width4 box-border">
 						<%= render 'clothes/index', clothes: clothes %>
 					</div>
 				<% end %>

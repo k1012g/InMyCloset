@@ -2,7 +2,7 @@
 <div class="col-xs-12">
 	<% @favorites.each do |fav| %>
 	<!-- いいねしている投稿一覧 -->
-		<div class="width-sm width-md width-bg box-border">
+		<div class="width-sm width-md width4 box-border">
 			<%= render 'clothes/index', clothes: fav.cloth %>
 		</div>
 	<% end %>
