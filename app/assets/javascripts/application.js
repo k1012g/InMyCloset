@@ -31,3 +31,29 @@ $(document).on('turbolinks:load', function() {
 			}, 300);
 		});
 });
+
+$(document).on('turbolinks:load', function(){
+	$('#menu').on('click', function(){
+		$('#nav').toggleClass('open');
+	});
+});
+
+$(document).on('turbolinks:load', function(){
+
+	$('.header').each(function(){
+
+		let $window = $(window),
+			$header = $(this),
+			headerOffsetTop = $header.offset().top;
+
+		$window.on('scroll', function(){
+			if ($window.scrollTop() > headerOffsetTop){
+				$header.addClass('sticky');
+			}else{
+				$header.removeClass('sticky');
+			}
+		});
+
+		$window.trigger('scroll');
+	});
+});
