@@ -1,39 +1,41 @@
 <header class="header">
 	<%= link_to root_path do %>
 		<span>
-			<strong class="font-md font-xs">InMyCloset</strong>
+			<strong class="font-md">InMyCloset</strong>
 		</span>
 	<% end %>
 	<% if signed_in? %>
 		<div style="float: right;">
-			<strong>
+			<strong class="links">
 				<%= link_to "What is InMyCloset?", about_path %>
 			</strong>
-			<strong>
+			<strong class="links">
 				<%= link_to "My Page", user_path(current_user.id) %>
 			</strong>
-			<strong>
+			<strong class="links">
 				<%= link_to "Search", search_path %>
 			</strong>
-			<strong>
+			<strong class="links">
 				<%= link_to "Sign out", destroy_user_session_path, data: { confirm: "Are you sure?" }, method: :delete %>
 			</strong>
+			<%= icon 'fas', 'bars', id: "menu" %>
 		</div>
 	<% else %>
 		<div style="float: right;">
-			<strong>
+			<strong class="links">
 				<%= link_to "What is InMyCloset?", about_path %>
 			</strong>
-			<strong>
+			<strong class="links">
 				<%= link_to "Search", search_path %>
 			</strong>
-			<strong>
+			<strong class="links">
 				<%= link_to "Sign in!", new_user_session_path %>
 			</strong>
-			<strong>
-				<%= link_to "Sign up!", new_user_registration_path
-			 %>
+			<strong class="links">
+				<%= link_to "Sign up!", new_user_registration_path %>
 			</strong>
+			<%= icon 'fas', 'bars', id: "menu" %>
 		</div>
 	<% end %>
+	<%= render 'layouts/nav' %>
 </header>
