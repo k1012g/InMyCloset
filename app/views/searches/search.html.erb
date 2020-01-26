@@ -17,7 +17,7 @@
 	<% if @input.blank? && @sort.blank? %>
 	<!-- 何も入力しなかった時の条件分岐 -->
 		<% @users.each do |user| %>
-			<div class="width-bg">
+			<div class="width4">
 				<%= render 'users/index', users: user %>
 			</div>
 		<% end %>
@@ -27,14 +27,14 @@
 			<% if @input.blank? %>
 			<!-- 入力しない時 -->
 				<% @users.each do |user| %>
-					<div class="width-bg">
+					<div class="width4">
 						<%= render 'users/index', users: user %>
 					</div>
 				<% end %>
 			<% else %>
 			<!-- 入力した時 -->
 				<% @results.each do |user| %>
-					<div class="width-bg">
+					<div class="width4">
 						<%= render 'users/index', users: user %>
 					</div>
 				<% end %>
@@ -44,14 +44,14 @@
 			<% if @input.blank? %>
 			<!-- 入力しない時 -->
 				<% @clothes.each do |brand| %>
-					<div class="width-bg box-border">
+					<div class="width4 box-border">
 						<%= render 'clothes/index', clothes: brand %>
 					</div>
 				<% end %>
 			<% else %>
 			<!-- 入力した時 -->
 				<% @results.each do |brand| %>
-					<div class="width-bg box-border">
+					<div class="width4 box-border">
 						<%= render 'clothes/index', clothes: brand %>
 					</div>
 				<% end %>
@@ -63,7 +63,7 @@
 				<% @categories.each do |category| %>
 					<span class="atag">
 						<%= link_to category_path(category.id) do %>
-							<div class="width-cg box-border">
+							<div class="width4-auto box-border">
 								<strong class="font-md">
 									<%= category.category %>
 								</strong>
@@ -76,7 +76,7 @@
 				<% @results.each do |category| %>
 					<span class="atag">
 						<%= link_to category_path(category.id) do %>
-							<div class="width-cg box-border">
+							<div class="width4-auto box-border">
 								<strong class="font-md">
 									<%= category.category %>
 								</strong>

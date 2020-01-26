@@ -5,7 +5,7 @@
 			Today's Post : <%= @todayPost %>
 		</strong>
 		<% @cloth.each do |cloth| %>
-			<div class="width-bg box-border">
+			<div class="width4 box-border">
 				<%= render 'clothes/index', clothes: cloth %>
 			</div>
 		<% end %>
@@ -20,7 +20,7 @@
 
 			<br><br><br>
 
-			<span style="font-size: 50px;"><strong>
+			<span class="font-bg"><strong>
 				If it were possible,<br>
 				you think you want to bring<br>
 				your closet to clothing store<br>
@@ -44,7 +44,8 @@
 				<span style="font-size: 40px;"><strong>Step 1 : Fill in required items.</strong></span><br>
 				<div class="step1"></div>
 				<br><br>
-				<strong style="font-size: 30px; color: #292929;"><%= link_to "☞ Sign up here!", new_user_registration_path %></strong>
+				<strong class="font-md" style="color: #292929;"><%= link_to "☞ Sign up here!", new_user_registration_path %>
+				</strong>
 
 				<br><br><br>
 
