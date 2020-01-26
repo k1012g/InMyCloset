@@ -1,10 +1,11 @@
 <strong class="font-bg text-center">
-	Follower Users(<%= @follower.count %>)
-</strong>
-<strong class="font-bg text-center">
 	<!-- そのページのユーザーネーム -->
 	<%= @user.name %>
 </strong>
+<strong class="font-md text-center">
+	Follower Users(<%= @follower.count %>)
+</strong>
+<br><br>
 <% if @follower.blank? %>
 <!-- フォロワーがいない時 -->
 	<strong class="font-md">No users.</strong>
@@ -17,7 +18,7 @@
 <% else %>
 <!-- フォロワーがいる時 -->
 	<% @follower.each do |user| %>
-		<div class="width-bg box-border">
+		<div class="width-cg">
 			<%= render 'users/index', users: user %>
 		</div>
 	<% end %>

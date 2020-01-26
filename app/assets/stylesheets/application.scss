@@ -134,12 +134,13 @@ select{
 	/* 1列に4要素を並べる */
 	.width-bg{
 		width: 24%;
-		height: 320px;
+		height: 350px;
 		margin-bottom: 1%;
 		margin-right: 1%;
-		padding-left: 19px;
+		padding-left: 18px;
 		padding-bottom: 10px;
 		float: left;
+		overflow: hidden;
 	}
 
 	.width-cg{
@@ -281,24 +282,26 @@ select{
 	}
 
 	.profile-edit-left{
-		width: 45%;
+		width: 55%;
 		float: left;
+		margin: 0 auto;
 		.edit-image{
 			input{
-				margin: 0 0 0 140px;
+				margin: 0 0 0 150px;
 			}
 		}
 	}
 	.profile-edit-right{
 		width: 40%;
 		padding: 30px;
-		margin-left: 15%;
+		margin-left: 0%;
 		float: left;
 		text-align: left;
 	}
 	.profile-edit-image{
 		width: 500px;
 		height: 500px;
+		margin: 0 auto;
 		border: 1px solid black;
 		border-radius: 50%;
 		overflow: hidden;
