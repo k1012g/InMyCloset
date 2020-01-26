@@ -5,7 +5,7 @@
 			Today's Post : <%= @todayPost %>
 		</strong>
 		<% @cloth.each do |cloth| %>
-			<div class="width-3x box-border">
+			<div class="width-bg box-border">
 				<%= render 'clothes/index', clothes: cloth %>
 			</div>
 		<% end %>
