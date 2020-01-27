@@ -41,7 +41,7 @@
 			text-align: left;
 			color: #fff;
 			line-height: 50px;
-			font-size: 20px;
+			font-size: 200%;
 			padding-left: 20px;
 		}
 		.links{
@@ -49,7 +49,7 @@
 		}
 		i{
 			color: #fff;
-			font-size: 20px;
+			font-size: 200%;
 			line-height: 50px;
 			padding-right: 10px;
 		}
@@ -93,6 +93,89 @@
 		strong{
 			color: #fff;
 			line-height: 38px;
+		}
+	}
+
+	.top-contents{
+		width: 100%;
+		height: 250px;
+		border: 1px solid black;
+		text-align: center;
+		background-image: url(contents-sm.jpg);
+		background-size: cover;
+		background-position: center;
+		span{
+			display: block;
+			margin: 115px auto;
+			color: #FBFBFB;
+		}
+	}
+	.top-contents2{
+		width: 70%;
+		height: 200px;
+		border: 1px solid black;
+		text-align: center;
+		background-image: url(application.jpg);
+		background-size: cover;
+		background-position: center;
+		margin: 0 auto;
+		span{
+			display: block;
+			margin: 80px auto;
+			color: #FBFBFB;
+		}
+	}
+	.top-contents3{
+		a{
+			color: red;
+		}
+		div{
+			width: 70%;
+			height: 300px;
+			margin: 0 auto;
+			border: 1px solid black;
+		}
+		.step1{
+			background-image: url(signup.png);
+			background-size: cover;
+			background-position: center;
+		}
+		.step2{
+			background-image: url(add-clothes.jpg);
+			background-size: cover;
+			background-position: center;
+		}
+		.step3{
+			background-image: url(shopping.jpg);
+			background-size: cover;
+			background-position: center;
+		}
+	}
+	.font-bg{
+		font-size: 50px;
+	}
+	.font-md{
+		font-size: 35px;
+	}
+
+	.about{
+		text-align: center;
+		span{
+			font-size: 30px;
+		}
+		li{
+			font-size: 20px;
+			text-align: left;
+		}
+		a{
+			color: red;
+		}
+	}
+
+	.form-table{
+		table-layout: fixed;
+		th{
+			width: 100px;
 		}
 	}
 
@@ -189,7 +272,7 @@
 	.top-contents{
 		width: 100%;
 		height: 700px;
-		background-image: url(closet.jpg);
+		background-image: url(contents-sm.jpg);
 		background-size: cover;
 		background-position: center;
 		span{
@@ -319,16 +402,6 @@
 		height: 34px;
 	}
 
-	/* 完了ボタン */
-	.done-btn{
-		margin-top: 2px;
-		background-color: #292929;
-		color: #fff;
-		&:hover{
-			background-color: #5D5D5D;
-			color: #fff;
-		}
-	}
 	body{
 		margin-top: 110px;
 	}
@@ -400,4 +473,15 @@ a{
 .text-center{
 	text-align: center;
 	display: block;
+}
+
+/* 完了ボタン */
+.done-btn{
+	margin-top: 2px;
+	background-color: #292929;
+	color: #fff;
+	&:hover{
+		background-color: #5D5D5D;
+		color: #fff;
+	}
 }

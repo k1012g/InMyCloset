@@ -2,22 +2,22 @@
   <strong class="font-bg">Sign up</strong>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <br>
-    <table class="table">
+    <table class="table form-table">
       <tr>
         <th>User Name</th>
-        <td><%= f.text_field :name, autofocus: true, style: "width: 250px;" %></td>
+        <td><%= f.text_field :name, autofocus: true, style: "width: 80%;" %></td>
       </tr>
       <tr>
         <th>Email</th>
-        <td><%= f.email_field :email, autocomplete: "email", style: "width: 250px;" %></td>
+        <td><%= f.email_field :email, autocomplete: "email", style: "width: 80%;" %></td>
       </tr>
       <tr>
         <th>Password</th>
-        <td><%= f.password_field :password, autocomplete: "new-password", placeholder: "6 characters minimum", style: "width: 250px;" %></td>
+        <td><%= f.password_field :password, autocomplete: "new-password", placeholder: "6 characters minimum", style: "width: 80%;" %></td>
       </tr>
       <tr>
         <th>Password Confirmation</th>
-        <td><%= f.password_field :password_confirmation, autocomplete: "new-password", style: "width: 250px;" %></td>
+        <td><%= f.password_field :password_confirmation, autocomplete: "new-password", style: "width: 80%;" %></td>
       </tr>
     </table>
     <%= render "users/shared/error_messages", resource: resource %>

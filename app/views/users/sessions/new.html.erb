@@ -1,16 +1,16 @@
-<div class="text-center col-xs-6 col-xs-offset-3">
+<div class="text-center col-xs-6 col-xs-offset-3 form-box">
   <strong class="font-bg">Sign in</strong>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <br>
-    <table class="table">
+    <table class="table form-table">
       <tr>
         <th>Email</th>
-        <td><%= f.email_field :email, autofocus: true, autocomplete: "email", style: "width: 250px;" %></td>
+        <td><%= f.email_field :email, autofocus: true, autocomplete: "email", style: "width: 80%" %></td>
       </tr>
       <tr>
         <th>Password</th>
-        <td><%= f.password_field :password, autocomplete: "current-password", style: "width: 250px;" %></td>
+        <td><%= f.password_field :password, autocomplete: "current-password", style: "width: 80%" %></td>
       </tr>
     </table>
     <% flash.each do |name, msg| %>
