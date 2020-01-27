@@ -1,4 +1,4 @@
-<% if signed_in? != false %>
+<% if signed_in? %>
 	<% if user.followed_by?(current_user) %>
 	<!-- followしている時 -->
 		<%= link_to "Following", user_relationships_path(user.id), method: :delete, remote: true, class: "btn done-btn" %>
