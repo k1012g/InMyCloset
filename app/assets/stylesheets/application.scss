@@ -147,6 +147,19 @@
 		}
 	}
 
+	.about{
+		span{
+			font-size: 20px;
+		}
+		li{
+			font-size: 15px;
+			text-align: left;
+		}
+		a{
+			color: red;
+		}
+	}
+
 	.font-md{
 		font-size: 20px;
 	}
@@ -159,6 +172,24 @@
 		strong{
 			line-height: 25px;
 		}
+	}
+
+	.form-table{
+		table-layout: fixed;
+		th{
+			width: 100px;
+		}
+	}
+
+	.font-bg{
+		font-size: 35px;
+	}
+
+	.width4{
+		width: 200px;
+		margin: 3px 3px;
+		overflow: hidden;
+		float: left;
 	}
 }
 
@@ -536,21 +567,27 @@
 		font-size: 20px;
 	}
 
-	/* コンテンツの区切り用ボーダー */
-	.box-border{
-		border: 1px solid #D3D3D3;
-	}
-
-	/* select_tag */
-	select{
-		background-color: #292929;
-		color: #fff;
-		height: 34px;
-	}
-
 	body{
 		margin-top: 110px;
 	}
+	.form-table{
+		table-layout: fixed;
+		th{
+			width: 100px;
+		}
+	}
+}
+
+/* コンテンツの区切り用ボーダー */
+.box-border{
+	border: 1px solid #D3D3D3;
+}
+
+/* select_tag */
+select{
+	background-color: #292929;
+	color: #fff;
+	height: 34px;
 }
 
 /* font名の指定 */
