@@ -1,5 +1,5 @@
 <div style="width: 100%;">
-	<strong class="font-xl text-center">Search Page</strong>
+	<strong class="font-l text-center">Search Page</strong>
 	<span class="text-center">
 		<!-- 検索結果のフォーム -->
 		<%= form_tag(search_path, :method => 'get') do %>
@@ -7,7 +7,7 @@
 			<%= select_tag :sort, options_for_select({ "User" => "User", "Brand" => "Brand", "Category" => "Category" }) %>
 			<%= submit_tag "Search", class: "btn done-btn" %>
 		<% end %>
-		<strong class="font-md">
+		<strong class="font-s" style="display: block; margin-bottom: 30px;">
 			You can search everything you want to check.
 			<br>
 			Sorting fuction and search box can be available.
@@ -64,7 +64,7 @@
 					<span class="atag">
 						<%= link_to category_path(category.id) do %>
 							<div class="contents-size-auto border">
-								<strong class="font-md">
+								<strong class="font-s">
 									<%= category.category %>
 								</strong>
 							</div>
@@ -77,7 +77,7 @@
 					<span class="atag">
 						<%= link_to category_path(category.id) do %>
 							<div class="contents-size-auto border">
-								<strong class="font-md">
+								<strong class="font-s">
 									<%= category.category %>
 								</strong>
 							</div>
