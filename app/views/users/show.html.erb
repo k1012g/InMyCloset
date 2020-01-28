@@ -61,7 +61,7 @@
 	</div>
 </div>
 <!-- 投稿一覧 -->
-<div class="col-xs-12">
+<div style="width: 100%;">
 	<div class="text-center" style="margin: 20px auto;">
 		<%= form_tag(user_path(@user.id), :method => 'get') do %>
 			<%= link_to "All Clothes", user_path(@user.id), class: "btn done-btn" %>
