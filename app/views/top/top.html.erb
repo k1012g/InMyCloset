@@ -1,62 +1,72 @@
-<div style="width: 100%;">
+<div class="width-max">
 	<% if signed_in? %>
 		<!-- ログインしているときはフォローしている人のタイムラインを表示 -->
-		<strong class="font-bg text-center">
+		<strong class="font-l text-center">
 			Today's Post : <%= @todayPost %>
 		</strong>
 		<% @cloth.each do |cloth| %>
-			<div class="width4 box-border">
+			<div class="contents-size border">
 				<%= render 'clothes/index', clothes: cloth %>
 			</div>
 		<% end %>
 	<% else %>
 		<!-- ログインしていないときはTOPページ -->
-		<div style="text-align: center;">
-			<h1><strong class="font-bg">Welcome to InMyCloset!</strong></h1>
-			<br>
-			<section class="top-contents">
-				<span><strong>I am sure you have the experience of forgetting what you have in your closet.</strong></span>
+		<div class="text-center top">
+			<strong class="font-xl" style="display: block; margin-bottom: 30px;">
+				Welcome to InMyCloset!
+			</strong>
+
+			<section class="contents1">
+				<strong>
+					I am sure you have the experience of forgetting what you have in your closet.
+				</strong>
 			</section>
 
-			<br><br><br>
-
-			<span class="font-md"><strong>
+			<strong class="font-m" style="display: block; margin-bottom: 70px;">
 				If it were possible,<br>
 				you think you want to bring<br>
 				your closet to clothing store<br>
 				you always buy clothes.
-			</strong></span>
+			</strong>
 
-			<br><br><br>
-
-			<section class="top-contents2">
-				<span><strong>
+			<section class="contents2">
+				<strong>
 					This application "InMyCloset" makes it possible.
-				</strong></span>
+				</strong>
 			</section>
 
-			<br><br><br>
-
-			<section class="top-contents3">
-				<h2 style="font-size: 50px;"><strong>Only 3 steps!</strong></h2>
-				<br><br>
-
-				<span style="font-size: 40px;"><strong>Step 1 : Fill in required items.</strong></span><br>
-				<div class="step1"></div>
-				<br><br>
-				<strong class="font-md" style="color: #292929;"><%= link_to "☞ Sign up here!", new_user_registration_path %>
+			<section class="contents3">
+				<strong class="font-l" style="display: block; margin-bottom: 30px;">
+					Only 3 steps!
 				</strong>
 
-				<br><br><br>
+				<strong class="font-m">
+					Step 1 : Fill in required items.
+				</strong>
 
-				<span style="font-size: 40px;"><strong>Step 2 : Add your clothes.</strong></span><br>
-				<div class="step2"></div>
+				<div class="step1">
+					<!-- ここには画像が入ります -->
+				</div>
 
-				<br><br><br>
+				<strong class="font-m" style="display: block; margin-bottom: 30px;">
+					<%= link_to "☞ Sign up here!", new_user_registration_path %>
+				</strong>
 
-				<span style="font-size: 40px;"><strong>Step 3 : Enjoy fashion!</strong></span><br>
-				<div class="step3"></div>
-				<br><br>
+				<strong class="font-m">
+						Step 2 : Add your clothes.
+				</strong>
+
+				<div class="step2">
+					<!-- ここには画像が入ります -->
+				</div>
+
+				<strong class="font-m">
+					Step 3 : Enjoy fashion!
+				</strong>
+
+				<div class="step3">
+					<!-- ここには画像が入ります -->
+				</div>
 			</section>
 		</div>
 	<% end %>

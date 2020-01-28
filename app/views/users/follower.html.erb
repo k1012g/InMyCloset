@@ -1,4 +1,4 @@
-<strong class="font-bg text-center">
+<strong class="font-xl text-center">
 	<!-- そのページのユーザーネーム -->
 	<%= @user.name %>
 </strong>
@@ -18,7 +18,7 @@
 <% else %>
 <!-- フォロワーがいる時 -->
 	<% @follower.each do |user| %>
-		<div class="width4-auto">
+		<div class="contents-size-auto">
 			<%= render 'users/index', users: user %>
 		</div>
 	<% end %>

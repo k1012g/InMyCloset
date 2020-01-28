@@ -62,3 +62,15 @@ $(document).on('turbolinks:load', function(){
 		$window.trigger('scroll');
 	});
 });
+
+$(document).on('turbolinks:load', function(){
+	let $topBtn = $('#top-btn');
+
+	$topBtn.each(function(){
+		let el = ('html');
+
+		$(this).on('click', function(){
+			$(el).stop(true).animate({scrollTop: 0}, 750);
+		});
+	});
+});

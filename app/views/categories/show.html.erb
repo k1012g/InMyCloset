@@ -1,10 +1,10 @@
-<strong class="font-bg text-center" style="margin-bottom: 15px;">
+<strong class="font-xl text-center" style="margin-bottom: 15px;">
 	<!-- カテゴリー名を表示 -->
 	<%= @category.category %>
 </strong>
 <!-- カテゴリー毎の投稿を表示 -->
 <% @category.cloths.each do |clothes| %>
-	<div class="width4 box-border">
+	<div class="contents-size border">
 		<%= render 'clothes/index', clothes: clothes %>
 	</div>
 <% end %>

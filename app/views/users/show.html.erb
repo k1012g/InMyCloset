@@ -1,5 +1,5 @@
 <% if current_user == @user %>
-	<strong class="font-bg text-center">My Page</strong>
+	<strong class="font-xl text-center">My Page</strong>
 <% end %>
 
 <!-- プロフィール欄 -->
@@ -70,7 +70,7 @@
 		<% end %>
 	</div>
 	<% if @user_cloth.blank? %>
-		<strong class="font-bg text-center" style="margin: 30px 0;">No clothes.</strong>
+		<strong class="font-xl text-center" style="margin: 30px 0;">No clothes.</strong>
 	<% else %>
 	<!-- ユーザー毎の投稿一覧 -->
 		<% @user_cloth.each do |clothes| %>
@@ -78,12 +78,12 @@
 				<% if current_user == @user %>
 				<!-- ユーザー本人のみ編集可 -->
 					<%= link_to edit_clothes_path(clothes.id) do %>
-						<div class="width4-auto box-border">
+						<div class="contents-size-auto border">
 							<%= render 'clothes/index', clothes: clothes %>
 						</div>
 					<% end %>
 				<% else %>
-					<div class="width4-auto box-border">
+					<div class="contents-size-auto border">
 						<%= render 'clothes/index', clothes: clothes %>
 					</div>
 				<% end %>

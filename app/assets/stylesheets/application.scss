@@ -185,11 +185,11 @@
 		}
 	}
 
-	.font-bg{
+	.font-xl{
 		font-size: 35px;
 	}
 
-	.width4{
+	.contents-size{
 		width: 200px;
 		height: 350px;
 		padding: 2px;
@@ -197,12 +197,21 @@
 		overflow: hidden;
 		float: left;
 	}
-	.width4-auto{
+	.contents-size-auto{
 		width: 48%;
 		margin: 1%;
 		padding-left: 2px;
 		overflow: hidden;
 		float: left;
+	}
+
+	/* ページ上部に戻るボタン */
+	#top-btn{
+		position: fixed;
+		right: 30px;
+		bottom: 35px;
+		z-index: 1000;
+		font-size: 40px;
 	}
 }
 
@@ -341,7 +350,7 @@
 			background-position: center;
 		}
 	}
-	.font-bg{
+	.font-xl{
 		font-size: 50px;
 	}
 	.font-md{
@@ -369,6 +378,18 @@
 		}
 	}
 
+	/* ページ上部に戻るボタン */
+	#top-btn{
+		position: fixed;
+		right: 45px;
+		bottom: 45px;
+		z-index: 1000;
+		font-size: 50px;
+		&:hover{
+			opacity: 0.8;
+		}
+	}
+
 }
 
 
@@ -379,8 +400,13 @@
 /* PC画面 レスポンシブ */
 @media screen and (min-width: 991px) {
 
-	/* 1列に4要素を並べる */
-	.width4{
+	/* 横幅の指定 */
+	.width-max{
+		width: 100%;
+	}
+
+	/* 横に4要素を並べる */
+	.contents-size{
 		width: 24%;
 		height: 350px;
 		margin-bottom: 1%;
@@ -391,8 +417,8 @@
 		overflow: hidden;
 	}
 
-	/* 1列に4要素を並べる(高さ指定なし) */
-	.width4-auto{
+	/* 横に4要素を並べる(高さ指定なし) */
+	.contents-size-auto{
 		width: 24%;
 		margin-bottom: 1%;
 		margin-right: 1%;
@@ -400,6 +426,39 @@
 		padding-bottom: 10px;
 		float: left;
 	}
+
+	/* 要素の中央寄せ */
+	.text-center{
+		text-align: center;
+		display: block;
+	}
+
+	/* 要素の境界線の表示 */
+	.border{
+		border: 1px solid #D3D3D3;
+	}
+
+	/* fontのサイズ指定 */
+	.font-xl{
+		font-size: 9rem;
+	}
+
+	.font-l{
+		font-size: 7rem;
+	}
+
+	.font-m{
+		font-size: 5rem;
+	}
+
+	/*
+	.font-s{
+
+	}
+	.font-xs{
+
+	}
+	*/
 
 	/* ヘッダー */
 	.header{
@@ -434,6 +493,75 @@
 		opacity: 0.95;
 	}
 
+
+	/* トップ画面(top/top.html.erb) */
+	.top{
+		.contents1{
+			width: 100%;
+			height: 700px;
+			background-image: image-url("contents-sm.jpg");
+			background-size: cover;
+			background-position: center;
+			margin-bottom: 70px;
+			strong{
+				background: rgba(100,100,100,0.4);
+				width: 100%;
+				height: 700px;
+				display: block;
+				line-height: 700px;
+				color: #fff;
+				font-size: 25px;
+			}
+		}
+
+		.contents2{
+			width: 100%;
+			height: 500px;
+			background-image: image-url("application.jpg");
+			background-size: cover;
+			background-position: center;
+			margin-bottom: 70px;
+			strong{
+				width: 100%;
+				height: 500px;
+				display: block;
+				background: rgba(100,100,100,0.5);
+				line-height: 500px;
+				color: #fff;
+				font-size: 25px;
+			}
+		}
+
+		.contents3{
+			a{
+				color: red;
+			}
+			div{
+				width: 70%;
+				height: 400px;
+				margin: 30px auto;
+				border: 1px solid black;
+			}
+			.step1{
+				background-image: image-url("signup.png");
+				background-size: cover;
+				background-position: center;
+			}
+			.step2{
+				background-image: image-url("add-clothes.jpg");
+				background-size: cover;
+				background-position: center;
+			}
+			.step3{
+				background-image: image-url("shopping.jpg");
+				background-size: cover;
+				background-position: center;
+			}
+		}
+	}
+
+
+
 	/* フッター */
 	.footer{
 		width: 100%;
@@ -454,69 +582,6 @@
 		border: double black;
 	}
 
-	/* トップ画面(未サインイン) */
-	h1{
-		font-size: 70px;
-	}
-
-	.top-contents{
-		width: 100%;
-		height: 700px;
-		background-image: image-url("contents-sm.jpg");
-		background-size: cover;
-		background-position: center;
-		span{
-			background: rgba(100,100,100,0.5);
-			width: 100%;
-			height: 700px;
-			display: block;
-			line-height: 700px;
-			color: #fff;
-			font-size: 20px;
-		}
-	}
-	.top-contents2{
-		width: 100%;
-		height: 500px;
-		background-image: image-url("application.jpg");
-		background-size: cover;
-		background-position: center;
-		span{
-			width: 100%;
-			height: 500px;
-			display: block;
-			background: rgba(100,100,100,0.5);
-			line-height: 500px;
-			color: #fff;
-			font-size: 20px;
-		}
-	}
-	.top-contents3{
-		a{
-			color: red;
-		}
-		div{
-			width: 70%;
-			height: 400px;
-			margin: 0 auto;
-			border: 1px solid black;
-		}
-		.step1{
-			background-image: image-url("signup.png");
-			background-size: cover;
-			background-position: center;
-		}
-		.step2{
-			background-image: image-url("add-clothes.jpg");
-			background-size: cover;
-			background-position: center;
-		}
-		.step3{
-			background-image: image-url("shopping.jpg");
-			background-size: cover;
-			background-position: center;
-		}
-	}
 
 	/* アバウト画面 */
 	.about{
@@ -569,17 +634,6 @@
 		overflow: hidden;
 	}
 
-	/* fontのサイズ指定 */
-	.font-bg{
-		font-size: 50px;
-	}
-	.font-md{
-		font-size: 32px;
-	}
-	.font-sm{
-		font-size: 20px;
-	}
-
 	body{
 		margin-top: 110px;
 	}
@@ -589,11 +643,17 @@
 			width: 100px;
 		}
 	}
-}
-
-/* コンテンツの区切り用ボーダー */
-.box-border{
-	border: 1px solid #D3D3D3;
+	/* ページ上部に戻るボタン */
+	#top-btn{
+		position: fixed;
+		right: 80px;
+		bottom: 65px;
+		z-index: 1000;
+		font-size: 50px;
+		&:hover{
+			opacity: 0.8;
+		}
+	}
 }
 
 /* select_tag */
@@ -662,13 +722,6 @@ body{
 
 a{
 	color: #292929;
-}
-
-
-/* textの中央寄せ */
-.text-center{
-	text-align: center;
-	display: block;
 }
 
 /* 完了ボタン */
