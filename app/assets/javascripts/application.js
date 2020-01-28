@@ -63,6 +63,7 @@ $(document).on('turbolinks:load', function(){
 	});
 });
 
+
 $(document).on('turbolinks:load', function(){
 	let $topBtn = $('#top-btn');
 

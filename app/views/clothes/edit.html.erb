@@ -1,6 +1,6 @@
 <!-- 変更前 -->
-<div class="col-xs-6" style="text-align: center;">
-	<strong class="font-md">Before the edit</strong>
+<div class="before-edit text-center">
+	<strong class="font-s">Before the edit</strong>
 	<br>
 	<%= attachment_image_tag @cloth, :image, :fill, 350, 350 %>
 	<br>
@@ -14,8 +14,8 @@
 	<%= @cloth.size %>
 </div>
 <!-- 編集フォーム -->
-<div class="col-xs-6">
-	<strong class="font-md text-center">Edit clothes</strong>
+<div class="edit">
+	<strong class="font-s text-center">Edit clothes</strong>
 	<br>
 	<%= form_with(model: @cloth, url: edit_clothes_path, local: true) do |f| %>
 		<!-- 入力フォームの部分テンプレート -->
@@ -27,7 +27,7 @@
 			<%= link_to "Back", user_path(current_user.id), class: "btn done-btn" %>
 		</span>
 		<span class="atag">
-			<%= link_to "Delete this clothes", destroy_clothes_path(@cloth.id), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+			<%= link_to "Delete this clothes", destroy_clothes_path(@cloth.id), data: { confirm: "Delete this #{@cloth.brand} #{@cloth.category.category.capitalize}?" }, method: :delete, class: "btn btn-danger" %>
 		</span>
 	<% end %>
 </div>

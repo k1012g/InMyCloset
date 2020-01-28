@@ -1,9 +1,7 @@
-<strong class="font-xl text-center" style="margin-bottom: 15px;">Favorites</strong>
-<div class="col-xs-12">
-	<% @favorites.each do |fav| %>
-	<!-- いいねしている投稿一覧 -->
-		<div class="width-sm width-md contents-size border">
-			<%= render 'clothes/index', clothes: fav.cloth %>
-		</div>
-	<% end %>
-</div>
+<strong class="font-l text-center" style="margin-bottom: 15px;">Favorites</strong>
+<% @favorites.each do |fav| %>
+<!-- いいねしている投稿一覧 -->
+	<div class="contents-size border">
+		<%= render 'clothes/index', clothes: fav.cloth %>
+	</div>
+<% end %>

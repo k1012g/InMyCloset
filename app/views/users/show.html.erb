@@ -60,40 +60,38 @@
 	</div>
 </div>
 <!-- 投稿一覧 -->
-<div class="width-xl">
-	<div class="text-center" style="margin: 20px auto;">
-		<%= form_tag(user_path(@user.id), :method => 'get') do %>
-			<%= link_to "All Clothes", user_path(@user.id), class: "btn done-btn" %>
-			<%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :category) %>
-			<%= submit_tag "Search", class: "btn done-btn" %>
-		<% end %>
-	</div>
-	<% if @user_cloth.blank? %>
-		<strong class="font-l text-center" style="margin: 30px 0;">
-			No clothes.<br>
-			<% if current_user == @user %>
-				<%= link_to new_clothes_path do %>
-					<%= icon 'fas', 'plus-circle' %>
-				<% end %>
+<div class="text-center" style="margin: 20px auto;">
+	<%= form_tag(user_path(@user.id), :method => 'get') do %>
+		<%= link_to "All Clothes", user_path(@user.id), class: "btn done-btn" %>
+		<%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :category) %>
+		<%= submit_tag "Search", class: "btn done-btn" %>
+	<% end %>
+</div>
+<% if @user_cloth.blank? %>
+	<strong class="font-l text-center" style="margin: 30px 0;">
+		No clothes.<br>
+		<% if current_user == @user %>
+			<%= link_to new_clothes_path do %>
+				<%= icon 'fas', 'plus-circle' %>
 			<% end %>
-		</strong>
-	<% else %>
-	<!-- ユーザーの投稿一覧 -->
-		<% @user_cloth.each do |clothes| %>
-			<span class="atag">
-				<% if current_user == @user %>
-				<!-- ユーザー本人のみ編集可 -->
-					<%= link_to edit_clothes_path(clothes.id) do %>
-						<div class="contents-size-auto border">
-							<%= render 'clothes/index', clothes: clothes %>
-						</div>
-					<% end %>
-				<% else %>
+		<% end %>
+	</strong>
+<% else %>
+<!-- ユーザーの投稿一覧 -->
+	<% @user_cloth.each do |clothes| %>
+		<span class="atag">
+			<% if current_user == @user %>
+			<!-- ユーザー本人のみ編集可 -->
+				<%= link_to edit_clothes_path(clothes.id) do %>
 					<div class="contents-size-auto border">
 						<%= render 'clothes/index', clothes: clothes %>
 					</div>
 				<% end %>
-			</span>
-		<% end %>
+			<% else %>
+				<div class="contents-size-auto border">
+					<%= render 'clothes/index', clothes: clothes %>
+				</div>
+			<% end %>
+		</span>
 	<% end %>
-</div>
+<% end %>

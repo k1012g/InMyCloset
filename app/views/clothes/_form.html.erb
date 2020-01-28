@@ -1,16 +1,18 @@
 <div>
 	<!-- カテゴリー選択 -->
-	<h4><strong>Category</strong></h4>
+	<strong class="font-xs">Category</strong>
+	<br>
 	<%= form.collection_select(:category_id, Category.all, :id, :category) %>
 </div>
 <div>
 	<!-- ブランド記入 -->
-	<h4><strong>Brand</strong></h4>
-	<span>
+	<strong class="font-xs">Brand</strong>
+	<br>
+	<span style="color: red;">
 		※If you don't know brand name, please fill in "No brand".
 	</span>
 	<br>
-	<span>
+	<span style="color: red;">
 		※Brand of first letter is capitalized when you add your clothes.(Example : gucci → Gucci)
 	</span>
 	<br>
@@ -18,8 +20,9 @@
 </div>
 <div>
 	<!-- サイズ記入 -->
-	<h4><strong>Size</strong></h4>
-	<span>
+	<strong class="font-xs">Size</strong>
+	<br>
+	<span style="color: red;">
 		※Alphabet of size is capitalized when you add your clothes.(Example : m → M)
 	</span>
 	<br>
@@ -27,6 +30,6 @@
 </div>
 <div>
 	<!-- 画像選択 -->
-	<h4><strong>Select Image</strong></h4>
+	<strong class="font-xs">Select Image</strong>
 	<%= form.attachment_field :image %>
 </div>
