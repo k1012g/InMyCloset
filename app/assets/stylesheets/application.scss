@@ -19,6 +19,25 @@
 @import 'font-awesome';
 
 
+/* font名の指定 */
+body{
+	font-family: "Georgia";
+}
+
+/* リセットcss */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* clearfix */
+.clearfix{
+	content: "";
+	display: block;
+	clear: both;
+}
+
 /* スマホ レスポンシブ */
 @media screen and (max-width: 414px){
 
@@ -400,9 +419,41 @@
 /* PC画面 レスポンシブ */
 @media screen and (min-width: 991px) {
 
+	.container{
+		margin: 30px auto;
+	}
+
+	/* ヘッダー固定の時にレイアウト維持のため */
+	body{
+		margin-top: 110px;
+	}
+
+	.form-table{
+		table-layout: fixed;
+		th{
+			width: 100px;
+		}
+	}
+
 	/* 横幅の指定 */
-	.width-max{
+	.width-xl{
 		width: 100%;
+	}
+
+	.width-l{
+		width: 85%;
+	}
+
+	.width-m{
+		width: 60%;
+	}
+
+	.width-s{
+		width: 45%
+	}
+
+	.width-xs{
+		width: 30%;
 	}
 
 	/* 横に4要素を並べる */
@@ -451,14 +502,25 @@
 		font-size: 5rem;
 	}
 
-	/*
 	.font-s{
-
+		font-size: 4rem;
 	}
+
 	.font-xs{
-
+		font-size: 2rem;
 	}
-	*/
+
+	/* ページ上部に戻るボタン */
+	#top-btn{
+		position: fixed;
+		right: 80px;
+		bottom: 75px;
+		z-index: 1000;
+		font-size: 50px;
+		&:hover{
+			opacity: 0.8;
+		}
+	}
 
 	/* ヘッダー */
 	.header{
@@ -472,6 +534,7 @@
 		span{
 			text-align: left;
 		}
+
 		a{
 			line-height: 80px;
 			float: left;
@@ -479,18 +542,35 @@
 			font-size: 20px;
 			padding: 0 20px;
 		}
+
 		#nav{
 			display: none;
 		}
-		i{
-			display: none;
+
+		.header-links{
+			i{
+				display: none;
+			}
 		}
 	}
 
+	/* ヘッダー固定 */
 	.header.sticky{
 		position: fixed;
 		top: 0;
 		opacity: 0.95;
+	}
+
+	/* フッター */
+	.footer{
+		width: 100%;
+		height: 60px;
+		text-align: center;
+		background-color: #292929;
+		strong{
+			color: #fff;
+			line-height: 60px;
+		}
 	}
 
 
@@ -499,6 +579,7 @@
 		.contents1{
 			width: 100%;
 			height: 700px;
+			border: 1px solid #292929;
 			background-image: image-url("contents-sm.jpg");
 			background-size: cover;
 			background-position: center;
@@ -517,6 +598,7 @@
 		.contents2{
 			width: 100%;
 			height: 500px;
+			border: 1px solid #292929;
 			background-image: image-url("application.jpg");
 			background-size: cover;
 			background-position: center;
@@ -540,7 +622,7 @@
 				width: 70%;
 				height: 400px;
 				margin: 30px auto;
-				border: 1px solid black;
+				border: 1px solid #292929;
 			}
 			.step1{
 				background-image: image-url("signup.png");
@@ -560,17 +642,21 @@
 		}
 	}
 
-
-
-	/* フッター */
-	.footer{
-		width: 100%;
-		height: 60px;
-		text-align: center;
-		background-color: #292929;
-		strong{
-			color: #fff;
-			line-height: 60px;
+	/* アバウト画面 */
+	.about{
+		a{
+			color: red;
+		}
+		ul{
+			list-style: none;
+			font-size: 30px;
+			margin-bottom: 17px;
+		}
+		.inventor{
+			color: #292929;
+			background: -webkit-linear-gradient(0deg, #ACB6E5, #86FDE8);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
 	}
 
@@ -580,22 +666,6 @@
 		height: 350px;
 		margin: 0 auto;
 		border: double black;
-	}
-
-
-	/* アバウト画面 */
-	.about{
-		text-align: center;
-		span{
-			font-size: 30px;
-		}
-		li{
-			font-size: 20px;
-			text-align: left;
-		}
-		a{
-			color: red;
-		}
 	}
 
 	/* プロフィール編集 */
@@ -633,27 +703,6 @@
 		border-radius: 50%;
 		overflow: hidden;
 	}
-
-	body{
-		margin-top: 110px;
-	}
-	.form-table{
-		table-layout: fixed;
-		th{
-			width: 100px;
-		}
-	}
-	/* ページ上部に戻るボタン */
-	#top-btn{
-		position: fixed;
-		right: 80px;
-		bottom: 65px;
-		z-index: 1000;
-		font-size: 50px;
-		&:hover{
-			opacity: 0.8;
-		}
-	}
 }
 
 /* select_tag */
@@ -661,25 +710,6 @@ select{
 	background-color: #292929;
 	color: #fff;
 	height: 34px;
-}
-
-/* font名の指定 */
-body{
-	font-family: "Georgia";
-}
-
-/* リセットcss */
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-/* clearfix */
-.clearfix{
-	content: "";
-	display: block;
-	clear: both;
 }
 
 /* user imageの形 */
