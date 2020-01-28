@@ -1,16 +1,12 @@
-<strong class="font-xl text-center">
+<strong class="font-l text-center" style="display: block; margin-bottom: 20px;">
 	<!-- そのページのユーザーネーム -->
 	<%= @user.name %>
 </strong>
-<strong class="font-md text-center">
-	Following Users(<%= @following.count %>)
-</strong>
-<br><br>
 <% if @following.blank? %>
 <!-- フォローしている人がいない時 -->
-	<strong class="font-xl text-center">No users.</strong>
+	<strong class="font-l text-center">No users.</strong>
 	<% if current_user == @user %>
-		<strong class="font-md text-center" style="text-decoration: underline;">
+		<strong class="font-m text-center" style="text-decoration: underline;">
 			<!-- 検索ページ(ユーザー一覧が観れるため) -->
 			<%= link_to "Let's follow users!", search_path %>
 		</strong>

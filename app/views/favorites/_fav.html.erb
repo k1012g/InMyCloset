@@ -4,7 +4,7 @@
 		<!-- いいねしている時 -->
 		<span class="atag">
 			<%= link_to destroy_favorite_path(cloth.id), method: :delete, remote: true do %>
-				<%= icon 'fas', 'heart', style: "color: red;"  %>
+				<%= icon 'fas', 'heart', style: "color: red;", class: "font-xs" %>
 				<span style="color: #292929;">
 					<%= cloth.favorites.count %>
 				</span>
@@ -14,7 +14,7 @@
 		<!-- いいねしていない時 -->
 		<span class="atag">
 			<%= link_to create_favorite_path(cloth.id), method: :post, remote: true do %>
-				<%= icon 'far', 'heart', style: "color: red;" %>
+				<%= icon 'far', 'heart', style: "color: red;", class: "font-xs" %>
 				<span style="color: #292929;">
 					<%= cloth.favorites.count %>
 				</span>

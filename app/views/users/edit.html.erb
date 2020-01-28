@@ -1,40 +1,44 @@
-<strong class="font-xl text-center">Edit Profile</strong>
-<%= form_with(model: @user, local: true) do |form| %>
-	<div class="profile-edit-left">
-		<div class="profile-edit-image">
-		<!-- プロフィール画像 -->
-			<%= attachment_image_tag @user, :profile_image, :fill, 500, 500, fallback: "no_image.png"  %>
+<strong class="font-m text-center">Edit Profile</strong>
+<div class="width-l" style="margin: 15px auto 0 auto;">
+	<%= form_with(model: @user, local: true) do |form| %>
+		<div class="profile-edit-left">
+			<!-- プロフィール画像 -->
+			<%= attachment_image_tag @user, :profile_image, :fill, 500, 500, fallback: "no_image.png", size:'500x500', class: "user_image" %>
+			<div class="edit-image">
+			<!-- プロフィール画像の編集 -->
+				<strong class="font-xs text-center">Edit profile image</strong>
+				<%= form.attachment_field :profile_image %>
+			</div>
 		</div>
-		<div class="edit-image">
-		<!-- プロフィール画像の編集 -->
-			<strong class="font-sm text-center">Edit profile image</strong>
-			<%= form.attachment_field :profile_image %>
+		<div class="profile-edit-right">
+			<strong class="font-xs">User Name</strong>
+			<br>
+			<span style="color: red;">⚠️Please less than 20 characters.</span>
+			<br>
+			<%= form.text_field :name, class: "form-field" %>
+			<br>
+			<!-- ユーザーネームの編集 -->
+			<strong class="font-xs">Introduction</strong>
+			<br>
+			<span style="color: red;">⚠️Please less than 40 characters.</span>
+			<br>
+			<!-- ユーザーの自己紹介の編集 -->
+			<%= form.text_area :introduction, class: "form-area" %>
+			<br>
+			<!-- エラーメッセージ -->
+			<% if @user.errors.any? %>
+				<div id="error_explanation">
+				    <ul style="list-style: none;">
+				      <% @user.errors.full_messages.each do |message| %>
+				        <li style="color: red;"><%= message %>
+				        </li>
+				      <% end %>
+				    </ul>
+			    </div>
+			    <br>
+			<% end %>
+			<%= form.submit "Update profile", class: "btn done-btn" %>
+			<%= link_to "Back", user_path(current_user.id), class: "btn done-btn" %>
 		</div>
-	</div>
-	<div class="profile-edit-right">
-		<strong class="font-sm">User Name</strong>
-		<br>
-		<span>⚠️Please less than 20 characters.</span>
-		<%= form.text_field :name, style: "height: 25px; width: 300px;" %>
-		<!-- ユーザーネームの編集 -->
-		<strong class="font-sm">Introduction</strong>
-		<br>
-		<span>⚠️Please less than 40 characters.</span>
-		<!-- ユーザーの自己紹介の編集 -->
-		<%= form.text_area :introduction, style: "height: 150px; width: 300px;" %>
-		<!-- エラーメッセージ -->
-		<% if @user.errors.any? %>
-			<div id="error_explanation">
-			    <ul style="list-style: none;">
-			      <% @user.errors.full_messages.each do |message| %>
-			        <li style="color: red;"><%= message %>
-			        </li>
-			      <% end %>
-			    </ul>
-		    </div>
-		<% end %>
-		<br>
-		<%= form.submit "Update profile", class: "btn done-btn", style: "width: 244px;" %>
-		<%= link_to "Back", user_path(current_user.id), class: "btn done-btn" %>
-	</div>
-<% end %>
+	<% end %>
+</div>

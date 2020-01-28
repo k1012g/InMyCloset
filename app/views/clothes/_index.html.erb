@@ -8,17 +8,19 @@
 <br>
 <!-- 投稿した人の画像、名前とその人のページへのリンク -->
 <span class="atag">
-	<%= link_to user_path(clothes.user.id) do %>
-		<%= attachment_image_tag clothes.user, :profile_image, :fill, 70, 70, fallback: "no_image.png", size:'70x70', class: "user_image" %>
-		<span style="color: #292929;">
-			<%= clothes.user.name %>
-		</span>
+	<% unless controller.controller_name == 'users' && controller.action_name == 'show' %>
+		<%= link_to user_path(clothes.user.id) do %>
+			<%= attachment_image_tag clothes.user, :profile_image, :fill, 70, 70, fallback: "no_image.png", size:'70x70', class: "user_image" %>
+			<span style="color: #292929;">
+				<%= clothes.user.name %>
+			</span>
+		<% end %>
 	<% end %>
 </span>
 <!-- いいね機能の部分テンプレート -->
-<span id="favorites_<%= clothes.id %>" class="font-sm">
+<div id="favorites_<%= clothes.id %>" class="font-xs" style="display: inline-block;">
 	<%= render 'favorites/fav', cloth: clothes %>
-</span>
+</div>
 <!-- フォロー機能の部分テンプレート -->
 <% if controller.controller_name != "top" && controller.controller_name != "users" %>
 	<% if current_user != clothes.user %>

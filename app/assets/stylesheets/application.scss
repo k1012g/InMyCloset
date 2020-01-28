@@ -38,6 +38,8 @@ body{
 	clear: both;
 }
 
+/* ------------------------------------------------------ */
+
 /* スマホ レスポンシブ */
 @media screen and (max-width: 414px){
 
@@ -239,7 +241,7 @@ body{
 
 
 
-
+/* ------------------------------------------------------ */
 
 /* スマホ横画面 & タブレット縦画面 レスポンシブ */
 @media screen and (min-width: 415px) and (max-width: 990px){
@@ -413,8 +415,7 @@ body{
 
 
 
-
-
+/* ------------------------------------------------------ */
 
 /* PC画面 レスポンシブ */
 @media screen and (min-width: 991px) {
@@ -668,20 +669,42 @@ body{
 		border: double black;
 	}
 
-	/* プロフィール編集 */
-
-	.introduction{
-		width: 300px;
+	/* プロフィール画面 */
+	.profile{
 		margin: 0 auto;
-		margin-top: -15px;
-		border: double black;
-		padding: 10px;
+		.category{
+			width: 20%;
+			float: left;
+		}
+		.image{
+			float: left;
+			margin-left: 30px;
+		}
+		.info{
+			float: left;
+			margin-left: 100px;
+			.introduction{
+				width: 300px;
+				margin: 0 auto;
+				margin-top: -20px;
+				border: 1px solid #292929;
+				padding: 5px;
+			}
+		}
 	}
 
+
+	/* プロフィール編集画面 */
+
 	.profile-edit-left{
-		width: 55%;
 		float: left;
 		margin: 0 auto;
+		.user_image{
+			margin: 0 auto;
+			border: 1px solid black;
+			border-radius: 50%;
+			overflow: hidden;
+		}
 		.edit-image{
 			input{
 				margin: 0 0 0 150px;
@@ -689,19 +712,17 @@ body{
 		}
 	}
 	.profile-edit-right{
-		width: 40%;
-		padding: 30px;
-		margin-left: 0%;
+		margin-top: 100px;
+		margin-left: 100px;
 		float: left;
 		text-align: left;
-	}
-	.profile-edit-image{
-		width: 500px;
-		height: 500px;
-		margin: 0 auto;
-		border: 1px solid black;
-		border-radius: 50%;
-		overflow: hidden;
+		.form-field{
+			width: 300px;
+		}
+		.form-area{
+			width: 300px;
+			height: 100px;
+		}
 	}
 }
 
