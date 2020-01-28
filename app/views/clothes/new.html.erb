@@ -1,10 +1,8 @@
 <!-- プレビュー -->
-<div class="col-xs-6" style="text-align: center;">
-	<strong class="font-md">Preview</strong>
-	<div class="cloth-preview">
-		<span style="line-height: 350px; font-size: 30px;">
-			<strong>Image is here.</strong>
-		</span>
+<div class="preview text-center">
+	<strong class="font-s">Preview</strong>
+	<div>
+		<strong>Image is here.</strong>
 	</div>
 	<br>
 	<strong>Category : </strong>
@@ -17,8 +15,8 @@
 	<span>(Example : 42/S)</span>
 </div>
 <!-- 入力フォーム -->
-<div class="col-xs-6">
-	<strong class="font-md text-center">Add clothes</strong>
+<div class="new">
+	<strong class="font-s text-center">Add clothes</strong>
 	<%= form_with(model: @cloth, url: create_clothes_path, local: true) do |f| %>
 		<!-- 入力フォームの部分テンプレート -->
 		<%= render 'clothes/form', form: f %>

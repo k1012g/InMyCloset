@@ -1,6 +1,6 @@
 <!-- 投稿そのものを表示 -->
-<div style="width: 200px;" class="outer">
-	<strong class="font-md cover">
+<div class="outer">
+	<strong class="font-s cover">
 		<%= clothes.brand %>
 	</strong>
 	<%= attachment_image_tag clothes, :image, :fill, 200, 200 %>
@@ -26,10 +26,6 @@
 	<% if current_user != clothes.user %>
 		<span id="follow_<%= clothes.user.id %>">
 			<%= render 'relationships/follow' , user: clothes.user %>
-		</span>
-	<% else %>
-		<span>
-			<%= link_to "Me", user_path(current_user.id), class: "btn done-btn", style: "width: 65px;" %>
 		</span>
 	<% end %>
 <% end %>

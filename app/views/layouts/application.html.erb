@@ -15,11 +15,6 @@
     <%= render 'layouts/header' %>
     <div class="container clearfix">
       <%= yield %>
-      <% if devise_controller? == false %>
-        <button>
-          <%= icon 'far', 'arrow-alt-circle-up', id: "top-btn" %>
-        </button>
-      <% end %>
     </div>
     <%= render 'layouts/footer' %>
   </body>
