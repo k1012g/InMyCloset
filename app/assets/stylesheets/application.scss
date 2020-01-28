@@ -160,6 +160,10 @@
 		}
 	}
 
+	.font-sm{
+		font-size: 10px;
+	}
+
 	.font-md{
 		font-size: 20px;
 	}
@@ -187,7 +191,16 @@
 
 	.width4{
 		width: 200px;
-		margin: 3px 3px;
+		height: 350px;
+		padding: 2px;
+		margin: 3px;
+		overflow: hidden;
+		float: left;
+	}
+	.width4-auto{
+		width: 48%;
+		margin: 1%;
+		padding-left: 2px;
 		overflow: hidden;
 		float: left;
 	}
