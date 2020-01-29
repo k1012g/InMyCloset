@@ -250,26 +250,100 @@ body{
 		margin-top: 80px;
 	}
 
+	.container{
+		margin-bottom: 20px;
+	}
+
+	/* 横に3要素を並べる */
+	.contents-size{
+		width: 32%;
+		height: 350px;
+		margin-bottom: 1%;
+		margin-right: 1%;
+		padding-left: 18px;
+		padding-bottom: 10px;
+		float: left;
+		overflow: hidden;
+	}
+
+	/* 横に3要素を並べる(高さ指定なし) */
+	.contents-size-auto{
+		width: 32%;
+		margin-bottom: 1%;
+		margin-right: 1%;
+		padding-left: 19px;
+		padding-bottom: 10px;
+		float: left;
+	}
+
+	.form-table{
+		table-layout: fixed;
+		th{
+			width: 88px;
+		}
+	}
+
+	/* 横幅の指定 */
+	.width-xl{
+		width: 90%;
+	}
+
+	.width-l{
+		width: 85%;
+	}
+
+	.width-m{
+		width: 55%;
+	}
+
+	.width-s{
+		width: 50%
+	}
+
+	.width-xs{
+		width: 40%;
+	}
+
+	/* fontのサイズ指定 */
+	.font-xl{
+		font-size: 7rem;
+	}
+
+	.font-l{
+		font-size: 5rem;
+	}
+
+	.font-m{
+		font-size: 3.5rem;
+	}
+
+	.font-s{
+		font-size: 2.5rem;
+	}
+
+	.font-xs{
+		font-size: 1.5rem;
+	}
+
+	/* ヘッダー */
 	.header{
 		width: 100%;
 		height: 50px;
-		background-color: #292929;
+		padding: 0 10px;
 		position: absolute;
 		top: 0;
+		background-color: #292929;
 		z-index: 1000;
-		span{
+		.title{
 			text-align: left;
 			color: #fff;
 			line-height: 50px;
-			font-size: 200%;
-			padding-left: 20px;
 		}
 		.links{
 			display: none;
 		}
 		i{
 			color: #fff;
-			font-size: 200%;
 			line-height: 50px;
 			padding-right: 10px;
 		}
@@ -293,124 +367,167 @@ body{
 					}
 				}
 			}
-
 		}
 		.open{
 			transform: translate3d(-110px, 0, 0);
 		}
 	}
 
+	/* ヘッダー固定 */
 	.header.sticky{
 		position: fixed;
 		top: 0;
 		opacity: 0.95;
 	}
 
+	/* フッター */
 	.footer{
 		width: 100%;
-		height: 38px;
+		height: 35px;
+		text-align: center;
 		background-color: #292929;
+		position: relative;
 		strong{
 			color: #fff;
-			line-height: 38px;
+			line-height: 35px;
+		}
+		/* ページ上部に戻るボタン */
+		#top-btn{
+			position: absolute;
+			right: 50px;
+			bottom: 60px;
+			z-index: 1000;
+			&:hover{
+				opacity: 0.8;
+			}
 		}
 	}
 
-	.top-contents{
-		width: 100%;
-		height: 250px;
-		border: 1px solid black;
-		text-align: center;
-		background-image: image-url("contents-sm.jpg");
-		background-size: cover;
-		background-position: center;
-		span{
-			display: block;
-			margin: 115px auto;
-			color: #FBFBFB;
-		}
-	}
-	.top-contents2{
-		width: 70%;
-		height: 200px;
-		border: 1px solid black;
-		text-align: center;
-		background-image: image-url("application.jpg");
-		background-size: cover;
-		background-position: center;
-		margin: 0 auto;
-		span{
-			display: block;
-			margin: 80px auto;
-			color: #FBFBFB;
-		}
-	}
-	.top-contents3{
-		a{
-			color: red;
-		}
-		div{
-			width: 70%;
+	.top{
+		.contents1{
+			width: 100%;
 			height: 300px;
-			margin: 0 auto;
+			padding: 120px;
 			border: 1px solid black;
-		}
-		.step1{
-			background-image: image-url("signup.png");
+			text-align: center;
+			background-image: image-url("contents-sm.jpg");
 			background-size: cover;
 			background-position: center;
+			margin-bottom: 50px;
+			strong{
+				color: #fff;
+			}
 		}
-		.step2{
-			background-image: image-url("add-clothes.jpg");
+		.contents2{
+			width: 80%;
+			height: 300px;
+			border: 1px solid black;
+			text-align: center;
+			background-image: image-url("application.jpg");
 			background-size: cover;
 			background-position: center;
+			margin: 0 auto;
+			margin-bottom: 50px;
+			strong{
+				display: block;
+				margin: 140px auto;
+				color: #FBFBFB;
+			}
 		}
-		.step3{
-			background-image: image-url("shopping.jpg");
-			background-size: cover;
-			background-position: center;
+		.contents3{
+			margin-bottom: 50px;
+			a{
+				color: red;
+			}
+			div{
+				width: 70%;
+				height: 300px;
+				margin: 0 auto;
+				margin-bottom: 30px;
+				border: 1px solid black;
+			}
+			.step1{
+				background-image: image-url("signup.png");
+				background-size: cover;
+				background-position: center;
+			}
+			.step2{
+				background-image: image-url("add-clothes.jpg");
+				background-size: cover;
+				background-position: center;
+			}
+			.step3{
+				background-image: image-url("shopping.jpg");
+				background-size: cover;
+				background-position: center;
+			}
 		}
 	}
-	.font-xl{
-		font-size: 50px;
-	}
-	.font-md{
-		font-size: 35px;
-	}
-
 	.about{
-		text-align: center;
-		span{
-			font-size: 30px;
-		}
-		li{
-			font-size: 20px;
-			text-align: left;
-		}
 		a{
 			color: red;
 		}
-	}
-
-	.form-table{
-		table-layout: fixed;
-		th{
-			width: 100px;
+		ul{
+			list-style: none;
+			font-size: 22px;
+			margin-bottom: 12px;
+		}
+		.inventor{
+			color: #292929;
+			background: -webkit-linear-gradient(0deg, #ACB6E5, #86FDE8);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
 	}
 
-	/* ページ上部に戻るボタン */
-	#top-btn{
-		position: fixed;
-		right: 45px;
-		bottom: 45px;
-		z-index: 1000;
-		font-size: 50px;
-		&:hover{
-			opacity: 0.8;
+	/* マイページ */
+	.profile{
+		margin: 0 auto;
+		margin-bottom: 30px;
+		.category{
+			width: 20%;
+			float: left;
+		}
+		.image{
+			float: left;
+			margin-left: 15px;
+		}
+		.info{
+			float: left;
+			width: 250px;
+			margin-left: 15px;
+			.introduction{
+				margin: 0 auto;
+				margin-top: -15px;
+				border: 1px solid #292929;
+				padding: 2px;
+			}
 		}
 	}
 
+	/* プロフィール編集 */
+	.profile-edit-left{
+		width: 300px;
+		float: left;
+		img{
+			width: 300px;
+			height: 300px;
+		}
+		.edit-image{
+			width: 300px;
+		}
+	}
+	.profile-edit-right{
+		width: 220px;
+		float: left;
+		margin: 60px 0 0 60px;
+	}
+
+	.outer{
+		.cover{
+			display: none;
+		}
+	}
 }
 
 
@@ -427,13 +544,6 @@ body{
 	/* ヘッダー固定の時にレイアウト維持のため */
 	body{
 		margin-top: 110px;
-	}
-
-	.form-table{
-		table-layout: fixed;
-		th{
-			width: 100px;
-		}
 	}
 
 	/* 横幅の指定 */
@@ -457,6 +567,13 @@ body{
 		width: 30%;
 	}
 
+	.form-table{
+		table-layout: fixed;
+		th{
+			width: 100px;
+		}
+	}
+
 	/* 横に4要素を並べる */
 	.contents-size{
 		width: 24%;
@@ -477,17 +594,6 @@ body{
 		padding-left: 19px;
 		padding-bottom: 10px;
 		float: left;
-	}
-
-	/* 要素の中央寄せ */
-	.text-center{
-		text-align: center;
-		display: block;
-	}
-
-	/* 要素の境界線の表示 */
-	.border{
-		border: 1px solid #D3D3D3;
 	}
 
 	/* fontのサイズ指定 */
@@ -806,4 +912,15 @@ a{
 		background-color: #5D5D5D;
 		color: #fff;
 	}
+}
+
+/* 要素の境界線の表示 */
+.border{
+	border: 1px solid #D3D3D3;
+}
+
+/* 要素の中央寄せ */
+.text-center{
+	text-align: center;
+	display: block;
 }

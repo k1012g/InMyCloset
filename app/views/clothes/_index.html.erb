@@ -21,6 +21,7 @@
 <div id="favorites_<%= clothes.id %>" class="font-xs" style="display: inline-block;">
 	<%= render 'favorites/fav', cloth: clothes %>
 </div>
+<br>
 <!-- フォロー機能の部分テンプレート -->
 <% if controller.controller_name != "top" && controller.controller_name != "users" %>
 	<% if current_user != clothes.user %>
