@@ -1,6 +1,6 @@
 <header class="header">
 	<%= link_to root_path do %>
-			<strong class="font-s">InMyCloset</strong>
+			<strong class="font-s title">InMyCloset</strong>
 	<% end %>
 	<% if signed_in? %>
 		<div class="header-links" style="float: right;">
@@ -16,7 +16,7 @@
 			<strong class="links">
 				<%= link_to "Sign out", destroy_user_session_path, data: { confirm: "Sign out ?" }, method: :delete %>
 			</strong>
-			<%= icon 'fas', 'bars', id: "menu" %>
+			<%= icon 'fas', 'bars', id: "menu", class: "font-s" %>
 		</div>
 	<% else %>
 		<div class="header-links" style="float: right;">
@@ -32,7 +32,7 @@
 			<strong class="links">
 				<%= link_to "Sign up!", new_user_registration_path %>
 			</strong>
-			<%= icon 'fas', 'bars', id: "menu" %>
+			<%= icon 'fas', 'bars', id: "menu", class: "font-s" %>
 		</div>
 	<% end %>
 	<%= render 'layouts/nav' %>
