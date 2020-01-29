@@ -350,17 +350,17 @@ body{
 		#nav{
 			position: fixed;
 			top: 50px;
-			right: -110px;
-			width: 110px;
-			height: 140px;
-			padding: 10px;
+			right: -170px;
+			width: 170px;
+			padding: 20px;
 			background-color: rgba(0, 0, 0, 0.77);
 			transition: transform 0.9s;
 			z-index: 1000;
 			ul{
 				list-style: none;
 				li{
-					margin-bottom: 5px;
+					margin-bottom: 20px;
+					font-size: 20px;
 					a{
 						color: #fff;
 						text-decoration: underline;
@@ -369,7 +369,7 @@ body{
 			}
 		}
 		.open{
-			transform: translate3d(-110px, 0, 0);
+			transform: translate3d(-170px, 0, 0);
 		}
 	}
 
@@ -527,6 +527,40 @@ body{
 		.cover{
 			display: none;
 		}
+	}
+
+	/* 新規投稿画面 */
+	.preview{
+		margin: 0 6%;
+		width: 40%;
+		float: left;
+		div{
+			margin: 0 auto;
+			border: 1px solid #292929;
+			height: 300px;
+			strong{
+				font-size: 15px;
+				line-height: 300px;
+			}
+		}
+	}
+	.new{
+		width: 44%;
+		float: left;
+	}
+
+	.before-edit{
+		width: 40%;
+		margin: 0 5%;
+		float: left;
+		img{
+			width: 280px;
+			height: 280px;
+		}
+	}
+	.edit{
+		width: 45%;
+		float: left;
 	}
 }
 
