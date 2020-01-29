@@ -21,7 +21,7 @@
 	</div>
 	<div class="info">
 		<strong class="font-s text-center">
-			<%= @user.name %>
+			<%= @user.name %><br>
 			<span id="follow_<%= @user.id %>">
 				<% if current_user != @user %>
 					<%= render 'relationships/follow' , user: @user %>
@@ -29,7 +29,7 @@
 			</span>
 		</strong>
 		<br>
-		<span class="atag text-center" style="display: block; margin-bottom: 20px;">
+		<span class="atag text-center follow" style="display: block; margin-bottom: 20px;">
 			<%= link_to following_path(@user.id) do %>
 				<strong class="font-xs">
 					Following :
@@ -44,7 +44,7 @@
 				</strong>
 			<% end %>
 		</span>
-		<strong class="text-center" style="font-size: 3rem; display: block; margin-bottom: 25px;">
+		<strong class="text-center introduction-title" style="font-size: 3rem; display: block; margin-bottom: 25px;">
 			Introduction
 		</strong>
 		<div class="font-xs introduction">
