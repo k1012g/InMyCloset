@@ -1,13 +1,15 @@
 <% if signed_in? %>
 	<!-- ログインしているときはフォローしている人のタイムラインを表示 -->
-	<strong class="font-l text-center">
-		Today's Post : <%= @todayPost %>
-	</strong>
-	<% @cloth.each do |cloth| %>
-		<div class="contents-size border">
-			<%= render 'clothes/index', clothes: cloth %>
-		</div>
-	<% end %>
+	<div class="top">
+		<strong class="font-l text-center">
+			Today's Post : <%= @todayPost %>
+		</strong>
+		<% @cloth.each do |cloth| %>
+			<div class="contents-size-top border">
+				<%= render 'clothes/index', clothes: cloth %>
+			</div>
+		<% end %>
+	</div>
 <% else %>
 	<!-- ログインしていないときはTOPページ -->
 	<div class="text-center top">

@@ -65,6 +65,27 @@ body{
 	}
 
 
+	/* タイムライン用 */
+	.top{
+		.contents-size-top{
+			width: 100%;
+			margin: 0 1%;
+			float: left;
+			overflow: hidden;
+			margin-bottom: 10px;
+			.outer{
+				margin-bottom: -30px;
+			}
+			img{
+				width: 350px;
+			}
+			.user_image{
+				width: 110px;
+				height: 110px;
+			}
+		}
+	}
+
 	.header{
 		width: 100%;
 		height: 45px;
@@ -218,6 +239,84 @@ body{
 			-webkit-text-fill-color: transparent;
 		}
 	}
+
+	.form-table{
+		table-layout: fixed;
+		th{
+			width: 70px;
+			font-size: 13px;
+		}
+	}
+
+	/* 横に2要素を並べる */
+	.contents-size{
+		width: 48%;
+		height: 300px;
+		margin: 1%;
+		float: left;
+		overflow: hidden;
+		.user_image{
+			width: 180px;
+			height: 180px;
+		}
+	}
+
+	/* 横に2要素を並べる(高さ指定なし) */
+	.contents-size-auto{
+		width: 48%;
+		margin: 1%;
+		margin-bottom: 5px;
+		float: left;
+		padding: 2px;
+		overflow: hidden;
+		img{
+			width: 150px;
+			height: 150px;
+		}
+	}
+
+	.profile{
+		margin: 0 auto;
+		.category{
+			width: 22%;
+			float: left;
+			strong{
+				font-size: 12px;
+			}
+		}
+		.image{
+			width: 100px;
+			float: left;
+			img{
+				width: 100px;
+				height: 100px;
+			}
+		}
+		.info{
+			width: 150px;
+			float: left;
+			margin-left: 10px;
+			.introduction{
+				width: 150px;
+				margin: 0 auto;
+				margin-top: -10px;
+				border: 1px solid #292929;
+				padding: 2px;
+			}
+			.follow{
+				strong{
+					font-size: 10px;
+				}
+			}
+			.introduction-title{
+				font-size: 13px;
+			}
+			.done-btn{
+				width: 100%;
+				margin-bottom: 3px;
+			}
+		}
+	}
 }
 
 
@@ -237,6 +336,17 @@ body{
 
 	.container{
 		margin-bottom: 20px;
+	}
+
+	.contents-size-top{
+		width: 32%;
+		height: 350px;
+		margin-bottom: 1%;
+		margin-right: 1%;
+		padding-left: 18px;
+		padding-bottom: 10px;
+		float: left;
+		overflow: hidden;
 	}
 
 	/* 横に3要素を並べる */
@@ -595,6 +705,17 @@ body{
 		}
 	}
 
+	.contents-size-top{
+		width: 24%;
+		height: 350px;
+		margin-bottom: 1%;
+		margin-right: 1%;
+		padding-left: 18px;
+		padding-bottom: 10px;
+		float: left;
+		overflow: hidden;
+	}
+
 	/* 横に4要素を並べる */
 	.contents-size{
 		width: 24%;
@@ -927,7 +1048,6 @@ a{
 
 /* 完了ボタン */
 .done-btn{
-	margin-top: 2px;
 	background-color: #292929;
 	color: #fff;
 	&:hover{
