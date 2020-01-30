@@ -17,11 +17,9 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-
-// 投稿のアニメーション
 $(document).on('turbolinks:load', function() {
+	// 投稿のマウスオーバー時のアニメーション
 	let $image = $('.outer');
-
 	$image
 		.on('mouseover', function(){
 			$(this).find('.cover').stop(true).animate({
@@ -33,20 +31,14 @@ $(document).on('turbolinks:load', function() {
 				opacity: 0
 			}, 300);
 		});
-});
 
-// スライドメニュー
-$(document).on('turbolinks:load', function(){
+	// メニュー開閉
 	$('#menu').on('click', function(){
 		$('#nav').toggleClass('open');
 	});
-});
 
-
-// ヘッダーの固定
-$(document).on('turbolinks:load', function(){
+	// ヘッダーの固定
 	$('.header').each(function(){
-
 		let $window = $(window),
 			$header = $(this),
 			headerOffsetTop = $header.offset().top;
@@ -61,13 +53,11 @@ $(document).on('turbolinks:load', function(){
 
 		$window.trigger('scroll');
 	});
-});
 
-
-$(document).on('turbolinks:load', function(){
+	// ページ上部に戻るボタン
 	let $topBtn = $('#top-btn');
 
-	$topBtn.each(function(){
+	$opBtn.each(function(){
 		let el = ('html');
 
 		$(this).on('click', function(){

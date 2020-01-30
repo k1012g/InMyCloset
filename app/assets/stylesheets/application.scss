@@ -19,37 +19,126 @@
 @import 'font-awesome';
 
 
-/* font名の指定 */
+
+/* ----------------------- 共通CSS ----------------------- */
+
+/* ----- font名の指定 ----- */
+
 body{
 	font-family: "Georgia";
 }
 
-/* リセットcss */
+
+
+/* ----- リセットcss ----- */
+
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-/* clearfix */
+
+
+/* ----- clearfix ----- */
+
 .clearfix{
 	content: "";
 	display: block;
 	clear: both;
 }
 
-/* ------------------------------------------------------ */
 
-/* スマホ レスポンシブ */
+
+/* ----- select_tag ----- */
+
+select{
+	background-color: #292929;
+	color: #fff;
+	height: 34px;
+}
+
+
+
+/* ----- プロフィール画像 ----- */
+
+.user_image{
+	border: 1px solid black;
+	border-radius: 50%;
+}
+
+
+
+/* ----- エラー文 ----- */
+
+#flash_alert{
+	font-size: 14px;
+	color: red;
+}
+
+
+
+/* ----- aタグのアニメーション ----- */
+
+.atag{
+	text-decoration: none;
+	a{
+		text-decoration: none;
+		&:hover{
+			opacity: 0.6;
+		}
+	}
+}
+
+a{
+	color: #292929;
+}
+
+
+
+/* ----- ボタン ----- */
+
+.done-btn{
+	background-color: #292929;
+	color: #fff;
+	&:hover{
+		background-color: #5D5D5D;
+		color: #fff;
+	}
+}
+
+
+
+/* ----- コンテンツのボーダー ----- */
+
+.border{
+	border: 1px solid #D3D3D3;
+}
+
+
+
+/* ----- 要素の中央寄せ ----- */
+
+.text-center{
+	text-align: center;
+	display: block;
+}
+
+
+
+/* ------------------ スマホのレスポンシブ ------------------ */
+
 @media screen and (max-width: 414px){
+
 	.container{
 		margin-top: 55px;
 		margin-bottom: 35px;
 	}
 
-	/* fontサイズの指定 */
-	.font-xl{
+	/* ----- fontサイズの指定 ----- */
 
+	.font-xl{
+		font-size: 5rem;
 	}
 	.font-l{
 		font-size: 4.2rem;
@@ -64,27 +153,7 @@ body{
 		font-size: 1.7rem;
 	}
 
-
-	/* タイムライン用 */
-	.top{
-		.contents-size-top{
-			width: 100%;
-			margin: 0 1%;
-			float: left;
-			overflow: hidden;
-			margin-bottom: 10px;
-			.outer{
-				margin-bottom: -30px;
-			}
-			img{
-				width: 350px;
-			}
-			.user_image{
-				width: 110px;
-				height: 110px;
-			}
-		}
-	}
+	/* ----- ヘッダー ----- */
 
 	.header{
 		width: 100%;
@@ -104,6 +173,9 @@ body{
 			color: #fff;
 			line-height: 45px;
 		}
+
+		/* ----- メニュー ----- */
+
 		#nav{
 			position: fixed;
 			top: 45px;
@@ -130,12 +202,15 @@ body{
 		}
 	}
 
-	/* ヘッダー固定 */
+	/* ----- ヘッダー固定 ----- */
+
 	.header.sticky{
 		position: fixed;
 		top: 0;
 		opacity: 0.95;
 	}
+
+	/* ----- フッター ----- */
 
 	.footer{
 		width: 100%;
@@ -148,7 +223,10 @@ body{
 			color: #fff;
 			line-height: 25px;
 		}
-		/* ページ上部に戻るボタン */
+
+
+		/* ----- ページ上部に戻るボタン ----- */
+
 		#top-btn{
 			position: absolute;
 			right: 40px;
@@ -160,6 +238,39 @@ body{
 			}
 		}
 	}
+
+
+	/* ----- トップ画面(ログイン済) ----- */
+
+	.top{
+		.contents-size-top{
+			width: 100%;
+			margin: 0 1%;
+			float: left;
+			overflow: hidden;
+			margin-bottom: 10px;
+			.outer{
+				margin-bottom: -30px;
+			}
+			img{
+				width: 350px;
+			}
+			.user_image{
+				width: 110px;
+				height: 110px;
+			}
+		}
+	}
+
+	/* ----- タイムラインの投稿時間 ----- */
+
+	.time{
+		font-size: 3rem;
+		text-align: center;
+		display: block;
+	}
+
+	/* ----- トップ画面(未ログイン) ----- */
 
 	.top{
 		.contents1{
@@ -223,6 +334,9 @@ body{
 		}
 	}
 
+
+	/* ----- アバウト画面 ----- */
+
 	.about{
 		a{
 			color: red;
@@ -240,6 +354,9 @@ body{
 		}
 	}
 
+
+	/* ----- ログイン、サインアップ画面のフォーム ----- */
+
 	.form-table{
 		table-layout: fixed;
 		th{
@@ -248,7 +365,9 @@ body{
 		}
 	}
 
-	/* 横に2要素を並べる */
+
+	/* ----- 横に2要素を並べる ----- */
+
 	.contents-size{
 		width: 48%;
 		height: 300px;
@@ -262,7 +381,8 @@ body{
 		}
 	}
 
-	/*  */
+	/* ----- 横に2要素を並べる(画像サイズ調整あり) ----- */
+
 	.contents-cloth{
 		width: 48%;
 		height: 350px;
@@ -280,7 +400,8 @@ body{
 		}
 	}
 
-	/* 横に2要素を並べる(高さ指定なし) */
+	/* ----- 横に2要素を並べる(高さ指定なし) ----- */
+
 	.contents-size-auto{
 		width: 48%;
 		margin: 1%;
@@ -294,8 +415,12 @@ body{
 		}
 	}
 
+	/* ----- マイページ ----- */
+
 	.profile{
 		margin: 0 auto;
+		/* ----- カテゴリー一覧 ----- */
+
 		.category{
 			width: 22%;
 			float: left;
@@ -303,6 +428,8 @@ body{
 				font-size: 11px;
 			}
 		}
+		/* ----- プロフィール画像サイズ ----- */
+
 		.image{
 			width: 100px;
 			float: left;
@@ -311,10 +438,19 @@ body{
 				height: 100px;
 			}
 		}
+
+		/* ----- プロフィール詳細 ----- */
+
 		.info{
 			width: 150px;
 			float: left;
 			margin-left: 10px;
+			/* ----- 自己紹介 ----- */
+
+			.introduction-title{
+				font-size: 20px;
+			}
+
 			.introduction{
 				width: 150px;
 				margin: 0 auto;
@@ -322,14 +458,15 @@ body{
 				border: 1px solid #292929;
 				padding: 2px;
 			}
+			/* ----- フォロー ----- */
+
 			.follow{
 				strong{
 					font-size: 10px;
 				}
 			}
-			.introduction-title{
-				font-size: 20px;
-			}
+
+			/* ----- ボタン ----- */
 			.done-btn{
 				width: 100%;
 				margin-bottom: 3px;
@@ -337,14 +474,12 @@ body{
 		}
 	}
 
-	.time{
-		font-size: 3rem;
-		text-align: center;
-		display: block;
-	}
+	/* ----- プロフィール編集 ----- */
 
 	.profile-edit-left{
 		width: 100%;
+		/* ----- プロフィール画像 ----- */
+
 		.user_image{
 			width: 200px;
 			height: 200px;
@@ -361,17 +496,25 @@ body{
 		margin: 10px auto;
 	}
 
+
+	/* ----- 検索画面のテキスト ----- */
+
 	.search-text{
 		margin-top: 20px;
 		display: block;
 		font-size: 13px;
 	}
 
+	/* ----- 新規投稿 ----- */
+
 	.preview{
 		opacity: 0;
 		width: 0;
 		height: 0;
 	}
+
+
+	/* ----- 投稿編集 ----- */
 
 	.before-edit{
 		margin-bottom: 20px;
@@ -386,6 +529,7 @@ body{
 			margin-bottom: -20px;
 		}
 	}
+
 }
 
 
@@ -393,9 +537,8 @@ body{
 
 
 
-/* ------------------------------------------------------ */
+/* ---------------- タブレットのレスポンシブ ---------------- */
 
-/* スマホ横画面 & タブレット縦画面 レスポンシブ */
 @media screen and (min-width: 415px) and (max-width: 990px){
 
 	body{
@@ -418,7 +561,7 @@ body{
 		overflow: hidden;
 	}
 
-	/* 横に3要素を並べる */
+	/* ----- 横に3要素を並べる ----- */
 	.contents-size{
 		width: 32%;
 		height: 350px;
@@ -430,7 +573,8 @@ body{
 		overflow: hidden;
 	}
 
-	/* 横に3要素を並べる(高さ指定なし) */
+	/* ----- 横に3要素を並べる(高さ指定なし) ----- */
+
 	.contents-size-auto{
 		width: 32%;
 		margin-bottom: 1%;
@@ -440,6 +584,8 @@ body{
 		float: left;
 	}
 
+	/* ----- ログイン、サインアップ用のフォーム ----- */
+
 	.form-table{
 		table-layout: fixed;
 		th{
@@ -447,7 +593,8 @@ body{
 		}
 	}
 
-	/* 横幅の指定 */
+	/* ----- 横幅の指定 -----  */
+
 	.width-xl{
 		width: 90%;
 	}
@@ -468,7 +615,8 @@ body{
 		width: 40%;
 	}
 
-	/* fontのサイズ指定 */
+	/* ----- fontのサイズ指定 ----- */
+
 	.font-xl{
 		font-size: 7rem;
 	}
@@ -489,7 +637,8 @@ body{
 		font-size: 1.5rem;
 	}
 
-	/* ヘッダー */
+	/* ----- ヘッダー ----- */
+
 	.header{
 		width: 100%;
 		height: 50px;
@@ -537,14 +686,16 @@ body{
 		}
 	}
 
-	/* ヘッダー固定 */
+	/* ----- ヘッダー固定 ----- */
+
 	.header.sticky{
 		position: fixed;
 		top: 0;
 		opacity: 0.95;
 	}
 
-	/* フッター */
+	/* ----- フッター ----- */
+
 	.footer{
 		width: 100%;
 		height: 35px;
@@ -556,7 +707,8 @@ body{
 			color: #fff;
 			line-height: 35px;
 		}
-		/* ページ上部に戻るボタン */
+		/* ----- ページ上部に戻るボタン ----- */
+
 		#top-btn{
 			position: absolute;
 			right: 50px;
@@ -567,6 +719,8 @@ body{
 			}
 		}
 	}
+
+	/* ----- トップ画面(未ログイン) ----- */
 
 	.top{
 		.contents1{
@@ -628,6 +782,9 @@ body{
 			}
 		}
 	}
+
+	/* ----- アバウト画面 ----- */
+
 	.about{
 		a{
 			color: red;
@@ -645,7 +802,9 @@ body{
 		}
 	}
 
-	/* マイページ */
+
+	/* ----- マイページ ----- */
+
 	.profile{
 		margin: 0 auto;
 		margin-bottom: 30px;
@@ -670,7 +829,8 @@ body{
 		}
 	}
 
-	/* プロフィール編集 */
+	/* ----- プロフィール編集 ----- */
+
 	.profile-edit-left{
 		width: 300px;
 		float: left;
@@ -688,13 +848,16 @@ body{
 		margin: 60px 0 0 60px;
 	}
 
+	/* ----- 投稿のjsを無効 ----- */
+
 	.outer{
 		.cover{
 			display: none;
 		}
 	}
 
-	/* 新規投稿画面 */
+	/* ----- 新規投稿画面 ----- */
+
 	.preview{
 		margin: 0 6%;
 		width: 40%;
@@ -714,6 +877,9 @@ body{
 		float: left;
 	}
 
+
+	/* ----- 投稿の編集画面 ----- */
+
 	.before-edit{
 		width: 40%;
 		margin: 0 5%;
@@ -727,13 +893,14 @@ body{
 		width: 45%;
 		float: left;
 	}
+
+
 }
 
 
 
-/* ------------------------------------------------------ */
+/* ------------------- PCのレスポンシブ ------------------- */
 
-/* PC画面 レスポンシブ */
 @media screen and (min-width: 991px) {
 
 	.container{
@@ -741,12 +908,12 @@ body{
 		margin-bottom: 60px;
 	}
 
-	/* ヘッダー固定の時にレイアウト維持のため */
 	body{
 		margin-top: 110px;
 	}
 
-	/* 横幅の指定 */
+	/* ----- 横幅の指定 ----- */
+
 	.width-xl{
 		width: 100%;
 	}
@@ -767,12 +934,17 @@ body{
 		width: 30%;
 	}
 
+	/* ----- ログイン、サインアップのフォーム ----- */
+
 	.form-table{
 		table-layout: fixed;
 		th{
 			width: 100px;
 		}
 	}
+
+	/* ----- トップ画面(ログイン済)の
+	コンテンツのサイズ調整 ----- */
 
 	.contents-size-top{
 		width: 24%;
@@ -785,7 +957,8 @@ body{
 		overflow: hidden;
 	}
 
-	/* 横に4要素を並べる */
+	/* ----- 横に4要素を並べる ----- */
+
 	.contents-size{
 		width: 24%;
 		height: 350px;
@@ -797,7 +970,8 @@ body{
 		overflow: hidden;
 	}
 
-	/* 横に4要素を並べる(高さ指定なし) */
+	/* ----- 横に4要素を並べる(高さ指定なし) ----- */
+
 	.contents-size-auto{
 		width: 24%;
 		margin-bottom: 1%;
@@ -807,7 +981,8 @@ body{
 		float: left;
 	}
 
-	/* fontのサイズ指定 */
+	/* ----- fontのサイズ指定 ----- */
+
 	.font-xl{
 		font-size: 9rem;
 	}
@@ -829,7 +1004,8 @@ body{
 	}
 
 
-	/* ヘッダー */
+	/* ----- ヘッダー ----- */
+
 	.header{
 		width: 100%;
 		height: 80px;
@@ -861,14 +1037,17 @@ body{
 		}
 	}
 
-	/* ヘッダー固定 */
+
+	/* ----- ヘッダー固定 ----- */
+
 	.header.sticky{
 		position: fixed;
 		top: 0;
 		opacity: 0.95;
 	}
 
-	/* フッター */
+	/* ----- フッター ----- */
+
 	.footer{
 		width: 100%;
 		height: 60px;
@@ -880,7 +1059,8 @@ body{
 			color: #fff;
 			line-height: 60px;
 		}
-		/* ページ上部に戻るボタン */
+		/* ----- ページ上部に戻るボタン ----- */
+
 		#top-btn{
 			position: absolute;
 			right: 80px;
@@ -894,7 +1074,8 @@ body{
 	}
 
 
-	/* トップ画面(top/top.html.erb) */
+	/* ----- トップ画面(未ログイン) ----- */
+
 	.top{
 		.contents1{
 			width: 100%;
@@ -962,7 +1143,9 @@ body{
 		}
 	}
 
-	/* アバウト画面 */
+
+	/* ----- アバウト画面 ----- */
+
 	.about{
 		a{
 			color: red;
@@ -980,7 +1163,9 @@ body{
 		}
 	}
 
-	/* 新規投稿画面 */
+
+	/* ----- 新規投稿画面 ----- */
+
 	.preview{
 		margin: 0 8%;
 		width: 30%;
@@ -999,7 +1184,9 @@ body{
 		float: left;
 	}
 
-	/* 投稿編集画面 */
+
+	/* ----- 投稿編集画面 ----- */
+
 	.before-edit{
 		margin: 0 9%;
 		width: 30%;
@@ -1010,7 +1197,9 @@ body{
 		float: left;
 	}
 
-	/* プロフィール画面 */
+
+	/* ----- プロフィール画面 ----- */
+
 	.profile{
 		margin: 0 auto;
 		.category{
@@ -1035,7 +1224,7 @@ body{
 	}
 
 
-	/* プロフィール編集画面 */
+	/* ----- プロフィール編集画面 ----- */
 
 	.profile-edit-left{
 		float: left;
@@ -1066,7 +1255,8 @@ body{
 		}
 	}
 
-	/* jQueryの処理用 */
+
+	/* ----- jQuery ----- */
 	.outer{
 		position: relative;
 		margin-top: 10px;
@@ -1079,59 +1269,5 @@ body{
 			color: #292929;
 		}
 	}
-}
 
-/* select_tag */
-select{
-	background-color: #292929;
-	color: #fff;
-	height: 34px;
-}
-
-/* user imageの形 */
-.user_image{
-	border: 1px solid black;
-	border-radius: 50%;
-}
-
-#flash_alert{
-	font-size: 14px;
-	color: red;
-}
-
-
-/* aタグのアニメーション */
-.atag{
-	text-decoration: none;
-	a{
-		text-decoration: none;
-		&:hover{
-			opacity: 0.6;
-		}
-	}
-}
-
-a{
-	color: #292929;
-}
-
-/* 完了ボタン */
-.done-btn{
-	background-color: #292929;
-	color: #fff;
-	&:hover{
-		background-color: #5D5D5D;
-		color: #fff;
-	}
-}
-
-/* 要素の境界線の表示 */
-.border{
-	border: 1px solid #D3D3D3;
-}
-
-/* 要素の中央寄せ */
-.text-center{
-	text-align: center;
-	display: block;
 }
