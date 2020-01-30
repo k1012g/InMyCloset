@@ -252,6 +252,7 @@ body{
 	.contents-size{
 		width: 48%;
 		height: 300px;
+		padding: 2px;
 		margin: 1%;
 		float: left;
 		overflow: hidden;
@@ -335,10 +336,55 @@ body{
 			}
 		}
 	}
+
 	.time{
 		font-size: 3rem;
 		text-align: center;
 		display: block;
+	}
+
+	.profile-edit-left{
+		width: 100%;
+		.user_image{
+			width: 200px;
+			height: 200px;
+			display: block;
+			margin: 0 auto;
+		}
+		input{
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	.profile-edit-right{
+		width: 220px;
+		margin: 10px auto;
+	}
+
+	.search-text{
+		margin-top: 20px;
+		display: block;
+		font-size: 13px;
+	}
+
+	.preview{
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	.before-edit{
+		margin-bottom: 20px;
+		border: 1px solid #292929;
+		overflow: hidden;
+		.font-s{
+			display: none;
+		}
+	}
+	.edit{
+		.font-s{
+			margin-bottom: -20px;
+		}
 	}
 }
 
