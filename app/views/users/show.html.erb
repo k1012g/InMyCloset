@@ -44,12 +44,14 @@
 				</strong>
 			<% end %>
 		</span>
-		<strong class="text-center introduction-title" style="display: block; margin-bottom: 25px;">
-			Introduction
-		</strong>
-		<div class="font-xs introduction">
-			<%= simple_format(@user.introduction) %>
-		</div>
+		<% if @user.introduction.present? %>
+			<strong class="text-center introduction-title" style="display: block; margin-bottom: 25px;">
+				Introduction
+			</strong>
+			<div class="font-xs introduction">
+				<%= simple_format(@user.introduction) %>
+			</div>
+		<% end %>
 		<span class="text-center" style="margin-top: 10px;">
 			<% if current_user == @user %>
 				<%= link_to "Add Clothes", new_clothes_path, class: "btn done-btn" %>
