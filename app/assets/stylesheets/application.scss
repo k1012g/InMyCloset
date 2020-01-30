@@ -256,8 +256,26 @@ body{
 		float: left;
 		overflow: hidden;
 		.user_image{
-			width: 180px;
-			height: 180px;
+			width: 160px;
+			height: 160px;
+		}
+	}
+
+	/*  */
+	.contents-cloth{
+		width: 48%;
+		height: 350px;
+		padding: 3px;
+		margin: 1%;
+		float: left;
+		overflow: hidden;
+		img{
+			width: 150px;
+			height: 150px;
+		}
+		.user_image{
+			width: 60px;
+			height: 60px;
 		}
 	}
 
@@ -281,7 +299,7 @@ body{
 			width: 22%;
 			float: left;
 			strong{
-				font-size: 12px;
+				font-size: 11px;
 			}
 		}
 		.image{
@@ -309,13 +327,18 @@ body{
 				}
 			}
 			.introduction-title{
-				font-size: 13px;
+				font-size: 20px;
 			}
 			.done-btn{
 				width: 100%;
 				margin-bottom: 3px;
 			}
 		}
+	}
+	.time{
+		font-size: 3rem;
+		text-align: center;
+		display: block;
 	}
 }
 

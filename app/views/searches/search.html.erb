@@ -44,14 +44,14 @@
 			<% if @input.blank? %>
 			<!-- 入力しない時 -->
 				<% @clothes.each do |brand| %>
-					<div class="contents-size border">
+					<div class="contents-size contents-cloth">
 						<%= render 'clothes/index', clothes: brand %>
 					</div>
 				<% end %>
 			<% else %>
 			<!-- 入力した時 -->
 				<% @results.each do |brand| %>
-					<div class="contents-size border">
+					<div class="contents-size contents-cloth">
 						<%= render 'clothes/index', clothes: brand %>
 					</div>
 				<% end %>

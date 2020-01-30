@@ -32,5 +32,7 @@
 <% end %>
 <!-- topコントローラのみ時刻を表示 -->
 <% if controller.controller_name == "top" %>
-	<%= clothes.created_at.strftime("%y/%m/%d/%H:%M") %>
+	<span class="time">
+		<%= clothes.created_at.strftime("%m/%d/%H:%M") %>
+	</span>
 <% end %>
