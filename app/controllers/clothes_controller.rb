@@ -9,9 +9,13 @@ class ClothesController < ApplicationController
     @cloth.user_id = current_user.id
     if params[:cloth][:size] != /^[0-9]+$/
       @cloth.size = params[:cloth][:size].to_s.upcase!
+    else
+      @cloth.size = params[:cloth][:size]
     end
     if params[:cloth][:brand] != /^[0-9]+$/
       @cloth.brand = params[:cloth][:brand].to_s.capitalize!
+    else
+      @cloth.brand = params[:cloth][:brand]
     end
     if @cloth.save
       redirect_to user_path(current_user.id)
@@ -28,9 +32,13 @@ class ClothesController < ApplicationController
     @cloth = Cloth.find(params[:id])
     if params[:cloth][:size] != /^[0-9]+$/
       @cloth.size = params[:cloth][:size].to_s.upcase!
+    else
+      @cloth.size = params[:cloth][:size]
     end
     if params[:cloth][:brand] != /^[0-9]+$/
       @cloth.brand = params[:cloth][:brand].to_s.capitalize!
+    else
+      @cloth.brand = params[:cloth][:brand]
     end
     if @cloth.update(cloth_params)
       redirect_to user_path(current_user.id)
