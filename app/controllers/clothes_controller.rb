@@ -7,8 +7,8 @@ class ClothesController < ApplicationController
   def create
     @cloth = Cloth.new(cloth_params)
     @cloth.user_id = current_user.id
-    @cloth.brand = params[:cloth][:brand].to_s.capitalize!
     if params[:cloth][:size] != /^[0-9]+$/
+      @cloth.brand = params[:cloth][:brand].to_s.capitalize!
       @cloth.size = params[:cloth][:size].to_s.upcase!
     end
     if @cloth.save
@@ -24,8 +24,8 @@ class ClothesController < ApplicationController
 
   def update
     @cloth = Cloth.find(params[:id])
-    @cloth.brand = params[:cloth][:brand].to_s.capitalize!
     if params[:cloth][:size] != /^[0-9]+$/
+      @cloth.brand = params[:cloth][:brand].to_s.capitalize!
       @cloth.size = params[:cloth][:size].to_s.upcase!
     end
     if @cloth.update(cloth_params)
