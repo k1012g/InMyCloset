@@ -18,19 +18,6 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-	// 投稿のマウスオーバー時のアニメーション
-	let $image = $('.outer');
-	$image
-		.on('mouseover', function(){
-			$(this).find('.cover').stop(true).animate({
-				opacity: 1.0
-			}, 300);
-		})
-		.on('mouseout', function(){
-			$(this).find('.cover').stop(true).animate({
-				opacity: 0
-			}, 300);
-		});
 
 	// メニュー開閉
 	$('#menu').on('click', function(){
@@ -57,11 +44,27 @@ $(document).on('turbolinks:load', function() {
 	// ページ上部に戻るボタン
 	let $topBtn = $('#top-btn');
 
-	$opBtn.each(function(){
+	$topBtn.each(function(){
 		let el = ('html');
 
 		$(this).on('click', function(){
 			$(el).stop(true).animate({scrollTop: 0}, 750);
 		});
 	});
+
+	// 投稿のマウスオーバー時のアニメーション
+	if (window.matchMedia('(min-width: 991px)').matches) {
+		let $image = $('.outer');
+		$image
+			.on('mouseover', function(){
+				$(this).find('.cover').stop(true).animate({
+					opacity: 1.0
+				}, 300);
+			})
+			.on('mouseout', function(){
+				$(this).find('.cover').stop(true).animate({
+					opacity: 0
+				}, 300);
+			});
+	};
 });
