@@ -1,9 +1,16 @@
 <% if signed_in? %>
 	<!-- ログインしているときはフォローしている人のタイムラインを表示 -->
 	<div class="top">
-		<strong class="font-l text-center">
-			Today's Post : <%= @todayPost %>
-		</strong>
+		<% if current_user.followings.present? %>
+			<strong class="font-l text-center">
+				Today's Post : <%= @todayPost %>
+			</strong>
+		<% else %>
+			<strong class="font-l text-center">
+				No Users<br>
+				<%= link_to "Let's Follow!", search_path %>
+			</strong>
+		<% end %>
 		<% @cloth.each do |cloth| %>
 			<div class="contents-size-top border">
 				<%= render 'clothes/index', clothes: cloth %>

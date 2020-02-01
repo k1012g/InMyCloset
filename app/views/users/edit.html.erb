@@ -1,13 +1,20 @@
 <strong class="font-m text-center">Edit Profile</strong>
-<div class="width-l" style="margin: 15px auto 0 auto;">
+<div class="width-l" style="margin: 15px auto 30px auto;">
 	<%= form_with(model: @user, local: true) do |form| %>
 		<div class="profile-edit-left">
 			<!-- プロフィール画像 -->
 			<%= attachment_image_tag @user, :profile_image, :fill, 500, 500, fallback: "no_image.png", size:'500x500', class: "user_image" %>
 			<div class="edit-image">
 			<!-- プロフィール画像の編集 -->
-				<strong class="font-xs text-center">Edit profile image</strong>
+				<strong class="font-xs text-center">
+					Edit profile image
+				</strong>
 				<%= form.attachment_field :profile_image %>
+				<% if @user.profile_image.present? %>
+					<strong class="text-center" style="color: red;">Delete Image
+						<input type="checkbox" name="delete" value="yes" class="checkbox">
+					</strong>
+				<% end %>
 			</div>
 		</div>
 		<div class="profile-edit-right">

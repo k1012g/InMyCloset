@@ -486,6 +486,10 @@ a{
 			display: block;
 			margin: 0 auto;
 		}
+		.checkbox{
+			margin: 0;
+			display: inline-block;
+		}
 		input{
 			display: block;
 			margin: 0 auto;
@@ -837,6 +841,10 @@ a{
 		img{
 			width: 300px;
 			height: 300px;
+		}
+		.checkbox{
+			margin: 0;
+			display: inline-block;
 		}
 		.edit-image{
 			width: 300px;
@@ -1236,6 +1244,10 @@ a{
 			overflow: hidden;
 		}
 		.edit-image{
+			.checkbox{
+				margin: 0;
+				display: inline-block;
+			}
 			input{
 				margin: 0 0 0 150px;
 			}

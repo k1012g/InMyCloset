@@ -24,66 +24,30 @@
 	<% else %>
 		<% if @sort == "User" %>
 		<!-- ユーザーでのソート -->
-			<% if @input.blank? %>
-			<!-- 入力しない時 -->
-				<% @users.each do |user| %>
-					<div class="contents-size">
-						<%= render 'users/index', users: user %>
-					</div>
-				<% end %>
-			<% else %>
-			<!-- 入力した時 -->
-				<% @results.each do |user| %>
-					<div class="contents-size">
-						<%= render 'users/index', users: user %>
-					</div>
-				<% end %>
+			<% @results.each do |user| %>
+				<div class="contents-size">
+					<%= render 'users/index', users: user %>
+				</div>
 			<% end %>
 		<% elsif @sort == "Brand" %>
 		<!-- ブランドでのソート -->
-			<% if @input.blank? %>
-			<!-- 入力しない時 -->
-				<% @clothes.each do |brand| %>
-					<div class="contents-size contents-cloth">
-						<%= render 'clothes/index', clothes: brand %>
-					</div>
-				<% end %>
-			<% else %>
-			<!-- 入力した時 -->
-				<% @results.each do |brand| %>
-					<div class="contents-size contents-cloth">
-						<%= render 'clothes/index', clothes: brand %>
-					</div>
-				<% end %>
+			<% @results.each do |brand| %>
+				<div class="contents-size contents-cloth">
+					<%= render 'clothes/index', clothes: brand %>
+				</div>
 			<% end %>
 		<% elsif @sort == "Category" %>
 		<!-- カテゴリーでのソート -->
-			<% if @input.blank? %>
-			<!-- 入力しない時 -->
-				<% @categories.each do |category| %>
-					<span class="atag">
-						<%= link_to category_path(category.id) do %>
-							<div class="contents-size-auto border">
-								<strong class="font-s">
-									<%= category.category %>
-								</strong>
-							</div>
-						<% end %>
-					</span>
-				<% end %>
-			<% else %>
-			<!-- 入力した時 -->
-				<% @results.each do |category| %>
-					<span class="atag">
-						<%= link_to category_path(category.id) do %>
-							<div class="contents-size-auto border">
-								<strong class="font-s">
-									<%= category.category %>
-								</strong>
-							</div>
-						<% end %>
-					</span>
-				<% end %>
+			<% @results.each do |category| %>
+				<span class="atag">
+					<%= link_to category_path(category.id) do %>
+						<div class="contents-size-auto border">
+							<strong class="font-s">
+								<%= category.category %>
+							</strong>
+						</div>
+					<% end %>
+				</span>
 			<% end %>
 		<% end %>
 	<% end %>
