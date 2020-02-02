@@ -1,99 +1,101 @@
-<% if current_user == @user %>
-<!-- ログインしているユーザーなら表示 -->
-	<strong class="font-m text-center" style="display: block; margin-bottom: 30px;">My Page</strong>
-<% end %>
+<div class="container clearfix">
+	<% if current_user == @user %>
+	<!-- ログインしているユーザーなら表示 -->
+		<strong class="font-m text-center" style="display: block; margin-bottom: 30px;">My Page</strong>
+	<% end %>
 
-<!-- プロフィール欄 -->
-<div class="profile width-l clearfix">
-	<div class="category">
-		<% @categories.each do |category| %>
-			<strong class="font-xs">
-				<%= category.category %> :
-			</strong>
-			<strong class="font-xs">
-				<%= Cloth.where(user_id: @user.id, category_id: category.id).count %>
+	<!-- プロフィール欄 -->
+	<div class="profile width-l clearfix">
+		<div class="category">
+			<% @categories.each do |category| %>
+				<strong class="font-xs">
+					<%= category.category %> :
+				</strong>
+				<strong class="font-xs">
+					<%= Cloth.where(user_id: @user.id, category_id: category.id).count %>
+				</strong>
+				<br>
+			<% end %>
+		</div>
+		<div class="image">
+			<%= attachment_image_tag @user, :profile_image, :fill, 200, 200, fallback: "no_image.png", size:'200x200', class: "user_image" %>
+		</div>
+		<div class="info">
+			<strong class="font-s text-center">
+				<%= @user.name %><br>
+				<span id="follow_<%= @user.id %>">
+					<% if current_user != @user %>
+						<%= render 'relationships/follow' , user: @user %>
+					<% end %>
+				</span>
 			</strong>
 			<br>
-		<% end %>
-	</div>
-	<div class="image">
-		<%= attachment_image_tag @user, :profile_image, :fill, 200, 200, fallback: "no_image.png", size:'200x200', class: "user_image" %>
-	</div>
-	<div class="info">
-		<strong class="font-s text-center">
-			<%= @user.name %><br>
-			<span id="follow_<%= @user.id %>">
-				<% if current_user != @user %>
-					<%= render 'relationships/follow' , user: @user %>
+			<span class="atag text-center follow" style="display: block; margin-bottom: 20px;">
+				<%= link_to following_path(@user.id) do %>
+					<strong class="font-xs">
+						Following :
+						<%= @user.followings.count %>
+					</strong>
+				<% end %>
+				<strong>/</strong>
+				<%= link_to follower_path(@user.id) do %>
+					<strong class="font-xs">
+						Follower :
+						<%= @user.followers.count %>
+					</strong>
 				<% end %>
 			</span>
-		</strong>
-		<br>
-		<span class="atag text-center follow" style="display: block; margin-bottom: 20px;">
-			<%= link_to following_path(@user.id) do %>
-				<strong class="font-xs">
-					Following :
-					<%= @user.followings.count %>
+			<% if @user.introduction.present? %>
+				<strong class="text-center introduction-title" style="display: block; margin-bottom: 25px;">
+					Introduction
 				</strong>
+				<div class="font-xs introduction">
+					<%= simple_format(@user.introduction) %>
+				</div>
 			<% end %>
-			<strong>/</strong>
-			<%= link_to follower_path(@user.id) do %>
-				<strong class="font-xs">
-					Follower :
-					<%= @user.followers.count %>
-				</strong>
-			<% end %>
-		</span>
-		<% if @user.introduction.present? %>
-			<strong class="text-center introduction-title" style="display: block; margin-bottom: 25px;">
-				Introduction
-			</strong>
-			<div class="font-xs introduction">
-				<%= simple_format(@user.introduction) %>
-			</div>
-		<% end %>
-		<span class="text-center" style="margin-top: 10px;">
-			<% if current_user == @user %>
-				<%= link_to "Add Clothes", new_clothes_path, class: "btn done-btn" %>
-				<%= link_to "Edit profile", edit_user_path(@user.id), class: "btn done-btn" %>
-				<%= link_to "Favorites", user_favorite_path(@user.id), class: "btn done-btn" %>
-			<% end %>
-		</span>
+			<span class="text-center" style="margin-top: 10px;">
+				<% if current_user == @user %>
+					<%= link_to "Add Clothes", new_clothes_path, class: "btn done-btn" %>
+					<%= link_to "Edit profile", edit_user_path(@user.id), class: "btn done-btn" %>
+					<%= link_to "Favorites", user_favorite_path(@user.id), class: "btn done-btn" %>
+				<% end %>
+			</span>
+		</div>
 	</div>
-</div>
-<!-- 投稿一覧 -->
-<div class="text-center" style="margin: 20px auto;">
-	<%= form_tag(user_path(@user.id), :method => 'get') do %>
-		<%= link_to "All Clothes", user_path(@user.id), class: "btn done-btn" %>
-		<%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :category) %>
-		<%= submit_tag "Search", class: "btn done-btn" %>
-	<% end %>
-</div>
-<% if @user_cloth.blank? %>
-	<strong class="font-l text-center" style="margin: 30px 0;">
-		No clothes.<br>
-		<% if current_user == @user %>
-			<%= link_to new_clothes_path do %>
-				<%= icon 'fas', 'plus-circle' %>
-			<% end %>
+	<!-- 投稿一覧 -->
+	<div class="text-center" style="margin: 20px auto;">
+		<%= form_tag(user_path(@user.id), :method => 'get') do %>
+			<%= link_to "All Clothes", user_path(@user.id), class: "btn done-btn" %>
+			<%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :category) %>
+			<%= submit_tag "Search", class: "btn done-btn" %>
 		<% end %>
-	</strong>
-<% else %>
-<!-- ユーザーの投稿一覧 -->
-	<% @user_cloth.each do |clothes| %>
-		<span class="atag">
+	</div>
+	<% if @user_cloth.blank? %>
+		<strong class="font-l text-center" style="margin: 30px 0;">
+			No clothes.<br>
 			<% if current_user == @user %>
-			<!-- ユーザー本人のみ編集可 -->
-				<%= link_to edit_clothes_path(clothes.id) do %>
+				<%= link_to new_clothes_path do %>
+					<%= icon 'fas', 'plus-circle' %>
+				<% end %>
+			<% end %>
+		</strong>
+	<% else %>
+	<!-- ユーザーの投稿一覧 -->
+		<% @user_cloth.each do |clothes| %>
+			<span class="atag">
+				<% if current_user == @user %>
+				<!-- ユーザー本人のみ編集可 -->
+					<%= link_to edit_clothes_path(clothes.id) do %>
+						<div class="contents-size-auto border">
+							<%= render 'clothes/index', clothes: clothes %>
+						</div>
+					<% end %>
+				<% else %>
 					<div class="contents-size-auto border">
 						<%= render 'clothes/index', clothes: clothes %>
 					</div>
 				<% end %>
-			<% else %>
-				<div class="contents-size-auto border">
-					<%= render 'clothes/index', clothes: clothes %>
-				</div>
-			<% end %>
-		</span>
+			</span>
+		<% end %>
 	<% end %>
-<% end %>
+</div>

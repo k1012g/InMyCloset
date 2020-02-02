@@ -1,31 +1,33 @@
-<!-- プレビュー -->
-<div class="preview text-center">
-	<strong class="font-s">Preview</strong>
-	<div>
-		<strong>Image is here.</strong>
-	</div>
-	<br>
-	<strong>Category : </strong>
-	<span>(Example : tops)</span>
-	<br>
-	<strong>Brand : </strong>
-	<span>(Example : Gucci)</span>
-	<br>
-	<strong>Size : </strong>
-	<span>(Example : 42/S)</span>
-</div>
-<!-- 入力フォーム -->
-<div class="new">
-	<strong class="font-s text-center">Add clothes</strong>
-	<%= form_with(model: @cloth, url: create_clothes_path, local: true) do |f| %>
-		<!-- 入力フォームの部分テンプレート -->
-		<%= render 'clothes/form', form: f %>
-		<!-- エラーメッセージの部分テンプレート -->
-		<%= render 'layouts/error', obj: @cloth %>
+<div class="container clearfix">
+	<!-- プレビュー -->
+	<div class="preview text-center">
+		<strong class="font-s">Preview</strong>
+		<div>
+			<strong>Image is here.</strong>
+		</div>
 		<br>
-		<%= f.submit "Add clothes", class: "btn done-btn" %>
-		<span>
-			<%= link_to "Back", user_path(current_user.id), class: "btn done-btn" %>
-		</span>
-	<% end %>
+		<strong>Category : </strong>
+		<span>(Example : tops)</span>
+		<br>
+		<strong>Brand : </strong>
+		<span>(Example : Gucci)</span>
+		<br>
+		<strong>Size : </strong>
+		<span>(Example : 42/S)</span>
+	</div>
+	<!-- 入力フォーム -->
+	<div class="new">
+		<strong class="font-s text-center">Add clothes</strong>
+		<%= form_with(model: @cloth, url: create_clothes_path, local: true) do |f| %>
+			<!-- 入力フォームの部分テンプレート -->
+			<%= render 'clothes/form', form: f %>
+			<!-- エラーメッセージの部分テンプレート -->
+			<%= render 'layouts/error', obj: @cloth %>
+			<br>
+			<%= f.submit "Add clothes", class: "btn done-btn" %>
+			<span>
+				<%= link_to "Back", user_path(current_user.id), class: "btn done-btn" %>
+			</span>
+		<% end %>
+	</div>
 </div>

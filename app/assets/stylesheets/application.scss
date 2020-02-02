@@ -242,7 +242,7 @@ a{
 
 	/* ----- トップ画面(ログイン済) ----- */
 
-	.top{
+	.timeline{
 		.contents-size-top{
 			width: 100%;
 			margin: 0 1%;
@@ -271,7 +271,6 @@ a{
 	}
 
 	/* ----- トップ画面(未ログイン) ----- */
-
 	.top{
 		.contents1{
 			width: 100%;
@@ -726,7 +725,7 @@ a{
 
 	/* ----- トップ画面(未ログイン) ----- */
 
-	.top{
+	.timeline{
 		.contents1{
 			width: 100%;
 			height: 300px;
@@ -917,7 +916,7 @@ a{
 	}
 
 	body{
-		margin-top: 110px;
+		margin-top: 80px;
 	}
 
 	/* ----- 横幅の指定 ----- */
@@ -954,15 +953,17 @@ a{
 	/* ----- トップ画面(ログイン済)の
 	コンテンツのサイズ調整 ----- */
 
-	.contents-size-top{
-		width: 24%;
-		height: 350px;
-		margin-bottom: 1%;
-		margin-right: 1%;
-		padding-left: 18px;
-		padding-bottom: 10px;
-		float: left;
-		overflow: hidden;
+	.timeline{
+		.contents-size-top{
+			width: 24%;
+			height: 350px;
+			margin-bottom: 1%;
+			margin-right: 1%;
+			padding-left: 18px;
+			padding-bottom: 10px;
+			float: left;
+			overflow: hidden;
+		}
 	}
 
 	/* ----- 横に4要素を並べる ----- */
@@ -1084,7 +1085,57 @@ a{
 
 	/* ----- トップ画面(未ログイン) ----- */
 
+
+	main{
+		width: 100%;
+		z-index: 0;
+		.section1{
+			width: 100%;
+			height: 700px;
+			background-image: image-url("top-image.jpg");
+			background-size: cover;
+			background-position: center;
+			padding-top: 250px;
+			.inner{
+				width: 60%;
+				margin: 0 auto;
+				line-height: 100px;
+				color: #fff;
+				opacity: 0;
+			}
+		}
+		.section2{
+			width: 50%;
+			height: 1000px;
+			margin: 15px auto;
+			padding-top: 365px;
+			background-color: lightgrey;
+			background-image: image-url("top-image2.jpg");
+			background-size: cover;
+			background-position: center;
+			.fade_off{
+				opacity: 0;
+				-webkit-transition: all 2.7s;
+				-moz-transition: all 2.7s;
+				-o-transition: all 2.7s;
+				-ms-transition: all 2.7s;
+				transition: all 2.7s;
+				color: #fff;
+			}
+			.sample.fade_on{
+				opacity: 1;
+			}
+		}
+	}
+
 	.top{
+
+
+
+		display: none;
+
+
+
 		.contents1{
 			width: 100%;
 			height: 700px;

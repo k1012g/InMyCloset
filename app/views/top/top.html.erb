@@ -1,6 +1,6 @@
 <% if signed_in? %>
 	<!-- ログインしているときはフォローしている人のタイムラインを表示 -->
-	<div class="top">
+	<div class="timeline">
 		<% if current_user.followings.present? %>
 			<strong class="font-l text-center">
 				Today's Post : <%= @todayPost %>
@@ -19,6 +19,24 @@
 	</div>
 <% else %>
 	<!-- ログインしていないときはTOPページ -->
+	<main>
+		<section class="section1">
+			<div class="inner fadeInTitle">
+				<strong class="font-l text-center">
+					Welcome to InMyCloset
+				</strong>
+			</div>
+		</section>
+		<section class="section2">
+			<strong class="font-s text-center fade_off sample">
+				Do you like fashion?<br>
+				Fashion is universal culture.<br>
+				Everyone should enjoy fashion<br>
+				through "InMyCloset".
+			</strong>
+		</section>
+	</main>
+
 	<div class="text-center top">
 		<strong class="font-l" style="display: block; margin-bottom: 30px;">
 			Welcome to InMyCloset!

@@ -1,21 +1,23 @@
-<strong class="font-l text-center" style="display: block; margin-bottom: 20px;">
-	<!-- そのページのユーザーネーム -->
-	<%= @user.name %>
-</strong>
-<% if @following.blank? %>
-<!-- フォローしている人がいない時 -->
-	<strong class="font-l text-center">No users.</strong>
-	<% if current_user == @user %>
-		<strong class="font-m text-center" style="text-decoration: underline;">
-			<!-- 検索ページ(ユーザー一覧が観れるため) -->
-			<%= link_to "Let's follow users!", search_path %>
-		</strong>
+<div class="container clearfix">
+	<strong class="font-l text-center" style="display: block; margin-bottom: 20px;">
+		<!-- そのページのユーザーネーム -->
+		<%= @user.name %>
+	</strong>
+	<% if @following.blank? %>
+	<!-- フォローしている人がいない時 -->
+		<strong class="font-l text-center">No users.</strong>
+		<% if current_user == @user %>
+			<strong class="font-m text-center" style="text-decoration: underline;">
+				<!-- 検索ページ(ユーザー一覧が観れるため) -->
+				<%= link_to "Let's follow users!", search_path %>
+			</strong>
+		<% end %>
+	<% else %>
+	<!-- フォローしている人がいる時 -->
+		<% @following.each do |user| %>
+			<div class="contents-size-auto">
+				<%= render 'users/index', users: user %>
+			</div>
+		<% end %>
 	<% end %>
-<% else %>
-<!-- フォローしている人がいる時 -->
-	<% @following.each do |user| %>
-		<div class="contents-size-auto">
-			<%= render 'users/index', users: user %>
-		</div>
-	<% end %>
-<% end %>
+</div>
