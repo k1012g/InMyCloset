@@ -16,7 +16,7 @@
 	</span>
 	<% if @input.blank? && @sort.blank? %>
 	<!-- 何も入力しなかった時の条件分岐 -->
-		<% @users.each do |user| %>
+		<% User.all.each do |user| %>
 			<div class="contents-size">
 				<%= render 'users/index', users: user %>
 			</div>

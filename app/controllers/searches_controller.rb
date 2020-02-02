@@ -1,6 +1,5 @@
 class SearchesController < ApplicationController
   def search
-  	@users = User.all
   	@input = params[:input]
   	@sort = params[:sort]
   	@results = searching(@input, @sort)
