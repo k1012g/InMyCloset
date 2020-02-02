@@ -1,26 +1,28 @@
-<div class="text-center width-s" style="margin: 0 auto;">
-  <strong class="font-l">Sign in</strong>
+<div class="container clearfix">
+  <div class="text-center width-s" style="margin: 0 auto;">
+    <strong class="font-l">Sign in</strong>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <br>
-    <table class="table form-table">
-      <tr>
-        <th>Email</th>
-        <td><%= f.email_field :email, autofocus: true, autocomplete: "email", style: "width: 75%" %></td>
-      </tr>
-      <tr>
-        <th>Password</th>
-        <td><%= f.password_field :password, autocomplete: "current-password", style: "width: 75%" %></td>
-      </tr>
-    </table>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <br>
+      <table class="table form-table">
+        <tr>
+          <th>Email</th>
+          <td><%= f.email_field :email, autofocus: true, autocomplete: "email", style: "width: 75%" %></td>
+        </tr>
+        <tr>
+          <th>Password</th>
+          <td><%= f.password_field :password, autocomplete: "current-password", style: "width: 75%" %></td>
+        </tr>
+      </table>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <% end %>
+      <br>
+      <div class="actions">
+        <%= f.submit "Sign in!", class: "btn done-btn" %>
+      </div>
     <% end %>
     <br>
-    <div class="actions">
-      <%= f.submit "Sign in!", class: "btn done-btn" %>
-    </div>
-  <% end %>
-  <br>
-  <%= render "users/shared/links" %>
+    <%= render "users/shared/links" %>
+  </div>
 </div>

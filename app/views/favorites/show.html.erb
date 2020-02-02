@@ -1,7 +1,9 @@
-<strong class="font-l text-center" style="margin-bottom: 15px;">Favorites</strong>
-<% @favorites.each do |fav| %>
-<!-- いいねしている投稿一覧 -->
-	<div class="contents-cloth contents-size">
-		<%= render 'clothes/index', clothes: fav.cloth %>
-	</div>
-<% end %>
+<div class="container clearfix">
+	<strong class="font-l text-center" style="margin-bottom: 15px;">Favorites</strong>
+	<% @favorites.each do |fav| %>
+	<!-- いいねしている投稿一覧 -->
+		<div class="contents-cloth contents-size">
+			<%= render 'clothes/index', clothes: fav.cloth %>
+		</div>
+	<% end %>
+</div>
