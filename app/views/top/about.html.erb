@@ -1,94 +1,42 @@
-<div class="container clearfix">
-	<div class="width-l about" style="margin: 0 auto;">
-		<strong class="text-center font-l" style="display: block; margin-bottom: 30px;">What is InMyCloset?</strong>
-
-		<strong class="text-center font-m" style="text-decoration: underline; display: block; margin-bottom: 17px;">
-			1.About "InMyCloset"
+<main class="about">
+	<section class="about-section1">
+		<strong class="font-l text-center">
+			What is InMyCloset?
 		</strong>
-
-		<ul>
-			<li>
-				<strong>
-					1-1
-				</strong>
-				 "InMyCloset" enables you all to check what you have in your closet anytime, anywhere.
-			</li>
-
-			<li>
-				<strong>
-					1-2
-				</strong>
-				 "InMyCloset" enables you all to share your clothes and closet with anyone.
-			</li>
-
-			<li>
-				<strong>
-					1-3
-				</strong>
-				 "InMyCloset" enables you all to enjoy fashion referencing other users all over the world.
-			</li>
-		</ul>
-
-		<strong class="text-center font-m" style="text-decoration: underline; margin-bottom: 17px; display: block;">
-			2.How to use "InMyCloset"
+	</section>
+	<section class="about-section2">
+		<strong class="font-m text-center">
+			-Purpose-
 		</strong>
-
-		<ul>
-			<li>
-				<strong>
-					2-1
-				</strong>
-				 You take the picture of your clothes which you want to add.
-			</li>
-			<li>
-				<strong>
-					2-2
-				</strong>
-				 You fill in required items(brand, size, the picture, category) from your "MyPage".
-			</li>
-			<li>
-				<strong>
-					2-3
-				</strong>
-				 Let's enjoy shopping and sharing your clothes!
-			</li>
-		</ul>
-
-		<strong class="text-center font-xs" style="color: red;">⚠️You can not use the above function without sign up</strong>
 		<br>
-
-		<strong class="text-center font-s" >
-			<%= link_to "☞ Sign up here!", new_user_registration_path %>
+		<strong class="font-xs">
+			I want to make Fashion's life good.<br>
+			Fashion is one of the "basic needs" for a human being.<br>
+			There are countless awesome clothes in the world that I've never seen.<br>
+			Everyone is looking for them.<br>
+			<br>
+			But, have you experienced something like this?<br>
+			<br>
+			<strong class="font-s">
+				"What clothes do I have?"<br><br>
+			</strong>
+			In those cases you should use this application InMyCloset.<br>
+			InMyCloset will able you to take your closet everywhere.<br>
+			Once you add your clothes to InMyCloset, you can see them everywhere.<br>
 		</strong>
-
-		<strong class="text-center font-m" style="text-decoration: underline; margin: 17px; display: block;">3.About Details</strong>
-
-		<ul>
-			<li>
-				<strong>
-					3-1
-				</strong>
-				 Alphabet of size is capitalized when you add your clothes.(Example : m -> M)
-			</li>
-			<li>
-				<strong>
-					3-2
-				</strong>
-				 Brand of first letter is capitalized when you add your clothes.(Example : gucci -> Gucci)
-			</li>
-			<li>
-				<strong>
-					3-3
-				</strong>
-				 Follow and Favorite function can be used.(⚠️You can not use the function without sign up.)
-			</li>
-		</ul>
-
-		<strong class="text-center font-m inventor" style="text-decoration: underline;">Inventor</strong>
-
-		<strong class="text-center font-m inventor">
-			<%= icon 'fab', 'instagram', class: "inventor" %>
-			<a href="https://www.instagram.com/k1012g_xx/" style="color: #292929;"> k1012g_xx</a>
+		<strong class="font-m text-center">
+			-Functions-
 		</strong>
-	</div>
-</div>
+		<br>
+		<strong class="font-xs">
+			・You can see other people's closets.<br>
+			・You can favorite all clothes you like.<br>
+			・You can follow all people you like.
+		</strong>
+	</section>
+	<section class="about-section3">
+		<strong class="font-l text-center">
+			<%= link_to "Sign up here", new_user_registration_path, class: "link" %>
+		</strong>
+	</section>
+</main>
