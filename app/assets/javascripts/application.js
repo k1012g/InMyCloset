@@ -68,29 +68,4 @@ $(document).on('turbolinks:load', function() {
 			});
 	};
 
-	// トップ画面のタイトル
-	let $fadeInTitle = $('.fadeInTitle');
-
-	$fadeInTitle.on('mouseover', function(){
-		$(this).stop(true).animate({
-			opacity: 1.0
-		}, 600);
-	});
-});
-
-$(document).on('turbolinks:load', function(){
-
-	$(window).scroll(function(){
-		$('.sample').each(function(){
-			let target = $(this).offset().top,
-				scroll = $(window).scrollTop();
-				windowHeight = $(window).height();
-
-				if (scroll > target - windowHeight + windowHeight / 5) {
-					$(this).addClass('fade_on');
-				}else{
-					$(this).removeClass('fade_on');
-				}
-		});
-	});
 });
