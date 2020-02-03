@@ -68,4 +68,16 @@ $(document).on('turbolinks:load', function() {
 			});
 	};
 
+	$('.link')
+		.on('mouseover', function(){
+			$(this).parent().parent().stop(true).animate({
+				opacity: 0.8
+			}, 300);
+		})
+		.on('mouseout', function(){
+			$(this).parent().parent().stop(true).animate({
+				opacity: 1.0
+			}, 300);
+		})
+
 });

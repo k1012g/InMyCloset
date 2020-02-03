@@ -917,6 +917,7 @@ a{
 
 	body{
 		margin-top: 80px;
+		margin-bottom: 60px;
 	}
 
 	/* ----- 横幅の指定 ----- */
@@ -1092,107 +1093,95 @@ a{
 		.section1{
 			width: 100%;
 			height: 700px;
-			position: relative;
+			padding-top: 250px;
+			background-attachment: fixed;
 			background-image: image-url("top-image.jpg");
 			background-size: cover;
 			background-position: center;
-			padding-top: 250px;
 			.inner{
 				width: 60%;
 				margin: 0 auto;
 				.title{
 					color: #fff;
 					line-height: 100px;
+					text-shadow: 0px 0px 5px #fff;
 					-webkit-animation: blink 1.7s ease-in-out infinite alternate;
 					-moz-animation: blink 1.7s ease-in-out infinite alternate;
 					animation: blink 1.7s ease-in-out infinite alternate;
 				}
-			}
-			@-webkit-keyframes blink{
-				0% {opacity: 0;}
-				100% {opacity: 1;}
-			}
-			@-moz-keyframes blink{
-				0% {opacity: 0;}
-				100% {opacity: 1;}
-			}
-			@keyframes blink{
-				0% {opacity: 0;}
-				100% {opacity: 1;}
+				@-webkit-keyframes blink{
+					0% {opacity: 0;}
+					100% {opacity: 1;}
+				}
+				@-moz-keyframes blink{
+					0% {opacity: 0;}
+					100% {opacity: 1;}
+				}
+				@keyframes blink{
+					0% {opacity: 0;}
+					100% {opacity: 1;}
+				}
 			}
 		}
-	}
-
-	.top{
-
-
-
-		display: none;
-
-
-
-		.contents1{
+		.section2,
+		.section3,
+		.section4{
 			width: 100%;
-			height: 700px;
-			border: 1px solid #292929;
-			background-image: image-url("contents-sm.jpg");
+			height: 800px;
 			background-size: cover;
 			background-position: center;
-			margin-bottom: 70px;
+		}
+		.section3,
+		.section4{
+			padding-top: 350px;
+		}
+		.section2{
+			padding-top: 300px;
+			background-image: image-url("top-image2.jpg");
 			strong{
-				background: rgba(100,100,100,0.4);
-				width: 100%;
-				height: 700px;
-				display: block;
-				line-height: 700px;
 				color: #fff;
-				font-size: 25px;
+				text-shadow: 0px 0px 5px black;
 			}
 		}
-
-		.contents2{
+		.section3{
+			background-attachment: fixed;
+			background-image: image-url("top-image3.jpg");
+			strong{
+				color: #fff;
+				text-shadow: 0px 0px 5px black;
+			}
+		}
+		.section4{
+			background-image: image-url("top-image4.jpg");
+			strong{
+				color: #fff;
+				text-shadow: 0px 0px 5px #fff;
+			}
+		}
+		.section5{
 			width: 100%;
-			height: 500px;
-			border: 1px solid #292929;
-			background-image: image-url("application.jpg");
-			background-size: cover;
-			background-position: center;
-			margin-bottom: 70px;
-			strong{
-				width: 100%;
-				height: 500px;
-				display: block;
-				background: rgba(100,100,100,0.5);
-				line-height: 500px;
-				color: #fff;
-				font-size: 25px;
-			}
-		}
-
-		.contents3{
-			a{
-				color: red;
-			}
+			margin-top: 50px;
+			height: 740px;
 			div{
-				width: 70%;
-				height: 400px;
-				margin: 30px auto;
-				border: 1px solid #292929;
-			}
-			.step1{
-				background-image: image-url("signup.png");
+				height: 100%;
+				padding-top: 400px;
 				background-size: cover;
 				background-position: center;
+				strong{
+					a{
+						color: #fff;
+						text-decoration: none;
+					}
+				}
 			}
-			.step2{
-				background-image: image-url("add-clothes.jpg");
-				background-size: cover;
-				background-position: center;
+			div:first-child{
+				background-image: image-url("top-image5.jpg");
 			}
-			.step3{
-				background-image: image-url("shopping.jpg");
-				background-size: cover;
-				background-position: center;
+			div:nth-child(2){
+				background-image: image-url("top-image7.jpg");
+			}
+			div:last-child{
+				background-image: image-url("top-image6.jpg");
 			}
 		}
 	}
