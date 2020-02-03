@@ -1,6 +1,6 @@
 <% if signed_in? %>
 	<!-- ログインしているときはフォローしている人のタイムラインを表示 -->
-	<div class="timeline">
+	<main class="timeline">
 		<% if current_user.followings.present? %>
 			<strong class="font-l text-center">
 				Today's Post : <%= @todayPost %>
@@ -16,7 +16,7 @@
 				<%= render 'clothes/index', clothes: cloth %>
 			</div>
 		<% end %>
-	</div>
+	</main>
 <% else %>
 	<!-- ログインしていないときはTOPページ -->
 	<main>
@@ -27,64 +27,39 @@
 				</strong>
 			</div>
 		</section>
+		<section class="section2">
+			<strong class="font-m text-center">
+				The "basic needs" for a human<br>
+				being is food, shelter and clothing.<br>
+			</strong>
+		</section>
+		<section class="section3">
+			<strong class="font-m text-center">
+				Fashion is essential for us.
+			</strong>
+		</section>
+		<section class="section4">
+			<strong class="font-m text-center">
+				InMyCloset is the application<br>
+				that makes fashion life happy.
+			</strong>
+		</section>
+		<section class="section5">
+			<div class="col-xs-4">
+				<strong class="font-s text-center">
+					<%= link_to "Search for users?", search_path, class: "link" %>
+				</strong>
+			</div>
+			<div class="col-xs-4">
+				<strong class="font-s text-center">
+				<%= link_to "What is InMyCloset?", about_path, class: "link" %>
+				</strong>
+			</div>
+			<div class="col-xs-4">
+				<strong class="font-s text-center">
+					<%= link_to "Sign up?", new_user_registration_path, class: "link" %>
+				</strong>
+			</div>
+		</section>
 	</main>
-
-	<div class="text-center top">
-		<strong class="font-l" style="display: block; margin-bottom: 30px;">
-			Welcome to InMyCloset!
-		</strong>
-
-		<section class="contents1">
-			<strong>
-				I am sure you have the experience of forgetting what you have in your closet.
-			</strong>
-		</section>
-
-		<strong class="font-m" style="display: block; margin-bottom: 70px;">
-			If it were possible,<br>
-			you think you want to bring<br>
-			your closet to clothing store<br>
-			you always buy clothes.
-		</strong>
-
-		<section class="contents2">
-			<strong>
-				This application "InMyCloset" makes it possible.
-			</strong>
-		</section>
-
-		<section class="contents3">
-			<strong class="font-l" style="display: block; margin-bottom: 30px;">
-				Only 3 steps!
-			</strong>
-
-			<strong class="font-m">
-				Step 1 : Fill in required items.
-			</strong>
-
-			<div class="step1">
-				<!-- ここには画像が入ります -->
-			</div>
-
-			<strong class="font-m" style="display: block; margin-bottom: 30px;">
-				<%= link_to "☞ Sign up here!", new_user_registration_path %>
-			</strong>
-
-			<strong class="font-m">
-					Step 2 : Add your clothes.
-			</strong>
-
-			<div class="step2">
-				<!-- ここには画像が入ります -->
-			</div>
-
-			<strong class="font-m">
-				Step 3 : Enjoy fashion!
-			</strong>
-
-			<div class="step3">
-				<!-- ここには画像が入ります -->
-			</div>
-		</section>
-	</div>
 <% end %>
