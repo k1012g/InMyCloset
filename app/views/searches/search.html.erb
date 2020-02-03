@@ -1,20 +1,22 @@
+<section class="search-section1">
+	<strong class="font-l text-center">Search</strong>
+	<span class="text-center">
+		<!-- 検索結果のフォーム -->
+		<%= form_tag(search_path, :method => 'get') do %>
+			<%= text_field_tag :input, '', placeholder: 'Example : Gucci, Justin Biebar' %>
+			<%= select_tag :sort, options_for_select({ "User" => "User", "Brand" => "Brand", "Category" => "Category" }) %>
+			<%= submit_tag "Search", class: "btn done-btn2" %>
+		<% end %>
+		<strong class="font-s search-text" style="display: block; margin-bottom: 30px;">
+			You can search everything you want to check.
+			<br>
+			Sorting fuction and search box can be available.
+			<br>
+		</strong>
+	</span>
+</section>
 <div class="container clearfix">
 	<div style="width: 100%;">
-		<strong class="font-l text-center">Search Page</strong>
-		<span class="text-center">
-			<!-- 検索結果のフォーム -->
-			<%= form_tag(search_path, :method => 'get') do %>
-				<%= text_field_tag :input, '', placeholder: 'Example : Gucci, Justin Biebar' %>
-				<%= select_tag :sort, options_for_select({ "User" => "User", "Brand" => "Brand", "Category" => "Category" }) %>
-				<%= submit_tag "Search", class: "btn done-btn" %>
-			<% end %>
-			<strong class="font-s search-text" style="display: block; margin-bottom: 30px;">
-				You can search everything you want to check.
-				<br>
-				Sorting fuction and search box can be available.
-				<br>
-			</strong>
-		</span>
 		<% if @input.blank? && @sort.blank? %>
 		<!-- 何も入力しなかった時の条件分岐 -->
 			<% User.all.each do |user| %>
