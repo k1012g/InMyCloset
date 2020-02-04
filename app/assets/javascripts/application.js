@@ -80,4 +80,32 @@ $(document).on('turbolinks:load', function() {
 			}, 300);
 		})
 
+	$('.lower').each(function(){
+
+		let $tab = $(this).find('.tab'),
+			$tabA = $tab.find('a'),
+			$tabC = $(this).find('.tab-contents');
+
+		$tab.on('click', 'a', function(event){
+
+			event.preventDefault();
+
+			let $this = $(this);
+
+			if($this.hasClass('active')){
+				return;
+			}
+
+			$tabA.removeClass('active');
+			$tabA.parent().removeClass('active');
+			$this.addClass('active');
+			$this.parent().addClass('active');
+
+			$tabC.hide();
+			$($this.attr('href')).show();
+		});
+
+		$tabA.eq(0).trigger('click');
+	});
+
 });
