@@ -17,14 +17,14 @@
 			</strong>
 			<br>
 			<span class="atag text-center follow" style="display: block; margin-bottom: 20px;">
-				<%= link_to following_path(@user.id) do %>
+				<%= link_to follow_path(@user.id) do %>
 					<strong class="font-xs">
 						Following :
 						<%= @user.followings.count %>
 					</strong>
 				<% end %>
 				<strong>/</strong>
-				<%= link_to follower_path(@user.id) do %>
+				<%= link_to follow_path(@user.id) do %>
 					<strong class="font-xs">
 						Follower :
 						<%= @user.followers.count %>
@@ -38,7 +38,7 @@
 			<% end %>
 			<span class="text-center" style="margin-top: 10px;">
 				<% if current_user == @user %>
-					<%= link_to "Add Clothes", new_clothes_path, class: "btn done-btn" %>
+					<%= link_to "Add clothes", new_clothes_path, class: "btn done-btn" %>
 					<%= link_to "Edit profile", edit_user_path(@user.id), class: "btn done-btn" %>
 					<%= link_to "Favorites", user_favorite_path(@user.id), class: "btn done-btn" %>
 				<% end %>
@@ -76,8 +76,8 @@
 					<div class="contents-size-auto">
 						<%= render 'clothes/index', clothes: cloth %>
 						<% if @user == current_user %>
-							<%= link_to "Edit", edit_clothes_path(clothes.id), class: "btn done-btn" %>
-							<%= link_to "Delete this cloth", destroy_clothes_path(clothes.id), data: { confirm: "Delete this #{clothes.brand} #{clothes.category.category.capitalize}?" }, method: :delete, class: "btn btn-danger" %>
+							<%= link_to "Edit", edit_clothes_path(cloth.id), class: "btn done-btn" %>
+							<%= link_to "Delete this cloth", destroy_clothes_path(cloth.id), data: { confirm: "Delete this #{cloth.brand} #{cloth.category.category.capitalize}?" }, method: :delete, class: "btn btn-danger" %>
 						<% end %>
 					</div>
 				<% end %>

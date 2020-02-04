@@ -1,0 +1,38 @@
+<div class="follow container">
+	<strong class="font-l text-center follow-link" style="display: block; margin: 50px auto;">
+		<%= link_to user_path(@user.id) do |user| %>
+			<%= @user.name %>
+			<%= attachment_image_tag @user, :profile_image, :fill, 120, 120, fallback: "no_image.png", size:'120x120', class: "user_image" %>
+		<% end %>
+	</strong>
+	<ul class="fBtn">
+		<li>
+			<a href="#following">
+				<strong class="font-s">
+					Following (<%= @following.count %>)
+				</strong>
+			</a>
+		</li>
+		<li>
+			<a href="#follower">
+				<strong class="font-s">
+					Follower (<%= @follower.count %>)
+				</strong>
+			</a>
+		</li>
+	</ul>
+	<div class="follow-contents" id="follower">
+		<% @follower.each do |user| %>
+			<div class="contents-size-auto">
+				<%= render 'users/index', users: user %>
+			</div>
+		<% end %>
+	</div>
+	<div class="follow-contents" id="following">
+		<% @following.each do |user| %>
+			<div class="contents-size-auto">
+				<%= render 'users/index', users: user %>
+			</div>
+		<% end %>
+	</div>
+</div>

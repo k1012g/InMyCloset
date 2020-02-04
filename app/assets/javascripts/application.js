@@ -108,4 +108,33 @@ $(document).on('turbolinks:load', function() {
 		$tabA.eq(0).trigger('click');
 	});
 
+	$('.follow').each(function(){
+
+		let $btn = $(this).find('.fBtn'),
+			$btnA = $btn.find('a'),
+			$btnC = $(this).find('.follow-contents');
+
+		$btn.on('click', 'a', function(event){
+
+			event.preventDefault();
+
+			let $this = $(this);
+
+			if ($this.hasClass('active')) {
+				return;
+			}
+
+			$btnA.removeClass('active');
+			$btnA.parent().removeClass('active');
+
+			$this.addClass('active');
+			$this.parent().addClass('active');
+
+			$btnC.hide();
+			$($this.attr('href')).show();
+		});
+
+		$btnA.eq(0).trigger('click');
+	});
+
 });
