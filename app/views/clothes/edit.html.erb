@@ -1,7 +1,9 @@
 <div class="container clearfix">
+	<br>
+	<strong class="font-m text-center">Edit clothes</strong>
+	<br>
 	<!-- 変更前 -->
 	<div class="before-edit text-center">
-		<strong class="font-s">Before the edit</strong>
 		<br>
 		<%= attachment_image_tag @cloth, :image, :fill, 350, 350 %>
 		<br>
@@ -16,7 +18,6 @@
 	</div>
 	<!-- 編集フォーム -->
 	<div class="edit">
-		<strong class="font-s text-center">Edit clothes</strong>
 		<br>
 		<%= form_with(model: @cloth, url: edit_clothes_path, local: true) do |f| %>
 			<!-- 入力フォームの部分テンプレート -->

@@ -1,7 +1,9 @@
 <div class="container clearfix">
+	<br>
+	<strong class="font-m text-center">Add clothes</strong>
+	<br>
 	<!-- プレビュー -->
 	<div class="preview text-center">
-		<strong class="font-s">Preview</strong>
 		<div>
 			<strong>Image is here.</strong>
 		</div>
@@ -17,7 +19,6 @@
 	</div>
 	<!-- 入力フォーム -->
 	<div class="new">
-		<strong class="font-s text-center">Add clothes</strong>
 		<%= form_with(model: @cloth, url: create_clothes_path, local: true) do |f| %>
 			<!-- 入力フォームの部分テンプレート -->
 			<%= render 'clothes/form', form: f %>

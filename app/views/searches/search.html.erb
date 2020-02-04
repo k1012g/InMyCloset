@@ -47,6 +47,9 @@
 							<div class="contents-size-auto border">
 								<strong class="font-s">
 									<%= category.category %>
+									<strong class="font-xs">
+										(<%= Cloth.where(category_id: category.id).count %>)
+									</strong>
 								</strong>
 							</div>
 						<% end %>
