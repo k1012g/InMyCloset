@@ -75,8 +75,10 @@
 				<% @user.cloths.each do |cloth| %>
 					<div class="contents-size-auto">
 						<%= render 'clothes/index', clothes: cloth %>
-						<%= link_to "Edit", edit_clothes_path(cloth.id), class: "btn done-btn" %>
-						<%= link_to "Delete this cloth", destroy_clothes_path(cloth.id), data: { confirm: "Delete this #{cloth.brand} #{cloth.category.category.capitalize}?" }, method: :delete, class: "btn btn-danger" %>
+						<% if @user == current_user %>
+							<%= link_to "Edit", edit_clothes_path(clothes.id), class: "btn done-btn" %>
+							<%= link_to "Delete this cloth", destroy_clothes_path(clothes.id), data: { confirm: "Delete this #{clothes.brand} #{clothes.category.category.capitalize}?" }, method: :delete, class: "btn btn-danger" %>
+						<% end %>
 					</div>
 				<% end %>
 			</div>
@@ -85,8 +87,10 @@
 					<% Cloth.where(user_id: @user.id, category_id: category.id).each do |clothes| %>
 						<div class="contents-size-auto">
 							<%= render 'clothes/index', clothes: clothes %>
-							<%= link_to "Edit", edit_clothes_path(clothes.id), class: "btn done-btn" %>
-							<%= link_to "Delete this cloth", destroy_clothes_path(clothes.id), data: { confirm: "Delete this #{clothes.brand} #{clothes.category.category.capitalize}?" }, method: :delete, class: "btn btn-danger" %>
+							<% if @user == current_user %>
+								<%= link_to "Edit", edit_clothes_path(clothes.id), class: "btn done-btn" %>
+								<%= link_to "Delete this cloth", destroy_clothes_path(clothes.id), data: { confirm: "Delete this #{clothes.brand} #{clothes.category.category.capitalize}?" }, method: :delete, class: "btn btn-danger" %>
+							<% end %>
 						</div>
 					<% end %>
 				</div>
