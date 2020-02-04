@@ -1,28 +1,14 @@
-<div class="container clearfix">
-	<% if current_user == @user %>
-	<!-- ログインしているユーザーなら表示 -->
-		<strong class="font-m text-center" style="display: block; margin-bottom: 30px;">My Page</strong>
-	<% end %>
-
-	<!-- プロフィール欄 -->
-	<div class="profile width-l clearfix">
-		<div class="category">
-			<% @categories.each do |category| %>
-				<strong class="font-xs">
-					<%= category.category %> :
-				</strong>
-				<strong class="font-xs">
-					<%= Cloth.where(user_id: @user.id, category_id: category.id).count %>
-				</strong>
-				<br>
-			<% end %>
+<main class="container profile">
+	<section class="upper clearfix">
+		<div class="left">
+			<%= attachment_image_tag @user, :profile_image, :fill, 300, 300, fallback: "no_image.png", size:'300x300', class: "user_image" %>
 		</div>
-		<div class="image">
-			<%= attachment_image_tag @user, :profile_image, :fill, 200, 200, fallback: "no_image.png", size:'200x200', class: "user_image" %>
-		</div>
-		<div class="info">
+		<div class="right">
+			<strong class="font-l text-center">
+				<%= @user.name %>
+			</strong>
+			<br>
 			<strong class="font-s text-center">
-				<%= @user.name %><br>
 				<span id="follow_<%= @user.id %>">
 					<% if current_user != @user %>
 						<%= render 'relationships/follow' , user: @user %>
@@ -46,9 +32,6 @@
 				<% end %>
 			</span>
 			<% if @user.introduction.present? %>
-				<strong class="text-center introduction-title" style="display: block; margin-bottom: 25px;">
-					Introduction
-				</strong>
 				<div class="font-xs introduction">
 					<%= simple_format(@user.introduction) %>
 				</div>
@@ -61,41 +44,53 @@
 				<% end %>
 			</span>
 		</div>
-	</div>
-	<!-- 投稿一覧 -->
-	<div class="text-center" style="margin: 20px auto;">
-		<%= form_tag(user_path(@user.id), :method => 'get') do %>
-			<%= link_to "All Clothes", user_path(@user.id), class: "btn done-btn" %>
-			<%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :category) %>
-			<%= submit_tag "Search", class: "btn done-btn" %>
-		<% end %>
-	</div>
-	<% if @user_cloth.blank? %>
-		<strong class="font-l text-center" style="margin: 30px 0;">
-			No clothes.<br>
-			<% if current_user == @user %>
-				<%= link_to new_clothes_path do %>
-					<%= icon 'fas', 'plus-circle' %>
-				<% end %>
+	</section>
+	<section class="lower">
+		<ul class="tab">
+			<li id="tab_0">
+				<a href="#0">
+					<strong class="font-xs">
+						All
+					</strong>
+					<strong class="font-xs">
+						(<%= @user.cloths.count %>)
+					</strong>
+				</a>
+			</li>
+			<% @categories.each do |category| %>
+				<li id="tab_<%= category.id %>">
+					<a href="#<%= category.id %>">
+						<strong class="font-xs">
+							<%= category.category %>
+						</strong>
+						<strong class="font-xs">
+							(<%= Cloth.where(user_id: @user.id, category_id: category.id).count %>)
+						</strong>
+					</a>
+				</li>
 			<% end %>
-		</strong>
-	<% else %>
-	<!-- ユーザーの投稿一覧 -->
-		<% @user_cloth.each do |clothes| %>
-			<span class="atag">
-				<% if current_user == @user %>
-				<!-- ユーザー本人のみ編集可 -->
-					<%= link_to edit_clothes_path(clothes.id) do %>
-						<div class="contents-size-auto border">
-							<%= render 'clothes/index', clothes: clothes %>
-						</div>
-					<% end %>
-				<% else %>
-					<div class="contents-size-auto border">
-						<%= render 'clothes/index', clothes: clothes %>
+		</ul>
+		<div class="tabContent">
+			<div class="tab-contents" id="0">
+				<% @user.cloths.each do |cloth| %>
+					<div class="contents-size-auto">
+						<%= render 'clothes/index', clothes: cloth %>
+						<%= link_to "Edit", edit_clothes_path(cloth.id), class: "btn done-btn" %>
+						<%= link_to "Delete this cloth", destroy_clothes_path(cloth.id), data: { confirm: "Delete this #{cloth.brand} #{cloth.category.category.capitalize}?" }, method: :delete, class: "btn btn-danger" %>
 					</div>
 				<% end %>
-			</span>
-		<% end %>
-	<% end %>
-</div>
+			</div>
+			<% @categories.each do |category| %>
+				<div class="tab-contents" id="<%= category.id %>">
+					<% Cloth.where(user_id: @user.id, category_id: category.id).each do |clothes| %>
+						<div class="contents-size-auto">
+							<%= render 'clothes/index', clothes: clothes %>
+							<%= link_to "Edit", edit_clothes_path(clothes.id), class: "btn done-btn" %>
+							<%= link_to "Delete this cloth", destroy_clothes_path(clothes.id), data: { confirm: "Delete this #{clothes.brand} #{clothes.category.category.capitalize}?" }, method: :delete, class: "btn btn-danger" %>
+						</div>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+	</section>
+</main>
