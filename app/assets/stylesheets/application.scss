@@ -1346,20 +1346,20 @@ a{
 			li{
 				border: 1px solid black;
 				display: inline-block;
-				background-color: #292929;
+				background-color: #fff;
 				height: 40px;
-				line-height: 40px;
 				a{
-					color: #fff;
-					text-decoration: none;
-				}
-				a.active{
 					color: #292929;
 					text-decoration: none;
+					padding: 0 10px;
+					line-height: 40px;
+				}
+				a.active{
+					color: #fff;
 				}
 			}
 			li.active{
-				background-color: #fff;
+				background-color: #292929;
 			}
 		}
 		.tabContent{
@@ -1404,6 +1404,46 @@ a{
 		.form-area{
 			width: 300px;
 			height: 100px;
+		}
+	}
+
+
+	.follow{
+		.follow-link{
+			a{
+				text-decoration: none;
+			}
+			a:hover{
+				opacity: 0.8;
+			}
+		}
+		ul{
+			text-align: center;
+			margin: 50px auto;
+			li{
+				border: 1px solid black;
+				display: inline-block;
+				background-color: #fff;
+				height: 61px;
+				width: 48%;
+				a{
+					color: #292929;
+					text-decoration: none;
+					padding: 0 10px;
+					line-height: 61px;
+				}
+				a.active{
+					color: #fff;
+				}
+			}
+			li.active{
+				background-color: #292929;
+			}
+		}
+		.follow-contents{
+			width: 100%;
+			height: 400px;
+			margin: 0 auto;
 		}
 	}
 

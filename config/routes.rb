@@ -16,8 +16,7 @@ Rails.application.routes.draw do
 	    get :followers, on: :member
 	end
 
-	get '/following/:id' => 'users#following', as: 'following'
-	get '/follower/:id' => 'users#follower', as: 'follower'
+	get '/follow/:id' => 'users#follow', as: 'follow'
 
 
 # clothes controller
