@@ -1,28 +1,54 @@
-# ポートフォリオ/Portfolio
+# ポートフォリオ
 就職活動用に自身のポートフォリオとして主にRuby on Railsを使用してWebアプリケーションを作成しました。  
-I created web application as my portfolio with Ruby on Rails for job hunting.
-## アプリケーション名/Application title  
+English is below.
+## アプリケーション名
 InMyCloset  
-## 概要/About
+## 概要
 クローゼット管理, 共有アプリケーション  
-Closet management and sharing application
-## 機能一覧/Functions
-* フォロー機能/Follow
-* いいね機能/Favorite
-* アプリ上に洋服を保存, 編集/Add clothes
-* ブランド検索, カテゴリー検索, ユーザー検索が可能/Search users, category, brand
-## インフラ/Infrastructure
+## 機能一覧
+* フォロー機能
+* いいね機能
+* アプリ上に洋服を保存, 編集
+* ブランド検索, カテゴリー検索, ユーザー検索が可能
+## インフラ
 AWS
-## Rubyのバージョン/Ruby version
+## Rubyのバージョン
 ruby-2.5.7
-## Railsのバージョン/Rails version
+## Railsのバージョン
 rails-5.2.4
-## 使用しているGem/Using Gem
+## 使用しているGem
 * font-awesome-rails(5.4.1)
 * refile
 * refile-mini_magick
 * bootstrap-sass
 * jquery-rails
 * devise
-## ライセンス/License
+## ライセンス
+[MIT license](https://en.wikipedia.org/wiki/MIT_License).
+    
+# Portfolio
+I created web application as my portfolio with Ruby on Rails for job hunting.
+## Application title
+InMyCloset
+## About
+Closet management and sharing application
+## Functions
+* Follow
+* Favorite
+* Add and edit clothes
+* Search users, category, brand
+## Infrastructure
+AWS
+## Ruby version
+ruby-2.5.7
+## Rails version
+rails-5.2.4
+## Using Gem
+* font-awesome-rails(5.4.1)
+* refile
+* refile-mini_magick
+* bootstrap-sass
+* jquery-rails
+* devise
+## License
 [MIT license](https://en.wikipedia.org/wiki/MIT_License).
