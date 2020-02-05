@@ -1,21 +1,49 @@
 <% if signed_in? %>
 	<!-- ログインしているときはフォローしている人のタイムラインを表示 -->
 	<main class="timeline">
-		<% if current_user.followings.present? %>
-			<strong class="font-l text-center">
-				Today's Post : <%= @todayPost %>
-			</strong>
-		<% else %>
-			<strong class="font-l text-center">
-				No Users<br>
-				<%= link_to "Let's Follow!", search_path %>
-			</strong>
-		<% end %>
-		<% @cloth.each do |cloth| %>
-			<div class="contents-size-top border">
-				<%= render 'clothes/index', clothes: cloth %>
+		<section class="left">
+			<% if current_user.followings.present? %>
+				<strong class="font-l text-center">
+					Today's Post : <%= @todayPost %>
+					<% @cloth.each do |cloth| %>
+						<div class="post">
+							<%= render 'clothes/index', clothes: cloth %>
+						</div>
+					<% end %>
+				</strong>
+			<% else %>
+				<strong class="font-l text-center">
+					No Users<br>
+					<%= link_to "Let's Follow!", search_path %>
+				</strong>
+			<% end %>
+		</section>
+		<section class="right">
+			<div class="inner">
+				<%= link_to user_path(current_user.id) do %>
+					<%= attachment_image_tag current_user, :profile_image, :fill, 200, 200, fallback: "no_image.png", size:'200x200', class: "user_image" %>
+					<strong class="font-s text-center">
+						<%= current_user.name %>
+					</strong>
+				<% end %>
+				<br>
+				<span class="atag text-center follow" style="display: block; margin-bottom: 20px;">
+					<%= link_to follow_path(current_user.id) do %>
+						<strong class="font-xs">
+							Following :
+							<%= current_user.followings.count %>
+						</strong>
+					<% end %>
+					<strong>/</strong>
+					<%= link_to follow_path(current_user.id) do %>
+						<strong class="font-xs">
+							Follower :
+							<%= current_user.followers.count %>
+						</strong>
+					<% end %>
+				</span>
 			</div>
-		<% end %>
+		</section>
 	</main>
 <% else %>
 	<!-- ログインしていないときはTOPページ -->
