@@ -21,15 +21,15 @@
 			</a>
 		</li>
 	</ul>
-	<div class="follow-contents" id="follower">
-		<% @follower.each do |user| %>
+	<div class="follow-contents" id="following">
+		<% @following.each do |user| %>
 			<div class="contents-size-auto">
 				<%= render 'users/index', users: user %>
 			</div>
 		<% end %>
 	</div>
-	<div class="follow-contents" id="following">
-		<% @following.each do |user| %>
+	<div class="follow-contents" id="follower">
+		<% @follower.each do |user| %>
 			<div class="contents-size-auto">
 				<%= render 'users/index', users: user %>
 			</div>

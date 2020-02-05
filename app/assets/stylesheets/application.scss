@@ -1361,15 +1361,14 @@ a{
 	}
 	.lower{
 		width: 100%;
-		ul{
-			text-align: center;
-			white-space: nowrap;
-			overflow-x: scroll;
+		.big-tab{
+			list-style: none;
 			li{
 				border: 1px solid black;
 				display: inline-block;
 				background-color: #fff;
 				height: 40px;
+				width: 48%;
 				a{
 					color: #292929;
 					text-decoration: none;
@@ -1384,12 +1383,73 @@ a{
 				background-color: #292929;
 			}
 		}
-		.tabContent{
+		.big-contents{
 			width: 100%;
-			.tab-contents{
+			.big-contents-inner{
 				width: 100%;
 				height: 400px;
 				margin: 0 auto;
+				.small-tab{
+					list-style: none;
+					text-align: center;
+					display: inline-block;
+					li{
+						border: 1px solid black;
+						display: inline-block;
+						background-color: #fff;
+						height: 40px;
+						a{
+							color: #292929;
+							text-decoration: none;
+							padding: 0 10px;
+							line-height: 40px;
+						}
+						a.active{
+							color: #fff;
+						}
+					}
+					li.active{
+						background-color: #292929;
+					}
+				}
+				.small-contents{
+					width: 100%;
+					.small-contents-inner{
+						width: 100%;
+						margin: 0 auto;
+					}
+				}
+				.category-tab{
+					text-align: center;
+					white-space: nowrap;
+					overflow-x: scroll;
+					li{
+						border: 1px solid black;
+						display: inline-block;
+						background-color: #fff;
+						height: 40px;
+						a{
+							color: #292929;
+							text-decoration: none;
+							padding: 0 10px;
+							line-height: 40px;
+						}
+						a.active{
+							color: #fff;
+						}
+					}
+					li.active{
+						background-color: #292929;
+					}
+				}
+				.category-contents{
+					width: 100%;
+					.category-contents-inner{
+						width: 100%;
+						height: 400px;
+						margin: 0 auto;
+					}
+				}
 			}
 		}
 	}
