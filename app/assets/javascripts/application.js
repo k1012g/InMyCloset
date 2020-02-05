@@ -64,33 +64,6 @@ $(document).on('turbolinks:load', function() {
 			}, 300);
 		})
 
-	$('.lower').each(function(){
-
-		let $tab = $(this).find('.tab'),
-			$tabA = $tab.find('a'),
-			$tabC = $(this).find('.tab-contents');
-
-		$tab.on('click', 'a', function(event){
-
-			event.preventDefault();
-
-			let $this = $(this);
-
-			if($this.hasClass('active')){
-				return;
-			}
-
-			$tabA.removeClass('active');
-			$tabA.parent().removeClass('active');
-			$this.addClass('active');
-			$this.parent().addClass('active');
-
-			$tabC.hide();
-			$($this.attr('href')).show();
-		});
-
-		$tabA.eq(0).trigger('click');
-	});
 
 	$('.follow').each(function(){
 
@@ -119,6 +92,79 @@ $(document).on('turbolinks:load', function() {
 		});
 
 		$btnA.eq(0).trigger('click');
+	});
+
+	$('.lower').each(function(){
+
+		let $bigTab = $(this).find('.big-tab'),
+			$bigTabA = $bigTab.find('a'),
+			$bigContents = $(this).find('.big-contents-inner');
+
+		$bigTab.on('click', 'a', function(event){
+
+			event.preventDefault();
+
+			let $this = $(this);
+
+			$bigTabA.removeClass('active');
+			$bigTabA.parent().removeClass('active');
+
+			$this.addClass('active');
+			$this.parent().addClass('active');
+
+			$bigContents.hide();
+			$($this.attr('href')).show();
+		});
+
+		$bigTabA.eq(0).trigger('click');
+
+		$('.big-contents-inner').each(function(){
+
+			let $smallTab = $(this).find('.small-tab'),
+				$smallTabA = $smallTab.find('a'),
+				$smallContents = $(this).find('.small-contents-inner');
+
+			$smallTab.on('click', 'a', function(event){
+
+				event.preventDefault();
+
+				let $this = $(this);
+
+				$smallTabA.removeClass('active');
+				$smallTabA.parent().removeClass('active');
+
+				$this.addClass('active');
+				$this.parent().addClass('active');
+
+				$smallContents.hide();
+				$($this.attr('href')).show();
+			});
+
+			$smallTabA.eq(0).trigger('click');
+
+
+			let $categoryTab = $(this).find('.category-tab'),
+				$categoryTabA = $categoryTab.find('a'),
+				$categoryContents = $(this).find('.category-contents-inner');
+
+			$categoryTab.on('click', 'a', function(event){
+
+				event.preventDefault();
+
+				let $this = $(this);
+
+				$categoryTabA.removeClass('active');
+				$categoryTabA.parent().removeClass('active');
+
+				$this.addClass('active');
+				$this.parent().addClass('active');
+
+				$categoryContents.hide();
+				$($this.attr('href')).show();
+			});
+
+			$categoryTabA.eq(0).trigger('click');
+		});
 	});
 
 });

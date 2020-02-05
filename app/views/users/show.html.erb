@@ -46,55 +46,25 @@
 		</div>
 	</section>
 	<section class="lower">
-		<ul class="tab">
-			<li id="tab_0">
-				<a href="#0">
-					<strong class="font-xs">
-						All
-					</strong>
-					<strong class="font-xs">
-						(<%= @user.cloths.count %>)
-					</strong>
+		<ul class="big-tab text-center">
+			<li>
+				<a href="#category">
+					<strong class="font-xs">Category</strong>
 				</a>
 			</li>
-			<% @categories.each do |category| %>
-				<li id="tab_<%= category.id %>">
-					<a href="#<%= category.id %>">
-						<strong class="font-xs">
-							<%= category.category %>
-						</strong>
-						<strong class="font-xs">
-							(<%= Cloth.where(user_id: @user.id, category_id: category.id).count %>)
-						</strong>
-					</a>
-				</li>
-			<% end %>
+			<li>
+				<a href="#brand">
+					<strong class="font-xs">Brand</strong>
+				</a>
+			</li>
 		</ul>
-		<div class="tabContent">
-			<div class="tab-contents" id="0">
-				<% @user.cloths.each do |cloth| %>
-					<div class="contents-size-auto">
-						<%= render 'clothes/index', clothes: cloth %>
-						<% if @user == current_user %>
-							<%= link_to "Edit", edit_clothes_path(cloth.id), class: "btn done-btn" %>
-							<%= link_to "Delete this cloth", destroy_clothes_path(cloth.id), data: { confirm: "Delete this #{cloth.brand} #{cloth.category.category.capitalize}?" }, method: :delete, class: "btn btn-danger" %>
-						<% end %>
-					</div>
-				<% end %>
+		<div class="big-contents">
+			<div id="category" class="big-contents-inner">
+				<%= render 'clothes/category_tab', user: @user, categories: @categories %>
 			</div>
-			<% @categories.each do |category| %>
-				<div class="tab-contents" id="<%= category.id %>">
-					<% Cloth.where(user_id: @user.id, category_id: category.id).each do |clothes| %>
-						<div class="contents-size-auto">
-							<%= render 'clothes/index', clothes: clothes %>
-							<% if @user == current_user %>
-								<%= link_to "Edit", edit_clothes_path(clothes.id), class: "btn done-btn" %>
-								<%= link_to "Delete this cloth", destroy_clothes_path(clothes.id), data: { confirm: "Delete this #{clothes.brand} #{clothes.category.category.capitalize}?" }, method: :delete, class: "btn btn-danger" %>
-							<% end %>
-						</div>
-					<% end %>
-				</div>
-			<% end %>
+			<div id="brand" class="big-contents-inner">
+				<%= render 'clothes/brand_tab', times: @times, other_times: @other_times, user_cloth: @user_cloth, user: @user %>
+			</div>
 		</div>
 	</section>
 </main>

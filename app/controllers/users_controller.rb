@@ -5,7 +5,9 @@ class UsersController < ApplicationController
   def show
     @categories = Category.all
     @user = User.find(params[:id])
-    @user_cloth = @user.cloths
+    @user_cloth =@user.cloths.pluck(:brand)
+    @times = 1
+    @other_times = 1
   end
 
   def edit
