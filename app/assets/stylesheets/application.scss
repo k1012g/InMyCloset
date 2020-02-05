@@ -983,15 +983,38 @@ a{
 	コンテンツのサイズ調整 ----- */
 
 	.timeline{
-		.contents-size-top{
-			width: 24%;
-			height: 350px;
-			margin-bottom: 1%;
-			margin-right: 1%;
-			padding-left: 18px;
-			padding-bottom: 10px;
+		width: 75%;
+		margin: 120px auto;
+		.left{
+			width: 70%;
 			float: left;
-			overflow: hidden;
+			margin-bottom: 80px;
+			.post{
+				.cloth_image{
+					width: 50%;
+					height: auto;
+				}
+			}
+		}
+		.right{
+			width: 30%;
+			float: left;
+			position: fixed;
+			right: 100px;
+			border: 1px solid #292929;
+			background-color: #fff;
+			.inner{
+				a{
+					text-decoration: none;
+					&:hover{
+						opacity: 0.8;
+					}
+				}
+				img{
+					display: block;
+					margin: 20px auto;
+				}
+			}
 		}
 	}
 
@@ -1306,7 +1329,6 @@ a{
 		float: left;
 	}
 
-
 	/* ----- プロフィール画面 ----- */
 	.profile{
 		.upper{
@@ -1444,21 +1466,6 @@ a{
 			width: 100%;
 			height: 400px;
 			margin: 0 auto;
-		}
-	}
-
-
-	/* ----- jQuery ----- */
-	.outer{
-		position: relative;
-		margin-top: 10px;
-		overflow: hidden;
-		.cover{
-			position: absolute;
-			display: block;
-			opacity: 0;
-			text-shadow: 2px 2px 8px #fff;
-			color: #292929;
 		}
 	}
 

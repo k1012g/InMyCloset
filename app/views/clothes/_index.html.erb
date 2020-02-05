@@ -1,13 +1,12 @@
 <!-- 投稿そのものを表示 -->
-<div class="outer">
-	<strong class="font-s cover">
-		<%= clothes.brand %>
-	</strong>
-	<%= attachment_image_tag clothes, :image, :fill, 200, 200 %>
-</div>
+<%= attachment_image_tag clothes, :image, :fill, 200, 200, class: "cloth_image" %>
 <br>
 <!-- 投稿した人の画像、名前とその人のページへのリンク -->
 <span class="atag">
+	<strong class="font-xs">
+		<%= clothes.brand %>
+	</strong>
+	<br>
 	<% unless controller.controller_name == 'users' && controller.action_name == 'show' %>
 		<%= link_to user_path(clothes.user.id) do %>
 			<%= attachment_image_tag clothes.user, :profile_image, :fill, 70, 70, fallback: "no_image.png", size:'70x70', class: "user_image" %>

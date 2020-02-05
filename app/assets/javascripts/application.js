@@ -52,22 +52,6 @@ $(document).on('turbolinks:load', function() {
 		});
 	});
 
-	// 投稿のマウスオーバー時のアニメーション
-	if (window.matchMedia('(min-width: 991px)').matches) {
-		let $image = $('.outer');
-		$image
-			.on('mouseover', function(){
-				$(this).find('.cover').stop(true).animate({
-					opacity: 1.0
-				}, 300);
-			})
-			.on('mouseout', function(){
-				$(this).find('.cover').stop(true).animate({
-					opacity: 0
-				}, 300);
-			});
-	};
-
 	$('.link')
 		.on('mouseover', function(){
 			$(this).parent().parent().stop(true).animate({
