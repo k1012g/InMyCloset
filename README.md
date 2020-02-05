@@ -1,6 +1,6 @@
 # ポートフォリオ
 就職活動用に自身のポートフォリオとして主にRuby on Railsを使用してWebアプリケーションを作成しました。  
-English is below.
+English sentence is below.
 ## アプリケーション名
 InMyCloset  
 ## 概要
