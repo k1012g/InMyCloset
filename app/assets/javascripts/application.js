@@ -19,10 +19,11 @@
 
 $(document).on('turbolinks:load', function() {
 
-	// メニュー開閉
+	// メニュー開閉(pcの時は使わない)
 	$('#menu').on('click', function(){
 		$('#nav').toggleClass('open');
 	});
+
 
 	// ヘッダーの固定
 	$('.header').each(function(){
@@ -42,9 +43,9 @@ $(document).on('turbolinks:load', function() {
 	});
 
 	// ページ上部に戻るボタン
-	let $topBtn = $('#top-btn');
+	let $toTop = $('#to-top');
 
-	$topBtn.each(function(){
+	$toTop.each(function(){
 		let el = ('html');
 
 		$(this).on('click', function(){
@@ -52,6 +53,7 @@ $(document).on('turbolinks:load', function() {
 		});
 	});
 
+	// リンク選択時にエフェクト
 	$('.link')
 		.on('mouseover', function(){
 			$(this).parent().parent().stop(true).animate({
@@ -64,14 +66,14 @@ $(document).on('turbolinks:load', function() {
 			}, 300);
 		})
 
-
+	// フォロー一覧のタブ
 	$('.follow').each(function(){
 
-		let $btn = $(this).find('.fBtn'),
-			$btnA = $btn.find('a'),
-			$btnC = $(this).find('.follow-contents');
+		let $followTab = $(this).find('.follow-tag'),
+			$followTabA = $followTab.find('a'),
+			$followContents = $(this).find('.follow-contents');
 
-		$btn.on('click', 'a', function(event){
+		$followTab.on('click', 'a', function(event){
 
 			event.preventDefault();
 
@@ -81,68 +83,73 @@ $(document).on('turbolinks:load', function() {
 				return;
 			}
 
-			$btnA.removeClass('active');
-			$btnA.parent().removeClass('active');
+			$followTabA.removeClass('active');
+			$followTabA.parent().removeClass('active');
 
 			$this.addClass('active');
 			$this.parent().addClass('active');
 
-			$btnC.hide();
+			$followContents.hide();
 			$($this.attr('href')).show();
 		});
 
-		$btnA.eq(0).trigger('click');
+		$followTabA.eq(0).trigger('click');
 	});
 
+
+	// マイページのタブ
 	$('.lower').each(function(){
 
-		let $bigTab = $(this).find('.big-tab'),
-			$bigTabA = $bigTab.find('a'),
-			$bigContents = $(this).find('.big-contents-inner');
+		let $Tab = $(this).find('.tab'),
+			$TabA = $Tab.find('a'),
+			$Contents = $(this).find('.tab-contents-inner');
 
-		$bigTab.on('click', 'a', function(event){
+		$Tab.on('click', 'a', function(event){
 
 			event.preventDefault();
 
 			let $this = $(this);
 
-			$bigTabA.removeClass('active');
-			$bigTabA.parent().removeClass('active');
+			$TabA.removeClass('active');
+			$TabA.parent().removeClass('active');
 
 			$this.addClass('active');
 			$this.parent().addClass('active');
 
-			$bigContents.hide();
+			$Contents.hide();
 			$($this.attr('href')).show();
 		});
 
-		$bigTabA.eq(0).trigger('click');
+		$TabA.eq(0).trigger('click');
 
-		$('.big-contents-inner').each(function(){
 
-			let $smallTab = $(this).find('.small-tab'),
-				$smallTabA = $smallTab.find('a'),
-				$smallContents = $(this).find('.small-contents-inner');
+		// ブランドタブとカテゴリータブ
+		$('.tab-contents-inner').each(function(){
 
-			$smallTab.on('click', 'a', function(event){
+			// ブランドタブ
+			let $brandTab = $(this).find('.brand-tab'),
+				$brandTabA = $brandTab.find('a'),
+				$brandContents = $(this).find('.brand-contents-inner');
+
+			$brandTab.on('click', 'a', function(event){
 
 				event.preventDefault();
 
 				let $this = $(this);
 
-				$smallTabA.removeClass('active');
-				$smallTabA.parent().removeClass('active');
+				$brandTabA.removeClass('active');
+				$brandTabA.parent().removeClass('active');
 
 				$this.addClass('active');
 				$this.parent().addClass('active');
 
-				$smallContents.hide();
+				$brandContents.hide();
 				$($this.attr('href')).show();
 			});
 
-			$smallTabA.eq(0).trigger('click');
+			$brandTabA.eq(0).trigger('click');
 
-
+			// カテゴリータブ
 			let $categoryTab = $(this).find('.category-tab'),
 				$categoryTabA = $categoryTab.find('a'),
 				$categoryContents = $(this).find('.category-contents-inner');

@@ -1,7 +1,9 @@
 <% user_cloth.group_by(&:itself).each do |brand, num| %>
-	<ul class="small-tab">
+<!-- 特定のユーザーの投稿のブランドの種類とその数を表示 -->
+	<ul class="brand-tab">
 		<li>
 			<a href="#<%= times %>">
+				<!-- eachの回数をリンクにしている -->
 				<strong class="font-xs">
 					<%= brand %>
 					(<%= num.count %>)
@@ -10,20 +12,22 @@
 		</li>
 	</ul>
 	<% times += 1 %>
+	<!-- eachの回数 -->
 <% end %>
 <% user_cloth.group_by(&:itself).each do |brand, num| %>
-	<div class="small-contents">
-		<div class="small-contents-inner" id="<%= other_times %>">
+	<div class="brand-contents">
+		<div class="brand-contents-inner" id="<%= other_times %>">
+			<!-- eachの回数を上記のaタグと一致させている(jQuery用) -->
 			<% user.cloths.where(brand: brand).each do |cloth| %>
 				<div class="contents-size-auto">
 					<%= render 'clothes/index', clothes: cloth %>
-					<% if @user == current_user %>
-						<%= link_to "Edit", edit_clothes_path(cloth.id), class: "btn done-btn" %>
-						<%= link_to "Delete this cloth", destroy_clothes_path(cloth.id), data: { confirm: "Delete this #{cloth.brand} #{cloth.category.category.capitalize}?" }, method: :delete, class: "btn btn-danger" %>
-					<% end %>
+					<!-- 投稿一覧のテンプレート -->
+					<%= render 'clothes/edit_link', user: user, cloth: cloth %>
+					<!-- 投稿に対して編集、削除ボタンのテンプレート -->
 				</div>
 			<% end %>
 		</div>
 	</div>
 	<% other_times += 1 %>
+	<!-- eachの回数 -->
 <% end %>

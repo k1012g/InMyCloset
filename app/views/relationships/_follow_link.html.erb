@@ -1,0 +1,13 @@
+<%= link_to follow_path(user.id) do %>
+	<strong class="font-xs">
+		Following :
+		<%= user.followings.count %>
+	</strong>
+<% end %>
+<strong>/</strong>
+<%= link_to follow_path(user.id) do %>
+	<strong class="font-xs">
+		Follower :
+		<%= user.followers.count %>
+	</strong>
+<% end %>

@@ -1,6 +1,6 @@
 <header class="header">
 	<%= link_to root_path do %>
-			<strong class="font-s title">InMyCloset</strong>
+			<strong class="font-s">InMyCloset</strong>
 	<% end %>
 	<% if signed_in? %>
 		<div class="header-links" style="float: right;">
@@ -36,4 +36,5 @@
 		</div>
 	<% end %>
 	<%= render 'layouts/nav' %>
+	<!-- スマホとタブレットの時のみ表示 -->
 </header>

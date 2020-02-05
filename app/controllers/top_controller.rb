@@ -1,16 +1,25 @@
 class TopController < ApplicationController
   def top
+    # ログインしているかどうかのif文
   	if signed_in?
-  		@users = current_user.followings
-  		@clothes = []
-  		@users.each do |user|
-  			@clothes += user.cloths
+
+      # フォローしている人を取得
+  		@followings = current_user.followings
+
+      # 配列を作成
+  		@followings_clothes = []
+  		@followings.each do |user|
+  			@followings_clothes += user.cloths
   		end
-  		@cloth = @clothes.sort{|a, b|
+
+      # 新着順に並び替え
+  		@timeline_clothes = @followings_clothes.sort{|a, b|
 	      b.id <=> a.id
 	    }
+
+      # 今日のフォローしている人の投稿をカウント
       @todayPost = 0
-      @clothes.each do |post|
+      @followings_clothes.each do |post|
         if (post.created_at.to_s.match(/#{Date.today.to_s}.+/))
           @todayPost += 1
         end

@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   def show
     @categories = Category.all
     @user = User.find(params[:id])
-    @user_cloth =@user.cloths.pluck(:brand)
+
+    # ユーザーの投稿をブランド名のみ取得
+    @user_cloth_brand =@user.cloths.pluck(:brand)
+
+    # each文の回数をカウントする用
     @times = 1
     @other_times = 1
   end
@@ -16,24 +20,26 @@ class UsersController < ApplicationController
 
   def update
   	@user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user.id)
+    else
+      render :edit
+    end
+
+    # 画像削除する場合のif文
     if params[:delete] == "yes"
       @user.profile_image = nil
     end
-  	if @user.update(user_params)
-  		redirect_to user_path(@user.id)
-  	else
-  		render :edit
-  	end
   end
 
   def follow
     @user = User.find(params[:id])
-    @follower = @user.followers
-    @following = @user.followings
-  end
 
-  def index
-    redirect_to new_user_registration_path
+    # フォローしている人を取得
+    @follower = @user.followers
+
+    # フォロワーを取得
+    @following = @user.followings
   end
 
   private
@@ -41,6 +47,7 @@ class UsersController < ApplicationController
   	params.require(:user).permit(:name, :introduction, :profile_image)
   end
 
+  # 自分かどうかを判定するメソッド
   def current_user?
   	user = User.find(params[:id])
   	if user != current_user

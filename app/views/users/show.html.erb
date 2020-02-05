@@ -1,4 +1,4 @@
-<main class="container profile">
+<main class="container mypage">
 	<section class="upper clearfix">
 		<div class="left">
 			<%= attachment_image_tag @user, :profile_image, :fill, 300, 300, fallback: "no_image.png", size:'300x300', class: "user_image" %>
@@ -11,25 +11,15 @@
 			<strong class="font-s text-center">
 				<span id="follow_<%= @user.id %>">
 					<% if current_user != @user %>
+					<!-- 自分以外のページのみフォローボタンを表示 -->
 						<%= render 'relationships/follow' , user: @user %>
 					<% end %>
 				</span>
 			</strong>
 			<br>
-			<span class="atag text-center follow" style="display: block; margin-bottom: 20px;">
-				<%= link_to follow_path(@user.id) do %>
-					<strong class="font-xs">
-						Following :
-						<%= @user.followings.count %>
-					</strong>
-				<% end %>
-				<strong>/</strong>
-				<%= link_to follow_path(@user.id) do %>
-					<strong class="font-xs">
-						Follower :
-						<%= @user.followers.count %>
-					</strong>
-				<% end %>
+			<span class="atag text-center" style="display: block; margin-bottom: 20px;">
+				<!-- フォローフォロワーを表示 -->
+				<%= render 'relationships/follow_link', user: @user %>
 			</span>
 			<% if @user.introduction.present? %>
 				<div class="font-xs introduction">
@@ -38,6 +28,7 @@
 			<% end %>
 			<span class="text-center" style="margin-top: 10px;">
 				<% if current_user == @user %>
+				<!-- 自分の時のみ編集、追加、お気に入り一覧のボタンを表示 -->
 					<%= link_to "Add clothes", new_clothes_path, class: "btn done-btn" %>
 					<%= link_to "Edit profile", edit_user_path(@user.id), class: "btn done-btn" %>
 					<%= link_to "Favorites", user_favorite_path(@user.id), class: "btn done-btn" %>
@@ -46,7 +37,7 @@
 		</div>
 	</section>
 	<section class="lower">
-		<ul class="big-tab text-center">
+		<ul class="tab text-center">
 			<li>
 				<a href="#category">
 					<strong class="font-xs">Category</strong>
@@ -58,12 +49,14 @@
 				</a>
 			</li>
 		</ul>
-		<div class="big-contents">
-			<div id="category" class="big-contents-inner">
+		<div class="tab-contents">
+			<div id="category" class="tab-contents-inner">
+				<!-- カテゴリータブ部分のテンプレート -->
 				<%= render 'clothes/category_tab', user: @user, categories: @categories %>
 			</div>
-			<div id="brand" class="big-contents-inner">
-				<%= render 'clothes/brand_tab', times: @times, other_times: @other_times, user_cloth: @user_cloth, user: @user %>
+			<div id="brand" class="tab-contents-inner">
+				<!-- ブランドタブ部分のテンプレート -->
+				<%= render 'clothes/brand_tab', times: @times, other_times: @other_times, user_cloth: @user_cloth_brand, user: @user %>
 			</div>
 		</div>
 	</section>

@@ -1,6 +1,10 @@
-<footer class="footer" style="position: fixed; bottom: 0;">
-	<% if devise_controller? == false %>
-        <a><%= icon 'far', 'arrow-alt-circle-up', id: "top-btn", class: "font-m"%></a>
+<footer class="footer">
+	<% unless devise_controller? %>
+	<!-- サインイン、サインアップ画面の時は非表示 -->
+        <a>
+        	<!-- aタグで囲むことでボタン認識させる -->
+        	<%= icon 'far', 'arrow-alt-circle-up', id: "to-top", class: "font-m"%>
+    	</a>
       <% end %>
 	<strong class="text-center">©k1012g</strong>
 </footer>

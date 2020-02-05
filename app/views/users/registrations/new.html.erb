@@ -1,4 +1,4 @@
-<div class="sign-section1">
+<div class="signin">
   <div class="text-center width-s" style="margin: 0 auto; padding-top: 100px;">
     <strong class="font-l">Sign up</strong>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -22,6 +22,7 @@
         </tr>
       </table>
       <%= render "users/shared/error_messages", resource: resource %>
+      <!-- エラー文の表示 -->
       <br>
       <div class="actions">
         <%= f.submit "Sign up!", class: "btn done-btn" %>

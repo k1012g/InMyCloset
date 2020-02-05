@@ -1,13 +1,14 @@
 <div class="follow container">
-	<strong class="font-l text-center follow-link" style="display: block; margin: 50px auto;">
+	<strong class="font-l text-center follow-link">
 		<%= link_to user_path(@user.id) do |user| %>
 			<%= @user.name %>
 			<%= attachment_image_tag @user, :profile_image, :fill, 120, 120, fallback: "no_image.png", size:'120x120', class: "user_image" %>
 		<% end %>
 	</strong>
-	<ul class="fBtn">
+	<ul class="follow-tag">
 		<li>
 			<a href="#following">
+			<!-- フォローしている人を表示するタブ -->
 				<strong class="font-s">
 					Following (<%= @following.count %>)
 				</strong>
@@ -15,6 +16,7 @@
 		</li>
 		<li>
 			<a href="#follower">
+			<!-- フォロワーを表示するタブ -->
 				<strong class="font-s">
 					Follower (<%= @follower.count %>)
 				</strong>
@@ -22,6 +24,7 @@
 		</li>
 	</ul>
 	<div class="follow-contents" id="following">
+		<!-- フォローしている人を表示する -->
 		<% @following.each do |user| %>
 			<div class="contents-size-auto">
 				<%= render 'users/index', users: user %>
@@ -29,6 +32,7 @@
 		<% end %>
 	</div>
 	<div class="follow-contents" id="follower">
+		<!-- フォロワーを表示する -->
 		<% @follower.each do |user| %>
 			<div class="contents-size-auto">
 				<%= render 'users/index', users: user %>

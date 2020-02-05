@@ -1,4 +1,4 @@
-<section class="search-section1">
+<section class="search">
 	<strong class="font-l text-center">Search</strong>
 	<span class="text-center">
 		<!-- 検索結果のフォーム -->
@@ -7,6 +7,7 @@
 			<%= select_tag :sort, options_for_select({ "User" => "User", "Brand" => "Brand", "Category" => "Category" }) %>
 			<%= submit_tag "Search", class: "btn done-btn2" %>
 		<% end %>
+		<br>
 		<strong class="font-s search-text" style="display: block; margin-bottom: 30px;">
 			You can search everything you want to check.
 			<br>
@@ -15,7 +16,7 @@
 		</strong>
 	</span>
 </section>
-<div class="container clearfix">
+<div class="container">
 	<div style="width: 100%;">
 		<% if @input.blank? && @sort.blank? %>
 		<!-- 何も入力しなかった時の条件分岐 -->

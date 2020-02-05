@@ -16,6 +16,7 @@ class FavoritesController < ApplicationController
   end
 
   private
+  # 自分かどうかの判定
   def current_user?
     user = User.find(params[:user_id])
     if user != current_user
