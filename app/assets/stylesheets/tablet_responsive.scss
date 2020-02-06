@@ -1,0 +1,408 @@
+// Place all the styles related to the searches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* ---------------- タブレットのレスポンシブ ---------------- */
+
+@media screen and (min-width: 415px) and (max-width: 990px){
+
+	body{
+		margin-top: 50px;
+	}
+
+	.container{
+		margin-bottom: 35px;
+	}
+
+	.contents-size-top{
+		width: 32%;
+		height: 350px;
+		margin-bottom: 1%;
+		margin-right: 1%;
+		padding-left: 18px;
+		padding-bottom: 10px;
+		float: left;
+		overflow: hidden;
+	}
+
+	/* ----- 横に3要素を並べる ----- */
+	.contents-size{
+		width: 32%;
+		height: 350px;
+		margin-bottom: 1%;
+		margin-right: 1%;
+		padding-left: 18px;
+		padding-bottom: 10px;
+		float: left;
+		overflow: hidden;
+	}
+
+	/* ----- 横に3要素を並べる(高さ指定なし) ----- */
+
+	.contents-size-auto{
+		width: 32%;
+		margin-bottom: 1%;
+		margin-right: 1%;
+		padding-left: 19px;
+		padding-bottom: 10px;
+		float: left;
+	}
+
+	/* ----- ログイン、サインアップ用のフォーム ----- */
+
+	.form-table{
+		table-layout: fixed;
+		th{
+			width: 88px;
+		}
+	}
+
+	/* ----- 横幅の指定 -----  */
+
+	.width-xl{
+		width: 90%;
+	}
+
+	.width-l{
+		width: 85%;
+	}
+
+	.width-m{
+		width: 55%;
+	}
+
+	.width-s{
+		width: 50%
+	}
+
+	.width-xs{
+		width: 40%;
+	}
+
+	/* ----- fontのサイズ指定 ----- */
+
+	.font-xl{
+		font-size: 7rem;
+	}
+
+	.font-l{
+		font-size: 5rem;
+	}
+
+	.font-m{
+		font-size: 3.5rem;
+	}
+
+	.font-s{
+		font-size: 2.5rem;
+	}
+
+	.font-xs{
+		font-size: 1.5rem;
+	}
+
+	/* ----- トップ画面(未ログイン) ----- */
+
+	.top{
+		width: 100%;
+		z-index: 0;
+		.top-contents1{
+			background-attachment: fixed;
+			background-image: image-url("top-image.jpg");
+			background-position: center;
+			background-size: cover;
+			height: 624px;
+			padding-top: 225px;
+			width: 100%;
+			.top-contents1-inner{
+				margin: 0 auto;
+				width: 80%;
+				.top-contents1-title{
+					animation: blink 1.7s ease-in-out infinite alternate;
+					color: #fff;
+					line-height: 70px;
+					-moz-animation: blink 1.7s ease-in-out infinite alternate;
+					text-shadow: 0px 0px 5px #fff;
+					-webkit-animation: blink 1.7s ease-in-out infinite alternate;
+					@keyframes blink{
+						0% {opacity: 0;}
+						100% {opacity: 1;}
+					}
+					@-moz-keyframes blink{
+						0% {opacity: 0;}
+						100% {opacity: 1;}
+					}
+					@-webkit-keyframes blink{
+						0% {opacity: 0;}
+						100% {opacity: 1;}
+					}
+				}
+			}
+		}
+		.top-contents2,
+		.top-contents3,
+		.top-contents4{
+			background-position: center;
+			background-size: cover;
+			height: 624px;
+			width: 100%;
+		}
+		.top-contents3,
+		.top-contents4{
+			padding-top: 250px;
+		}
+		.top-contents2{
+			background-image: image-url("top-image2.jpg");
+			padding-top: 240px;
+			strong{
+				color: #fff;
+				text-shadow: 0px 0px 5px black;
+			}
+		}
+		.top-contents3{
+			background-attachment: fixed;
+			background-image: image-url("top-image3.jpg");
+			strong{
+				color: #fff;
+				text-shadow: 0px 0px 5px black;
+			}
+		}
+		.top-contents4{
+			background-image: image-url("top-image4.jpg");
+			strong{
+				color: #fff;
+				text-shadow: 0px 0px 5px #fff;
+			}
+		}
+		.top-contents5{
+			height: 624px;
+			margin-top: 30px;
+			width: 100%;
+			div{
+				background-position: center;
+				background-size: cover;
+				height: 100%;
+				padding-top: 250px;
+				strong{
+					a{
+						color: #fff;
+						text-decoration: none;
+					}
+				}
+			}
+			div:first-child{
+				background-image: image-url("top-image5.jpg");
+			}
+			div:nth-child(2){
+				background-image: image-url("top-image7.jpg");
+			}
+			div:last-child{
+				background-image: image-url("top-image6.jpg");
+			}
+		}
+	}
+
+
+	/* ----- アバウト画面 ----- */
+
+	.about{
+		a{
+			color: red;
+		}
+		ul{
+			list-style: none;
+			font-size: 22px;
+			margin-bottom: 12px;
+		}
+		.inventor{
+			color: #292929;
+			background: -webkit-linear-gradient(0deg, #ACB6E5, #86FDE8);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+
+
+
+	/* ----- ヘッダー ----- */
+
+	.header{
+		width: 100%;
+		height: 50px;
+		padding: 0 10px;
+		position: absolute;
+		top: 0;
+		background-color: #292929;
+		z-index: 1000;
+		.title{
+			text-align: left;
+			color: #fff;
+			line-height: 50px;
+		}
+		.links{
+			display: none;
+		}
+		i{
+			color: #fff;
+			line-height: 50px;
+			padding-right: 10px;
+		}
+		#nav{
+			position: fixed;
+			top: 50px;
+			right: -170px;
+			width: 170px;
+			padding: 20px;
+			background-color: rgba(0, 0, 0, 0.77);
+			transition: transform 0.9s;
+			z-index: 1000;
+			ul{
+				list-style: none;
+				li{
+					margin-bottom: 20px;
+					font-size: 20px;
+					a{
+						color: #fff;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		.open{
+			transform: translate3d(-170px, 0, 0);
+		}
+	}
+
+	/* ----- ヘッダー固定 ----- */
+
+	.header.sticky{
+		position: fixed;
+		top: 0;
+		opacity: 0.95;
+	}
+
+	/* ----- フッター ----- */
+
+	.footer{
+		background-color: #292929;
+		bottom: 0;
+		height: 35px;
+		opacity: 0.95;
+		position: fixed;
+		text-align: center;
+		width: 100%;
+		strong{
+			color: #fff;
+			line-height: 35px;
+		}
+		/* ----- ページ上部に戻るボタン ----- */
+
+		#to-top{
+			position: absolute;
+			right: 50px;
+			bottom: 60px;
+			color: #fff;
+			text-shadow: 0px 0px 5px black;
+			z-index: 1000;
+			&:hover{
+				opacity: 0.8;
+			}
+		}
+	}
+
+
+	/* ----- マイページ ----- */
+
+	.profile{
+		margin: 0 auto;
+		margin-bottom: 30px;
+		.category{
+			width: 20%;
+			float: left;
+		}
+		.image{
+			float: left;
+			margin-left: 15px;
+		}
+		.info{
+			float: left;
+			width: 250px;
+			margin-left: 15px;
+			.introduction{
+				margin: 0 auto;
+				margin-top: -15px;
+				border: 1px solid #292929;
+				padding: 2px;
+			}
+		}
+	}
+
+	/* ----- プロフィール編集 ----- */
+
+	.profile-edit-left{
+		width: 300px;
+		float: left;
+		img{
+			width: 300px;
+			height: 300px;
+		}
+		.checkbox{
+			margin: 0;
+			display: inline-block;
+		}
+		.edit-image{
+			width: 300px;
+		}
+	}
+	.profile-edit-right{
+		width: 220px;
+		float: left;
+		margin: 60px 0 0 60px;
+	}
+
+	/* ----- 投稿のjsを無効 ----- */
+
+	.outer{
+		.cover{
+			display: none;
+		}
+	}
+
+	/* ----- 新規投稿画面 ----- */
+
+	.preview{
+		margin: 0 6%;
+		width: 40%;
+		float: left;
+		div{
+			margin: 0 auto;
+			border: 1px solid #292929;
+			height: 300px;
+			strong{
+				font-size: 15px;
+				line-height: 300px;
+			}
+		}
+	}
+	.new{
+		width: 44%;
+		float: left;
+	}
+
+
+	/* ----- 投稿の編集画面 ----- */
+
+	.before-edit{
+		width: 40%;
+		margin: 0 5%;
+		float: left;
+		img{
+			width: 280px;
+			height: 280px;
+		}
+	}
+	.edit{
+		width: 45%;
+		float: left;
+	}
+}
