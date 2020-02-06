@@ -194,7 +194,6 @@
 	background-color: rgba(0, 0, 0, 0.77);
 	position: fixed;
 	transition: transform 0.9s;
-	width: 170px;
 	z-index: 1000;
 }
 
@@ -985,6 +984,7 @@
 			padding: 20px;
 			right: -170px;
 			top: 50px;
+			width: 170px;
 			ul{
 				list-style: none;
 				li{
