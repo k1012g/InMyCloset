@@ -94,7 +94,7 @@
 		.top-contents1{
 			background-attachment: fixed;
 			background-image: image-url("top-image.jpg");
-			background-position: center;
+			background-position: top;
 			background-size: cover;
 			height: 812px;
 			padding-top: 240px;
@@ -128,7 +128,7 @@
 		.top-contents3,
 		.top-contents4{
 			background-position: center;
-			background-size: cover;
+			background-size: top;
 			height: 800px;
 			width: 100%;
 		}
@@ -163,6 +163,7 @@
 			width: 100%;
 			div{
 				background-attachment: fixed;
+				background-position: top;
 				background-size: cover;
 				height: 230px;
 				padding-top: 100px;
@@ -239,7 +240,7 @@
 		.about-contents1{
 			background-attachment: fixed;
 			background-image: image-url("about-image.jpg");
-			background-position: center;
+			background-position: top;
 			background-size: cover;
 			height: 240px;
 			padding-top: 70px;
@@ -256,7 +257,7 @@
 		.about-contents3{
 			background-attachment: fixed;
 			background-image: image-url("top-image6.jpg");
-			background-position: center;
+			background-position: top;
 			background-size: cover;
 			height: 240px;
 			padding-top: 75px;
