@@ -20,15 +20,15 @@ class UsersController < ApplicationController
 
   def update
   	@user = User.find(params[:id])
+     # 画像削除する場合のif文
+    if params[:delete] == "yes"
+      @user.profile_image = nil
+    end
+
     if @user.update(user_params)
       redirect_to user_path(@user.id)
     else
       render :edit
-    end
-
-    # 画像削除する場合のif文
-    if params[:delete] == "yes"
-      @user.profile_image = nil
     end
   end
 

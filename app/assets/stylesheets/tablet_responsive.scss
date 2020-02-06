@@ -11,6 +11,7 @@
 	}
 
 	.container{
+		margin-top: 50px;
 		margin-bottom: 35px;
 	}
 
@@ -48,14 +49,7 @@
 		float: left;
 	}
 
-	/* ----- ログイン、サインアップ用のフォーム ----- */
 
-	.form-table{
-		table-layout: fixed;
-		th{
-			width: 88px;
-		}
-	}
 
 	/* ----- 横幅の指定 -----  */
 
@@ -111,8 +105,8 @@
 			background-image: image-url("top-image.jpg");
 			background-position: center;
 			background-size: cover;
-			height: 624px;
-			padding-top: 225px;
+			height: 702px;
+			padding-top: 300px;
 			width: 100%;
 			.top-contents1-inner{
 				margin: 0 auto;
@@ -144,16 +138,16 @@
 		.top-contents4{
 			background-position: center;
 			background-size: cover;
-			height: 624px;
+			height: 702px;
 			width: 100%;
 		}
 		.top-contents3,
 		.top-contents4{
-			padding-top: 250px;
+			padding-top: 300px;
 		}
 		.top-contents2{
 			background-image: image-url("top-image2.jpg");
-			padding-top: 240px;
+			padding-top: 300px;
 			strong{
 				color: #fff;
 				text-shadow: 0px 0px 5px black;
@@ -175,14 +169,14 @@
 			}
 		}
 		.top-contents5{
-			height: 624px;
+			height: 702px;
 			margin-top: 30px;
 			width: 100%;
 			div{
 				background-position: center;
 				background-size: cover;
 				height: 100%;
-				padding-top: 250px;
+				padding-top: 300px;
 				strong{
 					a{
 						color: #fff;
@@ -202,23 +196,102 @@
 		}
 	}
 
+	/* ----- タイムライン(ログイン済top画面) ----- */
+
+	.timeline{
+		margin: 60px auto;
+		width: 75%;
+		.left{
+			float: left;
+			margin-bottom: 80px;
+			width: 70%;
+			.post{
+				.cloth_image{
+					height: auto;
+					width: 50%;
+				}
+			}
+		}
+		.right{
+			background-color: #fff;
+			border: 1px solid #292929;
+			float: left;
+			position: fixed;
+			right: 20px;
+			width: 30%;
+			.inner{
+				a{
+					text-decoration: none;
+					&:hover{
+						opacity: 0.8;
+					}
+				}
+				img{
+					width: 150px;
+					height: 150px;
+					display: block;
+					margin: 10px auto;
+				}
+				span{
+					display: block;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+
 
 	/* ----- アバウト画面 ----- */
 
 	.about{
-		a{
-			color: red;
+		width: 100%;
+		.about-contents1{
+			background-attachment: fixed;
+			background-image: image-url("about-image.jpg");
+			background-position: center;
+			background-size: cover;
+			height: 200px;
+			padding-top: 80px;
+			width: 100%;
+			strong{
+				color: #fff;
+			}
 		}
-		ul{
-			list-style: none;
-			font-size: 22px;
-			margin-bottom: 12px;
+		.about-contents2{
+			margin: 20px auto;
+			padding-bottom: 35px;
+			width: 55%;
 		}
-		.inventor{
-			color: #292929;
-			background: -webkit-linear-gradient(0deg, #ACB6E5, #86FDE8);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
+		.about-contents3{
+			background-attachment: fixed;
+			background-image: image-url("top-image6.jpg");
+			background-position: center;
+			background-size: cover;
+			height: 250px;
+			padding-top: 80px;
+			width: 100%;
+			strong{
+				a{
+					color: #fff;
+					text-decoration: none;
+					text-shadow: 0px 0px 5px #fff;
+					-webkit-animation: blink 1.7s ease-in-out infinite alternate;
+					-moz-animation: blink 1.7s ease-in-out infinite alternate;
+					animation: blink 1.7s ease-in-out infinite alternate;
+				}
+				@-webkit-keyframes blink{
+					0% {opacity: 0;}
+					100% {opacity: 1;}
+				}
+				@-moz-keyframes blink{
+					0% {opacity: 0;}
+					100% {opacity: 1;}
+				}
+				@keyframes blink{
+					0% {opacity: 0;}
+					100% {opacity: 1;}
+				}
+			}
 		}
 	}
 
@@ -227,17 +300,17 @@
 	/* ----- ヘッダー ----- */
 
 	.header{
-		width: 100%;
+		background-color: #292929;
 		height: 50px;
 		padding: 0 10px;
 		position: absolute;
 		top: 0;
-		background-color: #292929;
+		width: 100%;
 		z-index: 1000;
 		.title{
-			text-align: left;
 			color: #fff;
 			line-height: 50px;
+			text-align: left;
 		}
 		.links{
 			display: none;
@@ -248,19 +321,20 @@
 			padding-right: 10px;
 		}
 		#nav{
+			/* ----- ナビゲーションメニュー ----- */
+			background-color: rgba(0, 0, 0, 0.77);
+			right: -170px;
+			padding: 20px;
 			position: fixed;
 			top: 50px;
-			right: -170px;
-			width: 170px;
-			padding: 20px;
-			background-color: rgba(0, 0, 0, 0.77);
 			transition: transform 0.9s;
+			width: 170px;
 			z-index: 1000;
 			ul{
 				list-style: none;
 				li{
-					margin-bottom: 20px;
 					font-size: 20px;
+					margin-bottom: 20px;
 					a{
 						color: #fff;
 						text-decoration: underline;
@@ -269,16 +343,15 @@
 			}
 		}
 		.open{
+			/* ----- ナビゲーションメニューの開閉 ----- */
 			transform: translate3d(-170px, 0, 0);
 		}
-	}
-
-	/* ----- ヘッダー固定 ----- */
-
-	.header.sticky{
-		position: fixed;
-		top: 0;
-		opacity: 0.95;
+		&.sticky{
+			/* ----- ヘッダー固定 ----- */
+			opacity: 0.95;
+			position: fixed;
+			top: 0;
+		}
 	}
 
 	/* ----- フッター ----- */
@@ -298,75 +371,240 @@
 		/* ----- ページ上部に戻るボタン ----- */
 
 		#to-top{
-			position: absolute;
-			right: 50px;
 			bottom: 60px;
 			color: #fff;
+			position: absolute;
+			right: 50px;
 			text-shadow: 0px 0px 5px black;
 			z-index: 1000;
 			&:hover{
+				/* ----- ホバー時 ----- */
 				opacity: 0.8;
 			}
 		}
 	}
 
 
+	/* ----- ログイン、サインアップ用のフォーム ----- */
+
+	.form-table{
+		table-layout: fixed;
+		th{
+			width: 88px;
+		}
+	}
+
+	.signin{
+		background-attachment: fixed;
+		background-image: image-url("signin-image.jpg");
+		background-position: center;
+		background-size: cover;
+		height: 702px;
+		padding-top: 150px;
+		width: 100%;
+	}
+
+
 	/* ----- マイページ ----- */
 
-	.profile{
-		margin: 0 auto;
-		margin-bottom: 30px;
-		.category{
-			width: 20%;
-			float: left;
+	.mypage{
+		.upper{
+			margin: 40px auto 20px auto;
+			width: 100%;
+			div{
+				float: left;
+				height: 340px;
+			}
+			.left{
+				width: 30%;
+				img{
+					width: 220px;
+					height: 220px;
+					display: block;
+					margin: 0 auto;
+				}
+			}
+			.right{
+				width: 50%;
+				.introduction{
+					width: 80%;
+					height: 100px;
+					margin: 0 10%;
+					margin-bottom: 10px;
+					border: 1px solid #292929;
+					overflow-y: scroll;
+					background-color: #fff;
+				}
+			}
 		}
-		.image{
-			float: left;
-			margin-left: 15px;
-		}
-		.info{
-			float: left;
-			width: 250px;
-			margin-left: 15px;
-			.introduction{
-				margin: 0 auto;
-				margin-top: -15px;
-				border: 1px solid #292929;
-				padding: 2px;
+		.lower{
+			width: 100%;
+			.tab{
+				list-style: none;
+				li{
+					background-color: #fff;
+					border: 1px solid black;
+					display: inline-block;
+					height: 40px;
+					width: 48%;
+					a{
+						color: #292929;
+						line-height: 40px;
+						padding: 0 10px;
+						text-decoration: none;
+					}
+					a.active{
+						color: #fff;
+					}
+				}
+				li.active{
+					background-color: #292929;
+				}
+			}
+			.tab-contents{
+				width: 100%;
+				.tab-contents-inner{
+					margin: 0 auto;
+					height: 400px;
+					width: 100%;
+					.brand-tab{
+						display: inline-block;
+						overflow-x: scroll;
+						list-style: none;
+						text-align: center;
+						white-space: nowrap;
+						li{
+							border: 1px solid black;
+							display: inline-block;
+							background-color: #fff;
+							height: 40px;
+							a{
+								color: #292929;
+								text-decoration: none;
+								padding: 0 10px;
+								line-height: 40px;
+							}
+							a.active{
+								color: #fff;
+							}
+						}
+						li.active{
+							background-color: #292929;
+						}
+					}
+					.brand-contents{
+						width: 100%;
+						.brand-contents-inner{
+							height: 350px;
+							margin: 0 auto;
+							width: 100%;
+						}
+					}
+					.category-tab{
+						overflow-x: scroll;
+						text-align: center;
+						white-space: nowrap;
+						li{
+							background-color: #fff;
+							border: 1px solid black;
+							display: inline-block;
+							height: 40px;
+							a{
+								color: #292929;
+								line-height: 40px;
+								padding: 0 10px;
+								text-decoration: none;
+							}
+							a.active{
+								color: #fff;
+							}
+						}
+						li.active{
+							background-color: #292929;
+						}
+					}
+					.category-contents{
+						width: 100%;
+						.category-contents-inner{
+							height: 350px;
+							margin: 0 auto;
+							width: 100%;
+						}
+					}
+				}
 			}
 		}
 	}
 
 	/* ----- プロフィール編集 ----- */
 
-	.profile-edit-left{
-		width: 300px;
-		float: left;
-		img{
+	.profile-edit{
+		padding-top: 30px;
+		.profile-edit-left{
 			width: 300px;
-			height: 300px;
+			float: left;
+			img{
+				width: 300px;
+				height: 300px;
+			}
+			.checkbox{
+				margin: 0;
+				display: inline-block;
+			}
+			.edit-image{
+				width: 300px;
+			}
 		}
-		.checkbox{
-			margin: 0;
-			display: inline-block;
+		.profile-edit-right{
+			width: 220px;
+			float: left;
+			margin: 60px 0 0 60px;
 		}
-		.edit-image{
-			width: 300px;
-		}
-	}
-	.profile-edit-right{
-		width: 220px;
-		float: left;
-		margin: 60px 0 0 60px;
 	}
 
-	/* ----- 投稿のjsを無効 ----- */
+	/* ----- フォロー一覧画面 ----- */
 
-	.outer{
-		.cover{
-			display: none;
+	.follow{
+		.follow-link{
+			display: block;
+			margin: 50px auto;
+			a{
+				text-decoration: none;
+			}
+			a:hover{
+				opacity: 0.8;
+			}
+		}
+		.follow-tag{
+			margin: 50px auto;
+			text-align: center;
+			li{
+				background-color: #fff;
+				border: 1px solid black;
+				display: inline-block;
+				height: 45px;
+				width: 48%;
+				a{
+					color: #292929;
+					line-height: 45px;
+					padding: 0 10px;
+					text-decoration: none;
+				}
+				a.active{
+					color: #fff;
+				}
+			}
+			li.active{
+				background-color: #292929;
+			}
+		}
+		.follow-contents{
+			height: 400px;
+			margin: 0 auto;
+			width: 100%;
 		}
 	}
+
 
 	/* ----- 新規投稿画面 ----- */
 
@@ -404,5 +642,20 @@
 	.edit{
 		width: 45%;
 		float: left;
+	}
+
+	/* ----- 検索画面 ----- */
+
+	.search{
+		background-attachment: fixed;
+		background-image: image-url("search-image.jpg");
+		background-position: top;
+		background-size: cover;
+		height: 340px;
+		padding-top: 70px;
+		width: 100%;
+		strong{
+			color: #fff;
+		}
 	}
 }
