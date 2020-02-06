@@ -1,19 +1,19 @@
-<% user_cloth.group_by(&:itself).each do |brand, num| %>
-<!-- 特定のユーザーの投稿のブランドの種類とその数を表示 -->
-	<ul class="brand-tab">
-		<li>
-			<a href="#<%= times %>">
-				<!-- eachの回数をリンクにしている -->
-				<strong class="font-xs">
-					<%= brand %>
-					(<%= num.count %>)
-				</strong>
-			</a>
-		</li>
-	</ul>
-	<% times += 1 %>
-	<!-- eachの回数 -->
-<% end %>
+<ul class="brand-tab">
+	<% user_cloth.group_by(&:itself).each do |brand, num| %>
+	<!-- 特定のユーザーの投稿のブランドの種類とその数を表示 -->
+			<li>
+				<a href="#<%= times %>">
+					<!-- eachの回数をリンクにしている -->
+					<strong class="font-xs">
+						<%= brand %>
+						(<%= num.count %>)
+					</strong>
+				</a>
+			</li>
+		<% times += 1 %>
+		<!-- eachの回数 -->
+	<% end %>
+</ul>
 <% user_cloth.group_by(&:itself).each do |brand, num| %>
 	<div class="brand-contents">
 		<div class="brand-contents-inner" id="<%= other_times %>">
