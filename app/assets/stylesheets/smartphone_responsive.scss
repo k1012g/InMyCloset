@@ -29,6 +29,263 @@
 		font-size: 1.7rem;
 	}
 
+	/* ----- 横に2要素を並べる ----- */
+
+	.contents-size{
+		float: left;
+		height: 300px;
+		margin: 1%;
+		overflow: hidden;
+		padding: 2px;
+		width: 48%;
+		.user_image{
+			height: 160px;
+			width: 160px;
+		}
+	}
+
+	/* ----- 横に2要素を並べる(画像サイズ調整あり) ----- */
+
+	.contents-cloth{
+		float: left;
+		height: 350px;
+		margin: 1%;
+		overflow: hidden;
+		padding: 3px;
+		width: 48%;
+		img{
+			height: 150px;
+			width: 150px;
+		}
+		.user_image{
+			height: 60px;
+			width: 60px;
+		}
+	}
+
+	/* ----- 横に2要素を並べる(高さ指定なし) ----- */
+
+	.contents-size-auto{
+		float: left;
+		margin: 1%;
+		margin-bottom: 5px;
+		overflow: hidden;
+		padding: 2px;
+		width: 48%;
+		img{
+			height: 150px;
+			width: 150px;
+		}
+	}
+
+
+	/* ----- タイムラインの投稿時間 ----- */
+
+	.time{
+		display: block;
+		font-size: 3rem;
+		text-align: center;
+	}
+
+	/* ----- トップ画面(未ログイン) ----- */
+	.top{
+		width: 100%;
+		z-index: 0;
+		.top-contents1{
+			background-attachment: fixed;
+			background-image: image-url("top-image.jpg");
+			background-position: center;
+			background-size: cover;
+			height: 812px;
+			padding-top: 240px;
+			width: 100%;
+			.top-contents1-inner{
+				margin: 0 auto;
+				width: 100%;
+				.top-contents1-title{
+					animation: blink 1.7s ease-in-out infinite alternate;
+					color: #fff;
+					line-height: 100px;
+					-moz-animation: blink 1.7s ease-in-out infinite alternate;
+					text-shadow: 0px 0px 5px #fff;
+					-webkit-animation: blink 1.7s ease-in-out infinite alternate;
+					@keyframes blink{
+						0% {opacity: 0;}
+						100% {opacity: 1;}
+					}
+					@-moz-keyframes blink{
+						0% {opacity: 0;}
+						100% {opacity: 1;}
+					}
+					@-webkit-keyframes blink{
+						0% {opacity: 0;}
+						100% {opacity: 1;}
+					}
+				}
+			}
+		}
+		.top-contents2,
+		.top-contents3,
+		.top-contents4{
+			background-position: center;
+			background-size: cover;
+			height: 800px;
+			width: 100%;
+		}
+		.top-contents3,
+		.top-contents4{
+			padding-top: 350px;
+		}
+		.top-contents2{
+			background-image: image-url("top-image2.jpg");
+			padding-top: 300px;
+			strong{
+				color: #fff;
+				text-shadow: 0px 0px 5px black;
+			}
+		}
+		.top-contents3{
+			background-attachment: fixed;
+			background-image: image-url("top-image3.jpg");
+			strong{
+				color: #fff;
+				text-shadow: 0px 0px 5px black;
+			}
+		}
+		.top-contents4{
+			background-image: image-url("top-image4.jpg");
+			strong{
+				color: #fff;
+				text-shadow: 0px 0px 5px #fff;
+			}
+		}
+		.top-contents5{
+			width: 100%;
+			div{
+				background-attachment: fixed;
+				background-size: cover;
+				height: 230px;
+				padding-top: 100px;
+				width: 100%;
+				strong{
+					a{
+						color: #fff;
+						text-decoration: none;
+					}
+				}
+			}
+			div:first-child{
+				background-image: image-url("top-image5.jpg");
+			}
+			div:nth-child(2){
+				background-image: image-url("top-image7.jpg");
+			}
+			div:last-child{
+				background-image: image-url("top-image6.jpg");
+			}
+		}
+	}
+
+	/* ----- タイムライン(ログイン済top画面) ----- */
+
+	.timeline{
+		margin: 50px auto;
+		width: 75%;
+		.left{
+			float: left;
+			margin-bottom: 30px;
+			width: 70%;
+			strong{
+				font-size: 20px;
+			}
+			.post{
+				.cloth_image{
+					height: auto;
+					width: 50%;
+				}
+			}
+		}
+		.right{
+			background-color: #fff;
+			float: left;
+			position: fixed;
+			right: 10px;
+			width: 30%;
+			.inner{
+				a{
+					text-decoration: none;
+					&:hover{
+						opacity: 0.8;
+					}
+				}
+				img{
+					width: 80px;
+					height: 80px;
+					display: block;
+					margin: 20px auto;
+				}
+				span{
+					display: none;
+				}
+			}
+		}
+	}
+
+
+	/* ----- アバウト画面 ----- */
+
+	.about{
+		width: 100%;
+		.about-contents1{
+			background-attachment: fixed;
+			background-image: image-url("about-image.jpg");
+			background-position: center;
+			background-size: cover;
+			height: 240px;
+			padding-top: 70px;
+			width: 100%;
+			strong{
+				color: #fff;
+			}
+		}
+		.about-contents2{
+			margin: 20px auto;
+			padding-bottom: 35px;
+			width: 80%;
+		}
+		.about-contents3{
+			background-attachment: fixed;
+			background-image: image-url("top-image6.jpg");
+			background-position: center;
+			background-size: cover;
+			height: 240px;
+			padding-top: 75px;
+			width: 100%;
+			strong{
+				a{
+					color: #fff;
+					text-decoration: none;
+					text-shadow: 0px 0px 5px #fff;
+					-webkit-animation: blink 1.7s ease-in-out infinite alternate;
+					-moz-animation: blink 1.7s ease-in-out infinite alternate;
+					animation: blink 1.7s ease-in-out infinite alternate;
+				}
+				@-webkit-keyframes blink{
+					0% {opacity: 0;}
+					100% {opacity: 1;}
+				}
+				@-moz-keyframes blink{
+					0% {opacity: 0;}
+					100% {opacity: 1;}
+				}
+				@keyframes blink{
+					0% {opacity: 0;}
+					100% {opacity: 1;}
+				}
+			}
+		}
+	}
+
 	/* ----- ヘッダー ----- */
 
 	.header{
@@ -38,6 +295,13 @@
 		position: absolute;
 		top: 0;
 		background-color: #292929;
+		z-index: 1000;
+		&.sticky{
+			/* ----- ヘッダー固定 ----- */
+			position: fixed;
+			top: 0;
+			opacity: 0.95;
+		}
 		.title{
 			color: #fff;
 			line-height: 45px;
@@ -78,13 +342,6 @@
 		}
 	}
 
-	/* ----- ヘッダー固定 ----- */
-
-	.header.sticky{
-		position: fixed;
-		top: 0;
-		opacity: 0.95;
-	}
 
 	/* ----- フッター ----- */
 
@@ -93,8 +350,10 @@
 		height: 25px;
 		text-align: center;
 		background-color: #292929;
+		bottom: 0;
 		opacity: 0.95;
 		position: relative;
+		position: fixed;
 		strong{
 			color: #fff;
 			line-height: 25px;
@@ -108,124 +367,12 @@
 			right: 40px;
 			bottom: 45px;
 			z-index: 1000;
-			font-size: 4rem;
+			font-size: 5rem;
+			color: #fff;
+			text-shadow: 0px 0px 5px black;
 			&:hover{
 				opacity: 0.8;
 			}
-		}
-	}
-
-
-	/* ----- トップ画面(ログイン済) ----- */
-
-	.timeline{
-		.contents-size-top{
-			width: 100%;
-			margin: 0 1%;
-			float: left;
-			overflow: hidden;
-			margin-bottom: 10px;
-			.outer{
-				margin-bottom: -30px;
-			}
-			img{
-				width: 350px;
-			}
-			.user_image{
-				width: 110px;
-				height: 110px;
-			}
-		}
-	}
-
-	/* ----- タイムラインの投稿時間 ----- */
-
-	.time{
-		font-size: 3rem;
-		text-align: center;
-		display: block;
-	}
-
-	/* ----- トップ画面(未ログイン) ----- */
-	.top{
-		.contents1{
-			width: 100%;
-			height: 200px;
-			padding: 70px;
-			border: 1px solid black;
-			text-align: center;
-			background-image: image-url("contents-sm.jpg");
-			background-size: cover;
-			background-position: center;
-			margin-bottom: 50px;
-			strong{
-				color: #fff;
-			}
-		}
-		.contents2{
-			width: 100%;
-			height: 200px;
-			border: 1px solid black;
-			text-align: center;
-			background-image: image-url("application.jpg");
-			background-size: cover;
-			background-position: center;
-			margin: 0 auto;
-			margin-bottom: 50px;
-			strong{
-				display: block;
-				margin: 100px auto;
-				color: #FBFBFB;
-				font-size: 13px;
-			}
-		}
-		.contents3{
-			margin-bottom: 30px;
-			a{
-				color: red;
-			}
-			div{
-				width: 80%;
-				height: 200px;
-				margin: 0 auto;
-				margin-bottom: 30px;
-				border: 1px solid black;
-			}
-			.step1{
-				background-image: image-url("signup.png");
-				background-size: cover;
-				background-position: center;
-			}
-			.step2{
-				background-image: image-url("add-clothes.jpg");
-				background-size: cover;
-				background-position: center;
-			}
-			.step3{
-				background-image: image-url("shopping.jpg");
-				background-size: cover;
-				background-position: center;
-			}
-		}
-	}
-
-
-	/* ----- アバウト画面 ----- */
-
-	.about{
-		a{
-			color: red;
-		}
-		ul{
-			list-style: none;
-			font-size: 16px;
-			margin-bottom: 8px;
-		}
-		.inventor{
-			color: #292929;
-			background: -webkit-linear-gradient(0deg, #ACB6E5, #86FDE8);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
 		}
 	}
 
@@ -240,164 +387,259 @@
 		}
 	}
 
-
-	/* ----- 横に2要素を並べる ----- */
-
-	.contents-size{
-		width: 48%;
-		height: 300px;
-		padding: 2px;
-		margin: 1%;
-		float: left;
-		overflow: hidden;
-		.user_image{
-			width: 160px;
-			height: 160px;
-		}
+	.signin{
+		background-attachment: fixed;
+		background-image: image-url("signin-image.jpg");
+		background-position: center;
+		background-size: cover;
+		height: 702px;
+		padding-top: 150px;
+		width: 100%;
 	}
 
-	/* ----- 横に2要素を並べる(画像サイズ調整あり) ----- */
 
-	.contents-cloth{
-		width: 48%;
-		height: 350px;
-		padding: 3px;
-		margin: 1%;
-		float: left;
-		overflow: hidden;
-		img{
-			width: 150px;
-			height: 150px;
-		}
-		.user_image{
-			width: 60px;
-			height: 60px;
-		}
-	}
-
-	/* ----- 横に2要素を並べる(高さ指定なし) ----- */
-
-	.contents-size-auto{
-		width: 48%;
-		margin: 1%;
-		margin-bottom: 5px;
-		float: left;
-		padding: 2px;
-		overflow: hidden;
-		img{
-			width: 150px;
-			height: 150px;
-		}
-	}
 
 	/* ----- マイページ ----- */
 
-	.profile{
-		margin: 0 auto;
-		/* ----- カテゴリー一覧 ----- */
-
-		.category{
-			width: 22%;
-			float: left;
-			strong{
-				font-size: 11px;
+	.mypage{
+		.upper{
+			margin: 15px auto 0px auto;
+			width: 100%;
+			div{
+				float: left;
+				height: 400px;
 			}
-		}
-		/* ----- プロフィール画像サイズ ----- */
-
-		.image{
-			width: 100px;
-			float: left;
-			img{
-				width: 100px;
-				height: 100px;
-			}
-		}
-
-		/* ----- プロフィール詳細 ----- */
-
-		.info{
-			width: 150px;
-			float: left;
-			margin-left: 10px;
-			/* ----- 自己紹介 ----- */
-
-			.introduction-title{
-				font-size: 20px;
-			}
-
-			.introduction{
-				width: 150px;
-				margin: 0 auto;
-				margin-top: -10px;
-				border: 1px solid #292929;
-				padding: 2px;
-			}
-			/* ----- フォロー ----- */
-
-			.follow{
-				strong{
-					font-size: 10px;
+			.left{
+				width: 30%;
+				img{
+					width: 120px;
+					height: 120px;
+					display: block;
+					margin: 0 auto;
 				}
 			}
-
-			/* ----- ボタン ----- */
-			.done-btn{
+			.right{
+				width: 70%;
+				.introduction{
+					width: 80%;
+					height: 80px;
+					margin: 0 10%;
+					margin-bottom: 10px;
+					border: 1px solid #292929;
+					overflow-y: scroll;
+					background-color: #fff;
+				}
+				.profile-btn{
+					width: 80%;
+					margin: 0px auto 2px auto;
+				}
+			}
+		}
+		.lower{
+			width: 100%;
+			.tab{
+				list-style: none;
+				li{
+					background-color: #fff;
+					border: 1px solid black;
+					display: inline-block;
+					height: 40px;
+					width: 48%;
+					a{
+						color: #292929;
+						line-height: 40px;
+						padding: 0 10px;
+						text-decoration: none;
+					}
+					a.active{
+						color: #fff;
+					}
+				}
+				li.active{
+					background-color: #292929;
+				}
+			}
+			.tab-contents{
 				width: 100%;
-				margin-bottom: 3px;
+				.tab-contents-inner{
+					margin: 0 auto;
+					height: 400px;
+					width: 100%;
+					.brand-tab{
+						display: inline-block;
+						overflow-x: scroll;
+						list-style: none;
+						text-align: center;
+						white-space: nowrap;
+						li{
+							border: 1px solid black;
+							display: inline-block;
+							background-color: #fff;
+							height: 40px;
+							a{
+								color: #292929;
+								text-decoration: none;
+								padding: 0 10px;
+								line-height: 40px;
+							}
+							a.active{
+								color: #fff;
+							}
+						}
+						li.active{
+							background-color: #292929;
+						}
+					}
+					.brand-contents{
+						width: 100%;
+						.brand-contents-inner{
+							margin: 0 auto;
+							width: 100%;
+						}
+					}
+					.category-tab{
+						overflow-x: scroll;
+						text-align: center;
+						white-space: nowrap;
+						li{
+							background-color: #fff;
+							border: 1px solid black;
+							display: inline-block;
+							height: 40px;
+							a{
+								color: #292929;
+								line-height: 40px;
+								padding: 0 10px;
+								text-decoration: none;
+							}
+							a.active{
+								color: #fff;
+							}
+						}
+						li.active{
+							background-color: #292929;
+						}
+					}
+					.category-contents{
+						width: 100%;
+						.category-contents-inner{
+							height: 400px;
+							margin: 0 auto;
+							width: 100%;
+						}
+					}
+				}
 			}
 		}
 	}
 
 	/* ----- プロフィール編集 ----- */
 
-	.profile-edit-left{
+	.profile-edit{
+		.profile-edit-left{
+			width: 100%;
+			/* ----- プロフィール画像 ----- */
+
+			.user_image{
+				display: block;
+				height: 200px;
+				margin: 0 auto;
+				width: 200px;
+			}
+			.checkbox{
+				display: inline-block;
+				margin: 0;
+			}
+			input{
+				display: block;
+				margin: 0 auto;
+			}
+		}
+		.profile-edit-right{
+			margin: 10px auto;
+			width: 220px;
+		}
+	}
+
+	/* ----- フォロー一覧画面 ----- */
+
+	.follow{
+		.follow-link{
+			display: block;
+			margin: 20px auto;
+			a{
+				text-decoration: none;
+			}
+			a:hover{
+				opacity: 0.8;
+			}
+		}
+		.follow-tag{
+			margin: 50px auto;
+			text-align: center;
+			li{
+				background-color: #fff;
+				border: 1px solid black;
+				display: block;
+				margin: 0 auto 2px auto;
+				height: 38px;
+				width: 80%;
+				a{
+					color: #292929;
+					line-height: 38px;
+					padding: 0 10px;
+					text-decoration: none;
+				}
+				a.active{
+					color: #fff;
+				}
+			}
+			li.active{
+				background-color: #292929;
+			}
+		}
+		.follow-contents{
+			height: 400px;
+			margin: 0 auto;
+			width: 100%;
+		}
+	}
+
+
+	/* ----- 検索画面 ----- */
+
+	.search{
+		background-attachment: fixed;
+		background-image: image-url("search-image.jpg");
+		background-position: top;
+		background-size: cover;
+		height: 250px;
+		padding-top: 60px;
 		width: 100%;
-		/* ----- プロフィール画像 ----- */
-
-		.user_image{
-			width: 200px;
-			height: 200px;
+		strong{
+			color: #fff;
+		}
+		.search-text{
 			display: block;
-			margin: 0 auto;
+			font-size: 15px;
+			margin-top: 5px;
 		}
-		.checkbox{
-			margin: 0;
-			display: inline-block;
-		}
-		input{
-			display: block;
-			margin: 0 auto;
-		}
-	}
-	.profile-edit-right{
-		width: 220px;
-		margin: 10px auto;
-	}
-
-
-	/* ----- 検索画面のテキスト ----- */
-
-	.search-text{
-		margin-top: 20px;
-		display: block;
-		font-size: 13px;
 	}
 
 	/* ----- 新規投稿 ----- */
 
 	.preview{
+		height: 0;
 		opacity: 0;
 		width: 0;
-		height: 0;
 	}
 
 
 	/* ----- 投稿編集 ----- */
 
 	.before-edit{
-		margin-bottom: 20px;
 		border: 1px solid #292929;
+		margin-bottom: 20px;
 		overflow: hidden;
 		.font-s{
 			display: none;
