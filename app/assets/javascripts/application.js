@@ -69,7 +69,7 @@ $(document).on('turbolinks:load', function() {
 	// フォロー一覧のタブ
 	$('.follow').each(function(){
 
-		let $followTab = $(this).find('.follow-tag'),
+		let $followTab = $(this).find('.follow-tab'),
 			$followTabA = $followTab.find('a'),
 			$followContents = $(this).find('.follow-contents');
 

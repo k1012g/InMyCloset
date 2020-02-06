@@ -1,0 +1,1618 @@
+/* ----- pcとタブレットのコンテンツのサイズ ----- */
+@mixin contents-size{
+	background-color: #fff;
+	float: left;
+	margin-bottom: 1%;
+	margin-right: 1%;
+	overflow: hidden;
+	padding-bottom: 10px;
+	padding-left: 18px;
+}
+
+/* ----- トップ画面 ----- */
+@mixin top{
+	width: 100%;
+	z-index: 0;
+}
+
+/* ----- トップ画面のコンテンツ1 ----- */
+@mixin top-contents1{
+	background-image: image-url("top-image.jpg");
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+}
+
+/* ----- strongに白い影をつける ----- */
+@mixin text-shadow-white{
+	strong{
+		color: #fff;
+		text-shadow: 0px 0px 5px #fff;
+	}
+}
+
+/* ----- strongに黒い影をつける ----- */
+@mixin text-shadow-black{
+	strong{
+		color: #fff;
+		text-shadow: 0px 0px 5px black;
+	}
+}
+
+/* ----- 要素を点滅させる ----- */
+@mixin blink{
+	color: #fff;
+	text-shadow: 0px 0px 5px #fff;
+	animation: blink 1.7s ease-in-out infinite alternate;
+	-moz-animation: blink 1.7s ease-in-out infinite alternate;
+	-webkit-animation: blink 1.7s ease-in-out infinite alternate;
+	@keyframes blink{
+		0% {opacity: 0;}
+		100% {opacity: 1;}
+	}
+	@-moz-keyframes blink{
+		0% {opacity: 0;}
+		100% {opacity: 1;}
+	}
+	@-webkit-keyframes blink{
+		0% {opacity: 0;}
+		100% {opacity: 1;}
+	}
+}
+
+/* ----- トップ画面のコンテンツ2~4 -----*/
+@mixin top234-contents{
+	background-position: center;
+	background-size: cover;
+}
+
+/* ----- トップ画面のコンテンツ2 -----*/
+@mixin top-contents2{
+	background-image: image-url("top-image2.jpg");
+	padding-top: 300px;
+	@include text-shadow-black
+}
+
+/* ----- トップ画面のコンテンツ3 -----*/
+@mixin top-contents3{
+	background-image: image-url("top-image3.jpg");
+	@include text-shadow-black
+}
+
+/* ----- トップ画面のコンテンツ4 -----*/
+@mixin top-contents4{
+	background-image: image-url("top-image4.jpg");
+	@include text-shadow-white
+}
+
+/* ----- トップ画面のコンテンツ5 -----*/
+@mixin top-contents5{
+	background-position: center;
+	background-size: cover;
+	strong{
+		a{
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}
+
+/* ----- トップ画面のコンテンツ5の中のdiv -----*/
+@mixin top-contents5-inner{
+	div:first-child{
+		background-image: image-url("top-image5.jpg");
+	}
+	div:nth-child(2){
+		background-image: image-url("top-image7.jpg");
+	}
+	div:last-child{
+		background-image: image-url("top-image6.jpg");
+	}
+}
+
+/* ----- タイムライン(ログイン済のtop) ----- */
+@mixin timeline-left{
+	float: left;
+	width: 70%;
+	strong{
+		font-size: 20px;
+	}
+	.post{
+		.cloth_image{
+			height: auto;
+			width: 50%;
+		}
+	}
+}
+
+/* ----- タイムライン(ログイン済のtop)の右 ----- */
+@mixin timeline-right{
+	background-color: #fff;
+	float: left;
+	position: fixed;
+	width: 30%;
+}
+
+/* ----- タイムライン(ログイン済のtop)の右の中のaタグ ----- */
+@mixin timeline-right-inner-a{
+	a{
+		text-decoration: none;
+		&:hover{
+			opacity: 0.8;
+		}
+	}
+}
+
+/* ----- アバウト画面のコンテンツ1 ----- */
+@mixin about-contents1{
+	background-image: image-url("about-image.jpg");
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	strong{
+		color: #fff;
+	}
+}
+
+/* ----- アバウト画面のコンテンツ2 ----- */
+@mixin about-contents2{
+	margin: 20px auto;
+	padding-bottom: 35px;
+}
+
+/* ----- アバウト画面のコンテンツ3 ----- */
+@mixin about-contents3{
+	background-image: image-url("top-image6.jpg");
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	strong{
+		a{
+			text-decoration: none;
+			@include blink
+		}
+	}
+}
+
+/* ----- ヘッダー ----- */
+@mixin header{
+	background-color: #292929;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	&.sticky{
+		/* ----- ヘッダー固定 ----- */
+		opacity: 0.95;
+		position: fixed;
+		top: 0;
+	}
+}
+
+/* ----- ヘッダーのメニュー画面(タブレット,スマホのみ) ----- */
+@mixin header-nav{
+	background-color: rgba(0, 0, 0, 0.77);
+	position: fixed;
+	transition: transform 0.9s;
+	width: 170px;
+	z-index: 1000;
+}
+
+/* ----- フッター ----- */
+@mixin footer{
+	background-color: #292929;
+	bottom: 0;
+	opacity: 0.95;
+	position: relative;
+	position: fixed;
+	text-align: center;
+	width: 100%;
+}
+
+/* ----- フッターの画面上部に戻るボタン ----- */
+@mixin footer-btn{
+	color: #fff;
+	position: absolute;
+	text-shadow: 0px 0px 5px black;
+	z-index: 1000;
+	&:hover{
+		opacity: 0.8;
+	}
+}
+
+/* ----- サインイン＆サインアップ画面 ----- */
+@mixin signin{
+	background-image: image-url("signin-image.jpg");
+	background-position: center;
+	background-size: cover;
+	padding-top: 150px;
+	width: 100%;
+}
+
+/* ----- プロフィールの下の２つのタブ ----- */
+@mixin tab2{
+	li{
+		background-color: #fff;
+		border: 1px solid black;
+		display: inline-block;
+		height: 40px;
+		width: 48%;
+		&.active{
+			background-color: #292929;
+		}
+		a{
+			color: #292929;
+			line-height: 40px;
+			padding: 0 10px;
+			text-decoration: none;
+		}
+		a.active{
+			color: #fff;
+		}
+	}
+}
+
+/* ----- プロフィールの下の2つのタブの子要素 ----- */
+@mixin tab-contents-inner{
+	margin: 0 auto;
+	height: 400px;
+	width: 100%;
+}
+
+/* ----- ブランド、カテゴリータブ ----- */
+@mixin brand-category-tab{
+	overflow-x: scroll;
+	list-style: none;
+	white-space: nowrap;
+	li{
+		border: 1px solid black;
+		display: inline-block;
+		background-color: #fff;
+		height: 40px;
+		&.active{
+			background-color: #292929;
+		}
+		a{
+			color: #292929;
+			text-decoration: none;
+			padding: 0 10px;
+			line-height: 40px;
+			&.active{
+				color: #fff;
+			}
+		}
+	}
+}
+
+/* ----- プロフィール編集の画像削除ボタン ----- */
+@mixin profile-edit-checkbox{
+	display: inline-block;
+	margin: 0;
+}
+
+/* ----- フォローのリンク ----- */
+@mixin follow-link{
+	display: block;
+	a{
+		text-decoration: none;
+	}
+	a:hover{
+		opacity: 0.8;
+	}
+}
+
+/* ----- フォロー一覧画面のタブ ----- */
+@mixin follow-tab{
+	margin: 50px auto;
+	text-align: center;
+}
+
+/* ----- フォロー一覧画面のタブの子要素 ----- */
+@mixin follow-tab-li{
+	background-color: #fff;
+	border: 1px solid black;
+	&.active{
+		background-color: #292929;
+	}
+	a{
+		color: #292929;
+		padding: 0 10px;
+		text-decoration: none;
+		&.active{
+			color: #fff;
+		}
+	}
+}
+
+/* ----- フォロー一覧画面のコンテンツ ----- */
+@mixin follow-contents{
+	height: 400px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* ----- 検索画面 ----- */
+@mixin search{
+	background-image: image-url("search-image.jpg");
+	background-position: top;
+	background-size: cover;
+	width: 100%;
+	strong{
+		color: #fff;
+	}
+}
+
+
+
+/* ------------------ スマホのレスポンシブ ------------------ */
+
+@media screen and (max-width: 414px){
+
+	.container{
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	/* ----- fontサイズの指定 ----- */
+
+	.font-xl{
+		font-size: 5rem;
+	}
+	.font-l{
+		font-size: 4.2rem;
+	}
+	.font-m{
+		font-size: 2.5rem;
+	}
+	.font-s{
+		font-size: 2.2rem;
+	}
+	.font-xs{
+		font-size: 1.7rem;
+	}
+
+	/* ----- 横に2要素を並べる ----- */
+
+	.contents-size{
+		float: left;
+		height: 300px;
+		margin: 1%;
+		overflow: hidden;
+		padding: 2px;
+		width: 48%;
+		.user_image{
+			height: 160px;
+			width: 160px;
+		}
+	}
+
+	/* ----- 横に2要素を並べる(画像サイズ調整あり) ----- */
+
+	.contents-cloth{
+		float: left;
+		height: 350px;
+		margin: 1%;
+		overflow: hidden;
+		padding: 3px;
+		width: 48%;
+		img{
+			height: 150px;
+			width: 150px;
+		}
+		.user_image{
+			height: 60px;
+			width: 60px;
+		}
+	}
+
+	/* ----- 横に2要素を並べる(高さ指定なし) ----- */
+
+	.contents-size-auto{
+		float: left;
+		margin: 1%;
+		margin-bottom: 5px;
+		overflow: hidden;
+		padding: 2px;
+		width: 48%;
+		img{
+			height: 150px;
+			width: 150px;
+		}
+	}
+
+
+	/* ----- タイムラインの投稿時間 ----- */
+
+	.time{
+		display: block;
+		font-size: 3rem;
+		text-align: center;
+	}
+
+	/* ----- トップ画面(未ログイン) ----- */
+	.top{
+		.top-contents1{
+			height: 812px;
+			padding-top: 240px;
+			width: 100%;
+			.top-contents1-inner{
+				margin: 0 auto;
+				width: 100%;
+				.top-contents1-title{
+					line-height: 100px;
+					@include blink
+				}
+			}
+			@include top-contents1
+		}
+		.top-contents2,
+		.top-contents3,
+		.top-contents4{
+			height: 800px;
+			width: 100%;
+			@include top234-contents
+		}
+		.top-contents3,
+		.top-contents4{
+			padding-top: 350px;
+		}
+		.top-contents2{
+			@include top-contents2
+		}
+		.top-contents3{
+			@include top-contents3
+		}
+		.top-contents4{
+			@include top-contents4
+		}
+		.top-contents5{
+			width: 100%;
+			div{
+				height: 230px;
+				padding-top: 100px;
+				width: 100%;
+				@include top-contents5
+			}
+			@include top-contents5-inner
+		}
+		@include top
+	}
+
+	/* ----- タイムライン(ログイン済top画面) ----- */
+
+	.timeline{
+		margin: 50px auto;
+		width: 75%;
+		.left{
+			margin-bottom: 30px;
+			@include timeline-left
+		}
+		.right{
+			right: 10px;
+			.inner{
+				a{
+					text-decoration: none;
+					&:hover{
+						opacity: 0.8;
+					}
+				}
+				img{
+					width: 80px;
+					height: 80px;
+					display: block;
+					margin: 20px auto;
+				}
+				span{
+					display: none;
+				}
+			}
+			@include timeline-right
+		}
+	}
+
+
+	/* ----- アバウト画面 ----- */
+
+	.about{
+		width: 100%;
+		.about-contents1{
+			height: 240px;
+			padding-top: 70px;
+			@include about-contents1
+		}
+		.about-contents2{
+			width: 80%;
+			@include about-contents2
+		}
+		.about-contents3{
+			height: 240px;
+			padding-top: 75px;
+			@include about-contents3
+		}
+	}
+
+	/* ----- ヘッダー ----- */
+
+	.header{
+		height: 45px;
+		padding: 0 8px;
+		.title{
+			color: #fff;
+			line-height: 45px;
+		}
+		.links{
+			display: none;
+		}
+		i{
+			color: #fff;
+			line-height: 45px;
+		}
+
+		/* ----- メニュー ----- */
+
+		#nav{
+			top: 45px;
+			right: -145px;
+			padding: 15px;
+			width: 145px;
+			ul{
+				list-style: none;
+				li{
+					margin-bottom: 20px;
+					font-size: 18px;
+					a{
+						color: #fff;
+						text-decoration: underline;
+					}
+				}
+			}
+			@include header-nav
+		}
+		.open{
+			transform: translate3d(-145px, 0, 0);
+		}
+		@include header
+	}
+
+
+	/* ----- フッター ----- */
+
+	.footer{
+		height: 25px;
+		strong{
+			color: #fff;
+			line-height: 25px;
+		}
+
+		/* ----- ページ上部に戻るボタン ----- */
+
+		#to-top{
+			bottom: 45px;
+			font-size: 5rem;
+			right: 40px;
+			@include footer-btn
+		}
+		@include footer
+	}
+
+
+	/* ----- ログイン、サインアップ画面のフォーム ----- */
+
+	.form-table{
+		table-layout: fixed;
+		th{
+			width: 70px;
+			font-size: 13px;
+		}
+	}
+
+	.signin{
+		height: 702px;
+		@include signin
+	}
+
+
+
+	/* ----- マイページ ----- */
+
+	.mypage{
+		.upper{
+			margin: 15px auto 0px auto;
+			width: 100%;
+			div{
+				float: left;
+				height: 400px;
+			}
+			.left{
+				width: 30%;
+				img{
+					width: 120px;
+					height: 120px;
+					display: block;
+					margin: 0 auto;
+				}
+			}
+			.right{
+				width: 70%;
+				.introduction{
+					width: 80%;
+					height: 80px;
+					margin: 0 10%;
+					margin-bottom: 10px;
+					border: 1px solid #292929;
+					overflow-y: scroll;
+					background-color: #fff;
+				}
+				.profile-btn{
+					width: 80%;
+					margin: 0px auto 2px auto;
+				}
+			}
+		}
+		.lower{
+			width: 100%;
+			.tab{
+				list-style: none;
+				@include tab2
+			}
+			.tab-contents{
+				width: 100%;
+				.tab-contents-inner{
+					.brand-tab{
+						@include brand-category-tab
+					}
+					.brand-contents{
+						width: 100%;
+						.brand-contents-inner{
+							margin: 0 auto;
+							width: 100%;
+						}
+					}
+					.category-tab{
+						@include brand-category-tab
+					}
+					.category-contents{
+						width: 100%;
+						.category-contents-inner{
+							height: 400px;
+							margin: 0 auto;
+							width: 100%;
+						}
+					}
+					@include tab-contents-inner
+				}
+			}
+		}
+	}
+
+	/* ----- プロフィール編集 ----- */
+
+	.profile-edit{
+		.profile-edit-left{
+			width: 100%;
+			/* ----- プロフィール画像 ----- */
+
+			.user_image{
+				display: block;
+				height: 200px;
+				margin: 0 auto;
+				width: 200px;
+			}
+			.checkbox{
+				@include profile-edit-checkbox
+			}
+			input{
+				display: block;
+				margin: 0 auto;
+			}
+		}
+		.profile-edit-right{
+			margin: 10px auto;
+			width: 220px;
+		}
+	}
+
+	/* ----- フォロー一覧画面 ----- */
+
+	.follow{
+		.follow-link{
+			margin: 20px auto;
+			@include follow-link
+		}
+		.follow-tab{
+			li{
+				display: block;
+				line-height: 38px;
+				margin: 0 auto 2px auto;
+				height: 38px;
+				width: 80%;
+				@include follow-tab-li
+			}
+			@include follow-tab
+		}
+		.follow-contents{
+			@include follow-contents
+		}
+	}
+
+
+	/* ----- 検索画面 ----- */
+
+	.search{
+		height: 250px;
+		padding-top: 60px;
+		.search-text{
+			display: block;
+			font-size: 15px;
+			margin-top: 5px;
+		}
+		@include search
+	}
+
+	/* ----- 新規投稿 ----- */
+
+	.preview{
+		height: 0;
+		opacity: 0;
+		width: 0;
+	}
+
+
+	/* ----- 投稿編集 ----- */
+
+	.before-edit{
+		border: 1px solid #292929;
+		margin-bottom: 20px;
+		overflow: hidden;
+		.font-s{
+			display: none;
+		}
+	}
+	.edit{
+		.font-s{
+			margin-bottom: -20px;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+/* ---------------- タブレットのレスポンシブ ---------------- */
+
+@media screen and (min-width: 415px) and (max-width: 990px){
+
+	body{
+		margin-top: 50px;
+	}
+
+	.container{
+		margin-bottom: 35px;
+		margin-top: 50px;
+	}
+
+	/* ----- 横に3要素を並べる ----- */
+
+	.contents-size{
+		height: 350px;
+		width: 32%;
+		@include contents-size
+	}
+
+	/* ----- 横に3要素を並べる(高さ指定なし) ----- */
+
+	.contents-size-auto{
+		width: 32%;
+		@include contents-size
+	}
+
+
+
+	/* ----- 横幅の指定 -----  */
+
+	.width-xl{
+		width: 90%;
+	}
+
+	.width-l{
+		width: 85%;
+	}
+
+	.width-m{
+		width: 55%;
+	}
+
+	.width-s{
+		width: 50%
+	}
+
+	.width-xs{
+		width: 40%;
+	}
+
+	/* ----- fontのサイズ指定 ----- */
+
+	.font-xl{
+		font-size: 7rem;
+	}
+
+	.font-l{
+		font-size: 5rem;
+	}
+
+	.font-m{
+		font-size: 3.5rem;
+	}
+
+	.font-s{
+		font-size: 2.5rem;
+	}
+
+	.font-xs{
+		font-size: 1.5rem;
+	}
+
+	/* ----- トップ画面(未ログイン) ----- */
+
+	.top{
+		.top-contents1{
+			background-attachment: fixed;
+			height: 702px;
+			padding-top: 300px;
+			width: 100%;
+			.top-contents1-inner{
+				margin: 0 auto;
+				width: 80%;
+				.top-contents1-title{
+					line-height: 70px;
+					@include blink
+				}
+			}
+			@include top-contents1
+		}
+		.top-contents2,
+		.top-contents3,
+		.top-contents4{
+			height: 702px;
+			width: 100%;
+			@include top234-contents
+		}
+		.top-contents3,
+		.top-contents4{
+			padding-top: 300px;
+		}
+		.top-contents2{
+			@include top-contents2
+		}
+		.top-contents3{
+			background-attachment: fixed;
+			@include top-contents3
+		}
+		.top-contents4{
+			@include top-contents4
+		}
+		.top-contents5{
+			height: 702px;
+			margin-top: 30px;
+			width: 100%;
+			div{
+				height: 100%;
+				padding-top: 300px;
+				@include top-contents5
+			}
+			@include top-contents5-inner
+		}
+		@include top
+	}
+
+	/* ----- タイムライン(ログイン済top画面) ----- */
+
+	.timeline{
+		margin: 60px auto;
+		width: 75%;
+		.left{
+			margin-bottom: 80px;
+			@include timeline-left
+		}
+		.right{
+			right: 20px;
+			.inner{
+				img{
+					width: 150px;
+					height: 150px;
+					display: block;
+					margin: 10px auto;
+				}
+				span{
+					display: block;
+					margin-bottom: 10px;
+				}
+				@include timeline-right-inner-a
+			}
+			@include timeline-right
+		}
+	}
+
+
+	/* ----- アバウト画面 ----- */
+
+	.about{
+		width: 100%;
+		.about-contents1{
+			background-attachment: fixed;
+			height: 200px;
+			padding-top: 80px;
+			@include about-contents1
+		}
+		.about-contents2{
+			width: 55%;
+			@include about-contents2
+		}
+		.about-contents3{
+			background-attachment: fixed;
+			height: 250px;
+			padding-top: 80px;
+			@include about-contents3
+		}
+	}
+
+
+
+	/* ----- ヘッダー ----- */
+
+	.header{
+		height: 50px;
+		padding: 0 10px;
+		.title{
+			color: #fff;
+			line-height: 50px;
+			text-align: left;
+		}
+		.links{
+			display: none;
+		}
+		i{
+			color: #fff;
+			line-height: 50px;
+			padding-right: 10px;
+		}
+		#nav{
+			/* ----- ナビゲーションメニュー ----- */
+			padding: 20px;
+			right: -170px;
+			top: 50px;
+			ul{
+				list-style: none;
+				li{
+					font-size: 20px;
+					margin-bottom: 20px;
+					a{
+						color: #fff;
+						text-decoration: underline;
+					}
+				}
+			}
+			@include header-nav
+		}
+		.open{
+			/* ----- ナビゲーションメニューの開閉 ----- */
+			transform: translate3d(-170px, 0, 0);
+		}
+		@include header
+	}
+
+	/* ----- フッター ----- */
+
+	.footer{
+		height: 35px;
+		strong{
+			color: #fff;
+			line-height: 35px;
+		}
+		/* ----- ページ上部に戻るボタン ----- */
+
+		#to-top{
+			bottom: 60px;
+			right: 50px;
+			@include footer-btn
+		}
+		@include footer
+	}
+
+
+	/* ----- ログイン、サインアップ用のフォーム ----- */
+
+	.form-table{
+		table-layout: fixed;
+		th{
+			width: 88px;
+		}
+	}
+
+	.signin{
+		height: 702px;
+		@include signin
+	}
+
+
+	/* ----- マイページ ----- */
+
+	.mypage{
+		.upper{
+			margin: 40px auto 20px auto;
+			width: 100%;
+			div{
+				float: left;
+				height: 340px;
+			}
+			.left{
+				width: 30%;
+				img{
+					width: 220px;
+					height: 220px;
+					display: block;
+					margin: 0 auto;
+				}
+			}
+			.right{
+				width: 50%;
+				.introduction{
+					width: 80%;
+					height: 100px;
+					margin: 0 10%;
+					margin-bottom: 10px;
+					border: 1px solid #292929;
+					overflow-y: scroll;
+					background-color: #fff;
+				}
+			}
+		}
+		.lower{
+			width: 100%;
+			.tab{
+				list-style: none;
+				@include tab2
+			}
+			.tab-contents{
+				width: 100%;
+				.tab-contents-inner{
+					.brand-tab{
+						@include brand-category-tab
+					}
+					.brand-contents{
+						width: 100%;
+						.brand-contents-inner{
+							height: 350px;
+							margin: 0 auto;
+							width: 100%;
+						}
+					}
+					.category-tab{
+						@include brand-category-tab
+					}
+					.category-contents{
+						width: 100%;
+						.category-contents-inner{
+							height: 350px;
+							margin: 0 auto;
+							width: 100%;
+						}
+					}
+					@include tab-contents-inner
+				}
+			}
+		}
+	}
+
+	/* ----- プロフィール編集 ----- */
+
+	.profile-edit{
+		padding-top: 30px;
+		.profile-edit-left{
+			width: 300px;
+			float: left;
+			img{
+				width: 300px;
+				height: 300px;
+			}
+			.checkbox{
+				@include profile-edit-checkbox
+			}
+			.edit-image{
+				width: 300px;
+			}
+		}
+		.profile-edit-right{
+			width: 220px;
+			float: left;
+			margin: 60px 0 0 60px;
+		}
+	}
+
+	/* ----- フォロー一覧画面 ----- */
+
+	.follow{
+		.follow-link{
+			margin: 50px auto;
+			@include follow-link
+		}
+		.follow-tab{
+			li{
+				display: inline-block;
+				line-height: 45px;
+				height: 45px;
+				width: 48%;
+				@include follow-tab-li
+			}
+			@include follow-tab
+		}
+		.follow-contents{
+			@include follow-contents
+		}
+	}
+
+
+	/* ----- 新規投稿画面 ----- */
+
+	.preview{
+		margin: 0 6%;
+		width: 40%;
+		float: left;
+		div{
+			margin: 0 auto;
+			border: 1px solid #292929;
+			height: 300px;
+			strong{
+				font-size: 15px;
+				line-height: 300px;
+			}
+		}
+	}
+	.new{
+		width: 44%;
+		float: left;
+	}
+
+
+	/* ----- 投稿の編集画面 ----- */
+
+	.before-edit{
+		width: 40%;
+		margin: 0 5%;
+		float: left;
+		img{
+			width: 280px;
+			height: 280px;
+		}
+	}
+	.edit{
+		width: 45%;
+		float: left;
+	}
+
+	/* ----- 検索画面 ----- */
+
+	.search{
+		background-attachment: fixed;
+		height: 340px;
+		padding-top: 70px;
+		width: 100%;
+		@include search
+	}
+}
+
+
+
+
+
+/* ------------------- PCのレスポンシブ ------------------- */
+
+@media screen and (min-width: 991px) {
+
+
+
+	.container{
+		margin: 70px auto 60px auto;
+	}
+
+	body{
+		margin: 80px 0 60px 0;
+	}
+
+	/* ----- 横幅の指定 ----- */
+
+	.width-xl{
+		width: 100%;
+	}
+
+	.width-l{
+		width: 85%;
+	}
+
+	.width-m{
+		width: 60%;
+	}
+
+	.width-s{
+		width: 45%
+	}
+
+	.width-xs{
+		width: 30%;
+	}
+
+
+	/* ----- 横に4要素を並べる ----- */
+
+	.contents-size{
+		width: 24%;
+		height: 350px;
+		@include contents-size
+	}
+
+	/* ----- 横に4要素を並べる(高さ指定なし) ----- */
+
+	.contents-size-auto{
+		width: 24%;
+		@include contents-size
+	}
+
+	/* ----- fontのサイズ指定 ----- */
+
+	.font-xl{
+		font-size: 9rem;
+	}
+
+	.font-l{
+		font-size: 7rem;
+	}
+
+	.font-m{
+		font-size: 5rem;
+	}
+
+	.font-s{
+		font-size: 4rem;
+	}
+
+	.font-xs{
+		font-size: 2rem;
+	}
+
+	/* ----- トップ画面(未ログイン) ----- */
+
+	.top{
+		.top-contents1{
+			background-attachment: fixed;
+			height: 800px;
+			padding-top: 300px;
+			width: 100%;
+			.top-contents1-inner{
+				margin: 0 auto;
+				width: 60%;
+				.top-contents1-title{
+					line-height: 100px;
+					@include blink
+				}
+			}
+			@include top-contents1
+		}
+		.top-contents2,
+		.top-contents3,
+		.top-contents4{
+			height: 800px;
+			width: 100%;
+			@include top234-contents
+		}
+		.top-contents3,
+		.top-contents4{
+			padding-top: 350px;
+		}
+		.top-contents2{
+			@include top-contents2
+		}
+		.top-contents3{
+			background-attachment: fixed;
+			@include top-contents3
+		}
+		.top-contents4{
+			@include top-contents4
+		}
+		.top-contents5{
+			height: 800px;
+			margin-top: 50px;
+			width: 100%;
+			div{
+				height: 100%;
+				padding-top: 400px;
+				@include top-contents5
+			}
+			@include top-contents5-inner
+		}
+		@include top
+	}
+
+	/* ----- タイムライン(ログイン済top画面) ----- */
+
+	.timeline{
+		margin: 120px auto;
+		width: 75%;
+		.left{
+			margin-bottom: 80px;
+			@include timeline-left
+		}
+		.right{
+			right: 50px;
+			.inner{
+				img{
+					display: block;
+					margin: 20px auto;
+				}
+				span{
+					display: block;
+					margin-bottom: 20px;
+				}
+				@include timeline-right-inner-a
+			}
+			@include timeline-right
+		}
+	}
+
+
+
+	/* ----- アバウト画面 ----- */
+
+	.about{
+		width: 100%;
+		.about-contents1{
+			background-attachment: fixed;
+			height: 300px;
+			padding-top: 120px;
+			@include about-contents1
+		}
+		.about-contents2{
+			width: 55%;
+			@include about-contents2
+		}
+		.about-contents3{
+			background-attachment: fixed;
+			height: 350px;
+			padding-top: 120px;
+			@include about-contents3
+		}
+	}
+
+	/* ----- ヘッダー ----- */
+
+	.header{
+		height: 80px;
+		padding: 0 20px;
+		a{
+			color: white;
+			float: left;
+			font-size: 20px;
+			line-height: 80px;
+			padding: 0 20px;
+		}
+		.header-links{
+			i{
+				display: none;
+			}
+		}
+		#nav{
+			display: none;
+		}
+		span{
+			text-align: left;
+		}
+		@include header
+	}
+
+
+	/* ----- フッター ----- */
+
+	.footer{
+		height: 60px;
+		strong{
+			color: #fff;
+			line-height: 60px;
+		}
+		#to-top{
+			/* ----- ページ上部に戻るボタン ----- */
+			bottom: 75px;
+			font-size: 50px;
+			right: 80px;
+			@include footer-btn
+		}
+		@include footer
+	}
+
+
+
+	/* ----- ログイン、サインアップのフォーム ----- */
+
+	.form-table{
+		table-layout: fixed;
+		th{
+			width: 100px;
+		}
+	}
+
+	.signin{
+		height: 789px;
+		@include signin
+	}
+
+	/* ----- プロフィール画面 ----- */
+
+	.mypage{
+		.upper{
+			margin: 30px auto;
+			width: 100%;
+			div{
+				float: left;
+				height: 400px;
+			}
+			.left{
+				width: 30%;
+				img{
+					display: block;
+					margin: 0 auto;
+				}
+			}
+			.right{
+				width: 30%;
+				.introduction{
+					width: 80%;
+					height: 100px;
+					margin: 0 10%;
+					margin-bottom: 10px;
+					border: 1px solid #292929;
+					overflow-y: scroll;
+					background-color: #fff;
+				}
+			}
+		}
+		.lower{
+			width: 100%;
+			.tab{
+				list-style: none;
+				@include tab2
+			}
+			.tab-contents{
+				width: 100%;
+				.tab-contents-inner{
+					.brand-tab{
+						@include brand-category-tab
+					}
+					.brand-contents{
+						width: 100%;
+						.brand-contents-inner{
+							margin: 0 auto;
+							width: 100%;
+						}
+					}
+					.category-tab{
+						@include brand-category-tab
+					}
+					.category-contents{
+						width: 100%;
+						.category-contents-inner{
+							height: 400px;
+							margin: 0 auto;
+							width: 100%;
+						}
+					}
+					@include tab-contents-inner
+				}
+			}
+		}
+	}
+
+
+	/* ----- プロフィール編集画面 ----- */
+	.profile-edit{
+		.profile-edit-left{
+			float: left;
+			margin: 0 auto;
+			.user_image{
+				border: 1px solid black;
+				border-radius: 50%;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			.edit-image{
+				.checkbox{
+					@include profile-edit-checkbox
+				}
+				input{
+					margin: 0 0 0 150px;
+				}
+			}
+		}
+		.profile-edit-right{
+			float: left;
+			margin-top: 100px;
+			margin-left: 100px;
+			text-align: left;
+			.form-field{
+				width: 300px;
+			}
+			.form-area{
+				height: 100px;
+				width: 300px;
+			}
+		}
+	}
+
+	/* ----- フォロー一覧画面 ----- */
+
+	.follow{
+		.follow-link{
+			margin: 50px auto;
+			@include follow-link
+		}
+		.follow-tab{
+			li{
+				display: inline-block;
+				line-height: 61px;
+				height: 61px;
+				width: 48%;
+				@include follow-tab-li
+			}
+			@include follow-tab
+		}
+		.follow-contents{
+			@include follow-contents
+		}
+	}
+
+	/* ----- 新規投稿画面 ----- */
+
+	.cloth-new{
+		.preview{
+			float: left;
+			margin: 0 8%;
+			width: 30%;
+			div{
+				border: 1px solid #292929;
+				margin: 0 auto;
+				strong{
+					font-size: 30px;
+					line-height: 350px;
+				}
+			}
+		}
+		.new{
+			float: left;
+			width: 50%;
+		}
+	}
+
+	/* ----- 投稿編集画面 ----- */
+
+	.cloth-edit{
+		.before-edit{
+			float: left;
+			margin: 0 9%;
+			width: 30%;
+		}
+		.edit{
+			float: left;
+			widh: 50%;
+		}
+	}
+
+	/* ----- 検索画面 ----- */
+
+	.search{
+		background-attachment: fixed;
+		height: 500px;
+		padding-top: 100px;
+		@include search
+	}
+}
