@@ -92,9 +92,8 @@
 		width: 100%;
 		z-index: 0;
 		.top-contents1{
-			background-attachment: fixed;
 			background-image: image-url("top-image.jpg");
-			background-position: top;
+			background-position: center;
 			background-size: cover;
 			height: 812px;
 			padding-top: 240px;
@@ -128,7 +127,7 @@
 		.top-contents3,
 		.top-contents4{
 			background-position: center;
-			background-size: top;
+			background-size: cover;
 			height: 800px;
 			width: 100%;
 		}
@@ -145,7 +144,6 @@
 			}
 		}
 		.top-contents3{
-			background-attachment: fixed;
 			background-image: image-url("top-image3.jpg");
 			strong{
 				color: #fff;
@@ -162,8 +160,7 @@
 		.top-contents5{
 			width: 100%;
 			div{
-				background-attachment: fixed;
-				background-position: top;
+				background-position: center;
 				background-size: cover;
 				height: 230px;
 				padding-top: 100px;
@@ -238,9 +235,8 @@
 	.about{
 		width: 100%;
 		.about-contents1{
-			background-attachment: fixed;
 			background-image: image-url("about-image.jpg");
-			background-position: top;
+			background-position: center;
 			background-size: cover;
 			height: 240px;
 			padding-top: 70px;
@@ -255,9 +251,8 @@
 			width: 80%;
 		}
 		.about-contents3{
-			background-attachment: fixed;
 			background-image: image-url("top-image6.jpg");
-			background-position: top;
+			background-position: center;
 			background-size: cover;
 			height: 240px;
 			padding-top: 75px;
@@ -610,9 +605,8 @@
 	/* ----- 検索画面 ----- */
 
 	.search{
-		background-attachment: fixed;
 		background-image: image-url("search-image.jpg");
-		background-position: top;
+		background-position: center;
 		background-size: cover;
 		height: 250px;
 		padding-top: 60px;
