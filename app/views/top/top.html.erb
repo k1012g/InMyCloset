@@ -8,7 +8,7 @@
 					Today's Post : <%= @todayPost %>
 					<!-- 今日の投稿の件数表示 -->
 					<% @timeline_clothes.each do |cloth| %>
-						<div class="post border" style="margin: 10px auto;">
+						<div class="post" style="margin: 10px auto;">
 							<%= render 'clothes/index', clothes: cloth %>
 						</div>
 					<% end %>
