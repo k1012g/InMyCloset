@@ -1,5 +1,5 @@
 <ul class="brand-tab">
-	<% user_cloth.group_by(&:itself).each do |brand, num| %>
+	<% cloth_brand.group_by(&:itself).each do |brand, num| %>
 	<!-- 特定のユーザーの投稿のブランドの種類とその数を表示 -->
 			<li>
 				<a href="#<%= times %>">
@@ -14,9 +14,9 @@
 		<!-- eachの回数 -->
 	<% end %>
 </ul>
-<% user_cloth.group_by(&:itself).each do |brand, num| %>
+<% cloth_brand.group_by(&:itself).each do |brand, num| %>
 	<div class="brand-contents">
-		<div class="brand-contents-inner" id="<%= other_times %>">
+		<div class="brand-contents-inner" id="<%= times2 %>">
 			<!-- eachの回数を上記のaタグと一致させている(jQuery用) -->
 			<% user.cloths.where(brand: brand).each do |cloth| %>
 				<div class="contents-size-auto">
@@ -28,6 +28,6 @@
 			<% end %>
 		</div>
 	</div>
-	<% other_times += 1 %>
+	<% times2 += 1 %>
 	<!-- eachの回数 -->
 <% end %>

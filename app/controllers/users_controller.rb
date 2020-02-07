@@ -7,11 +7,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     # ユーザーの投稿をブランド名のみ取得
-    @user_cloth_brand =@user.cloths.pluck(:brand)
+    @user_cloth_brand = @user.cloths.pluck(:brand)
 
     # each文の回数をカウントする用
     @times = 1
-    @other_times = 1
+    @times2 = 1
   end
 
   def edit
