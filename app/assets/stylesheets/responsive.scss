@@ -1,6 +1,6 @@
 /* ----- pcとタブレットのコンテンツのサイズ ----- */
 @mixin contents-size{
-	background-color: #fff;
+	background-rgba: (0,0,0,0);
 	float: left;
 	margin-bottom: 1%;
 	margin-right: 1%;
@@ -114,9 +114,6 @@
 @mixin timeline-left{
 	float: left;
 	width: 70%;
-	strong{
-		font-size: 20px;
-	}
 	.post{
 		.cloth_image{
 			height: auto;
@@ -127,7 +124,7 @@
 
 /* ----- タイムライン(ログイン済のtop)の右 ----- */
 @mixin timeline-right{
-	background-color: #fff;
+	background-rgba: (0,0,0,0);
 	float: left;
 	position: fixed;
 	width: 30%;
@@ -221,7 +218,7 @@
 
 /* ----- サインイン＆サインアップ画面 ----- */
 @mixin signin{
-	background-image: image-url("signin-image.jpg");
+	background-image: image-url("back.png");
 	background-position: center;
 	background-size: cover;
 	padding-top: 150px;
@@ -486,6 +483,9 @@
 		width: 75%;
 		.left{
 			margin-bottom: 30px;
+			strong{
+				font-size: 20px;
+			}
 			@include timeline-left
 		}
 		.right{
@@ -762,7 +762,7 @@
 	/* ----- 投稿編集 ----- */
 
 	.before-edit{
-		border: 1px solid #292929;
+		background-rgba: (0,0,0,0);
 		margin-bottom: 20px;
 		overflow: hidden;
 		.font-s{
@@ -770,6 +770,7 @@
 		}
 	}
 	.edit{
+		margin-bottom: 20px;
 		.font-s{
 			margin-bottom: -20px;
 		}
@@ -917,6 +918,9 @@
 		width: 75%;
 		.left{
 			margin-bottom: 80px;
+			strong{
+				font-size: 38px;
+			}
 			@include timeline-left
 		}
 		.right{
