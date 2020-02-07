@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 	delete '/cloth/:cloth_id/favorite' => 'favorites#destroy', as: 'destroy_favorite'
 
 # categories controller
-	resources :categories, only: [:index, :show]
+	resources :categories, only: [:show]
 
 # searches controller
 	get '/search' => 'searches#search', as: 'search'
