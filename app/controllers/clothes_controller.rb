@@ -1,5 +1,6 @@
 class ClothesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :current_user?, only: [:new, :create, :edit, :update, :destroy]
   def new
     @cloth = Cloth.new
   end
@@ -35,5 +36,13 @@ class ClothesController < ApplicationController
   private
   def cloth_params
     params.require(:cloth).permit(:user_id, :category_id, :brand, :size, :image)
+  end
+
+  def current_user?
+    # 自分かどうかの判定
+    cloth = Cloth.find(params[:id])
+    if cloth.user != current_user
+      redirect_to user_path(current_user.id)
+    end
   end
 end
