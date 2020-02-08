@@ -30,7 +30,7 @@
 	</div>
 	<div>
 		<% if signed_in? %>
-			<%= link_to edit_user_path(current_user) do %>
+			<%= link_to others_path(current_user.id) do %>
 				<%= icon 'fas', 'ellipsis-h' %>
 			<% end %>
 		<% else %>

@@ -1,4 +1,13 @@
-ここには
+<!-- ここには
 ログアウト
 プロフィール編集
-アバウトへのリンク
+アバウトへのリンク -->
+<main class="others container">
+	<%= link_to "Sign out", destroy_user_session_path, data: { confirm: "Sign out ?" }, method: :delete %>
+	<br>
+	<%= link_to "Edit profile", edit_user_path(current_user.id) %>
+	<br>
+	<%= link_to "What is InMyCloset?", about_path %>
+	<br>
+	<%= link_to "Favorites", user_favorite_path(current_user.id) %>
+</main>
