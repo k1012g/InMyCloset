@@ -17,6 +17,9 @@
 				<%= link_to "Sign out", destroy_user_session_path, data: { confirm: "Sign out ?" }, method: :delete %>
 			</strong>
 			<%= icon 'fas', 'bars', id: "menu", class: "font-s" %>
+			<%= link_to user_path(current_user.id) do %>
+				<%= attachment_image_tag current_user, :profile_image, :fill, 38, 38, fallback: "no_image.png", size:'38x38', class: "user_image smartphone-only", style: "margin-top: 4px;" %>
+			<% end %>
 		</div>
 	<% else %>
 		<div class="header-links" style="float: right;">
@@ -33,6 +36,9 @@
 				<%= link_to "Sign up!", new_user_registration_path %>
 			</strong>
 			<%= icon 'fas', 'bars', id: "menu", class: "font-s" %>
+			<%= link_to confirm_path do %>
+				<%= image_tag 'no_image.png', class: "smartphone-only", style: "border-radius: 50%; width: 38px; height: 38px; margin-top: 4px;" %>
+			<% end %>
 		</div>
 	<% end %>
 	<%= render 'layouts/nav' %>

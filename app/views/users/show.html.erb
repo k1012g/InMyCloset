@@ -6,6 +6,11 @@
 		<div class="right">
 			<strong class="font-l text-center">
 				<%= @user.name %>
+				<% if current_user == @user %>
+					<%= link_to others_path(@user.id) do %>
+						<%= icon 'fas', 'cog', style: "font-size: 30px;" %>
+					<% end %>
+				<% end %>
 			</strong>
 			<br>
 			<strong class="font-s text-center">
@@ -31,9 +36,6 @@
 				<!-- 自分の時のみ編集、追加、お気に入り一覧のボタンを表示 -->
 					<%= link_to "Add clothes", new_clothes_path, class: "btn done-btn profile-btn" %>
 					<br>
-					<%= link_to others_path(@user.id) do %>
-						<%= icon 'fas', 'cog' %>
-					<% end %>
 				<% end %>
 			</span>
 		</div>
