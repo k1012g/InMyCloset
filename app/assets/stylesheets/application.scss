@@ -130,3 +130,13 @@ a{
 	text-align: center;
 	display: block;
 }
+
+
+.linknone{
+	a{
+		text-decoration: none;
+		&:hover{
+			opacity: 0.8;
+		}
+	}
+}

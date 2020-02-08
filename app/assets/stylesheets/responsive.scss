@@ -41,7 +41,6 @@
 
 /* ----- 要素を点滅させる ----- */
 @mixin blink{
-	color: #fff;
 	text-shadow: 0px 0px 5px #fff;
 	animation: blink 1.7s ease-in-out infinite alternate;
 	-moz-animation: blink 1.7s ease-in-out infinite alternate;
@@ -437,6 +436,7 @@
 				margin: 0 auto;
 				width: 100%;
 				.top-contents1-title{
+					color: #fff;
 					line-height: 100px;
 					@include blink
 				}
@@ -533,6 +533,25 @@
 	}
 
 	.confirm{
+		padding-top: 40px;
+		strong{
+			a{
+				color: red;
+				text-decoration: none;
+				&:hover{
+					text-decoration: underline;
+				}
+				@include blink
+			}
+			ul{
+				margin: 0 auto;
+				width: 70%;
+				li{
+					font-size: 16px;
+					text-align: left;
+				}
+			}
+		}
 	}
 
 	/* ----- ヘッダー ----- */
@@ -582,6 +601,7 @@
 				color: #fff;
 				font-size: 30px;
 				line-height: 55px;
+				text-shadow: 1px 1px 2px black;
 			}
 		}
 
@@ -874,6 +894,7 @@
 				margin: 0 auto;
 				width: 80%;
 				.top-contents1-title{
+					color: #fff;
 					line-height: 70px;
 					@include blink
 				}
@@ -966,6 +987,31 @@
 			height: 250px;
 			padding-top: 80px;
 			@include about-contents3
+		}
+	}
+
+	.confirm{
+		padding-top: 8px;
+		strong{
+			a{
+				color: red;
+				text-decoration: none;
+				&:hover{
+					text-decoration: underline;
+				}
+				@include blink
+			}
+			strong{
+				font-size: 20px;
+			}
+			ul{
+				margin: 0 auto;
+				width: 70%;
+				li{
+					font-size: 24px;
+					text-align: left;
+				}
+			}
 		}
 	}
 
@@ -1312,6 +1358,7 @@
 				margin: 0 auto;
 				width: 60%;
 				.top-contents1-title{
+					color: #fff;
 					line-height: 100px;
 					@include blink
 				}
@@ -1400,6 +1447,32 @@
 			height: 350px;
 			padding-top: 120px;
 			@include about-contents3
+		}
+	}
+
+	.confirm{
+		padding-top: 8px;
+		strong{
+			a{
+				color: red;
+				font-size: 40px;
+				text-decoration: none;
+				&:hover{
+					text-decoration: underline;
+				}
+				@include blink
+			}
+			strong{
+				font-size: 30px;
+			}
+			ul{
+				margin: 0 auto;
+				width: 70%;
+				li{
+					font-size: 38px;
+					text-align: left;
+				}
+			}
 		}
 	}
 

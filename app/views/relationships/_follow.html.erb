@@ -6,4 +6,6 @@
 	<!-- followしていない時 -->
 		<%= link_to "Follow", user_relationships_path(user.id), method: :post, remote: true, class: "btn btn-default" %>
 	<% end %>
+<% else %>
+	<%= link_to "Follow", confirm_path, class: "btn btn-default" %>
 <% end %>

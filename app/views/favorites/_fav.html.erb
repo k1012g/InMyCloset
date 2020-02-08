@@ -23,5 +23,12 @@
 	<% end %>
 <% else %>
 <!-- サインインしていない時 -->
-	<span>&#x2661;<%= cloth.favorites.count %></span>
+	<span class="linknone">
+		<%= link_to confirm_path do %>
+			<%= icon 'far', 'heart', style: "color: red;", class: "font-xs" %>
+			<span style="color: #292929;">
+				<%= cloth.favorites.count %>
+			</span>
+		<% end %>
+	</span>
 <% end %>
