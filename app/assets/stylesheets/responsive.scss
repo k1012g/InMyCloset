@@ -532,6 +532,9 @@
 		}
 	}
 
+	.confirm{
+	}
+
 	/* ----- ヘッダー ----- */
 
 	.header{
@@ -540,6 +543,11 @@
 		.title{
 			color: #fff;
 			line-height: 45px;
+		}
+		.header-links{
+			i{
+				display: none;
+			}
 		}
 		.links{
 			display: none;
@@ -552,25 +560,7 @@
 		/* ----- メニュー ----- */
 
 		#nav{
-			top: 45px;
-			right: -145px;
-			padding: 15px;
-			width: 145px;
-			ul{
-				list-style: none;
-				li{
-					margin-bottom: 20px;
-					font-size: 18px;
-					a{
-						color: #fff;
-						text-decoration: underline;
-					}
-				}
-			}
-			@include header-nav
-		}
-		.open{
-			transform: translate3d(-145px, 0, 0);
+			display: none;
 		}
 		@include header
 	}
@@ -579,16 +569,26 @@
 	/* ----- フッター ----- */
 
 	.footer{
-		height: 25px;
+		height: 55px;
 		strong{
-			color: #fff;
-			line-height: 25px;
+			display: none;
+		}
+		div{
+			border-right: 1px solid lightgrey;
+			float: left;
+			height: 55px;
+			width: 25%;
+			i{
+				color: #fff;
+				font-size: 30px;
+				line-height: 55px;
+			}
 		}
 
 		/* ----- ページ上部に戻るボタン ----- */
 
 		#to-top{
-			bottom: 45px;
+			bottom: 65px;
 			font-size: 5rem;
 			right: 40px;
 			@include footer-btn
@@ -1023,6 +1023,9 @@
 			color: #fff;
 			line-height: 35px;
 		}
+		div{
+			display: none;
+		}
 		/* ----- ページ上部に戻るボタン ----- */
 
 		#to-top{
@@ -1434,6 +1437,9 @@
 		strong{
 			color: #fff;
 			line-height: 60px;
+		}
+		div{
+			display: none;
 		}
 		#to-top{
 			/* ----- ページ上部に戻るボタン ----- */

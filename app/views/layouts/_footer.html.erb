@@ -5,6 +5,38 @@
         	<!-- aタグで囲むことでボタン認識させる -->
         	<%= icon 'far', 'arrow-alt-circle-up', id: "to-top", class: "font-m"%>
     	</a>
-      <% end %>
+    <% end %>
 	<strong class="text-center">©k1012g</strong>
+	<div>
+		<%= link_to root_path do %>
+			<%= icon 'fas', 'home' %>
+		<% end %>
+	</div>
+	<div>
+		<%= link_to search_path do %>
+			<%= icon 'fas', 'search' %>
+		<% end %>
+	</div>
+	<div>
+		<% if signed_in? %>
+			<%= link_to user_path(current_user.id) do %>
+				<%= icon 'fas', 'user' %>
+			<% end %>
+		<% else %>
+			<%= link_to confirm_path do %>
+				<%= icon 'fas', 'user' %>
+			<% end %>
+		<% end %>
+	</div>
+	<div>
+		<% if signed_in? %>
+			<%= link_to edit_user_path(current_user) do %>
+				<%= icon 'fas', 'ellipsis-h' %>
+			<% end %>
+		<% else %>
+			<%= link_to confirm_path do %>
+				<%= icon 'fas', 'ellipsis-h' %>
+			<% end %>
+		<% end %>
+	</div>
 </footer>

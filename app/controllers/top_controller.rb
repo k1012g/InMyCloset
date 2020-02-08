@@ -29,4 +29,10 @@ class TopController < ApplicationController
 
   def about
   end
+
+  def confirm
+    if signed_in?
+      redirect_to user_path(current_user.id)
+    end
+  end
 end
