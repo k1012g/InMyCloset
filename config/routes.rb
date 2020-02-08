@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 	root to: 'top#top'
 	get '/about' => 'top#about', as: 'about'
 	get '/confirm' => 'top#confirm', as: 'confirm'
+	get '/others/:id' => 'top#others', as: 'others'
 
 # devise controller
 	devise_for :users, :controllers => {

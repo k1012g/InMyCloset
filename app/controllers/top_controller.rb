@@ -1,4 +1,5 @@
 class TopController < ApplicationController
+  before_action :authenticate_user!, only: [:others]
   def top
     # ログインしているかどうかのif文
   	if signed_in?
@@ -34,5 +35,9 @@ class TopController < ApplicationController
     if signed_in?
       redirect_to user_path(current_user.id)
     end
+  end
+
+  def others
+    @user = User.find(params[:id])
   end
 end
