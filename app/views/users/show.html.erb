@@ -30,8 +30,10 @@
 				<% if current_user == @user %>
 				<!-- 自分の時のみ編集、追加、お気に入り一覧のボタンを表示 -->
 					<%= link_to "Add clothes", new_clothes_path, class: "btn done-btn profile-btn" %>
-					<%= link_to "Edit profile", edit_user_path(@user.id), class: "btn done-btn profile-btn" %>
-					<%= link_to "Favorites", user_favorite_path(@user.id), class: "btn done-btn  profile-btn" %>
+					<br>
+					<%= link_to others_path(@user.id) do %>
+						<%= icon 'fas', 'cog' %>
+					<% end %>
 				<% end %>
 			</span>
 		</div>

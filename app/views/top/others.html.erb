@@ -3,6 +3,9 @@
 プロフィール編集
 アバウトへのリンク -->
 <main class="others container">
+	<strong class="font-m text-center">
+		Others
+	</strong>
 	<%= link_to "Sign out", destroy_user_session_path, data: { confirm: "Sign out ?" }, method: :delete %>
 	<br>
 	<%= link_to "Edit profile", edit_user_path(current_user.id) %>
