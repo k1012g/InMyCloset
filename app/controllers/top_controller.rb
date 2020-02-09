@@ -32,12 +32,14 @@ class TopController < ApplicationController
   def about
   end
 
+  # ログインしていないと使えない機能を使おうとするとこのページに遷移
   def confirm
     if signed_in?
       redirect_to user_path(current_user.id)
     end
   end
 
+  # ユーザーのその他の設定画面
   def others
     @user = User.find(params[:id])
   end

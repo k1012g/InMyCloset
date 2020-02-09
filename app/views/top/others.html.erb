@@ -1,8 +1,4 @@
-<!-- ここには
-ログアウト
-プロフィール編集
-アバウトへのリンク -->
-<main class="others container">
+<div class="others container">
 	<strong class="font-l text-center">
 		Others
 	</strong>
@@ -14,4 +10,4 @@
 	<%= link_to "What is InMyCloset?", about_path, class: "btn done-btn others-btn" %>
 	<br>
 	<%= link_to "Sign out", destroy_user_session_path, class: "btn done-btn others-btn", data: { confirm: "Sign out ?" }, method: :delete %>
-</main>
+</div>

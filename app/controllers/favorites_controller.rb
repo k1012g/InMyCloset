@@ -5,11 +5,13 @@ class FavoritesController < ApplicationController
   	@favorites = current_user.favorites
   end
 
+  # いいねを作成
   def create
   	Favorite.create(user_id: current_user.id, cloth_id: params[:cloth_id])
     @clothes = Cloth.find(params[:cloth_id])
   end
 
+  # いいねを取り消し
   def destroy
   	Favorite.find_by(user_id: current_user.id, cloth_id: params[:cloth_id]).destroy
     @clothes = Cloth.find(params[:cloth_id])
