@@ -653,10 +653,10 @@
 			margin: 15px auto 0px auto;
 			width: 100%;
 			div{
-				float: left;
-				height: 330px;
+				margin: 0 auto 10px auto;
 			}
 			.left{
+				height: 120px;
 				width: 30%;
 				img{
 					width: 120px;
@@ -666,7 +666,8 @@
 				}
 			}
 			.right{
-				width: 70%;
+				height: 280px;
+				width: 100%;
 				.introduction{
 					width: 80%;
 					height: 80px;
