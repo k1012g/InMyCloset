@@ -684,6 +684,10 @@
 		}
 		.lower{
 			width: 100%;
+			.profile-btn{
+				margin: 0 auto;
+				width: 40%;
+			}
 			.tab{
 				list-style: none;
 				@include tab2
@@ -1158,6 +1162,10 @@
 		}
 		.lower{
 			width: 100%;
+			.profile-btn{
+				margin: 0 auto;
+				width: 50%;
+			}
 			.tab{
 				list-style: none;
 				@include tab2
@@ -1605,10 +1613,10 @@
 				}
 			}
 			.right{
-				width: 30%;
+				width: 40%;
 				.introduction{
 					width: 80%;
-					height: 100px;
+					height: 120px;
 					margin: 0 10%;
 					margin-bottom: 10px;
 					border: 1px solid #292929;
@@ -1619,6 +1627,10 @@
 		}
 		.lower{
 			width: 100%;
+			.profile-btn{
+				margin: 0 auto;
+				width: 50%;
+			}
 			.tab{
 				list-style: none;
 				@include tab2

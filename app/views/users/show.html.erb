@@ -31,16 +31,17 @@
 					<%= simple_format(@user.introduction) %>
 				</div>
 			<% end %>
-			<span class="text-center" style="margin-top: 10px;">
-				<% if current_user == @user %>
-				<!-- 自分の時のみ編集、追加、お気に入り一覧のボタンを表示 -->
-					<%= link_to "Add clothes", new_clothes_path, class: "btn done-btn profile-btn" %>
-					<br>
-				<% end %>
-			</span>
 		</div>
 	</section>
 	<section class="lower">
+		<span class="text-center" style="margin-top: 10px;">
+			<% if current_user == @user %>
+			<!-- 自分の時のみ編集、追加、お気に入り一覧のボタンを表示 -->
+				<%= link_to "Add clothes", new_clothes_path, class: "btn done-btn profile-btn" %>
+				<br>
+			<% end %>
+		</span>
+		<br>
 		<ul class="tab text-center">
 			<li>
 				<a href="#category">
