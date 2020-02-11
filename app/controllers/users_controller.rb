@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :current_user?, only: [:edit, :update]
   before_action :authenticate_user!, only: [:edit, :update]
+  before_action :current_user?, only: [:edit, :update]
 
   def show
     @categories = Category.all

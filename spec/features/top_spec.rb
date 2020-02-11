@@ -31,6 +31,9 @@ RSpec.feature "Top", type: :feature do
 	end
 
 	feature "ログイン済" do
+		before do
+	      login(@user1)
+	    end
 		feature "リダイレクト確認" do
 			scenario "topページ" do
 				visit root_path
@@ -42,9 +45,22 @@ RSpec.feature "Top", type: :feature do
 				expect(page).to have_current_path about_path
 			end
 
-			# ログインするメソッドがないとできない
-			# confirm
-			# others
+			scenario "confirmページ" do
+				visit confirm_path
+				expect(page).to have_current_path user_path(@user1)
+			end
+
+			feature "othersページ" do
+				scenario "othersページ" do
+					visit others_path(@user1)
+					expect(page).to have_current_path others_path(@user1)
+				end
+
+				scenario "他人のothersページにアクセスできず、マイページにリダイレクトされる" do
+					visit others_path(@user2)
+					expect(page).to have_current_path others_path(@user1)
+				end
+			end
 		end
 	end
 end

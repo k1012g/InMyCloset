@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
-  before_action :current_user?, only: [:show]
   before_action :authenticate_user!
+  before_action :current_user?, only: [:show]
   def show
   	@favorites = current_user.favorites
   end
