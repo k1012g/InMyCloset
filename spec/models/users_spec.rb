@@ -17,6 +17,11 @@ RSpec.describe User, type: :model do
 				user = FactoryBot.create(:user, introduction: "")
 				expect(user).to be_valid
 			end
+
+			it "profile_imageがなくても登録できる" do
+				user = FactoryBot.create(:user, profile_image: "")
+				expect(user).to be_valid
+			end
 		end
 
 		describe 'NG' do

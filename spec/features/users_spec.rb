@@ -67,5 +67,43 @@ RSpec.feature "Users", type: :feature do
 				end
 			end
 		end
+
+		feature "機能確認" do
+			feature "update" do
+				before do
+					visit edit_user_path(@user1)
+					find_field('user[name]').set('updated_name')
+					find_field('user[introduction]').set('updated_introduction')
+					# find('input[type="file"]').set('no_image.png')
+					find("input[name='commit']").click
+				end
+
+				# scenario "updateされているか" do
+				# 	expect(page).to have_content "updated_name"
+			 #        expect(page).to have_content "updated_inttroduction"
+			 #        expect(User.find(1).profile_image_id).to be_truthy
+				# end
+
+				scenario "リダイレクト先" do
+					expect(page).to have_current_path user_path(@user1)
+				end
+			end
+
+			feature "無効なデータでのupdate" do
+				before do
+					visit edit_user_path(@user1)
+					find_field('user[name]').set(nil)
+					find("input[name='commit']").click
+				end
+
+				scenario "リダイレクト先" do
+					expect(page).to have_current_path user_path(@user1)
+				end
+
+				scenario "エラーメッセージ" do
+					expect(page).to have_content "blank"
+				end
+			end
+		end
 	end
 end
