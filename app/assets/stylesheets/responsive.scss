@@ -300,7 +300,7 @@
 
 /* ----- フォロー一覧画面のタブ ----- */
 @mixin follow-tab{
-	margin: 50px auto;
+	margin: 35px auto;
 	text-align: center;
 }
 
@@ -482,7 +482,7 @@
 		margin: 50px auto;
 		width: 75%;
 		.left{
-			margin-bottom: 30px;
+			margin-bottom: 100px;
 			strong{
 				font-size: 20px;
 			}
@@ -649,6 +649,7 @@
 	/* ----- マイページ ----- */
 
 	.mypage{
+		margin-bottom: 100px;
 		.upper{
 			margin: 15px auto 0px auto;
 			width: 100%;
@@ -763,11 +764,16 @@
 		}
 		.follow-tab{
 			li{
-				display: block;
+				display: inline-block;
 				line-height: 38px;
 				margin: 0 auto 2px auto;
 				height: 38px;
-				width: 80%;
+				width: 45%;
+				a{
+					strong{
+						font-size: 18px;
+					}
+				}
 				@include follow-tab-li
 			}
 			@include follow-tab

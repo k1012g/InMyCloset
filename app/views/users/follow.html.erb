@@ -10,7 +10,7 @@
 			<a href="#following">
 			<!-- フォローしている人を表示するタブ -->
 				<strong class="font-s">
-					Following (<%= @following.count %>)
+					Following
 				</strong>
 			</a>
 		</li>
@@ -18,13 +18,16 @@
 			<a href="#follower">
 			<!-- フォロワーを表示するタブ -->
 				<strong class="font-s">
-					Follower (<%= @follower.count %>)
+					Follower
 				</strong>
 			</a>
 		</li>
 	</ul>
 	<div class="follow-contents" id="following">
 		<!-- フォローしている人を表示する -->
+		<strong class="text-center font-m">
+			<%= @following.count %> people
+		</strong>
 		<% @following.each do |user| %>
 			<div class="contents-size-auto">
 				<%= render 'users/index', users: user %>
@@ -33,6 +36,9 @@
 	</div>
 	<div class="follow-contents" id="follower">
 		<!-- フォロワーを表示する -->
+		<strong class="text-center font-m">
+			<%= @follower.count %> people
+		</strong>
 		<% @follower.each do |user| %>
 			<div class="contents-size-auto">
 				<%= render 'users/index', users: user %>
