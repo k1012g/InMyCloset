@@ -679,8 +679,8 @@
 					background-color: #fff;
 				}
 				.profile-btn{
-					width: 80%;
 					margin: 0px auto 2px auto;
+					width: 80%;
 				}
 			}
 		}
@@ -1139,11 +1139,11 @@
 
 	.mypage{
 		.upper{
-			margin: 40px auto 20px auto;
+			margin: 40px auto 0px auto;
 			width: 100%;
 			div{
 				float: left;
-				height: 340px;
+				height: 300px;
 			}
 			.left{
 				width: 30%;
@@ -1170,8 +1170,11 @@
 		.lower{
 			width: 100%;
 			.profile-btn{
+				position: fixed;
+				right: 50px;
+				top: 70px;
 				margin: 0 auto;
-				width: 50%;
+				width: 20%;
 			}
 			.tab{
 				list-style: none;
@@ -1606,11 +1609,11 @@
 
 	.mypage{
 		.upper{
-			margin: 30px auto;
+			margin: 30px auto 0px auto;
 			width: 100%;
 			div{
 				float: left;
-				height: 400px;
+				height: 350px;
 			}
 			.left{
 				width: 30%;
@@ -1620,7 +1623,7 @@
 				}
 			}
 			.right{
-				width: 40%;
+				width: 50%;
 				.introduction{
 					width: 80%;
 					height: 120px;
@@ -1636,7 +1639,10 @@
 			width: 100%;
 			.profile-btn{
 				margin: 0 auto;
-				width: 50%;
+				right: 100px;
+				position: fixed;
+				top: 100px;
+				width: 10%;
 			}
 			.tab{
 				list-style: none;
