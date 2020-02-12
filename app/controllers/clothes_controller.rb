@@ -1,6 +1,7 @@
 class ClothesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :current_user?, only: [:edit, :update, :destroy]
+
   def new
     @cloth = Cloth.new
   end

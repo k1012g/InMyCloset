@@ -1,3 +1,4 @@
+<!-- ログインしている時 -->
 <% if signed_in? %>
 	<% if user.followed_by?(current_user) %>
 	<!-- followしている時 -->
@@ -6,6 +7,7 @@
 	<!-- followしていない時 -->
 		<%= link_to "Follow", user_relationships_path(user.id), method: :post, remote: true, class: "btn btn-default" %>
 	<% end %>
+<!-- ログインしていない時 -->
 <% else %>
 	<%= link_to "Follow", confirm_path, class: "btn btn-default" %>
 <% end %>

@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+
   def search
     # 入力内容
   	@input = params[:input]

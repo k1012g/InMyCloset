@@ -3,13 +3,22 @@
 		Others
 	</strong>
 	<br>
+	<!-- いいね一覧 -->
 	<%= link_to "Favorites", user_favorite_path(current_user.id), class: "btn done-btn others-btn" %>
 	<br>
+
+	<!-- プロフィール編集 -->
 	<%= link_to "Edit profile", edit_user_path(current_user.id), class: "btn done-btn others-btn" %>
 	<br>
+
+	<!-- 新規投稿 -->
 	<%= link_to "Add clothes", new_clothes_path, class: "btn done-btn others-btn" %>
 	<br>
+
+	<!-- about画面へ -->
 	<%= link_to "What is InMyCloset?", about_path, class: "btn done-btn others-btn" %>
 	<br>
+
+	<!-- サインアウト -->
 	<%= link_to "Sign out", destroy_user_session_path, class: "btn done-btn others-btn", data: { confirm: "Sign out ?" }, method: :delete %>
 </div>

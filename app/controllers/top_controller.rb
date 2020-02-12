@@ -1,6 +1,7 @@
 class TopController < ApplicationController
   before_action :authenticate_user!, only: [:others]
   before_action :current_user?, only: [:others]
+
   def top
     # ログインしているかどうかのif文
   	if signed_in?
@@ -45,6 +46,7 @@ class TopController < ApplicationController
   end
 
   private
+  # 自分かどうか区別
   def current_user?
     user = User.find(params[:id])
     if current_user != user

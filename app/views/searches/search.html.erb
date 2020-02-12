@@ -1,7 +1,7 @@
 <section class="search">
 	<strong class="font-l text-center">Search</strong>
 	<span class="text-center">
-		<!-- 検索結果のフォーム -->
+		<!-- 検索フォーム -->
 		<%= form_tag(search_path, :method => 'get') do %>
 			<%= text_field_tag :input, '', placeholder: 'Example : Gucci, Justin Biebar' %>
 			<%= select_tag :sort, options_for_select({ "User" => "User", "Brand" => "Brand", "Category" => "Category" }) %>

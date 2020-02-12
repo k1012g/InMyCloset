@@ -2,6 +2,8 @@
 	<%= link_to root_path do %>
 			<strong class="font-s title">InMyCloset</strong>
 	<% end %>
+
+	<!-- ログインしている時 -->
 	<% if signed_in? %>
 		<div class="header-links" style="float: right;">
 			<strong class="links">
@@ -21,6 +23,8 @@
 				<%= attachment_image_tag current_user, :profile_image, :fill, 38, 38, fallback: "no_image.png", size:'38x38', class: "user_image smartphone-only", style: "margin-top: 4px;" %>
 			<% end %>
 		</div>
+
+	<!-- ログインしていない時 -->
 	<% else %>
 		<div class="header-links" style="float: right;">
 			<strong class="links">
