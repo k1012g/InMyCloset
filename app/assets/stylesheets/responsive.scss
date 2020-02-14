@@ -112,6 +112,8 @@
 /* ----- タイムライン(ログイン済のtop) ----- */
 @mixin timeline-left{
 	float: left;
+	height: 1000px;
+	overflow-y: scroll;
 	width: 70%;
 	.post{
 		.cloth_image{
