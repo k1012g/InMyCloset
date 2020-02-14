@@ -1,5 +1,5 @@
-<% if user == current_user %>
 <!-- 自分の時のみ表示 -->
+<% if user == current_user %>
 	<%= link_to "Edit", edit_clothes_path(cloth.id), class: "btn done-btn" %>
 	<%= link_to "Delete this cloth", destroy_clothes_path(cloth.id), data: { confirm: "Delete this #{cloth.brand} #{cloth.category.category}?" }, method: :delete, class: "btn btn-danger" %>
 <% end %>

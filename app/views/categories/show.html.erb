@@ -1,9 +1,11 @@
 <div class="container">
+
+	<!-- カテゴリー名を表示 -->
 	<strong class="font-l text-center" style="margin-bottom: 15px;">
-		<!-- カテゴリー名を表示 -->
 		<%= @category.category %>
 		(<%= Cloth.where(category_id: @category.id).count %>)
 	</strong>
+
 	<!-- カテゴリー毎の投稿を表示 -->
 	<% @category.cloths.each do |category| %>
 		<div class="contents-cloth contents-size">

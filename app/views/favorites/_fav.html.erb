@@ -1,7 +1,8 @@
+<!-- サインインしている時 -->
 <% if signed_in? %>
-	<!-- サインインしている時 -->
+
+	<!-- いいねしている時 -->
 	<% if cloth.favorited_by?(current_user) %>
-		<!-- いいねしている時 -->
 		<span class="atag">
 			<%= link_to destroy_favorite_path(cloth.id), method: :delete, remote: true do %>
 				<%= icon 'fas', 'heart', style: "color: red;", class: "font-xs" %>
@@ -10,8 +11,8 @@
 				</span>
 			<% end %>
 		</span>
+	<!-- いいねしていない時 -->
 	<% else %>
-		<!-- いいねしていない時 -->
 		<span class="atag">
 			<%= link_to create_favorite_path(cloth.id), method: :post, remote: true do %>
 				<%= icon 'far', 'heart', style: "color: red;", class: "font-xs" %>
@@ -21,8 +22,8 @@
 			<% end %>
 		</span>
 	<% end %>
-<% else %>
 <!-- サインインしていない時 -->
+<% else %>
 	<span class="linknone">
 		<%= link_to confirm_path do %>
 			<%= icon 'far', 'heart', style: "color: red;", class: "font-xs" %>

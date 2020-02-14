@@ -2,7 +2,6 @@
 	<br>
 	<strong class="font-m text-center">Add clothes</strong>
 	<br>
-	<!-- プレビュー -->
 	<div class="preview text-center">
 		<div>
 			<strong>Image is here.</strong>
@@ -20,8 +19,10 @@
 	<!-- 入力フォーム -->
 	<div class="new">
 		<%= form_with(model: @cloth, url: create_clothes_path, local: true) do |f| %>
+
 			<!-- 入力フォームの部分テンプレート -->
 			<%= render 'clothes/form', form: f %>
+
 			<!-- エラーメッセージの部分テンプレート -->
 			<%= render 'layouts/error', obj: @cloth %>
 			<br>

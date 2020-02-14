@@ -1,8 +1,8 @@
 <footer class="footer">
-	<% unless devise_controller? %>
 	<!-- サインイン、サインアップ画面の時は非表示 -->
+	<% unless devise_controller? %>
+		<!-- aタグで囲むことでボタン認識させる -->
         <a>
-        	<!-- aタグで囲むことでボタン認識させる -->
         	<%= icon 'far', 'arrow-alt-circle-up', id: "to-top", class: "font-m"%>
     	</a>
     <% end %>

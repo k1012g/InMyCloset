@@ -1,4 +1,6 @@
 <ul class="category-tab">
+
+	<!-- 特定のユーザーの服全件を表示するタブ -->
 	<li>
 		<a href="#category_0">
 			<strong class="font-xs">
@@ -8,9 +10,10 @@
 				(<%= user.cloths.count %>)
 			</strong>
 		</a>
-		<!-- 特定のユーザーの服全件を表示するタブ -->
 	</li>
 	<% categories.each do |category| %>
+
+		<!-- 特定のユーザーの服をカテゴリー毎に表示するタブ -->
 		<li>
 			<a href="#category_<%= category.id %>">
 				<strong class="font-xs">
@@ -20,7 +23,6 @@
 					(<%= Cloth.where(user_id: user.id, category_id: category.id).count %>)
 				</strong>
 			</a>
-			<!-- 特定のユーザーの服をカテゴリー毎に表示するタブ -->
 		</li>
 	<% end %>
 </ul>
@@ -28,10 +30,12 @@
 	<div class="category-contents-inner" id="category_0">
 		<% user.cloths.each do |cloth| %>
 			<div class="contents-size-auto">
-				<%= render 'clothes/index', clothes: cloth %>
+
 				<!-- 投稿一覧のテンプレート -->
-				<%= render 'clothes/edit_link', user: user, cloth: cloth %>
+				<%= render 'clothes/index', clothes: cloth %>
+
 				<!-- 投稿に対して編集、削除ボタンのテンプレート -->
+				<%= render 'clothes/edit_link', user: user, cloth: cloth %>
 			</div>
 		<% end %>
 	</div>
@@ -39,10 +43,12 @@
 		<div class="category-contents-inner" id="category_<%= category.id %>">
 			<% Cloth.where(user_id: user.id, category_id: category.id).each do |clothes| %>
 				<div class="contents-size-auto">
-					<%= render 'clothes/index', clothes: clothes %>
+
 					<!-- 投稿一覧のテンプレート -->
-					<%= render 'clothes/edit_link', user: user, cloth: clothes %>
+					<%= render 'clothes/index', clothes: clothes %>
+
 					<!-- 投稿に対して編集、削除ボタンのテンプレート -->
+					<%= render 'clothes/edit_link', user: user, cloth: clothes %>
 				</div>
 			<% end %>
 		</div>

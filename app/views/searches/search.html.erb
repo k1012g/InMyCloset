@@ -1,6 +1,7 @@
 <section class="search">
 	<strong class="font-l text-center">Search</strong>
 	<span class="text-center">
+
 		<!-- 検索フォーム -->
 		<%= form_tag(search_path, :method => 'get') do %>
 			<%= text_field_tag :input, '', placeholder: 'Example : Gucci, Justin Biebar' %>
@@ -18,30 +19,31 @@
 </section>
 <div class="container">
 	<div style="width: 100%;">
-		<% if @input.blank? && @sort.blank? %>
+
 		<!-- 何も入力しなかった時の条件分岐 -->
+		<% if @input.blank? && @sort.blank? %>
 			<% User.all.each do |user| %>
 				<div class="contents-size">
 					<%= render 'users/index', users: user %>
 				</div>
 			<% end %>
 		<% else %>
-			<% if @sort == "User" %>
 			<!-- ユーザーでのソート -->
+			<% if @sort == "User" %>
 				<% @results.each do |user| %>
 					<div class="contents-size">
 						<%= render 'users/index', users: user %>
 					</div>
 				<% end %>
-			<% elsif @sort == "Brand" %>
 			<!-- ブランドでのソート -->
+			<% elsif @sort == "Brand" %>
 				<% @results.each do |brand| %>
 					<div class="contents-size contents-cloth">
 						<%= render 'clothes/index', clothes: brand %>
 					</div>
 				<% end %>
-			<% elsif @sort == "Category" %>
 			<!-- カテゴリーでのソート -->
+			<% elsif @sort == "Category" %>
 				<% @results.each do |category| %>
 					<span class="atag">
 						<%= link_to category_path(category.id) do %>

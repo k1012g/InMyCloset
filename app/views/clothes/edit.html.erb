@@ -2,7 +2,6 @@
 	<br>
 	<strong class="font-m text-center">Edit clothes</strong>
 	<br>
-	<!-- 変更前 -->
 	<div class="before-edit text-center">
 		<br>
 		<%= attachment_image_tag @cloth, :image, :fill, 350, 350 %>
@@ -20,8 +19,10 @@
 	<div class="edit">
 		<br>
 		<%= form_with(model: @cloth, url: edit_clothes_path, local: true) do |f| %>
+
 			<!-- 入力フォームの部分テンプレート -->
 			<%= render 'clothes/form', form: f %>
+
 			<!-- エラーメッセージの部分テンプレート -->
 			<%= render 'layouts/error', obj: @cloth %>
 			<%= f.submit "Update clothes", class: "btn done-btn" %>

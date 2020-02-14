@@ -15,8 +15,8 @@
 			<br>
 			<strong class="font-s text-center">
 				<span id="follow_<%= @user.id %>">
-					<% if current_user != @user %>
 					<!-- 自分以外のページのみフォローボタンを表示 -->
+					<% if current_user != @user %>
 						<%= render 'relationships/follow' , user: @user %>
 					<% end %>
 				</span>
@@ -35,8 +35,8 @@
 	</section>
 	<section class="lower">
 		<span class="text-center" style="margin-top: 10px;">
-			<% if current_user == @user %>
 			<!-- 自分の時のみ編集、追加、お気に入り一覧のボタンを表示 -->
+			<% if current_user == @user %>
 				<%= link_to "Add clothes", new_clothes_path, class: "btn done-btn profile-btn" %>
 				<br>
 			<% end %>

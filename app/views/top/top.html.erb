@@ -1,12 +1,12 @@
+<!-- ログインしているときはフォローしている人のタイムラインを表示 -->
 <% if signed_in? %>
-	<!-- ログインしているときはフォローしている人のタイムラインを表示 -->
 	<main class="timeline">
 		<section class="left">
-			<% if current_user.followings.present? %>
 			<!-- フォローしている人がいる時 -->
+			<% if current_user.followings.present? %>
 				<strong class="font-l text-center">
-					Today's Post : <%= @todayPost %>
 					<!-- 今日の投稿の件数表示 -->
+					Today's Post : <%= @todayPost %>
 					<% @timeline_clothes.each do |cloth| %>
 						<div class="post" style="margin: 10px auto;">
 							<%= render 'clothes/index', clothes: cloth %>
@@ -14,8 +14,8 @@
 						</div>
 					<% end %>
 				</strong>
-			<% else %>
 			<!-- フォローしている人がいない時 -->
+			<% else %>
 				<strong class="font-l text-center">
 					No Users<br>
 					<%= link_to "Let's Follow!", search_path %>

@@ -2,8 +2,11 @@
 	<div id="error_explanation">
 	    <ul style="list-style: none;">
 	      <% obj.errors.full_messages.each do |message| %>
-	        <strong><li style="color: red;"><%= message %>
-	        </li></strong>
+	        <strong>
+	        	<li style="color: red;">
+	        		<%= message %>
+		        </li>
+		    </strong>
 	      <% end %>
 	    </ul>
     </div>

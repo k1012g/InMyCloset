@@ -1,33 +1,38 @@
 <ul class="brand-tab">
-	<% cloth_brand.group_by(&:itself).each do |brand, num| %>
+
 	<!-- 特定のユーザーの投稿のブランドの種類とその数を表示 -->
+	<% cloth_brand.group_by(&:itself).each do |brand, num| %>
 			<li>
+				<!-- eachの回数をリンクにしている -->
 				<a href="#<%= times %>">
-					<!-- eachの回数をリンクにしている -->
 					<strong class="font-xs">
 						<%= brand %>
 						(<%= num.count %>)
 					</strong>
 				</a>
 			</li>
-		<% times += 1 %>
 		<!-- eachの回数 -->
+		<% times += 1 %>
 	<% end %>
 </ul>
 <% cloth_brand.group_by(&:itself).each do |brand, num| %>
 	<div class="brand-contents">
+
+		<!-- eachの回数を上記のaタグと一致させている(jQuery用) -->
 		<div class="brand-contents-inner" id="<%= times2 %>">
-			<!-- eachの回数を上記のaタグと一致させている(jQuery用) -->
 			<% user.cloths.where(brand: brand).each do |cloth| %>
 				<div class="contents-size-auto">
-					<%= render 'clothes/index', clothes: cloth %>
+
 					<!-- 投稿一覧のテンプレート -->
-					<%= render 'clothes/edit_link', user: user, cloth: cloth %>
+					<%= render 'clothes/index', clothes: cloth %>
+
 					<!-- 投稿に対して編集、削除ボタンのテンプレート -->
+					<%= render 'clothes/edit_link', user: user, cloth: cloth %>
 				</div>
 			<% end %>
 		</div>
 	</div>
-	<% times2 += 1 %>
+
 	<!-- eachの回数 -->
+	<% times2 += 1 %>
 <% end %>
