@@ -44,8 +44,25 @@
 			<% Cloth.where(user_id: user.id, category_id: category.id).each do |clothes| %>
 				<div class="contents-size-auto">
 
-					<!-- 投稿一覧のテンプレート -->
-					<%= render 'clothes/index', clothes: clothes %>
+					<!-- 投稿そのものを表示 -->
+					<%= attachment_image_tag clothes, :image, :fill, 200, 200, class: "cloth_image" %>
+					<br>
+					<!-- 投稿した人の画像、名前とその人のページへのリンク -->
+					<span class="atag">
+						<strong class="font-xs">
+							<%= clothes.brand %>
+						</strong>
+						<br>
+						<% unless controller.controller_name == 'users' && controller.action_name == 'show' %>
+						<!-- マイページの時には投稿したユーザーの画像を表示しない -->
+							<%= link_to user_path(clothes.user.id) do %>
+								<%= attachment_image_tag clothes.user, :profile_image, :fill, 70, 70, fallback: "no_image.png", size:'70x70', class: "user_image" %>
+								<span style="color: #292929;">
+									<%= clothes.user.name %>
+								</span>
+							<% end %>
+						<% end %>
+					</span>
 
 					<!-- 投稿に対して編集、削除ボタンのテンプレート -->
 					<%= render 'clothes/edit_link', user: user, cloth: clothes %>
