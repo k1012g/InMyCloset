@@ -3,7 +3,7 @@
 
 	<!-- いいねしている投稿一覧 -->
 	<% @favorites.each do |fav| %>
-		<div class="contents-cloth contents-size">
+		<div class="contents-cloth contents-size-auto">
 			<%= render 'clothes/index', clothes: fav.cloth %>
 		</div>
 	<% end %>
